@@ -1,0 +1,167 @@
+body { margin:0; padding:0; font-size:12px; background:#ececec;}
+body,button,input,select,textarea,label 
+{
+    font-family:"微软雅黑","Microsoft Yahei",Arial, Helvetica, sans-serif;
+}
+
+html, body, div, h1, h2, h3, h4, h5, h6, ul, ol, dl, li, dt, dd, blockquote, pre, form, fieldset, table, th, td, span{padding:0;margin:0;}
+
+ul,li,p{ list-style:none; margin:0; padding:0;}
+h1,h2,h4,h5,h6{ margin:0px; padding:0px; font-weight:normal; font-size:12px; display:inline;}
+a,a:hover{ text-decoration:none;}
+a{ color:#333333;}
+a:hover{ color:#ca4912;}
+.clear{ clear:both;}
+.cb { clear:both;}
+.fB { font-weight:bold; }
+img{ border:none;}
+
+/*清除浮动*/
+.clear{clear: both;height: 0;}
+.blk-main .clearlist,.blk-main .listclear{ clear:both;height:0;padding:0;margin:0;border:0;width:100% ;float:none;}
+.b-main .clearlist,.b-main .listclear{ clear:both;height:0;padding:0;margin:0;border:0;width:100% ;float:none;}
+.clearafter:after { content:"."; display:block; height:0; visibility:hidden; clear:both; }
+
+
+
+/*Main模板*/
+.blk-main{width:100%; margin: 0 auto;}
+/*小模块*/
+.blk-xs{width:200px;}
+/*中模块*/
+
+
+
+/*首页板块全局变量*/
+.b{clear: both;}
+/*内页板块全局变量*/
+.blk{margin-bottom:  2px;}
+
+
+        .fdh-01-tit {
+            font-weight:bold;
+            color:#f08300;
+            padding:15px 0px 15px 20px;
+            border-bottom:1px solid #d6d0d0;
+            font-size:14px;
+        }
+        
+        .fdh-01-tit h3 {
+            height: 75px;
+            font-size: 24px;
+            font-weight: normal;
+            line-height: 75px;
+            color: #fff;
+            border-bottom: 1px solid #fff;
+            text-align: center;
+        }
+        
+        .fdh-01-tit h3 span {
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+        
+        .fdh-01-nav-one h3 {
+            height: 32px;
+            line-height: 32px;
+            background: url(arrowdown.png) no-repeat right center #ececec;
+            margin-bottom: 1px;
+            border-bottom:1px solid #d6d0d0;
+            padding-left:22px;
+            font-weight: normal;
+        }
+        .fdh-01-nav-one h3 img 
+        {
+            margin-bottom:-1px;
+        }        
+        .fdh-01-nav-one h3 a {
+            display: block;
+            font-size: 14px;
+            font-weight: normal;
+            margin-right: 40px;
+            margin-left: 22px;
+            color: #000000;
+        }
+        
+        .fdh-01-nav-one h3.sidenavcur,
+        .fdh-01-nav-one h3:hover {
+            background: url(arrowup.png) no-repeat right center #ececec;
+        }
+        
+        .fdh-01-nav dl {
+            padding: 0px 0px;
+        }
+        
+        .fdh-01-nav dt {
+            height: 32px;
+            font-size: 14px;
+            line-height: 32px;
+            padding-left: 40px;
+            padding-right: 40px;
+            margin-bottom: 1px;
+            background: #ffffff;
+            position: relative;
+        }
+        
+        .fdh-01-nav dt:after {
+            content: "";
+            width: 8px;
+            height: 8px;
+            border: 1px solid #cccccc;
+            border-style: solid solid none none;
+            position: absolute;
+            top: 50%;
+            right: 32px;
+            margin-top: -4px;
+            -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+        
+        .fdh-01-nav dt.sidenavcur:after,
+        .fdh-01-nav dt:hover:after {
+            border-color:  #c61215;
+        }
+        
+        .fdh-01-nav dt.sidenavcur a,
+        .fdh-01-nav dt:hover a {
+            color:  #c61215;
+        }
+        
+        .fdh-01-nav dd {
+            border: 1px solid #ececec;
+            border-bottom: 0;
+        }
+        
+        .fdh-01-nav p {
+            height: 50px;
+            font-size: 14px;
+            line-height: 50px;
+            padding-left: 72px;
+            padding-right: 40px;
+            border-bottom: 1px solid #ececec;
+            background: #fff;
+            position: relative;
+        }
+        
+        .fdh-01-nav p.sidenavcur a,
+        .fdh-01-nav p:hover a {
+            color:  #c61215;
+        }
+        
+        .fdh-01-nav p.sidenavcur:after,
+        .fdh-01-nav p:hover:after {
+            background: #4a4446;
+        }
+        
+        .fdh-01-nav a {
+            display: block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+    
+
+       
