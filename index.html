@@ -1,1504 +1,374 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="zh-CN">
 <head>
-    <meta charset="utf-8">
-
-
-    <meta name="baidu-site-verification" content="glgaGYQimU">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>建研华测</title>
-    <meta name="keywords" content=" ">
-    <meta name="description" content=" ">
-    <meta http-equiv="x-ua-compatible" content="IE=Edge">
-    <meta name="alpha-head-nav">
-    <!-- <link rel="canonical" href="https://www.31huiyi.com/"> -->
-    <link href="favicon.ico" rel="shortcut icon">
-    <link href="css/reset.css" rel="stylesheet">
-    <link href="css/common.css" rel="stylesheet">
-    <link href="css/idangerous.swiper.css" rel="stylesheet">
-	<link href="css/style.css" rel="stylesheet" />
-
-    <link href="css/home.css" rel="stylesheet">
-    <!-- <link href="css/swiper-bundle.min.css" rel="stylesheet"> -->
-    
-    <link href="css/home_new.css" rel="stylesheet">
-    <script src="js/jquery-1.10.1.min.js"></script>
-    <!-- 轮播 -->
-	<link href="css/swiper.min.css" rel="stylesheet">
-    <script src="js/swiper.min.js"></script>
-
-    <script>
-        function fadinHandlar(scrollTop, windowHeight, targetList) {
-            for (var i = 0, len = targetList.length; i < len; i++) {
-                target = targetList.eq(i)
-                // console.log(target)
-                var targetTop = target[0].offsetTop
-                if (target.hasClass('chooseus__list__block') || target.hasClass('trust__list')) {
-                    targetTop = target.offset().top
-                }
-                var subTop = targetTop - scrollTop
-                if (subTop < windowHeight && !target.hasClass('action')) {
-                    target.addClass('action act')
-                } else if (subTop > windowHeight && target.hasClass('action')) {
-                    target.removeClass('action act')
-                }
-            }
-        }
-    </script>
-    <script>
-        if ((navigator.userAgent.match(/Android/i) && navigator.userAgent.match(/Mobile/i)) || navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/Windows Phone/i)) {
-            var href = window.location.href;
-            if (href.match(/newslist_2017\/article\/\d+\/$/)) {
-                var n = href.match(/\d+\/$/);
-
-                window.location = window.location.protocol +
-                    "//" +
-                    window.location.host +
-                    "/h5/news/article/?articleId=" + n[0].replace("/", "");
-            } else {
-                window.location.replace('/mobile/index');
-            }
-
-
-        }
-    </script>
-    <!-- 首页自定义导航样式，和内页做区分 -->
-    <script src="js/jquery-1.10.1.min.js"></script>
-    <!-- GrowingIO Analytics code version 2.1 -->
-    <!-- Copyright 2015-2017 GrowingIO, Inc. More info available at http://www.growingio.com -->
-    <script type="text/javascript">
-        var showLayer = false
-        var layerTimer = null
-        var windowHeight = window.innerHeight // 浏览器高度
-        var windowWidth = window.innerWidth // 浏览器宽度
-        !function (e, t, n, g, i) { e[i] = e[i] || function () { (e[i].q = e[i].q || []).push(arguments) }, n = t.createElement("script"), tag = t.getElementsByTagName("script")[0], n.async = 1, n.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + g, tag.parentNode.insertBefore(n, tag) }(window, document, "script", "assets.giocdn.com/2.1/gio.js", "gio");
-        gio('init', '9da3743916aa207c', {});
-        gio('send');
-    </script>
-    <!-- End GrowingIO Analytics code version: 2.1 -->
+	<meta charset="utf-8">
+	<title>建研华测</title>
+	<script src="js/jquery-1.10.1.min.js" type="text/javascript"></script>
+	<script src="js/vue.js" type="text/javascript"></script>
+	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	<script src="js/style.js" type="text/javascript"></script>
+	<link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
+	<script src="js/swiper.min.js" type="text/javascript"></script>
+	
 </head>
-
 <body>
-
-    <div id="app">
-        <div class="corp">
-            <!--导航条-->
-            <div class="corp__header fix">
-
-                <!-- 新导航 -->
-                <div class="nav__new">
-                    <div class="nav__left pull-left">
-                        <a href="/" class="corp__header-logo">
-                            <h1><strong>冠力</strong></h1>
-                        </a>
-                        <ul class="corp__header-nav">
-                            <li class="corp__header-nav__item headerhover">
-                                <a href="javascript:;" rel="nofollow" style="color:#fff;" class="productMenu menuLink">首页</a>
-                            </li>
-                            <!-- 3D打印系统 -->
-                            <li class="corp__header-nav__item">
-                                <a href="javascript:;" rel="nofollow" class="productMenu menuLink">混凝土(砂浆)3D打印系统</a>
-                                <div class="w clearfix corp__header-subnav corp__subnav-product col-full newProductMenu" style="position: absolute; top: 76px; height:300px; left: -176px;">
-                                    <!--<div class="shadow"></div>-->
-                                    <ul class="dropdown_menu">
-                                        <li class="mL40">
-                                            <div>
-                                                <a href="javascript:;">
-                                                    <div class="imgBox"><img src="images/header/Hp1.jpeg" alt=""></div>
-
-                                                    <p> 【工业级】 混凝土（砂浆）3D打印系统</p>
-                                                    <img src="images/sale.png" class="hot-ico" alt="">
-                                                </a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div>
-                                                <a href="javascript:;">
-
-                                                    <div class="imgBox"><img src="images/header/Hp2.jpeg" alt=""></div>
-                                                    <p>【实验室级】混凝土（砂浆）3D打印系统</p>
-                                                    <img src="images/sale.png" class="hot-ico" alt="">
-                                                </a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div>
-                                                <a href="javascript:;">
-                                                    <div class="imgBox"><img src="images/header/Hp3.jpeg" alt=""></div>
-                                                    <p>【桌面级】混凝土（砂浆）3D打印系统</p>
-                                                    <img src="images/sale.png" class="hot-ico" alt="">
-                                                </a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div>
-                                                <a href="javascript:;">
-                                                    <div class="imgBox"><img src="images/header/Hp4.png" alt=""></div>
-
-                                                    <p>【机械臂】混凝土（砂浆）3D打印系统</p>
-                                                </a>
-                                            </div>
-                                        </li>
-                                    </ul>
-
-                                </div>
-                            </li>
-                            <!-- 混凝土耐久性测试仪器2 -->
-                            <li class="corp__header-nav__item">
-                                <a href="javascript:;" rel="nofollow" target="" class="productMenu menuLink">混凝土耐久性测试仪器</a>
-                                <div class="w clearfix corp__header-subnav corp__subnav-product col-full newProductMenu" style="position: absolute; top: 76px; left: -385px; height:600px;">
-                                    <ul class="dropdown_menu">
-                                        <li class="mL40">
-                                            <div>
-                                                <a href="javascript:;">
-                                                    <div class="imgBox">
-                                                        <img src="images/header/Hp21.png" alt="">
-                                                    </div>
-
-                                                    <p> 混凝土快速冻融试验机HC-HDK9</p>
-                                                    <img src="images/sale.png" class="hot-ico" alt="">
-                                                </a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div>
-                                                <a href="javascript:;">
-                                                    <div class="imgBox"><img src="images/header/Hp22.png" alt=""></div>
-                                                    <p>  混凝土碳化试验箱HC-HTX12</p>
-                                                    <img src="images/sale.png" class="hot-ico" alt="">
-                                                </a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div>
-                                                <a href="javascript:;">
-                                                    <div class="imgBox"><img src="images/header/Hp23.png" alt=""></div>
-                                                    <p> 全自动混凝土硫酸盐干湿循环试验机</p>
-                                                    <img src="images/sale.png" class="hot-ico" alt="">
-                                                </a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div>
-                                                <a href="javascript:;">
-                                                    <div class="imgBox"><img src="images/header/Hp24.jpeg" alt=""></div>
-
-                                                    <p>混凝土氯离子扩散系数测定仪</p>
-                                                </a>
-                                            </div>
-                                        </li>
-                                        <!--<li>
-                                            <div>
-                                                <a href="javascript:;">
-                                                    <div class="imgBox"><img src="images/header/Hp25.png" alt=""></div>
-
-                                                    <p>混凝土氯离子电通量测定仪</p>
-                                                </a>
-                                            </div>
-                                        </li>
-
-                                        <li class="mL40">
-                                            <div>
-                                                <a href="javascript:;">
-                                                    <div class="imgBox"><img src="images/header/Hp26.png" alt=""></div>
-
-                                                    <p>   混凝土徐变仪HC-XB50 </p>
-                                                </a>
-                                            </div>
-                                        </li>-->
-                                        <li class="mL40">
-                                            <div>
-                                                <a href="javascript:;">
-                                                    <div class="imgBox"><img src="images/header/Hp27.png" alt=""></div>
-
-                                                    <p>混凝土氯离子扩散系数电通量测定仪 </p>
-                                                </a>
-                                            </div>
-                                        </li>
-
-                                        <li>
-                                            <div>
-                                                <a href="javascript:;">
-                                                    <div class="imgBox"><img src="images/header/Hp28.jpeg" alt=""></div>
-
-                                                    <p>混凝土氯离子扩散系数电通量测定仪 </p>
-                                                </a>
-                                            </div>
-                                        </li>
-                                        <!--<li>
-                                            <div>
-                                                <a href="javascript:;">
-                                                    <div class="imgBox"><img src="images/header/Hp29.png" alt=""></div>
-                                                    <img src="images/header/Hp29.png" alt="">
-                                                    <p>非接触波纹管收缩变形测定仪 </p>
-                                                </a>
-                                            </div>
-                                        </li>-->
-                                        <!--<li>
-                                            <div>
-                                                <a href="javascript:;">
-                                                    <div class="imgBox"><img src="images/header/Hp210.png" alt=""></div>
-                                                    <p>混凝土早期抗开裂试验设备  </p>
-                                                </a>
-                                            </div>
-                                        </li>
-
-                                        <li class="mL40">
-                                            <div>
-                                                <a href="javascript:;">
-                                                    <div class="imgBox"><img src="images/header/Hp211.jpeg" alt=""></div>
-
-                                                    <p>非接触式混凝土收缩变形测定仪  </p>
-                                                </a>
-                                            </div>
-                                        </li>-->
-
-                                    </ul>
-
-                                </div>
-                            </li>
-                            <!-- 特殊性能高端测试仪器 -->
-                            <li class="corp__header-nav__item">
-                                <a href="/price" target="_blank" class="productMenu menuLink">特殊性能高端测试仪器</a>
-
-                                <div class="w clearfix corp__header-subnav corp__subnav-product col-full newProductMenu" style="position: absolute; top: 76px; left: -572px; height:600px;">
-                                    <ul class="dropdown_menu">
-                                        <li class="mL40">
-                                            <div>
-                                                <a href="javascript:;">
-
-                                                    <div class="imgBox"><img src="images/header/Hp31.png" alt=""></div>
-                                                    <p> 多功能建材冻融试验机HC-JCD</p>
-
-                                                </a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div>
-                                                <a href="javascript:;">
-
-                                                    <div class="imgBox"><img src="images/header/Hp32.jpeg" alt=""></div>
-
-                                                    <p>混凝土硫酸盐-应力耦合试验机</p>
-                                                </a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div>
-                                                <a href="javascript:;">
-                                                    <div class="imgBox"><img src="images/header/Hp33.jpeg" alt=""></div>
-                                                    <p>  低温硫酸盐-交流阻抗耦合试验机</p>
-                                                </a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div>
-                                                <a href="javascript:;">
-                                                    <div class="imgBox"><img src="images/header/Hp34.png" alt=""></div>
-
-
-                                                    <p>混凝土超低温试验箱</p>
-                                                </a>
-                                            </div>
-                                        </li>
-                                        <!--<li>
-                                            <div>
-                                                <a href="javascript:;">
-                                                    <div class="imgBox"><img src="images/header/Hp35.png" alt=""></div>
-
-
-                                                    <p> 混凝土热物理参数测定仪</p>
-                                                </a>
-                                            </div>
-                                        </li>-->
-
-                                        <li class="mL40">
-                                            <div>
-                                                <a href="javascript:;">
-                                                    <div class="imgBox"><img src="images/header/Hp36.png" alt=""></div>
-
-
-                                                    <p>硬化混凝土气孔结构分析仪 </p>
-                                                </a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div>
-                                                <a href="javascript:;">
-                                                    <div class="imgBox"><img src="images/header/Hp37.png" alt=""></div>
-
-
-                                                    <p>激光收缩变形测定仪</p>
-                                                </a>
-                                            </div>
-                                        </li>
-
-                                    </ul>
-
-                                </div>
-                            </li>
-                            <!-- 建材常规实验设备 -->
-                            <li class="corp__header-nav__item">
-                                <a href="/marketevent/list" target="_blank" class="productMenu menuLink">建材常规实验设备</a>
-                                <div class="w clearfix corp__header-subnav corp__subnav-product col-full newProductMenu" style="position: absolute; top: 76px; height:280px; left: -760px;">
-                                    <ul class="dropdown_menu">
-                                        <li class="mL40">
-                                            <div>
-                                                <a href="javascript:;">
-
-                                                    <div class="imgBox"><img src="images/header/Hp41.png" alt=""></div>
-
-                                                    <p> 混凝土卧式收缩膨胀测定仪</p>
-                                                </a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div>
-                                                <a href="javascript:;">
-
-                                                    <div class="imgBox"><img src="images/header/Hp42.jpg" alt=""></div>
-
-                                                    <p>  氯离子含量快速测定仪</p>
-                                                </a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div>
-                                                <a href="javascript:;">
-
-                                                    <div class="imgBox"><img src="images/header/Hp43.png" alt=""></div>
-
-                                                    <p>混凝土碱含量快速测定仪</p>
-                                                </a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div>
-                                                <a href="javascript:;">
-
-                                                    <div class="imgBox"><img src="images/header/Hp44.jpg" alt=""></div>
-
-                                                    <p>直读式砂浆含气量测定仪</p>
-                                                </a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div>
-                                                <a href="javascript:;">
-
-                                                    <div class="imgBox"><img src="images/header/Hp45.jpg" alt=""></div>
-
-                                                    <p> 混凝土搅拌挤出一体机</p>
-                                                </a>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <!-- 合作研发 -->
-                            <li class="corp__header-nav__item">
-                                <a href="javascript:;" rel="nofollow" target="" class="productMenu menuLink">合作研发</a>
-                                <div class="w clearfix corp__header-subnav corp__subnav-product col-full newProductMenu" style="position: absolute; top: 76px; height:280px; left: -925px;">
-                                    <ul class="dropdown_menu">
-                                        <li class="mL40">
-                                            <div>
-                                                <a href="javascript:;">
-                                                    <div class="imgBox"><img src="images/header/Hp51.png" alt=""></div>
-                                                    <p> 非接触光学变形测量系统</p>
-                                                </a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div>
-                                                <a href="javascript:;">
-                                                    <div class="imgBox"><img src="images/header/Hp52.png" alt=""></div>
-                                                    <p>全自动氯离子电位滴定仪APT</p>
-                                                </a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div>
-                                                <a href="javascript:;">
-                                                    <div class="imgBox"><img src="images/header/Hp53.png" alt=""></div>
-                                                    <p>  高精度磁共振混凝土微观分析仪</p>
-                                                </a>
-                                            </div>
-                                        </li>
-
-                                    </ul>
-                                </div>
-                            </li>
-                            <!-- 关于我们 -->
-                            <li class="corp__header-nav__item aboutUS">
-                                <a href="javascript:;" rel="nofollow" target="" class="productMenu menuLink">联系我们</a>
-                                <div class="w clearfix corp__header-subnav corp__subnav-product col-full newProductMenu" style="position: absolute;top: 76px;left: -39px;padding: 20px 40px;width: 218px;height: 390px">
-                                    <span class="aboutUS__menu"><a href="javascript:;" target="" class="aboutUS__menu__link">公司简介</a></span>
-                                    <span class="aboutUS__menu"><a href="javascript:;" target="" class="aboutUS__menu__link">公司优势</a></span>
-                                    <span class="aboutUS__menu"><a href="javascript:;" target="_blank" class="aboutUS__menu__link">服务客户</a></span>
-                                    <span class="aboutUS__menu"><a href="javascript:;" target="" class="aboutUS__menu__link">学术交流</a></span>
-
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="nav__right pull-right">
-                        <div class="corp__header-ctrls">
-                            <div class="corp__header-search__box">
-                                <i class="corp__header-search__icon"></i>
-                                <div class="corp__header-search__input">
-                                    <input id="js-corp__header-search__input" placeholder="输入想要搜索的内容" growing-track="true"><a id="js-corp__header-search__input-link" target="__blank"></a>
-                                </div>
-                            </div>
-                            <div class="corp__header-language">
-                                <a href="/english" class="corp__header-languageEn">En</a>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-            </div>
-
-            <script type="text/javascript">
-                //banner左侧内容栏
-                $(function () {
-                    var thisTime;
-                    //鼠标离开左侧内容栏
-                    $('.cat_wrap .cat_list .float').mouseleave(function (even) {
-                        thisTime = setTimeout(thisMouseOut, 1000);
-                    });
-                    //鼠标点击左侧内容栏滑动出弹层
-                    $('.cat_wrap .cat_list .float').mouseenter(function () {
-                        $(this).addClass("active").siblings().removeClass("active");
-                        clearTimeout(thisTime);
-                        var thisUB = $('.cat_wrap .cat_list .float').index($(this));
-                        if ($.trim($('.cat_subcont .cat_sublist').eq(thisUB).html()) != "") {
-                            $('.cat_subcont').addClass('active');
-                            $('.cat_sublist').hide();
-                            $('.cat_sublist').eq(thisUB).show();
-                        } else {
-                            $('.cat_subcont').removeClass('active');
-                        }
-                    });
-                    //函数——执行鼠标离开左侧内容栏的动作
-                    function thisMouseOut() {
-                        $('.cat_subcont').removeClass('active');
-                        $('.cat_wrap .cat_list .float').removeClass('active');
-                    }
-                    $('.cat_subcont').mouseenter(function () {
-                        clearTimeout(thisTime);
-                        $('.cat_subcont').addClass('active');
-                    });
-                    $('.cat_subcont').mouseleave(function () {
-                        $('.cat_subcont').removeClass('active');
-                        $('.cat_wrap .cat_list .float').removeClass('active');
-                    });
-                    $(".productMenu").mouseenter(function () {
-                        $('.for1').addClass('active');
-                        $('.menu_first').addClass('active');
-                    });
-
-                    $(".newProductMenu").mouseleave(function () {
-                        $('.for1').addClass('active');
-                        $('.menu_first').addClass('active');
-                    });
-                });
-            </script>
-            <!--左侧边栏-->
-
-            <div class="corp__container">
-                <!-- 导航菜单 -->
-                <div class="home--nav">
-                    <!-- 导航占位 -->
-                </div>
-
-                <!-- banner -->
-                <div class="homeSwiper">
-                    <div class="swiper-container">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="slide-left"  >
-                                    <div class="bt">
-                                        HC-3DPART/D
-                                    </div>
-                                    <span>
-                                        桌面级混凝土（砂浆）3D打印系统适用于3D建筑打印技术（包括设计、设备、材料等）的研究和教学。
-                                    </span>
-                                    <div class="readMore">阅读更多</div>
-                                </div>
-                                <div class="slide-right">
-                                    <img src="images/header/pro1.png">
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="slide-left">
-                                    <div class="bt">HC-HTX12 </div>
-                                    <span>混凝土碳化试验箱,为挥发性化合物的分析提供完整的智能互联系统。</span>
-                                    <div class="readMore">阅读更多</div>
-                                </div>
-                                <div class="slide-right">
-                                    <img src="images/header/pro2.png">
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="slide-left">
-                                    <div class="bt">HC-HTX13 </div>
-                                    <span>为挥发性化合物的分析提供完整的智能互联系统。</span>
-                                    <div class="readMore">阅读更多</div>
-                                </div>
-                                <div class="slide-right">
-                                    <img src="images/header/pro3.png">
-                                </div>
-                            </div>
-
-                            <div class="swiper-slide">
-                                <div class="slide-left">
-                                    <div class="bt">HC-JCD </div>
-                                    <span>为挥发性化合物的分析提供完整的智能互联系统。</span>
-                                    <div class="readMore">阅读更多</div>
-                                </div>
-                                <div class="slide-right">
-                                    <img src="images/header/pro4.png">
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Add Pagination -->
-                        <div class="swiper-pagination"></div>
-                        <!-- Add Arrows -->
-
-                    </div>
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
-                </div>
-                <script>
-                    var swiper = new Swiper('.swiper-container', {
-                        pagination: '.swiper-pagination',
-                        nextButton: '.swiper-button-next',
-                        prevButton: '.swiper-button-prev',
-                        slidesPerView: 1,
-                        paginationClickable: true,
-                        loop: true
-                    });
-                </script>
-
-
-                <!-- 最热产品-->
-                <div class="chooseus">
-
-                    <div class="productList common-container">
-                        <div class="site-title video-title site-product">
-                            <div class="ev-module-edit site-tag video-tag">
-                                <div class="ev-module-edit-box" data-animate-name="bounceInUp" data-animate-duration="1.00s" data-animate-delay="0.10s" id="Mo_94Qt5" data-loadanimate="1" style="">
-
-                                    <hr class="ev-line ev-line-10">
-
-                                </div>
-                            </div>
-                            <div class="ev-module-edit site-vodie-titlecn  site-titlecn">
-                                <div class="ev-module-text ev-module-edit-box" data-animate-name="bounceInUp" data-animate-duration="1.00s" data-animate-delay="0.10s" id="Mo_EdiFZ" data-loadanimate="1" style="">
-                                    <span style="font-family:微软雅黑;font-size:26px;">热卖产品</span>
-                                </div>
-                            </div>
-                            <div class="ev-module-edit site-titleen site-vodie-titleen">
-                                <div class="ev-module-text ev-module-edit-box" data-animate-name="bounceInUp" data-animate-duration="1.00s" data-animate-delay="0.10s" id="Mo_k5DjT" data-loadanimate="1" style="">
-                                    <div style="">
-                                        <span class="font">HOT PRODUCT</span>
-                                    </div>
-                                </div>
-                                <div class="ev-module-edit  site-more">
-                                    <a href="javascrpt:;">
-
-                                        <div style="">
-                                            <span>更多</span>
-                                        </div>
-                                        <div class="ev-pic ev-pic-1 ">
-                                            <img src="images/to1.png" class="default-img" />
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-
-
-                        </div>
-                        <ul class="productcenter">
-                            <li class="mL40">
-                                <div>
-                                    <a href="javascript:;">
-                                        <img src="images/header/Hp3.jpeg" alt="">
-
-                                        【桌面级】混凝土（砂浆）3D打印系统
-                                        <p>HC-3Dprt/D</p>
-                                        <img src="images/sale.png" class="hot-ico" alt="">
-                                    </a>
-                                </div>
-                            </li>
-                            <li>
-                                <div>
-                                    <a href="javascript:;">
-                                        <img src="images/header/Hp22.png" alt="">
-                                        混凝土碳化试验箱
-                                        <p>HC-HTX12</p>
-                                        <img src="images/sale.png" class="hot-ico" alt="">
-                                    </a>
-                                </div>
-                            </li>
-                            <li>
-                                <div>
-                                    <a href="javascript:;">
-                                        <img src="images/header/Hp33.jpeg" alt="">
-                                        低温硫酸盐-交流阻抗耦合试验机
-                                        <p> HC-DL30</p>
-                                        <img src="images/sale.png" class="hot-ico" alt="">
-                                    </a>
-                                </div>
-                            </li>
-                            <li>
-                                <div>
-                                    <a href="javascript:;">
-                                        <img src="images/header/Hp31.png" alt="">混凝土氯离子扩散系数测定仪
-                                        <p>HC-RCM6</p>
-                                        <img src="images/sale.png" class="hot-ico" alt="">
-                                    </a>
-                                </div>
-                            </li>
-                            <li class="mL40">
-                                <div>
-                                    <a href="javascript:;">
-                                        <img src="images/header/Hp53.png" alt="">混凝土氯离子电通量测定仪
-                                        <p>HC-RCP9</p>
-                                    </a>
-                                </div>
-                            </li>
-
-                            <li>
-                                <div>
-                                    <a href="javascript:;">
-                                        <img src="images/header/Hp36.png" alt="">硬化混凝土气孔结构分析仪
-                                        <p>HC-457 </p>
-                                    </a>
-                                </div>
-                            </li>
-                            <li>
-                                <div>
-                                    <a href="javascript:;">
-                                        <img src="images/header/Hp27.png" alt="">混凝土氯离子扩散系数电通量测定仪
-                                        <p>HC-RCMP6 </p>
-                                    </a>
-                                </div>
-                            </li>
-
-                            <li>
-                                <div>
-                                    <a href="javascript:;">
-                                        <img src="images/header/Hp28.jpeg" alt="">混凝土氯离子扩散系数电通量测定仪
-                                        <p>HC-HDD  </p>
-                                    </a>
-                                </div>
-                            </li>
-
-
-                        </ul>
-                    </div>
-                </div>
-
-
-                <!-- 公司介绍-->
-
-                <div class=" aboutUs-info">
-                    <div class="customModuleRowInner">
-
-                        <div class="CModulePA" style="height:501px;">
-                            <div id="evMo_vpzvx" class="ev-module-edit" style="width:400px; height:330px; left:686px; top:89px; z-index:0;">
-                                <div class="ev-module-edit-box" id="Mo_vpzvx">
-                                    <div class="ev-base-shape ev-base-shape-5"></div>
-                                </div>
-                            </div>
-                            <div class="site-title">
-                                <div class="ev-module-edit site-tag">
-                                    <div class="ev-module-edit-box" data-animate-name="bounceInUp" data-animate-duration="1.00s" data-animate-delay="0.10s" id="Mo_94Qt5" data-loadanimate="1" style="">
-
-                                        <hr class="ev-line ev-line-10">
-
-                                    </div>
-                                </div>
-                                <div class="ev-module-edit site-titlecn">
-                                    <div class="ev-module-text ev-module-edit-box" data-animate-name="bounceInUp" data-animate-duration="1.00s" data-animate-delay="0.10s" id="Mo_EdiFZ" data-loadanimate="1" style="">
-                                        <span style="font-family:微软雅黑;font-size:26px;color:#FFFFFF;">公司简介</span>
-                                    </div>
-                                </div>
-                                <div class="ev-module-edit site-titleen">
-                                    <div class="ev-module-text ev-module-edit-box" data-animate-name="bounceInUp" data-animate-duration="1.00s" data-animate-delay="0.10s" id="Mo_k5DjT" data-loadanimate="1" style="">
-                                        <div style="text-align:right;">
-                                            <span style="color:#666666;font-family:微软雅黑;font-size:20px;">COMPANY PROFILE</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="evMo_iJBUU" class="ev-module-edit" style="width:550px; height:150px; left:50px; top:190px; z-index:4;">
-                                <div class="ev-module-text ev-module-edit-box" data-animate-name="bounceInUp" data-animate-duration="1.00s" data-animate-delay="0.10s" id="Mo_iJBUU" data-loadanimate="1" style="">
-                                    <div style="text-align:left;">
-                                        <span style="color:#666666;font-family:微软雅黑;font-size:20px;">
-                                            <span style="font-size:14px;color:#CBCBCB;line-height:1.9;">
-
-                                                建研华测（杭州）科技有限公司是一家专业从事混凝土3D打印和高端测试仪器设备开发、生产和销售的国家高新技术企业。生产研发基地设在杭州萧山区和沈阳浑南高新技术开发区。
-
-                                                公司的主要产品有：混凝土3D打印系统、高性能低场磁共振微观分析仪、全自动混凝土凝结时间测定仪、混凝土冻融试验机、混凝土碳化箱、非接触式混凝土收缩变形测定仪、钢筋混凝土电化学腐蚀测试仪、混凝土热物理参数测定仪、混凝土气体渗透测试仪、混凝土温度-应力试验机、工业内窥镜、硬化混凝土气孔结构分析仪等...
-                                            </span><span style="font-size:14px;color:#CBCBCB;line-height:1.9;"></span>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>    <div id="evMo_3Kjrl" class="ev-module-edit" style="  width: 44px; height: 44px;left: 50px;top:390px;z-index: 5;">
-                                <div class="ev-module-edit-box" data-animate-name="bounceInUp" data-animate-duration="1.00s" data-animate-delay="0.10s" id="Mo_3Kjrl" data-loadanimate="1" style="">
-
-                                    <div class="ev-pic ev-pic-1 ">
-                                        <img src="images/to.png" class="default-img" style="width:44px;">
-
-                                    </div>
-
-                                </div>
-                            </div>    <div id="evMo_zbNFc" class="ev-module-edit" style="width:380px; height:330px; left:696px; top:80px; z-index:6;">
-                                <div class="ev-module-edit-box " id="Mo_zbNFc">
-
-                                    <div class="ev-pic ev-pic-1 ">
-                                        <img src="images/about.png" class="default-img" style="width:380px;">
-
-                                    </div>
-
-                                </div>
-                            </div>    <div id="evMo_E4nIu" class="ev-module-edit" style="width:21px; height:21px; left:665px; top:68px; z-index:7;">
-                                <div class="ev-module-edit-box " id="Mo_E4nIu">
-
-                                    <div class="ev-pic ev-pic-1 ">
-                                        <img src="images/leftop.png" class="default-img" style="width:21px; height:21px; left:665px; top:68px; z-index:7;">
-
-                                    </div>
-
-                                </div>
-                            </div>    <div id="evMo_fe2Qg" class="ev-module-edit" style="width:21px; height:21px; left:1075px; top:409px; z-index:8;">
-                                <div class="ev-module-edit-box " id="Mo_fe2Qg">
-
-                                    <div class="ev-pic ev-pic-1 ">
-                                        <img src="images/rightdown.png" class="default-img" style="width:21px; height:21px; left:665px; top:68px; z-index:7;">
-
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <!-- 成就13,000,00+场会议、展览、活动 -->
-                <div class="case-study">
-                    <div class="common-container">
-
-                        <div class="site-title video-title">
-                            <div class="ev-module-edit site-tag video-tag">
-                                <div class="ev-module-edit-box" data-animate-name="bounceInUp" data-animate-duration="1.00s" data-animate-delay="0.10s" id="Mo_94Qt5" data-loadanimate="1" style="">
-
-                                    <hr class="ev-line ev-line-10">
-
-                                </div>
-                            </div>
-                            <div class="ev-module-edit site-vodie-titlecn  site-titlecn">
-                                <div class="ev-module-text ev-module-edit-box" data-animate-name="bounceInUp" data-animate-duration="1.00s" data-animate-delay="0.10s" id="Mo_EdiFZ" data-loadanimate="1" style="">
-                                    <span style="font-family:微软雅黑;font-size:26px;">精彩视频</span>
-                                </div>
-                            </div>
-                            <div class="ev-module-edit site-titleen site-vodie-titleen">
-                                <div class="ev-module-text ev-module-edit-box" data-animate-name="bounceInUp" data-animate-duration="1.00s" data-animate-delay="0.10s" id="Mo_k5DjT" data-loadanimate="1" style="">
-                                    <div style="">
-                                        <span class="font">VEDIO</span>
-                                    </div>
-                                </div>
-                                <div class="ev-module-edit  site-more">
-                                    <a href="javascrpt:;">
-
-                                        <div style="">
-                                            <span>更多</span>
-                                        </div>
-                                        <div class="ev-pic ev-pic-1 ">
-                                            <img src="images/to1.png" class="default-img" />
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-
-
-                        </div>
-
-
-
-                        <div id="casehidden" style="display:none">
-                            <div class="case-study__block">
-                                <a href="javascript:;" target="block">
-                                    <ul>
-                                        <li class="case-study__image">
-                                            <img src="images/vedio3.jpg" alt="2022混凝土3D打印作品案例集（二）">
-                                        </li>
-                                        <li class="case-study__content">
-                                            <p class="case-study__title">混凝土3D打印作品案例集（二）</p>
-                                            <p class="case-study__desc">
-                                                <span>2022-01-22 </span>
-                                            </p>
-                                        </li>
-                                    </ul>
-                                </a>
-                            </div>
-                            <div class="case-study__block">
-                                <a href="javascript:;" target="block">
-                                    <ul>
-                                        <li class="case-study__image">
-                                            <img src="images/vedio2.jpg" alt="2022当3D打印的混凝土冰墩墩上了熊猫色">
-                                        </li>
-                                        <li class="case-study__content">
-                                            <p class="case-study__title">当3D打印的混凝土冰墩墩上了熊猫色</p>
-                                            <p class="case-study__desc">
-                                                <span>2022-02-21 </span>
-                                                <!--<span> 云上展览 </span>
-                                    <span> 大会官网</span>-->
-                                            </p>
-                                        </li>
-                                    </ul>
-                                </a>
-                            </div>
-                            <div class="case-study__block">
-                                <a href="javascript:;" target="block">
-                                    <ul>
-                                        <li class="case-study__image">
-                                            <img src="images/vedio4.jpg" alt="中国原创助力冬奥会">
-                                        </li>
-                                        <li class="case-study__content">
-                                            <p class="case-study__title">中国原创助力冬奥会—清华堆石混凝土技术引发"革命"</p>
-                                            <p class="case-study__desc">
-                                                <span>2022-02-10 </span>
-                                            </p>
-                                        </li>
-                                    </ul>
-                                </a>
-                            </div>
-
-                            <div class="case-study__block">
-                                <a href="javascript:;" target="block">
-                                    <ul>
-                                        <li class="case-study__image">
-                                            <img src="images/vedio1.jpg" alt="中国原创助力冬奥会">
-                                        </li>
-                                        <li class="case-study__content">
-                                            <p class="case-study__title">中国原创助力冬奥会—清华堆石混凝土技术引发"革命"</p>
-                                            <p class="case-study__desc">
-                                                <span>2022-02-10 </span>
-                                            </p>
-                                        </li>
-                                    </ul>
-                                </a>
-                            </div>
-
-                        </div>
-                        <div class="case-study__list">
-                            <div id="caseSwiper">
-                            </div>
-                        </div>
-                        <!--<div class="case-study__more">
-                <a href="javascript:;" target="block">查看更多视频</a>
-            </div>-->
-                        <script>
-                            (function () {
-                                var caseList = [$('#casehidden .case-study__block').clone(), $('#vidohidden .case-study__block').clone()]
-                                $('#caseSwiper').html('')
-                                var caseSwiperElement = document.querySelector('#caseSwiper')
-                                var marginLeft = 0
-                                var timer = null
-
-                                function renderCase(i) {
-                                    marginLeft = 0
-                                    var itemList = []
-                                    var len = caseList[i].length
-                                    if (caseList[i].length > 2) {
-                                        itemList.push(caseList[i][len - 3], caseList[i][len - 2], caseList[i][len - 1])
-                                        for (var j = 0; j < len; j++) {
-                                            itemList.push(caseList[i][j])
-                                        }
-                                        itemList.push(caseList[i][0], caseList[i][1], caseList[i][2])
-                                    } else {
-                                        for (var j = 0; j < len; j++) {
-                                            itemList.push(caseList[i][j])
-                                        }
-                                    }
-                                    len = itemList.length
-                                    var html = ''
-                                    var itemWidth = 0
-                                    $(itemList).each(function (index, ele) {
-                                        var cssText = 'float:left;'
-                                        if (index < len - 1) {
-                                            cssText += 'margin-right: 40px;'
-                                        }
-                                        ele.style.cssText = cssText
-                                        html += ele.outerHTML
-                                    })
-
-                                    caseSwiperElement.innerHTML = html
-                                    itemWidth = document.querySelector('#caseSwiper .case-study__block').offsetWidth
-                                    caseSwiperWidth = itemWidth * len + ((len - 1) * 40)
-                                    caseSwiperElement.style.cssText = 'width: ' + caseSwiperWidth + 'px'
-                                    if (len > 2) {
-                                        marginLeft = (itemWidth * 3 + 120) * -1
-                                        caseSwiperElement.style.marginLeft = marginLeft + 'px'
-                                    }
-
-                                    function swiperMoveHandler(marginLeft) {
-                                        if (caseSwiperWidth + marginLeft < (itemWidth * 3 + 80)) {
-                                            marginLeft = 0
-                                        }
-                                        if (marginLeft >= 0) {
-                                            marginLeft = ((len - 6) * itemWidth + ((len - 6) * 40)) * -1
-                                        }
-                                        caseSwiperElement.style.marginLeft = marginLeft + 'px'
-                                        return marginLeft
-                                    }
-
-                                    function swiperHandler() {
-                                        if (len > 2) {
-                                            timer = setTimeout(function () {
-                                                marginLeft -= 1
-                                                marginLeft = swiperMoveHandler(marginLeft)
-                                                if (timer) {
-                                                    clearTimeout(timer)
-                                                }
-                                                swiperHandler()
-                                            }, 10)
-                                        } else {
-                                            clearTimeout(timer)
-                                        }
-                                    }
-                                    swiperHandler()
-                                    var beginX = 0
-                                    var endX = 0
-                                    var subX = 0
-                                    function mouseoverHandler() {
-                                        if (timer) {
-                                            clearTimeout(timer)
-                                        }
-                                        caseSwiperElement.addEventListener('mouseout', mouseoutHandler)
-                                    }
-                                    function mouseoutHandler() {
-                                        swiperHandler()
-                                        caseSwiperElement.removeEventListener('mouseover', mouseoutHandler)
-                                        caseSwiperElement.removeEventListener('mouseup', mouseupHandler)
-                                        caseSwiperElement.removeEventListener('mousemove', mousemoveHandler)
-                                    }
-                                    function mousemoveHandler(event) {
-                                        endX = event.clientX - beginX
-                                        beginX = event.clientX
-                                        marginLeft += endX
-                                        subX = endX - beginX
-                                        marginLeft = swiperMoveHandler(marginLeft)
-                                    }
-                                    function mouseupHandler(event) {
-                                        beginX = 0
-                                        endX = 0
-                                        caseSwiperElement.removeEventListener('mouseup', mouseupHandler)
-                                        caseSwiperElement.removeEventListener('mousemove', mousemoveHandler)
-                                        if (subX === 0) {
-                                            caseSwiperElement.removeEventListener('click', clickHandler)
-                                        }
-                                        subX = 0
-                                    }
-                                    function mousedownHandler(event) {
-                                        caseSwiperElement.addEventListener('click', clickHandler)
-                                        beginX = event.clientX
-                                        caseSwiperElement.addEventListener('mousemove', mousemoveHandler)
-                                        caseSwiperElement.addEventListener('mouseup', mouseupHandler)
-                                    }
-                                    caseSwiperElement.removeEventListener('mouseout', mouseoverHandler)
-                                    caseSwiperElement.addEventListener('mouseover', mouseoverHandler)
-                                    caseSwiperElement.addEventListener('mousedown', mousedownHandler)
-
-                                    function clickHandler(event) {
-                                        event.stopPropagation()
-                                        event.preventDefault()
-                                    }
-                                }
-                                renderCase(0)
-                                $('#casehidden').html('')
-                                $('#vidohidden').html('')
-                                $('.case-study__tabs span').click(function () {
-                                    var index = $(this).index();
-                                    var tabItem = $('.case-study__tabs span');
-                                    var activeClass = 'case-study__tab--select'
-                                    if (!tabItem.eq(index).hasClass(activeClass)) {
-                                        tabItem.removeClass(activeClass)
-                                        tabItem.eq(index).addClass(activeClass)
-                                        renderCase(index)
-                                        var moreText = index === 0 ? '案例' : '视频'
-                                        var moreHref = index === '' ? 'https://www.31huiyi.com/case/list' : 'https://www.31huiyi.com/scenevideo'
-                                        $('.case-study__more a').text('查看全部' + moreText)
-                                        $('.case-study__more a').attr('href', moreHref)
-                                    }
-                                })
-                            })()
-                        </script>
-                    </div>
-                </div>
-                <!-- 学术交流开始 -->
-                <div class="learning common-container">
-                    <div class="site-title video-title">
-                        <div class="ev-module-edit site-tag video-tag">
-                            <div class="ev-module-edit-box" data-animate-name="bounceInUp" data-animate-duration="1.00s" data-animate-delay="0.10s" id="Mo_94Qt5" data-loadanimate="1" style="">
-
-                                <hr class="ev-line ev-line-10">
-
-                            </div>
-                        </div>
-                        <div class="ev-module-edit site-vodie-titlecn  site-titlecn">
-                            <div class="ev-module-text ev-module-edit-box" data-animate-name="bounceInUp" data-animate-duration="1.00s" data-animate-delay="0.10s" id="Mo_EdiFZ" data-loadanimate="1" style="">
-                                <span style="font-family:微软雅黑;font-size:26px;">学术交流</span>
-                            </div>
-                        </div>
-                        <div class="ev-module-edit site-titleen site-vodie-titleen">
-                            <div class="ev-module-text ev-module-edit-box" data-animate-name="bounceInUp" data-animate-duration="1.00s" data-animate-delay="0.10s" id="Mo_k5DjT" data-loadanimate="1" style="">
-                                <div style="">
-                                    <span class="font">ACADEMIC EXCHANGE</span>
-                                </div>
-                            </div>
-                            <div class="ev-module-edit  site-more">
-                                <a href="javascrpt:;">
-
-                                    <div style="">
-                                        <span>更多</span>
-                                    </div>
-                                    <div class="ev-pic ev-pic-1 ">
-                                        <img src="images/to1.png" class="default-img" />
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-
-
-                    </div>
-                    <ul class="learning-box">
-                        <li>
-                            <img src="images/new11.png">
-                            <div class="main">
-                                <div class="title">当3D打印的混凝土冰墩墩上了熊猫色</div>
-                                <div class="neirong"> 通过混凝土3D打印机进行创作，将大号冰墩墩、大号雪花送给大家，也祝奥运健儿们再接再厉、勇创佳绩!</div>
-                            </div>
-                            <div class="mengceng"></div>
-                        </li>
-                        <li>
-                            <img src="images/new1.png">
-                            <div class="main">
-                                <div class="title"> 混凝土3D打印作品案例集（一）</div>
-                                <div class="neirong">  国家“碳达峰、碳中和”双碳目标的提出。</div>
-                            </div>
-                            <div class="mengceng"></div>
-                        </li>
-                        <li>
-                            <img src="images/new12.png">
-                            <div class="main">
-                                <div class="title"> 中国原创助力冬奥会——清华堆石混凝土技术引发"革命"</div>
-                                <div class="neirong">  2022强劲开局，提升全年业绩预期</div>
-                            </div>
-                            <div class="mengceng"></div>
-                        </li>
-                    </ul>
-                </div>
-                <script>
-                    $('.learning-box li').mouseenter(function () {
-                        $(this).find('.mengceng').fadeIn(200);
-                        $(this).find('.neirong').fadeIn(200);
-                    });
-
-                    $('.learning-box li').mouseleave(function () {
-                        $(this).find('.mengceng').fadeOut(200);
-                        $(this).find('.neirong').fadeOut(200);
-                    });
-                </script>
-                <!-- 学术交流结束 -->
-                <!-- 客户的信赖 -->
-                <div class="cooperative common-container">
-                    <div class="site-title video-title">
-                        <div class="ev-module-edit site-tag video-tag">
-                            <div class="ev-module-edit-box" data-animate-name="bounceInUp" data-animate-duration="1.00s" data-animate-delay="0.10s" id="Mo_94Qt5" data-loadanimate="1" style="">
-
-                                <hr class="ev-line ev-line-10">
-
-                            </div>
-                        </div>
-                        <div class="ev-module-edit site-vodie-titlecn  site-titlecn">
-                            <div class="ev-module-text ev-module-edit-box" data-animate-name="bounceInUp" data-animate-duration="1.00s" data-animate-delay="0.10s" id="Mo_EdiFZ" data-loadanimate="1" style="">
-                                <span style="font-family:微软雅黑;font-size:26px;">合作机构</span>
-                            </div>
-                        </div>
-                        <div class="ev-module-edit site-titleen site-vodie-titleen">
-                            <div class="ev-module-text ev-module-edit-box" data-animate-name="bounceInUp" data-animate-duration="1.00s" data-animate-delay="0.10s" id="Mo_k5DjT" data-loadanimate="1" style="">
-                                <div style="">
-                                    <span class="font">COOPERATIVE ORGANIZATRON</span>
-                                </div>
-                            </div>
-                            <div class="ev-module-edit  site-more">
-                                <a href="javascrpt:;">
-
-                                    <div style="">
-                                        <span>更多</span>
-                                    </div>
-                                    <div class="ev-pic ev-pic-1 ">
-                                        <img src="images/to1.png" class="default-img" />
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-
-
-                    </div>
-                    <ul>
-                        <li><img src="images/customer1.png"></li>
-                        <li><img src="images/customer1.jpg"></li>
-                        <li><img src="images/customer3.jpg"></li>
-                        <li><img src="images/customer3.png"></li>
-                        <li><img src="images/customer3.jpg"></li>
-                        <li><img src="images/customer3.png"></li>
-                        <li><img src="images/customer3.jpg"></li>
-                        <li><img src="images/customer3.png"></li>
-                        <li><img src="images/customer3.jpg"></li>
-                        <li><img src="images/customer1.jpg"></li>
-
-                    </ul>
-                </div>
-
-
-
-
-                <!-- 即刻启程，开启数字化办会/办展新模式！begin -->
-
-
-
-                <!--<div class="usenow-info">
-                    <div class="usenow-info__container">
-                        <p class="usenow-info__title">
-                            咨询热线：  0571-82755615
-                        </p>-->
-                        <!--<p class="usenow-info__link" form-target="javascript:;js-corp__layer-shiyong"><span>立即试用</span></p>-->
-                    <!--</div>
-                </div>-->
-                <!-- 即刻启程，开启数字化办会/办展新模式！end -->
-                <script>
-                    var swiper = new Swiper(".tm-bxslider", {
-                        cssMode: true,
-                        navigation: {
-                            nextEl: ".swiper-button-next",
-                            prevEl: ".swiper-button-prev",
-                        },
-                        pagination: {
-                            el: ".swiper-pagination",
-                        },
-                        mousewheel: true,
-                        keyboard: true,
-                    });
-                </script>
-                <script>
-
-                    // 设置banner视频循环播放
-                    /*var video = document.querySelector('video');
-                    video.addEventListener('ended', function () {
-                        video.load();
-                    });*/
-                    //var swiper = new Swiper('.homeSwiper', {
-                    //    autoplay: 2500,
-                    //    //autoplay: false,
-                    //    preventClicks: false,
-                    //    centeredSlides: true,
-                    //    paginationClickable: true,
-                    //    pagination: '.swiper-pagination',
-                    //    autoplayDisableOnInteraction: false
-                    //    //spaceBetween: 30,
-                    //    //nextButton: '.swiper-button-next',
-                    //    //prevButton: '.swiper-button-prev',
-                    //    //effect: 'cube',
-                    //    //cube: {
-                    //    //    shadow: true,
-                    //    //    slideShadows: true,
-                    //    //    shadowOffset: 20,
-                    //    //    shadowScale: 0.94
-                    //    //},
-                    //});
-                    var mySwiper2 = new Swiper('.trust-swiper__container', {
-                        slidesPerView: 3,
-                        spaceBetween: 29,
-                        loop: true,
-                        autoplay: false,
-                        speed: 2000, // 滑动过程耗时2秒
-                        nextButton: '.trust__next',
-                        prevButton: '.trust__prev',
-                    });
-                    var serviceTitle = $('.service-info__container h2')
-                    var serviceList = $('.service-info__list ul li')
-                    var chooseusTitle = $('.chooseus h2')
-                    var chooseusList = $('.chooseus__list .chooseus__list__block')
-                    var caseStudyTitle = $('.case-study__header')
-                    var trustTitle = $('.trust__header h2')
-                    var trustList = $('.trust__list')
-
-                    var list = [
-                        $('.product-info__block'),
-                        serviceTitle,
-                        serviceList,
-                        chooseusTitle,
-                        chooseusList,
-                        caseStudyTitle,
-                        trustTitle,
-                        trustList,
-                        $('.customer-info__header'),
-                        $('.usenow-info__title'),
-                        $('.usenow-info__link')
-                    ]
-                    // 取消自动弹出表单（吴尚严于2021-12-21提出需求）
-                    function autoShowLayer() {
-                        layerTimer = setTimeout(function () {
-                            clearTimeout(layerTimer)
-                            showLayer = true
-                            // showlayerHandlar()
-                        }, 5000);
-                    }
-                    autoShowLayer()
-                    $(document).ready(function () {
-                        $(window).scroll(function () {
-                            var scrollTop = $(document).scrollTop() // 滚动的距离
-                            if (scrollTop >= windowHeight * 3 && !showLayer) {
-                                showLayer = true
-                                // showlayerHandlar()
-                                if (layerTimer) {
-                                    clearTimeout(layerTimer)
-                                }
-                            } else if (!showLayer) {
-                                if (layerTimer) {
-                                    clearTimeout(layerTimer)
-                                    autoShowLayer()
-                                }
-                            }
-                            for (var i = 0, len = list.length; i < len; i++) {
-                                fadinHandlar(scrollTop, windowHeight, list[i])
-                            }
-                        })
-                    })
-
-                    $('.product-link').hover(function () {
-                        $(this).addClass('active')
-                    }, function () {
-                        $(this).removeClass('active')
-                    });
-                </script>
-            </div>
-            <div class="corp__footer">
-                <!--底部导航条-->
-
-
-                <div class="footer_main">
-                    <div class="foot_box common-container">
-                        <div class="foot_left">
-                            <dl style="margin-left:50px;">
-                                <dt>售前咨询</dt>
-                                <dd><a href="#">产品咨询</a></dd>
-                                <dd><a href="#">服务咨询</a></dd>
-                                <dd><a href="#">合作咨询</a></dd>
-                            </dl>
-                            <dl>
-                                <dt>售后服务</dt>
-                                <dd><a href="#">安装培训</a></dd>
-                                <dd><a href="#">维修保养</a></dd>
-                                <dd><a href="#">资料下载</a></dd>
-                            </dl>
-                            <dl>
-                                <dt>新闻动态</dt>
-                                <dd><a href="#">学术交流</a></dd>
-                                <dd><a href="#">科研标准</a></dd>
-                                <dd><a href="#">学术交流</a></dd>
-                            </dl>
-                            <dl>
-                                <dt>关于我们</dt>
-                                <dd><a href="#">了解冠力</a></dd>
-                                <dd><a href="#">公司荣誉</a></dd>
-                                <dd><a href="#">加入我们</a></dd>
-                            </dl>
-                            <dl>
-                                <dt>媒体矩阵</dt>
-                                <dd><a href="#">微信公众号</a></dd>
-                                <dd><a href="#">搜狐号</a></dd>
-                                <dd><a href="#">抖音号</a></dd>
-                            </dl>
-                        </div>
-                        <div class="foot_right">
-                            <img src="images/ewm.jpg">
-                            <span>关注官方微信</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="foot_wrap">
-                    <div class="footer">
-
-
-
-                        <div class="copy">
-                            <div class="left">
-
-                                <div class="li">
-                                    <div class="lidiv1"><img src="images/sign1.png"></div>
-                                    <div class="spandiv"><span>国家高新技术企业</span></div>
-                                </div>
-                                <div class="li">
-                                    <div class="lidiv2"><img src="images/sign2.png"></div>
-                                    <div class="spandiv"><span>杭州市高新技术企业</span></div>
-                                </div>
-                                <div class="li">
-                                    <div class="lidiv3"><img src="images/sign3.png"></div>
-                                    <div class="spandiv"><span>ISO9001认证</span></div>
-                                </div>
-                            </div>
-                            <div class="right">
-                                <p><a style="color:white" href="http://beian.miit.gov.cn">版权所有 © 建研华测（杭州）科技有限公司 浙ICP备20006756号-1 </a></p>
-
-                                <p>地址：萧山区南秀路3089号新塘科创园1号楼4层     &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;邮编：311200</p>
-                                <p>
-                                    联系电话：0571-82755615&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 传真：0571-82155463
-                                    <script>var _hmt = _hmt || []; (function () { var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?508ca7ea77ce829a9ce5affac5a6af94"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })();</script>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="side-bar">
-        <ul>
-            <li class="side-bar__first">
-                <div class="side-bar__zixun">
-                    <a href="https://p.qiao.baidu.com/cps/chat?siteId=1172536&amp;userId=3452137&amp;cp=https%3A%2F%2Fwww.31huiyi.com%2F&amp;cr=&amp;cw=" target="block">
-                        <i></i>
-                        <span>咨询</span>
-                    </a>
-                    <!-- <div class="side-bar__layer">
-                      <div class="side-bar__layer-container">
-                        <dl class="side-bar__layer-content side-bar__layer-zixun">
-                          <dd>售前在线咨询</dd>
-                          <dt>专属商务经理在线解答</dt>
-                        </dl>
-                      </div>
-                    </div> -->
-                </div>
-                <div class="side-bar__rexian">
-                    <i></i>
-                    <span>热线</span>
-                    <div class="side-bar__layer">
-                        <div class="side-bar__layer-container">
-                            <dl class="side-bar__layer-content side-bar__layer-rexian">
-                                <dt>0571-82755615</dt>
-                            </dl>
-                        </div>
-                    </div>
-                </div>
-                <!--<div class="side-bar__kefu">
-                    <i></i>
-                    <span>客服</span>
-                    <div class="side-bar__layer">
-                        <div class="side-bar__layer-container">
-                            <div class="side-bar__layer-kefu">
-                                <img src="img/kefu.png">
-                                <p>关注客服：31小蜜蜂即时发起沟通</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>-->
-            </li>
-            <!--<li class="side-bar__apply" form-target="javascript:;js-corp__layer-shiyong">
-                <span>申请试用</span>
-            </li>-->
-        </ul>
-    </div>
-    <!----右侧悬浮 end-->
-    <!-- 申请试用 -->
-    <div class="corp__layer" id="js-corp__layer-shiyong"></div>
-    <div class="corp__layer" id="js-corp__top-layer-shiyong"></div>
-    <!---意见反馈-->
-    <div class="corp__layer" id="js-feadback"></div>
-    <div class="corp__layer" id="js-headfeadback"></div>
-
-    <script>
-        $(document).ready(function () {
-            $(".xmf").hover(function () {
-                $(".layer").toggle();
-            });
-        });
-    </script>
-    <script>
-        var _hmt = _hmt || [];
-        (function () {
-            var hm = document.createElement("script");
-            hm.src = "https://hm.baidu.com/hm.js?7f1d2a1bbfe70930077693fb73d7f592";
-            var s = document.getElementsByTagName("script")[0];
-            s.parentNode.insertBefore(hm, s);
-        })();
-    </script>
-    <script>
-        (function () {
-            var bp = document.createElement('script');
-            var curProtocol = window.location.protocol.split(':')[0];
-            if (curProtocol === 'https') {
-                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-            }
-            else {
-                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-            }
-            var s = document.getElementsByTagName("script")[0];
-            s.parentNode.insertBefore(bp, s);
-        })();
-    </script>
-    <script src="js/idangerous.swiper.min.js"></script>
-    <script src="js/customerSwiper.js"></script>
-    <!---表单相关start-->
-    <script src="js/jquery.validate.min.js"></script>
-    <script src="js/messages_zh.js"></script>
-    <script src="js/additional-methods.js"></script>
-    <script src="js/jquery.ui.widget.js"></script>
-    <script src="js/jquery.iframe-transport.js"></script>
-    <script src="js/jquery.fileupload.js"></script>
-    <script src="js/layer.js"></script>
-    <script src="js/utils.js"></script>
-    <script src="js/custormeform.js"></script>
-    <script src="js/header.js"></script>
-    <!---表单相关end-->
-
-    <script src="js/GetSSOUserJSONP.js"></script>
-
-    <!-- SSO -->
-    <script src="js/oidc-client.min.js"></script>
-    <script src="js/oidc-auth.js"></script>
-
-
-    <!-- 卫瓴官网小蜜蜂二维码 -->
-    <!--<script>
-        function xiaomifeng() {
-            // 官网右侧小蜜蜂、底部小蜜蜂
-            $.ajax({
-                url: "https://scrm-wx.weiling.cn/api/live_code/select?corp_id=wx6d730ac42d44ae3c&code_channel_id=1419912586815741952", success: function (result) {
-                    $("#xiaomifengImg").attr("src", JSON.parse(result).data.qr_code);
-                }
-            });
-            // 全网申请试用表单提交成功页面
-            $.ajax({
-                url: "https://scrm-wx.weiling.cn/api/live_code/select?corp_id=wx6d730ac42d44ae3c&code_channel_id=1420915087673270272", success: function (result) {
-                    $("#bdxiaomifengImg").attr("src", JSON.parse(result).data.qr_code);
-                }
-            });
-        }
-        setTimeout("xiaomifeng()", 0);
-    </script>-->
-
-
+	<div class="whole">
+		<!-- 导航 -->
+		<div class="nav">
+			<div class="common_containe">
+				<div class="logo">
+					<img src="images/logo1.png" >
+				</div>
+				<div class="list">
+					<ul>
+						<li>
+							<a href="#">
+								<span>混凝土(砂浆)3D打印系统</span>
+							</a>
+							<div class="list_current">
+								<div class="common_containe">
+									<span v-for="item in navObject.yi">
+										<a href="#">
+											<div class="img_box">
+												<img :src="item.img" >													<img v-show="item.flag" class="hot" src="images/sale.png" >
+											</div>
+											<p>{{item.text}}</p>
+										</a>
+									</span>
+								</div>
+								
+							</div>
+						</li>
+						<li>
+							<a href="#">
+								<span>混凝土耐久性测试仪器</span>
+							</a>
+							<div class="list_current">
+								<div class="common_containe">
+									<span v-for="item in navObject.er">
+										<a href="#">
+											<div class="img_box">
+												<img :src="item.img" >													<img v-show="item.flag" class="hot" src="images/sale.png" >
+											</div>
+											<p>{{item.text}}</p>
+										</a>
+									</span>
+								</div>
+								
+							</div>
+						</li>
+						<li>
+							<a href="#">
+								<span>特殊性能高端测试仪器</span>
+							</a>
+							<div class="list_current">
+								<div class="common_containe">
+									<span v-for="item in navObject.san">
+										<a href="#">
+											<div class="img_box">
+												<img :src="item.img" >													<img v-show="item.flag" class="hot" src="images/sale.png" >
+											</div>
+											<p>{{item.text}}</p>
+										</a>
+									</span>
+								</div>
+								
+							</div>
+						</li>
+						<li>
+							<a href="#">
+								<span>建材常规实验设备</span>
+							</a>
+							<div class="list_current">
+								<div class="common_containe">
+									<span v-for="item in navObject.si">
+										<a href="#">
+											<div class="img_box">
+												<img :src="item.img" >													<img v-show="item.flag" class="hot" src="images/sale.png" >
+											</div>
+											<p>{{item.text}}</p>
+										</a>
+									</span>
+								</div>
+								
+							</div>
+						</li>
+						<li>
+							<a href="#">
+								<span>合作研发</span>
+							</a>
+							<div class="list_current">
+								<div class="common_containe">
+									<span v-for="item in navObject.wu">
+										<a href="#">
+											<div class="img_box">
+												<img :src="item.img" >													<img v-show="item.flag" class="hot" src="images/sale.png" >
+											</div>
+											<p>{{item.text}}</p>
+										</a>
+									</span>
+								</div>
+								
+							</div>
+						</li>
+						<li>
+							<a href="#">
+								<span>联系我们</span>
+							</a>
+							<div class="lianxi">
+								<span>公司简介</span>
+								<span>公司优势</span>
+								<span>服务客户</span>
+								<span>学术交流</span>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="search">
+					<p><img src="images/sousuo.png" ></p>
+					<input type="text"  />
+					<div>En</div>
+				</div>
+			</div>
+		</div>
+		<!-- banner -->
+		<div class="banner">
+			<div class="swiper-container">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<div class="slide-left">
+							<div class="bt">6666 顶空进样器 </div>
+							<span>为挥发性化合物的分析提供完整的智能互联系统。</span>
+							<div class="readMore">阅读更多</div>
+						</div>
+						<div class="slide-right">
+							<img src="images/banner1.jpeg" >
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="slide-left">
+							<div class="bt">7777 顶空进样器 </div>
+							<span>为挥发性化合物的分析提供完整的智能互联系统。</span>
+							<div class="readMore">阅读更多</div>
+						</div>
+						<div class="slide-right">
+							<img src="images/banner2.jpeg" >
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="slide-left">
+							<div class="bt">88888 顶空进样器 </div>
+							<span>为挥发性化合物的分析提供完整的智能互联系统。</span>
+							<div class="readMore">阅读更多</div>
+						</div>
+						<div class="slide-right">
+							<img src="images/banner3.jpeg" >
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="slide-left">
+							<div class="bt">9999 顶空进样器 </div>
+							<span>为挥发性化合物的分析提供完整的智能互联系统。</span>
+							<div class="readMore">阅读更多</div>
+						</div>
+						<div class="slide-right">
+							<img src="images/banner4.png" >
+						</div>
+					</div>
+				</div>
+				<div class="swiper-pagination"></div>
+			</div>
+			<div class="swiper-button-next"></div>
+			<div class="swiper-button-prev"></div>
+		</div>
+		<!-- 热卖详情 -->
+		<div class="hotSell common_containe">
+			<div class="index_title">
+				<div class="title">{{titleArry[0].chinese}}</div>
+				<div class="main">
+					<span>{{titleArry[0].english}}</span>
+					<div class="more">
+						<span>更多</span>
+						<img src="images/to1.png" >
+					</div>
+					
+				</div>
+				
+			</div>
+			<div class="content">
+				<ul>
+					<li v-for="item in hotSellArry">
+						<img class="goods_img" :src="item.img" >
+						<span>{{item.text}}</span>
+						<p>{{item.english}}</p>
+						<img class="hot" v-show="item.flag" src="images/sale.png" >
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- 简介 -->
+		<div class="introduce common_containe">
+			<div class="in_left">
+				<div class="index_title">
+					<div class="title"></div>
+					<div class="main"　style="margin-top: 50px;">
+						<span>{{titleArry[1].english}}</span>
+					</div>
+				</div>
+				<p>建研华测（杭州）科技有限公司是一家专业从事混凝土3D打印和高端测试仪器设备开发、生产和销售的国家高新技术企业。生产研发基地设在杭州萧山区和沈阳浑南高新技术开发区。公司的主要产品有：混凝土3D打印系统、高性能低场磁共振微观分析仪、全自动混凝土凝结时间测定仪、混凝土冻融试验机、混凝土碳化箱、非接触式混凝土收缩变形测定仪、钢筋混凝土电化学腐蚀测试仪、混凝土热物理参数测定仪、混凝土气体渗透测试仪、混凝土温度-应力试验机、工业内窥镜、硬化混凝土气孔结构分析仪等...</p>
+				<div class="btn"><img src="images/to.png" ></div>
+			</div>
+			<div class="in_right">
+				<img class="leftop" src="images/leftop.png" >
+				<img src="images/about.png" >
+				<img class="rightdown" src="images/rightdown.png" >
+			</div>
+		</div>
+		<!-- 精彩视频 -->
+		<div class="vedio">
+			<div class="common_containe">
+				<div class="index_title">
+					<div class="title">{{titleArry[2].chinese}}</div>
+					<div class="main">
+						<span>{{titleArry[2].english}}</span>
+						<div class="more">
+							<span>更多</span>
+							<img src="images/to1.png" >
+						</div>
+					</div>
+				</div>
+				
+				
+				<div class="vedio_container swiper-container">
+				    <div class="swiper-wrapper">
+				        <div class="swiper-slide" v-for="item in vedioArry">
+							<div class="slide_main">
+								<img :src="item.img" >
+								<div class="mainP">{{item.text}}</div>
+								<span>{{item.time}}</span>
+							</div>
+						</div>
+				        
+				    </div>
+				    
+				</div> 
+				
+				<div class="vedio_more"><a href="#">查看更多视频</a></div>
+					
+			</div>
+		</div>
+		<!-- 学术交流 -->
+		<div class="learning common_containe">
+			<div class="index_title">
+				<div class="title">{{titleArry[3].chinese}}</div>
+				<div class="main">
+					<span>{{titleArry[3].english}}</span>
+					
+				</div>
+			</div>
+			<ul class="learning-box">
+				<li v-for="item in learningArry">
+					<img :src="item.img" >
+					<div class="main">
+						<div class="title">{{item.title}}</div>
+						<div class="neirong">{{item.jieshao}}</div>
+					</div>
+					<div class="mengceng"></div>
+				</li>
+			</ul>
+		</div>
+		<!-- 合作机构 -->
+		<div class="cooperative common_containe">
+			<div class="index_title">
+				<div class="title">{{titleArry[4].chinese}}</div>
+				<div class="main">
+					<span>{{titleArry[4].english}}</span>
+					<div class="more">
+						<span>更多</span>
+						<img src="images/to1.png" >
+					</div>
+				</div>
+			</div>
+			<ul>
+				<li v-for="item in cooperativeArry"><img :src="item" ></li>
+			</ul>
+		</div>
+		<!-- 底部 -->
+		<div class="zixun">
+		    <p>咨询热线：   010-82755175</p>
+		</div>
+		<div class="footer_main">
+			<div class="foot_box common_containe">
+				<div class="foot_left">
+					<dl>
+						<dt>售前咨询</dt>
+						<dd><a href="#">产品咨询</a></dd>
+						<dd><a href="#">服务咨询</a></dd>
+						<dd><a href="#">合作咨询</a></dd>
+					</dl>
+					<dl>
+						<dt>售后服务</dt>
+						<dd><a href="#">安装培训</a></dd>
+						<dd><a href="#">维修保养</a></dd>
+						<dd><a href="#">资料下载</a></dd>
+					</dl>
+					<dl>
+						<dt>新闻动态</dt>
+						<dd><a href="#">学术交流</a></dd>
+						<dd><a href="#">科研标准</a></dd>
+						<dd><a href="#">学术交流</a></dd>
+					</dl>
+					<dl>
+						<dt>关于我们</dt>
+						<dd><a href="#">了解冠力</a></dd>
+						<dd><a href="#">公司荣誉</a></dd>
+						<dd><a href="#">加入我们</a></dd>
+					</dl>
+					<dl>
+						<dt>媒体矩阵</dt>
+						<dd><a href="#">微信公众号</a></dd>
+						<dd><a href="#">搜狐号</a></dd>
+						<dd><a href="#">抖音号</a></dd>
+					</dl>
+				</div>
+				<div class="foot_right">
+					<img src="images/ewm.jpg" >
+					<span>关注官方微信</span>
+				</div>
+			</div>
+			
+		</div>
+		<div class="foot_wrap">
+		    <div class="footer">
+		        
+					<ul>
+						<li>
+							<div><img src="images/sign1.png"></div>
+							<span>国家高新技术企业</span>
+						</li>
+						<li>
+							<div><img src="images/sign2.png"></div>
+		                    <span>杭州市高新技术企业</span></li>
+						<li>
+							<div><img src="images/sign3.png"></div>
+							<span>ISO9001认证</span>
+						</li>
+						
+					</ul>
+		            <div class="right">
+		                <p><a style="color:white" href="http://beian.miit.gov.cn">版权所有 © 建研华测（杭州）科技有限公司 浙ICP备20006756号-1 </a></p>
+		
+		                <p>地址：萧山区南秀路3089号新塘科创园1号楼4层     &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;邮编：311200</p>
+		                <p>
+		                    联系电话：0571-82755615&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 传真：0571-82155463
+		                </p>
+		            </div>
+		        
+		    </div>
+		</div>
+		
+	</div>
+	
 
 </body>
 </html>
