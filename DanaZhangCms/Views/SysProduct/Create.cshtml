@@ -53,7 +53,7 @@
 
     <div class="layui-form-item">
 
-        @Html.LabelFor(model => model.ImgUrl, new { @class = "layui-form-label" })
+        @Html.LabelFor(model => model.VedioUrl, new { @class = "layui-form-label" })
         <div class="layui-input-inline">
             <div class="uploadPreview" id="PreviewVedio">
                 @if (!string.IsNullOrEmpty(Model.VedioUrl))
@@ -183,7 +183,7 @@
                 $("#PreviewImg").html("上传失败");
             });
 
-            var uploader = WebUploader.create({
+            var uploader1 = WebUploader.create({
                 pick: '#UploadVedio',
                 auto: true,
                 swf: '/lib/webuploader/Uploader.swf',
@@ -197,11 +197,11 @@
 
             });
 
-            uploader.on('uploadProgress', function (file, percentage) {
+            uploader1.on('uploadProgress', function (file, percentage) {
                 $("#PreviewVedio").html("上传中...");
             });
 
-            uploader.on('uploadSuccess', function (file, response) {
+            uploader1.on('uploadSuccess', function (file, response) {
                 var data = eval("(" + response._raw + ")");;
                 if (!data.uploaded) {
                     $("#PreviewVedio").html(data.url);
@@ -214,7 +214,7 @@
                 }
             });
 
-            uploader.on('uploadError', function (file) {
+            uploader1.on('uploadError', function (file) {
                 $("#PreviewVedio").html("上传失败");
             });
             layui.use('form', function () {

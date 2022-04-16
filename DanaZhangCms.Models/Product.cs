@@ -60,9 +60,9 @@ namespace DanaZhangCms.Models
         public int ClickCount { get; set; }
 
         /// <summary>
-        /// 是否精选文章
+        /// 是否热卖
         /// </summary>
-        [Display(Name = "是否精选")]
+        [Display(Name = "是否热卖")]
         public bool IsHot { get; set; }
 
 
