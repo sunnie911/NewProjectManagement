@@ -1,0 +1,125 @@
+﻿@model DanaZhangCms.Models.ProductCategory
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_SysLayout.cshtml";
+    List<SelectListItem> parentList = ViewBag.CategoryList;
+}
+
+
+
+<form class="layui-form" action="@(Model.Id<1? Url.Action("Add"):Url.Action("Edit"))">
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(model => model.Id)
+    <div class="layui-form-item">
+
+        @Html.LabelFor(model => model.Name, new { @class = "layui-form-label" })
+        <div class="layui-input-inline">
+            @Html.TextBoxFor(model => model.Name, new { @class = "layui-input", @required = "", @lay_verify = "required", autocomplete = "off" })
+
+        </div>
+        <div class="layui-form-mid layui-word-aux">
+            <span class="x-red">*</span>
+
+        </div>
+    </div>
+    <div class="layui-form-item">
+        @Html.LabelFor(model => model.ParentId, new { @class = "layui-form-label" })
+        <div class="layui-input-inline">
+
+            @Html.DropDownListFor(model => model.ParentId, parentList, "--请选择--", new { @class = "valid" })
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+
+        @Html.LabelFor(model => model.Title, new { @class = "layui-form-label" })
+        <div class="layui-input-inline">
+            @Html.TextAreaFor(model => model.Title, new { @class = "layui-textarea", autocomplete = "off" })
+
+        </div>
+        <div class="layui-form-mid layui-word-aux">
+            <span class="x-red">*</span>
+
+        </div>
+    </div>
+    <div class="layui-form-item">
+
+        @Html.LabelFor(model => model.KeyWord, new { @class = "layui-form-label" })
+        <div class="layui-input-inline">
+            @Html.TextAreaFor(model => model.KeyWord, new { @class = "layui-textarea", autocomplete = "off" })
+
+        </div>
+        <div class="layui-form-mid layui-word-aux">
+            <span class="x-red">*</span>
+
+        </div>
+    </div>
+    <div class="layui-form-item">
+
+        @Html.LabelFor(model => model.Description, new { @class = "layui-form-label" })
+        <div class="layui-input-inline">
+            @Html.TextAreaFor(model => model.Description, new { @class = "layui-textarea", autocomplete = "off" })
+
+        </div>
+        <div class="layui-form-mid layui-word-aux">
+            <span class="x-red">*</span>
+
+        </div>
+    </div>
+    <div class="layui-form-item">
+
+        @Html.LabelFor(model => model.SortId, new { @class = "layui-form-label" })
+        <div class="layui-input-inline">
+            @Html.TextBoxFor(model => model.SortId, new { @class = "layui-input", @required = "", @lay_verify = "required", autocomplete = "off" })
+
+        </div>
+        <div class="layui-form-mid layui-word-aux">
+            <span class="x-red">*</span>
+
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label for="L_repass" class="layui-form-label">
+        </label>
+        <button class="layui-btn" lay-filter="add" lay-submit="">
+            保存
+        </button>
+    </div>
+</form>
+@section Scripts{
+    <script>
+        $(function () {
+            layui.use('form', function () {
+                var form = layui.form;
+
+                form.on('submit(add)', function (data) {
+                    var url = $(".layui-form").attr("action");
+                    $.ajax({
+                        url: url,
+                        data: data.field,
+                        type: "post",
+                        success: function (rep) {
+                            if (rep.success == true) {
+                                layer.msg(rep.msg, function () {
+                                    x_admin_close();
+                                });
+                            }
+                            else {
+                                layer.alert(rep.msg, { icon: 5 });
+                            }
+
+                        },
+                        error: function () {
+                            layer.alert("网络错误，请稍候再试。", { icon: 5 });
+                        }
+                    });
+
+
+                    return false;
+                });
+            });
+        })
+
+
+    </script>
+}

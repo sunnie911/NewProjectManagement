@@ -1,0 +1,16 @@
+C:\OldProject\Tool\DanaZhangCms\src\DanaZhangCms.IRepositories\bin\Debug\netcoreapp2.1\DanaZhangCms.IRepositories.deps.json
+C:\OldProject\Tool\DanaZhangCms\src\DanaZhangCms.IRepositories\bin\Debug\netcoreapp2.1\DanaZhangCms.IRepositories.dll
+C:\OldProject\Tool\DanaZhangCms\src\DanaZhangCms.IRepositories\bin\Debug\netcoreapp2.1\DanaZhangCms.IRepositories.pdb
+C:\OldProject\Tool\DanaZhangCms\src\DanaZhangCms.IRepositories\bin\Debug\netcoreapp2.1\DanaZhangCms.Core.dll
+C:\OldProject\Tool\DanaZhangCms\src\DanaZhangCms.IRepositories\bin\Debug\netcoreapp2.1\DanaZhangCms.Models.dll
+C:\OldProject\Tool\DanaZhangCms\src\DanaZhangCms.IRepositories\bin\Debug\netcoreapp2.1\DanaZhangCms.ViewModels.dll
+C:\OldProject\Tool\DanaZhangCms\src\DanaZhangCms.IRepositories\bin\Debug\netcoreapp2.1\DanaZhangCms.Core.pdb
+C:\OldProject\Tool\DanaZhangCms\src\DanaZhangCms.IRepositories\bin\Debug\netcoreapp2.1\DanaZhangCms.Models.pdb
+C:\OldProject\Tool\DanaZhangCms\src\DanaZhangCms.IRepositories\bin\Debug\netcoreapp2.1\DanaZhangCms.ViewModels.pdb
+C:\OldProject\Tool\DanaZhangCms\src\DanaZhangCms.IRepositories\obj\Debug\netcoreapp2.1\DanaZhangCms.IRepositories.csprojAssemblyReference.cache
+C:\OldProject\Tool\DanaZhangCms\src\DanaZhangCms.IRepositories\obj\Debug\netcoreapp2.1\DanaZhangCms.IRepositories.AssemblyInfoInputs.cache
+C:\OldProject\Tool\DanaZhangCms\src\DanaZhangCms.IRepositories\obj\Debug\netcoreapp2.1\DanaZhangCms.IRepositories.AssemblyInfo.cs
+C:\OldProject\Tool\DanaZhangCms\src\DanaZhangCms.IRepositories\obj\Debug\netcoreapp2.1\DanaZhangCms.IRepositories.csproj.CoreCompileInputs.cache
+C:\OldProject\Tool\DanaZhangCms\src\DanaZhangCms.IRepositories\obj\Debug\netcoreapp2.1\DanaZhangCms.IRepositories.csproj.CopyComplete
+C:\OldProject\Tool\DanaZhangCms\src\DanaZhangCms.IRepositories\obj\Debug\netcoreapp2.1\DanaZhangCms.IRepositories.dll
+C:\OldProject\Tool\DanaZhangCms\src\DanaZhangCms.IRepositories\obj\Debug\netcoreapp2.1\DanaZhangCms.IRepositories.pdb

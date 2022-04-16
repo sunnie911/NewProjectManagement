@@ -1,0 +1,9 @@
+D:\GitHub\DanaZhangCms\src\DanaZhangCms.Core\bin\Debug\netstandard2.0\DanaZhangCms.Core.deps.json
+D:\GitHub\DanaZhangCms\src\DanaZhangCms.Core\bin\Debug\netstandard2.0\DanaZhangCms.Core.dll
+D:\GitHub\DanaZhangCms\src\DanaZhangCms.Core\bin\Debug\netstandard2.0\DanaZhangCms.Core.pdb
+D:\GitHub\DanaZhangCms\src\DanaZhangCms.Core\obj\Debug\netstandard2.0\DanaZhangCms.Core.csprojAssemblyReference.cache
+D:\GitHub\DanaZhangCms\src\DanaZhangCms.Core\obj\Debug\netstandard2.0\DanaZhangCms.Core.csproj.CoreCompileInputs.cache
+D:\GitHub\DanaZhangCms\src\DanaZhangCms.Core\obj\Debug\netstandard2.0\DanaZhangCms.Core.AssemblyInfoInputs.cache
+D:\GitHub\DanaZhangCms\src\DanaZhangCms.Core\obj\Debug\netstandard2.0\DanaZhangCms.Core.AssemblyInfo.cs
+D:\GitHub\DanaZhangCms\src\DanaZhangCms.Core\obj\Debug\netstandard2.0\DanaZhangCms.Core.dll
+D:\GitHub\DanaZhangCms\src\DanaZhangCms.Core\obj\Debug\netstandard2.0\DanaZhangCms.Core.pdb

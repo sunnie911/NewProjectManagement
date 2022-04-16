@@ -1,0 +1,9 @@
+C:\OldProject\Tool\DanaZhangCms\src\DanaZhangCms.Core\bin\Debug\netcoreapp2.1\DanaZhangCms.Core.deps.json
+C:\OldProject\Tool\DanaZhangCms\src\DanaZhangCms.Core\bin\Debug\netcoreapp2.1\DanaZhangCms.Core.dll
+C:\OldProject\Tool\DanaZhangCms\src\DanaZhangCms.Core\bin\Debug\netcoreapp2.1\DanaZhangCms.Core.pdb
+C:\OldProject\Tool\DanaZhangCms\src\DanaZhangCms.Core\obj\Debug\netcoreapp2.1\DanaZhangCms.Core.csprojAssemblyReference.cache
+C:\OldProject\Tool\DanaZhangCms\src\DanaZhangCms.Core\obj\Debug\netcoreapp2.1\DanaZhangCms.Core.AssemblyInfoInputs.cache
+C:\OldProject\Tool\DanaZhangCms\src\DanaZhangCms.Core\obj\Debug\netcoreapp2.1\DanaZhangCms.Core.AssemblyInfo.cs
+C:\OldProject\Tool\DanaZhangCms\src\DanaZhangCms.Core\obj\Debug\netcoreapp2.1\DanaZhangCms.Core.csproj.CoreCompileInputs.cache
+C:\OldProject\Tool\DanaZhangCms\src\DanaZhangCms.Core\obj\Debug\netcoreapp2.1\DanaZhangCms.Core.dll
+C:\OldProject\Tool\DanaZhangCms\src\DanaZhangCms.Core\obj\Debug\netcoreapp2.1\DanaZhangCms.Core.pdb

@@ -1,0 +1,10 @@
+﻿using System;
+using DanaZhangCms.Core.Repositories;
+using {ModelsNamespace};
+
+namespace {IRepositoriesNamespace}
+{
+    public interface I{ModelTypeName}Repository:IRepository<{ModelTypeName}, {KeyTypeName}>
+    {
+    }
+}

@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewData["Title"] = "后台用户管理";
+    Layout = "~/Views/Shared/_SysLayout.cshtml";
+}
+<div class="layui-row">
+
+
+</div>
+<div>
+    <table id="demo" lay-filter="test"></table>
+</div>
+
+@section Scripts{
+    <script>
+layui.use('table', function(){
+  var table = layui.table;
+
+  //第一个实例
+  table.render({
+    elem: '#demo'
+    ,height: 312
+      , url: '/SysUser/GetEntitiesByPaged' //数据接口
+    ,page: true //开启分页
+    ,cols: [[ //表头
+      {field: 'index', title: 'ID', width:80, fixed: 'left',type:'numbers'},
+        { field: 'sysUserName', title: '用户名'},
+        { field: 'telephone', title: '手机号', width:100},
+
+      {field: 'createdDate', title: '添加时间', width:100},
+        {
+            field: 'id', title: '操作', width: 100, templet: '<div><a onclick="x_admin_show(\'编辑\',\'/SysUser/EditPwd?id={{d.id}}\',600,400)" class="layui-btn layui-btn-primary layui-btn-xs">编辑</a></div>'
+        }
+    ]]
+  });
+
+});
+    </script>
+}
