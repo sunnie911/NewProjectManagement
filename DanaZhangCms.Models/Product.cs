@@ -30,18 +30,19 @@ namespace DanaZhangCms.Models
         [Required]
         [Display(Name = "产品名称")]
         public string Name { get; set; }
-
-
         /// <summary>
         /// 头图
         /// </summary>
         [Display(Name = "头图")]
         public string ImgUrl { get; set; }
-
+        /// <summary>
+        /// 视频地址
+        /// </summary>
+        [Display(Name = "视频地址")]
+        public string VedioUrl { get; set; } 
         /// <summary>
         /// 内容
         /// </summary>
-       
         [Display(Name = "内容")]
         public string Content { get; set; }
 

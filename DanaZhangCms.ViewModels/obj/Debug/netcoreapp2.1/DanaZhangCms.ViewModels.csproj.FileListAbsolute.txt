@@ -12,3 +12,17 @@ C:\OldProject\Tool\DanaZhangCms\src\DanaZhangCms.ViewModels\obj\Debug\netcoreapp
 C:\OldProject\Tool\DanaZhangCms\src\DanaZhangCms.ViewModels\obj\Debug\netcoreapp2.1\DanaZhangCms.ViewModels.csproj.CopyComplete
 C:\OldProject\Tool\DanaZhangCms\src\DanaZhangCms.ViewModels\obj\Debug\netcoreapp2.1\DanaZhangCms.ViewModels.dll
 C:\OldProject\Tool\DanaZhangCms\src\DanaZhangCms.ViewModels\obj\Debug\netcoreapp2.1\DanaZhangCms.ViewModels.pdb
+C:\OldProject\NewProjectManagement\DanaZhangCms.ViewModels\bin\Debug\netcoreapp2.1\DanaZhangCms.ViewModels.deps.json
+C:\OldProject\NewProjectManagement\DanaZhangCms.ViewModels\bin\Debug\netcoreapp2.1\DanaZhangCms.ViewModels.dll
+C:\OldProject\NewProjectManagement\DanaZhangCms.ViewModels\bin\Debug\netcoreapp2.1\DanaZhangCms.ViewModels.pdb
+C:\OldProject\NewProjectManagement\DanaZhangCms.ViewModels\bin\Debug\netcoreapp2.1\DanaZhangCms.Core.dll
+C:\OldProject\NewProjectManagement\DanaZhangCms.ViewModels\bin\Debug\netcoreapp2.1\DanaZhangCms.Models.dll
+C:\OldProject\NewProjectManagement\DanaZhangCms.ViewModels\bin\Debug\netcoreapp2.1\DanaZhangCms.Core.pdb
+C:\OldProject\NewProjectManagement\DanaZhangCms.ViewModels\bin\Debug\netcoreapp2.1\DanaZhangCms.Models.pdb
+C:\OldProject\NewProjectManagement\DanaZhangCms.ViewModels\obj\Debug\netcoreapp2.1\DanaZhangCms.ViewModels.csprojAssemblyReference.cache
+C:\OldProject\NewProjectManagement\DanaZhangCms.ViewModels\obj\Debug\netcoreapp2.1\DanaZhangCms.ViewModels.AssemblyInfoInputs.cache
+C:\OldProject\NewProjectManagement\DanaZhangCms.ViewModels\obj\Debug\netcoreapp2.1\DanaZhangCms.ViewModels.AssemblyInfo.cs
+C:\OldProject\NewProjectManagement\DanaZhangCms.ViewModels\obj\Debug\netcoreapp2.1\DanaZhangCms.ViewModels.csproj.CoreCompileInputs.cache
+C:\OldProject\NewProjectManagement\DanaZhangCms.ViewModels\obj\Debug\netcoreapp2.1\DanaZhangCms.ViewModels.csproj.CopyComplete
+C:\OldProject\NewProjectManagement\DanaZhangCms.ViewModels\obj\Debug\netcoreapp2.1\DanaZhangCms.ViewModels.dll
+C:\OldProject\NewProjectManagement\DanaZhangCms.ViewModels\obj\Debug\netcoreapp2.1\DanaZhangCms.ViewModels.pdb

@@ -10,3 +10,15 @@ C:\OldProject\Tool\DanaZhangCms\src\DanaZhangCms.Models\obj\Debug\netcoreapp2.1\
 C:\OldProject\Tool\DanaZhangCms\src\DanaZhangCms.Models\obj\Debug\netcoreapp2.1\DanaZhangCms.Models.csproj.CopyComplete
 C:\OldProject\Tool\DanaZhangCms\src\DanaZhangCms.Models\obj\Debug\netcoreapp2.1\DanaZhangCms.Models.dll
 C:\OldProject\Tool\DanaZhangCms\src\DanaZhangCms.Models\obj\Debug\netcoreapp2.1\DanaZhangCms.Models.pdb
+C:\OldProject\NewProjectManagement\DanaZhangCms.Models\bin\Debug\netcoreapp2.1\DanaZhangCms.Models.deps.json
+C:\OldProject\NewProjectManagement\DanaZhangCms.Models\bin\Debug\netcoreapp2.1\DanaZhangCms.Models.dll
+C:\OldProject\NewProjectManagement\DanaZhangCms.Models\bin\Debug\netcoreapp2.1\DanaZhangCms.Models.pdb
+C:\OldProject\NewProjectManagement\DanaZhangCms.Models\bin\Debug\netcoreapp2.1\DanaZhangCms.Core.dll
+C:\OldProject\NewProjectManagement\DanaZhangCms.Models\bin\Debug\netcoreapp2.1\DanaZhangCms.Core.pdb
+C:\OldProject\NewProjectManagement\DanaZhangCms.Models\obj\Debug\netcoreapp2.1\DanaZhangCms.Models.csprojAssemblyReference.cache
+C:\OldProject\NewProjectManagement\DanaZhangCms.Models\obj\Debug\netcoreapp2.1\DanaZhangCms.Models.AssemblyInfoInputs.cache
+C:\OldProject\NewProjectManagement\DanaZhangCms.Models\obj\Debug\netcoreapp2.1\DanaZhangCms.Models.AssemblyInfo.cs
+C:\OldProject\NewProjectManagement\DanaZhangCms.Models\obj\Debug\netcoreapp2.1\DanaZhangCms.Models.csproj.CoreCompileInputs.cache
+C:\OldProject\NewProjectManagement\DanaZhangCms.Models\obj\Debug\netcoreapp2.1\DanaZhangCms.Models.csproj.CopyComplete
+C:\OldProject\NewProjectManagement\DanaZhangCms.Models\obj\Debug\netcoreapp2.1\DanaZhangCms.Models.dll
+C:\OldProject\NewProjectManagement\DanaZhangCms.Models\obj\Debug\netcoreapp2.1\DanaZhangCms.Models.pdb
