@@ -17166,9 +17166,9 @@
   "project": {
     "version": "2.0.1",
     "restore": {
-      "projectUniqueName": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms\\DanaZhangCms.csproj",
-      "projectName": "DanaZhangCms",
-      "projectPath": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms\\DanaZhangCms.csproj",
+      "projectUniqueName": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms\\CompanyCms.csproj",
+      "projectName": "CompanyCms",
+      "projectPath": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms\\CompanyCms.csproj",
       "packagesPath": "C:\\Users\\sunnie\\.nuget\\packages\\",
       "outputPath": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms\\obj\\",
       "projectStyle": "PackageReference",

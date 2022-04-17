@@ -7,3 +7,11 @@ C:\OldProject\Tool\DanaZhangCms\src\DanaZhangCms.SysControllers\obj\Debug\netcor
 C:\OldProject\Tool\DanaZhangCms\src\DanaZhangCms.SysControllers\obj\Debug\netcoreapp2.1\DanaZhangCms.SysControllers.csproj.CoreCompileInputs.cache
 C:\OldProject\Tool\DanaZhangCms\src\DanaZhangCms.SysControllers\obj\Debug\netcoreapp2.1\DanaZhangCms.SysControllers.dll
 C:\OldProject\Tool\DanaZhangCms\src\DanaZhangCms.SysControllers\obj\Debug\netcoreapp2.1\DanaZhangCms.SysControllers.pdb
+C:\OldProject\NewProjectManagement\DanaZhangCms.SysControllers\bin\Debug\netcoreapp2.1\DanaZhangCms.SysControllers.deps.json
+C:\OldProject\NewProjectManagement\DanaZhangCms.SysControllers\bin\Debug\netcoreapp2.1\DanaZhangCms.SysControllers.dll
+C:\OldProject\NewProjectManagement\DanaZhangCms.SysControllers\bin\Debug\netcoreapp2.1\DanaZhangCms.SysControllers.pdb
+C:\OldProject\NewProjectManagement\DanaZhangCms.SysControllers\obj\Debug\netcoreapp2.1\DanaZhangCms.SysControllers.AssemblyInfoInputs.cache
+C:\OldProject\NewProjectManagement\DanaZhangCms.SysControllers\obj\Debug\netcoreapp2.1\DanaZhangCms.SysControllers.AssemblyInfo.cs
+C:\OldProject\NewProjectManagement\DanaZhangCms.SysControllers\obj\Debug\netcoreapp2.1\DanaZhangCms.SysControllers.csproj.CoreCompileInputs.cache
+C:\OldProject\NewProjectManagement\DanaZhangCms.SysControllers\obj\Debug\netcoreapp2.1\DanaZhangCms.SysControllers.dll
+C:\OldProject\NewProjectManagement\DanaZhangCms.SysControllers\obj\Debug\netcoreapp2.1\DanaZhangCms.SysControllers.pdb

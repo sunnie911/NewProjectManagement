@@ -15,7 +15,6 @@ C:\OldProject\NewProjectManagement\DanaZhangCms.Models\bin\Debug\netcoreapp2.1\D
 C:\OldProject\NewProjectManagement\DanaZhangCms.Models\bin\Debug\netcoreapp2.1\DanaZhangCms.Models.pdb
 C:\OldProject\NewProjectManagement\DanaZhangCms.Models\bin\Debug\netcoreapp2.1\DanaZhangCms.Core.dll
 C:\OldProject\NewProjectManagement\DanaZhangCms.Models\bin\Debug\netcoreapp2.1\DanaZhangCms.Core.pdb
-C:\OldProject\NewProjectManagement\DanaZhangCms.Models\obj\Debug\netcoreapp2.1\DanaZhangCms.Models.csprojAssemblyReference.cache
 C:\OldProject\NewProjectManagement\DanaZhangCms.Models\obj\Debug\netcoreapp2.1\DanaZhangCms.Models.AssemblyInfoInputs.cache
 C:\OldProject\NewProjectManagement\DanaZhangCms.Models\obj\Debug\netcoreapp2.1\DanaZhangCms.Models.AssemblyInfo.cs
 C:\OldProject\NewProjectManagement\DanaZhangCms.Models\obj\Debug\netcoreapp2.1\DanaZhangCms.Models.csproj.CoreCompileInputs.cache

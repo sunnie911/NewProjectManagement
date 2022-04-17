@@ -15,7 +15,7 @@
                     <div class="card card-shadow">
                         <figure class="card-header cover">
                             <a href="@(Url.Action("Detail","Product",new { id=item.Id}))" title="@item.Name" target=_self>
-                                <img class="cover-image" src="ViewBag.Total" alt="@item.Name" height='100'>
+                                <img class="cover-image" src="@item.ImgUrl" alt="@item.Name" height='100'>
                             </a>
                         </figure>
                         <h4 class="card-title m-0 p-x-10 font-size-16 text-xs-center">
