@@ -3,21 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DanaZhangCms.Models", "DanaZhangCms.Models\DanaZhangCms.Models.csproj", "{0D90B8EB-2074-405A-B2E1-72F2FE6585FE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CompanyCms.Models", "DanaZhangCms.Models\CompanyCms.Models.csproj", "{0D90B8EB-2074-405A-B2E1-72F2FE6585FE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DanaZhangCms.IRepositories", "DanaZhangCms.IRepositories\DanaZhangCms.IRepositories.csproj", "{299104AF-EBD2-4904-982D-11D0C8E09F06}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CompanyCms.IRepositories", "DanaZhangCms.IRepositories\CompanyCms.IRepositories.csproj", "{299104AF-EBD2-4904-982D-11D0C8E09F06}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DanaZhangCms.ViewModels", "DanaZhangCms.ViewModels\DanaZhangCms.ViewModels.csproj", "{C85FC374-EBC9-4296-89FD-EA70EDA4EFEF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CompanyCms.ViewModels", "DanaZhangCms.ViewModels\CompanyCms.ViewModels.csproj", "{C85FC374-EBC9-4296-89FD-EA70EDA4EFEF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DanaZhangCms.Repositories", "DanaZhangCms.Repositories\DanaZhangCms.Repositories.csproj", "{E550794A-BD9A-40C3-8491-7E72E6377825}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CompanyCms.Repositories", "DanaZhangCms.Repositories\CompanyCms.Repositories.csproj", "{E550794A-BD9A-40C3-8491-7E72E6377825}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DanaZhangCms.Controllers", "DanaZhangCms.Controllers\DanaZhangCms.Controllers.csproj", "{F8405975-46F5-43D8-931E-98855C707793}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CompanyCms.Controllers", "DanaZhangCms.Controllers\CompanyCms.Controllers.csproj", "{F8405975-46F5-43D8-931E-98855C707793}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CompanyCms", "DanaZhangCms\CompanyCms.csproj", "{C8446360-B218-48AB-A944-9298E3FCA368}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DanaZhangCms.Core", "DanaZhangCms.Core\DanaZhangCms.Core.csproj", "{0F9D6C9D-EDCB-4960-9AFA-4F88E37E6739}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CompanyCms.Core", "DanaZhangCms.Core\CompanyCms.Core.csproj", "{0F9D6C9D-EDCB-4960-9AFA-4F88E37E6739}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DanaZhangCms.SysControllers", "DanaZhangCms.SysControllers\DanaZhangCms.SysControllers.csproj", "{67494F4C-D8A7-4E0C-9F22-D9249611BDB1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CompanyCms.SysControllers", "DanaZhangCms.SysControllers\CompanyCms.SysControllers.csproj", "{67494F4C-D8A7-4E0C-9F22-D9249611BDB1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

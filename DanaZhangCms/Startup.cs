@@ -130,7 +130,7 @@ namespace DanaZhangCms
             services.Configure<DbContextOption>(options =>
             {
                 options.ConnectionString = dbConnectionString;
-                options.ModelAssemblyName = "DanaZhangCms.Models";
+                options.ModelAssemblyName = "CompanyCms.Models";
             });
 
             #endregion
@@ -145,10 +145,10 @@ namespace DanaZhangCms
             services.Configure<CodeGenerateOption>(options =>
             {
                 options.OutputPath = path;
-                options.ModelsNamespace = "DanaZhangCms.Models";
-                options.IRepositoriesNamespace = "DanaZhangCms.IRepositories";
-                options.RepositoriesNamespace = "DanaZhangCms.Repositories";
-                options.ControllersNamespace = "DanaZhangCms.Controllers";
+                options.ModelsNamespace = "CompanyCms.Models";
+                options.IRepositoriesNamespace = "CompanyCms.IRepositories";
+                options.RepositoriesNamespace = "CompanyCms.Repositories";
+                options.ControllersNamespace = "CompanyCms.Controllers";
             });
 
             #endregion
@@ -159,7 +159,7 @@ namespace DanaZhangCms
                 .AddTransient<IDbContextCore, SQLiteDbContext>()//注入EF上下文
                 .AddTransient<IImageProcessor, ImageSharpProcessor>()
                 .AddTransient<IMediaService, LocalMediaService>()
-                .AddTransientAssembly("DanaZhangCms.IRepositories", "DanaZhangCms.Repositories");//注入仓储
+                .AddTransientAssembly("CompanyCms.IRepositories", "CompanyCms.Repositories");//注入仓储
 
             #endregion
 

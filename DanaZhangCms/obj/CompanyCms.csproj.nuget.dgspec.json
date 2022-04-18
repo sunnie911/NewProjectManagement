@@ -4,12 +4,12 @@
     "C:\\OldProject\\NewProjectManagement\\DanaZhangCms\\CompanyCms.csproj": {}
   },
   "projects": {
-    "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Controllers\\DanaZhangCms.Controllers.csproj": {
+    "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Controllers\\CompanyCms.Controllers.csproj": {
       "version": "2.0.1",
       "restore": {
-        "projectUniqueName": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Controllers\\DanaZhangCms.Controllers.csproj",
-        "projectName": "DanaZhangCms.Controllers",
-        "projectPath": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Controllers\\DanaZhangCms.Controllers.csproj",
+        "projectUniqueName": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Controllers\\CompanyCms.Controllers.csproj",
+        "projectName": "CompanyCms.Controllers",
+        "projectPath": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Controllers\\CompanyCms.Controllers.csproj",
         "packagesPath": "C:\\Users\\sunnie\\.nuget\\packages\\",
         "outputPath": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Controllers\\obj\\",
         "projectStyle": "PackageReference",
@@ -35,11 +35,11 @@
           "netcoreapp2.1": {
             "targetAlias": "netcoreapp2.1",
             "projectReferences": {
-              "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.IRepositories\\DanaZhangCms.IRepositories.csproj": {
-                "projectPath": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.IRepositories\\DanaZhangCms.IRepositories.csproj"
+              "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.IRepositories\\CompanyCms.IRepositories.csproj": {
+                "projectPath": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.IRepositories\\CompanyCms.IRepositories.csproj"
               },
-              "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.ViewModels\\DanaZhangCms.ViewModels.csproj": {
-                "projectPath": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.ViewModels\\DanaZhangCms.ViewModels.csproj"
+              "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.ViewModels\\CompanyCms.ViewModels.csproj": {
+                "projectPath": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.ViewModels\\CompanyCms.ViewModels.csproj"
               }
             }
           }
@@ -91,12 +91,12 @@
         }
       }
     },
-    "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Core\\DanaZhangCms.Core.csproj": {
+    "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Core\\CompanyCms.Core.csproj": {
       "version": "2.0.1",
       "restore": {
-        "projectUniqueName": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Core\\DanaZhangCms.Core.csproj",
-        "projectName": "DanaZhangCms.Core",
-        "projectPath": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Core\\DanaZhangCms.Core.csproj",
+        "projectUniqueName": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Core\\CompanyCms.Core.csproj",
+        "projectName": "CompanyCms.Core",
+        "projectPath": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Core\\CompanyCms.Core.csproj",
         "packagesPath": "C:\\Users\\sunnie\\.nuget\\packages\\",
         "outputPath": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Core\\obj\\",
         "projectStyle": "PackageReference",
@@ -247,12 +247,12 @@
         }
       }
     },
-    "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.IRepositories\\DanaZhangCms.IRepositories.csproj": {
+    "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.IRepositories\\CompanyCms.IRepositories.csproj": {
       "version": "2.0.1",
       "restore": {
-        "projectUniqueName": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.IRepositories\\DanaZhangCms.IRepositories.csproj",
-        "projectName": "DanaZhangCms.IRepositories",
-        "projectPath": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.IRepositories\\DanaZhangCms.IRepositories.csproj",
+        "projectUniqueName": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.IRepositories\\CompanyCms.IRepositories.csproj",
+        "projectName": "CompanyCms.IRepositories",
+        "projectPath": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.IRepositories\\CompanyCms.IRepositories.csproj",
         "packagesPath": "C:\\Users\\sunnie\\.nuget\\packages\\",
         "outputPath": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.IRepositories\\obj\\",
         "projectStyle": "PackageReference",
@@ -278,14 +278,14 @@
           "netcoreapp2.1": {
             "targetAlias": "netcoreapp2.1",
             "projectReferences": {
-              "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Core\\DanaZhangCms.Core.csproj": {
-                "projectPath": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Core\\DanaZhangCms.Core.csproj"
+              "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Core\\CompanyCms.Core.csproj": {
+                "projectPath": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Core\\CompanyCms.Core.csproj"
               },
-              "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Models\\DanaZhangCms.Models.csproj": {
-                "projectPath": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Models\\DanaZhangCms.Models.csproj"
+              "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Models\\CompanyCms.Models.csproj": {
+                "projectPath": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Models\\CompanyCms.Models.csproj"
               },
-              "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.ViewModels\\DanaZhangCms.ViewModels.csproj": {
-                "projectPath": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.ViewModels\\DanaZhangCms.ViewModels.csproj"
+              "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.ViewModels\\CompanyCms.ViewModels.csproj": {
+                "projectPath": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.ViewModels\\CompanyCms.ViewModels.csproj"
               }
             }
           }
@@ -321,12 +321,12 @@
         }
       }
     },
-    "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Models\\DanaZhangCms.Models.csproj": {
+    "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Models\\CompanyCms.Models.csproj": {
       "version": "2.0.1",
       "restore": {
-        "projectUniqueName": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Models\\DanaZhangCms.Models.csproj",
-        "projectName": "DanaZhangCms.Models",
-        "projectPath": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Models\\DanaZhangCms.Models.csproj",
+        "projectUniqueName": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Models\\CompanyCms.Models.csproj",
+        "projectName": "CompanyCms.Models",
+        "projectPath": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Models\\CompanyCms.Models.csproj",
         "packagesPath": "C:\\Users\\sunnie\\.nuget\\packages\\",
         "outputPath": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Models\\obj\\",
         "projectStyle": "PackageReference",
@@ -352,8 +352,8 @@
           "netcoreapp2.1": {
             "targetAlias": "netcoreapp2.1",
             "projectReferences": {
-              "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Core\\DanaZhangCms.Core.csproj": {
-                "projectPath": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Core\\DanaZhangCms.Core.csproj"
+              "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Core\\CompanyCms.Core.csproj": {
+                "projectPath": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Core\\CompanyCms.Core.csproj"
               }
             }
           }
@@ -389,12 +389,12 @@
         }
       }
     },
-    "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Repositories\\DanaZhangCms.Repositories.csproj": {
+    "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Repositories\\CompanyCms.Repositories.csproj": {
       "version": "2.0.1",
       "restore": {
-        "projectUniqueName": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Repositories\\DanaZhangCms.Repositories.csproj",
-        "projectName": "DanaZhangCms.Repositories",
-        "projectPath": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Repositories\\DanaZhangCms.Repositories.csproj",
+        "projectUniqueName": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Repositories\\CompanyCms.Repositories.csproj",
+        "projectName": "CompanyCms.Repositories",
+        "projectPath": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Repositories\\CompanyCms.Repositories.csproj",
         "packagesPath": "C:\\Users\\sunnie\\.nuget\\packages\\",
         "outputPath": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Repositories\\obj\\",
         "projectStyle": "PackageReference",
@@ -420,14 +420,14 @@
           "netcoreapp2.1": {
             "targetAlias": "netcoreapp2.1",
             "projectReferences": {
-              "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Core\\DanaZhangCms.Core.csproj": {
-                "projectPath": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Core\\DanaZhangCms.Core.csproj"
+              "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Core\\CompanyCms.Core.csproj": {
+                "projectPath": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Core\\CompanyCms.Core.csproj"
               },
-              "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.IRepositories\\DanaZhangCms.IRepositories.csproj": {
-                "projectPath": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.IRepositories\\DanaZhangCms.IRepositories.csproj"
+              "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.IRepositories\\CompanyCms.IRepositories.csproj": {
+                "projectPath": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.IRepositories\\CompanyCms.IRepositories.csproj"
               },
-              "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Models\\DanaZhangCms.Models.csproj": {
-                "projectPath": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Models\\DanaZhangCms.Models.csproj"
+              "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Models\\CompanyCms.Models.csproj": {
+                "projectPath": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Models\\CompanyCms.Models.csproj"
               }
             }
           }
@@ -467,12 +467,12 @@
         }
       }
     },
-    "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.ViewModels\\DanaZhangCms.ViewModels.csproj": {
+    "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.ViewModels\\CompanyCms.ViewModels.csproj": {
       "version": "2.0.1",
       "restore": {
-        "projectUniqueName": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.ViewModels\\DanaZhangCms.ViewModels.csproj",
-        "projectName": "DanaZhangCms.ViewModels",
-        "projectPath": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.ViewModels\\DanaZhangCms.ViewModels.csproj",
+        "projectUniqueName": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.ViewModels\\CompanyCms.ViewModels.csproj",
+        "projectName": "CompanyCms.ViewModels",
+        "projectPath": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.ViewModels\\CompanyCms.ViewModels.csproj",
         "packagesPath": "C:\\Users\\sunnie\\.nuget\\packages\\",
         "outputPath": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.ViewModels\\obj\\",
         "projectStyle": "PackageReference",
@@ -498,11 +498,11 @@
           "netcoreapp2.1": {
             "targetAlias": "netcoreapp2.1",
             "projectReferences": {
-              "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Core\\DanaZhangCms.Core.csproj": {
-                "projectPath": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Core\\DanaZhangCms.Core.csproj"
+              "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Core\\CompanyCms.Core.csproj": {
+                "projectPath": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Core\\CompanyCms.Core.csproj"
               },
-              "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Models\\DanaZhangCms.Models.csproj": {
-                "projectPath": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Models\\DanaZhangCms.Models.csproj"
+              "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Models\\CompanyCms.Models.csproj": {
+                "projectPath": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Models\\CompanyCms.Models.csproj"
               }
             }
           }
@@ -569,20 +569,20 @@
           "netcoreapp2.1": {
             "targetAlias": "netcoreapp2.1",
             "projectReferences": {
-              "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Controllers\\DanaZhangCms.Controllers.csproj": {
-                "projectPath": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Controllers\\DanaZhangCms.Controllers.csproj"
+              "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Controllers\\CompanyCms.Controllers.csproj": {
+                "projectPath": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Controllers\\CompanyCms.Controllers.csproj"
               },
-              "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Core\\DanaZhangCms.Core.csproj": {
-                "projectPath": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Core\\DanaZhangCms.Core.csproj"
+              "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Core\\CompanyCms.Core.csproj": {
+                "projectPath": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Core\\CompanyCms.Core.csproj"
               },
-              "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.IRepositories\\DanaZhangCms.IRepositories.csproj": {
-                "projectPath": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.IRepositories\\DanaZhangCms.IRepositories.csproj"
+              "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.IRepositories\\CompanyCms.IRepositories.csproj": {
+                "projectPath": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.IRepositories\\CompanyCms.IRepositories.csproj"
               },
-              "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Models\\DanaZhangCms.Models.csproj": {
-                "projectPath": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Models\\DanaZhangCms.Models.csproj"
+              "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Models\\CompanyCms.Models.csproj": {
+                "projectPath": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Models\\CompanyCms.Models.csproj"
               },
-              "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Repositories\\DanaZhangCms.Repositories.csproj": {
-                "projectPath": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Repositories\\DanaZhangCms.Repositories.csproj"
+              "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Repositories\\CompanyCms.Repositories.csproj": {
+                "projectPath": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Repositories\\CompanyCms.Repositories.csproj"
               }
             }
           }

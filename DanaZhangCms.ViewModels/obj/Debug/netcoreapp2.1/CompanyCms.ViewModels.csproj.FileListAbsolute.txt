@@ -1,0 +1,14 @@
+C:\OldProject\NewProjectManagement\DanaZhangCms.ViewModels\bin\Debug\netcoreapp2.1\CompanyCms.ViewModels.deps.json
+C:\OldProject\NewProjectManagement\DanaZhangCms.ViewModels\bin\Debug\netcoreapp2.1\CompanyCms.ViewModels.dll
+C:\OldProject\NewProjectManagement\DanaZhangCms.ViewModels\bin\Debug\netcoreapp2.1\CompanyCms.ViewModels.pdb
+C:\OldProject\NewProjectManagement\DanaZhangCms.ViewModels\bin\Debug\netcoreapp2.1\CompanyCms.Core.dll
+C:\OldProject\NewProjectManagement\DanaZhangCms.ViewModels\bin\Debug\netcoreapp2.1\CompanyCms.Models.dll
+C:\OldProject\NewProjectManagement\DanaZhangCms.ViewModels\bin\Debug\netcoreapp2.1\CompanyCms.Core.pdb
+C:\OldProject\NewProjectManagement\DanaZhangCms.ViewModels\bin\Debug\netcoreapp2.1\CompanyCms.Models.pdb
+C:\OldProject\NewProjectManagement\DanaZhangCms.ViewModels\obj\Debug\netcoreapp2.1\CompanyCms.ViewModels.csprojAssemblyReference.cache
+C:\OldProject\NewProjectManagement\DanaZhangCms.ViewModels\obj\Debug\netcoreapp2.1\CompanyCms.ViewModels.AssemblyInfoInputs.cache
+C:\OldProject\NewProjectManagement\DanaZhangCms.ViewModels\obj\Debug\netcoreapp2.1\CompanyCms.ViewModels.AssemblyInfo.cs
+C:\OldProject\NewProjectManagement\DanaZhangCms.ViewModels\obj\Debug\netcoreapp2.1\CompanyCms.ViewModels.csproj.CoreCompileInputs.cache
+C:\OldProject\NewProjectManagement\DanaZhangCms.ViewModels\obj\Debug\netcoreapp2.1\CompanyCms.ViewModels.csproj.CopyComplete
+C:\OldProject\NewProjectManagement\DanaZhangCms.ViewModels\obj\Debug\netcoreapp2.1\CompanyCms.ViewModels.dll
+C:\OldProject\NewProjectManagement\DanaZhangCms.ViewModels\obj\Debug\netcoreapp2.1\CompanyCms.ViewModels.pdb

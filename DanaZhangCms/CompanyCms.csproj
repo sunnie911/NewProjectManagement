@@ -19,11 +19,11 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.3" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DanaZhangCms.Core\DanaZhangCms.Core.csproj" />
-    <ProjectReference Include="..\DanaZhangCms.Controllers\DanaZhangCms.Controllers.csproj" />
-    <ProjectReference Include="..\DanaZhangCms.IRepositories\DanaZhangCms.IRepositories.csproj" />
-    <ProjectReference Include="..\DanaZhangCms.Models\DanaZhangCms.Models.csproj" />
-    <ProjectReference Include="..\DanaZhangCms.Repositories\DanaZhangCms.Repositories.csproj" />
+    <ProjectReference Include="..\DanaZhangCms.Core\CompanyCms.Core.csproj" />
+    <ProjectReference Include="..\DanaZhangCms.Controllers\CompanyCms.Controllers.csproj" />
+    <ProjectReference Include="..\DanaZhangCms.IRepositories\CompanyCms.IRepositories.csproj" />
+    <ProjectReference Include="..\DanaZhangCms.Models\CompanyCms.Models.csproj" />
+    <ProjectReference Include="..\DanaZhangCms.Repositories\CompanyCms.Repositories.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Content Update="log4net.config">

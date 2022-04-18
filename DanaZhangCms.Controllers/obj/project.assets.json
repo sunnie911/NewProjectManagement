@@ -4281,7 +4281,7 @@
           "lib/netstandard2.0/Z.EntityFramework.Plus.EFCore.dll": {}
         }
       },
-      "DanaZhangCms.Core/2.0.1": {
+      "CompanyCms.Core/2.0.1": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.1",
         "dependencies": {
@@ -4310,52 +4310,52 @@
           "log4net": "2.0.8"
         },
         "compile": {
-          "bin/placeholder/DanaZhangCms.Core.dll": {}
+          "bin/placeholder/CompanyCms.Core.dll": {}
         },
         "runtime": {
-          "bin/placeholder/DanaZhangCms.Core.dll": {}
+          "bin/placeholder/CompanyCms.Core.dll": {}
         }
       },
-      "DanaZhangCms.IRepositories/2.0.1": {
+      "CompanyCms.IRepositories/2.0.1": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.1",
         "dependencies": {
-          "DanaZhangCms.Core": "2.0.1",
-          "DanaZhangCms.Models": "2.0.1",
-          "DanaZhangCms.ViewModels": "2.0.1"
+          "CompanyCms.Core": "2.0.1",
+          "CompanyCms.Models": "2.0.1",
+          "CompanyCms.ViewModels": "2.0.1"
         },
         "compile": {
-          "bin/placeholder/DanaZhangCms.IRepositories.dll": {}
+          "bin/placeholder/CompanyCms.IRepositories.dll": {}
         },
         "runtime": {
-          "bin/placeholder/DanaZhangCms.IRepositories.dll": {}
+          "bin/placeholder/CompanyCms.IRepositories.dll": {}
         }
       },
-      "DanaZhangCms.Models/2.0.1": {
+      "CompanyCms.Models/2.0.1": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.1",
         "dependencies": {
-          "DanaZhangCms.Core": "2.0.1"
+          "CompanyCms.Core": "2.0.1"
         },
         "compile": {
-          "bin/placeholder/DanaZhangCms.Models.dll": {}
+          "bin/placeholder/CompanyCms.Models.dll": {}
         },
         "runtime": {
-          "bin/placeholder/DanaZhangCms.Models.dll": {}
+          "bin/placeholder/CompanyCms.Models.dll": {}
         }
       },
-      "DanaZhangCms.ViewModels/2.0.1": {
+      "CompanyCms.ViewModels/2.0.1": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.1",
         "dependencies": {
-          "DanaZhangCms.Core": "2.0.1",
-          "DanaZhangCms.Models": "2.0.1"
+          "CompanyCms.Core": "2.0.1",
+          "CompanyCms.Models": "2.0.1"
         },
         "compile": {
-          "bin/placeholder/DanaZhangCms.ViewModels.dll": {}
+          "bin/placeholder/CompanyCms.ViewModels.dll": {}
         },
         "runtime": {
-          "bin/placeholder/DanaZhangCms.ViewModels.dll": {}
+          "bin/placeholder/CompanyCms.ViewModels.dll": {}
         }
       }
     }
@@ -12364,31 +12364,31 @@
         "z.entityframework.plus.efcore.nuspec"
       ]
     },
-    "DanaZhangCms.Core/2.0.1": {
+    "CompanyCms.Core/2.0.1": {
       "type": "project",
-      "path": "../DanaZhangCms.Core/DanaZhangCms.Core.csproj",
-      "msbuildProject": "../DanaZhangCms.Core/DanaZhangCms.Core.csproj"
+      "path": "../DanaZhangCms.Core/CompanyCms.Core.csproj",
+      "msbuildProject": "../DanaZhangCms.Core/CompanyCms.Core.csproj"
     },
-    "DanaZhangCms.IRepositories/2.0.1": {
+    "CompanyCms.IRepositories/2.0.1": {
       "type": "project",
-      "path": "../DanaZhangCms.IRepositories/DanaZhangCms.IRepositories.csproj",
-      "msbuildProject": "../DanaZhangCms.IRepositories/DanaZhangCms.IRepositories.csproj"
+      "path": "../DanaZhangCms.IRepositories/CompanyCms.IRepositories.csproj",
+      "msbuildProject": "../DanaZhangCms.IRepositories/CompanyCms.IRepositories.csproj"
     },
-    "DanaZhangCms.Models/2.0.1": {
+    "CompanyCms.Models/2.0.1": {
       "type": "project",
-      "path": "../DanaZhangCms.Models/DanaZhangCms.Models.csproj",
-      "msbuildProject": "../DanaZhangCms.Models/DanaZhangCms.Models.csproj"
+      "path": "../DanaZhangCms.Models/CompanyCms.Models.csproj",
+      "msbuildProject": "../DanaZhangCms.Models/CompanyCms.Models.csproj"
     },
-    "DanaZhangCms.ViewModels/2.0.1": {
+    "CompanyCms.ViewModels/2.0.1": {
       "type": "project",
-      "path": "../DanaZhangCms.ViewModels/DanaZhangCms.ViewModels.csproj",
-      "msbuildProject": "../DanaZhangCms.ViewModels/DanaZhangCms.ViewModels.csproj"
+      "path": "../DanaZhangCms.ViewModels/CompanyCms.ViewModels.csproj",
+      "msbuildProject": "../DanaZhangCms.ViewModels/CompanyCms.ViewModels.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
-      "DanaZhangCms.IRepositories >= 2.0.1",
-      "DanaZhangCms.ViewModels >= 2.0.1",
+      "CompanyCms.IRepositories >= 2.0.1",
+      "CompanyCms.ViewModels >= 2.0.1",
       "Microsoft.AspNetCore.Authentication >= 2.1.2",
       "Microsoft.AspNetCore.Authentication.Cookies >= 2.1.2",
       "Microsoft.AspNetCore.Mvc.Abstractions >= 2.1.2",
@@ -12404,9 +12404,9 @@
   "project": {
     "version": "2.0.1",
     "restore": {
-      "projectUniqueName": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Controllers\\DanaZhangCms.Controllers.csproj",
-      "projectName": "DanaZhangCms.Controllers",
-      "projectPath": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Controllers\\DanaZhangCms.Controllers.csproj",
+      "projectUniqueName": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Controllers\\CompanyCms.Controllers.csproj",
+      "projectName": "CompanyCms.Controllers",
+      "projectPath": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Controllers\\CompanyCms.Controllers.csproj",
       "packagesPath": "C:\\Users\\sunnie\\.nuget\\packages\\",
       "outputPath": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Controllers\\obj\\",
       "projectStyle": "PackageReference",
@@ -12432,11 +12432,11 @@
         "netcoreapp2.1": {
           "targetAlias": "netcoreapp2.1",
           "projectReferences": {
-            "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.IRepositories\\DanaZhangCms.IRepositories.csproj": {
-              "projectPath": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.IRepositories\\DanaZhangCms.IRepositories.csproj"
+            "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.IRepositories\\CompanyCms.IRepositories.csproj": {
+              "projectPath": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.IRepositories\\CompanyCms.IRepositories.csproj"
             },
-            "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.ViewModels\\DanaZhangCms.ViewModels.csproj": {
-              "projectPath": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.ViewModels\\DanaZhangCms.ViewModels.csproj"
+            "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.ViewModels\\CompanyCms.ViewModels.csproj": {
+              "projectPath": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.ViewModels\\CompanyCms.ViewModels.csproj"
             }
           }
         }

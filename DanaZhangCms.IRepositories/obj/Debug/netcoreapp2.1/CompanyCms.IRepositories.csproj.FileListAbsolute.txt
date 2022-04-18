@@ -1,0 +1,16 @@
+C:\OldProject\NewProjectManagement\DanaZhangCms.IRepositories\bin\Debug\netcoreapp2.1\CompanyCms.IRepositories.deps.json
+C:\OldProject\NewProjectManagement\DanaZhangCms.IRepositories\bin\Debug\netcoreapp2.1\CompanyCms.IRepositories.dll
+C:\OldProject\NewProjectManagement\DanaZhangCms.IRepositories\bin\Debug\netcoreapp2.1\CompanyCms.IRepositories.pdb
+C:\OldProject\NewProjectManagement\DanaZhangCms.IRepositories\bin\Debug\netcoreapp2.1\CompanyCms.Core.dll
+C:\OldProject\NewProjectManagement\DanaZhangCms.IRepositories\bin\Debug\netcoreapp2.1\CompanyCms.Models.dll
+C:\OldProject\NewProjectManagement\DanaZhangCms.IRepositories\bin\Debug\netcoreapp2.1\CompanyCms.ViewModels.dll
+C:\OldProject\NewProjectManagement\DanaZhangCms.IRepositories\bin\Debug\netcoreapp2.1\CompanyCms.Core.pdb
+C:\OldProject\NewProjectManagement\DanaZhangCms.IRepositories\bin\Debug\netcoreapp2.1\CompanyCms.Models.pdb
+C:\OldProject\NewProjectManagement\DanaZhangCms.IRepositories\bin\Debug\netcoreapp2.1\CompanyCms.ViewModels.pdb
+C:\OldProject\NewProjectManagement\DanaZhangCms.IRepositories\obj\Debug\netcoreapp2.1\CompanyCms.IRepositories.csprojAssemblyReference.cache
+C:\OldProject\NewProjectManagement\DanaZhangCms.IRepositories\obj\Debug\netcoreapp2.1\CompanyCms.IRepositories.AssemblyInfoInputs.cache
+C:\OldProject\NewProjectManagement\DanaZhangCms.IRepositories\obj\Debug\netcoreapp2.1\CompanyCms.IRepositories.AssemblyInfo.cs
+C:\OldProject\NewProjectManagement\DanaZhangCms.IRepositories\obj\Debug\netcoreapp2.1\CompanyCms.IRepositories.csproj.CoreCompileInputs.cache
+C:\OldProject\NewProjectManagement\DanaZhangCms.IRepositories\obj\Debug\netcoreapp2.1\CompanyCms.IRepositories.csproj.CopyComplete
+C:\OldProject\NewProjectManagement\DanaZhangCms.IRepositories\obj\Debug\netcoreapp2.1\CompanyCms.IRepositories.dll
+C:\OldProject\NewProjectManagement\DanaZhangCms.IRepositories\obj\Debug\netcoreapp2.1\CompanyCms.IRepositories.pdb

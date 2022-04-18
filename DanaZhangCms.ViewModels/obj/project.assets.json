@@ -4251,7 +4251,7 @@
           "lib/netstandard2.0/Z.EntityFramework.Plus.EFCore.dll": {}
         }
       },
-      "DanaZhangCms.Core/2.0.1": {
+      "CompanyCms.Core/2.0.1": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.1",
         "dependencies": {
@@ -4280,23 +4280,23 @@
           "log4net": "2.0.8"
         },
         "compile": {
-          "bin/placeholder/DanaZhangCms.Core.dll": {}
+          "bin/placeholder/CompanyCms.Core.dll": {}
         },
         "runtime": {
-          "bin/placeholder/DanaZhangCms.Core.dll": {}
+          "bin/placeholder/CompanyCms.Core.dll": {}
         }
       },
-      "DanaZhangCms.Models/2.0.1": {
+      "CompanyCms.Models/2.0.1": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.1",
         "dependencies": {
-          "DanaZhangCms.Core": "2.0.1"
+          "CompanyCms.Core": "2.0.1"
         },
         "compile": {
-          "bin/placeholder/DanaZhangCms.Models.dll": {}
+          "bin/placeholder/CompanyCms.Models.dll": {}
         },
         "runtime": {
-          "bin/placeholder/DanaZhangCms.Models.dll": {}
+          "bin/placeholder/CompanyCms.Models.dll": {}
         }
       }
     }
@@ -12279,21 +12279,21 @@
         "z.entityframework.plus.efcore.nuspec"
       ]
     },
-    "DanaZhangCms.Core/2.0.1": {
+    "CompanyCms.Core/2.0.1": {
       "type": "project",
-      "path": "../DanaZhangCms.Core/DanaZhangCms.Core.csproj",
-      "msbuildProject": "../DanaZhangCms.Core/DanaZhangCms.Core.csproj"
+      "path": "../DanaZhangCms.Core/CompanyCms.Core.csproj",
+      "msbuildProject": "../DanaZhangCms.Core/CompanyCms.Core.csproj"
     },
-    "DanaZhangCms.Models/2.0.1": {
+    "CompanyCms.Models/2.0.1": {
       "type": "project",
-      "path": "../DanaZhangCms.Models/DanaZhangCms.Models.csproj",
-      "msbuildProject": "../DanaZhangCms.Models/DanaZhangCms.Models.csproj"
+      "path": "../DanaZhangCms.Models/CompanyCms.Models.csproj",
+      "msbuildProject": "../DanaZhangCms.Models/CompanyCms.Models.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
-      "DanaZhangCms.Core >= 2.0.1",
-      "DanaZhangCms.Models >= 2.0.1",
+      "CompanyCms.Core >= 2.0.1",
+      "CompanyCms.Models >= 2.0.1",
       "Microsoft.NETCore.App >= 2.1.0"
     ]
   },
@@ -12305,9 +12305,9 @@
   "project": {
     "version": "2.0.1",
     "restore": {
-      "projectUniqueName": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.ViewModels\\DanaZhangCms.ViewModels.csproj",
-      "projectName": "DanaZhangCms.ViewModels",
-      "projectPath": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.ViewModels\\DanaZhangCms.ViewModels.csproj",
+      "projectUniqueName": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.ViewModels\\CompanyCms.ViewModels.csproj",
+      "projectName": "CompanyCms.ViewModels",
+      "projectPath": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.ViewModels\\CompanyCms.ViewModels.csproj",
       "packagesPath": "C:\\Users\\sunnie\\.nuget\\packages\\",
       "outputPath": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.ViewModels\\obj\\",
       "projectStyle": "PackageReference",
@@ -12333,11 +12333,11 @@
         "netcoreapp2.1": {
           "targetAlias": "netcoreapp2.1",
           "projectReferences": {
-            "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Core\\DanaZhangCms.Core.csproj": {
-              "projectPath": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Core\\DanaZhangCms.Core.csproj"
+            "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Core\\CompanyCms.Core.csproj": {
+              "projectPath": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Core\\CompanyCms.Core.csproj"
             },
-            "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Models\\DanaZhangCms.Models.csproj": {
-              "projectPath": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Models\\DanaZhangCms.Models.csproj"
+            "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Models\\CompanyCms.Models.csproj": {
+              "projectPath": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.Models\\CompanyCms.Models.csproj"
             }
           }
         }

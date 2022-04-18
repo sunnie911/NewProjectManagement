@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "GTF+uGOFhaWuown8rr+9muxmtFr6BfwdxE/p3WtLUYusgfKaqyTd30bjrJmXwxn3buPbkWUC8AAt6InCr49Kdw==",
+  "dgSpecHash": "JaikL+okikpLh6KMNIJNjPkBswrwFYnS/AoXOa3wmtRsEAbRvYID7broZw44W28GVa6niWbwO5Jzv8FN30DQwQ==",
   "success": true,
-  "projectFilePath": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.IRepositories\\DanaZhangCms.IRepositories.csproj",
+  "projectFilePath": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms.IRepositories\\CompanyCms.IRepositories.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sunnie\\.nuget\\packages\\aspectcore.abstractions\\1.0.1\\aspectcore.abstractions.1.0.1.nupkg.sha512",
     "C:\\Users\\sunnie\\.nuget\\packages\\aspectcore.core\\1.0.1\\aspectcore.core.1.0.1.nupkg.sha512",

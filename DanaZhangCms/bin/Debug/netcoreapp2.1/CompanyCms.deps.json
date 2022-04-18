@@ -24,11 +24,11 @@
     ".NETCoreApp,Version=v2.1": {
       "CompanyCms/2.0.1": {
         "dependencies": {
-          "DanaZhangCms.Controllers": "2.0.1",
-          "DanaZhangCms.Core": "2.0.1",
-          "DanaZhangCms.IRepositories": "2.0.1",
-          "DanaZhangCms.Models": "2.0.1",
-          "DanaZhangCms.Repositories": "2.0.1",
+          "CompanyCms.Controllers": "2.0.1",
+          "CompanyCms.Core": "2.0.1",
+          "CompanyCms.IRepositories": "2.0.1",
+          "CompanyCms.Models": "2.0.1",
+          "CompanyCms.Repositories": "2.0.1",
           "Microsoft.AspNetCore.All": "2.1.3",
           "Microsoft.NETCore.App": "2.1.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.1.3"
@@ -1455,23 +1455,23 @@
           "lib/netstandard2.0/Z.EntityFramework.Plus.EFCore.dll": {}
         }
       },
-      "DanaZhangCms.Controllers/2.0.1": {
+      "CompanyCms.Controllers/2.0.1": {
         "dependencies": {
-          "DanaZhangCms.IRepositories": "2.0.1",
-          "DanaZhangCms.ViewModels": "2.0.1",
+          "CompanyCms.IRepositories": "2.0.1",
+          "CompanyCms.ViewModels": "2.0.1",
           "Microsoft.AspNetCore.Authentication": "2.1.2",
           "Microsoft.AspNetCore.Authentication.Cookies": "2.1.2",
           "Microsoft.AspNetCore.Mvc.Abstractions": "2.1.2",
           "Microsoft.AspNetCore.Mvc.ViewFeatures": "2.1.2"
         },
         "runtime": {
-          "DanaZhangCms.Controllers.dll": {}
+          "CompanyCms.Controllers.dll": {}
         },
         "compile": {
-          "DanaZhangCms.Controllers.dll": {}
+          "CompanyCms.Controllers.dll": {}
         }
       },
-      "DanaZhangCms.Core/2.0.1": {
+      "CompanyCms.Core/2.0.1": {
         "dependencies": {
           "AspectCore.Extensions.Autofac": "1.0.1",
           "AspectCore.Extensions.DependencyInjection": "1.0.1",
@@ -1498,60 +1498,60 @@
           "log4net": "2.0.8"
         },
         "runtime": {
-          "DanaZhangCms.Core.dll": {}
+          "CompanyCms.Core.dll": {}
         },
         "compile": {
-          "DanaZhangCms.Core.dll": {}
+          "CompanyCms.Core.dll": {}
         }
       },
-      "DanaZhangCms.IRepositories/2.0.1": {
+      "CompanyCms.IRepositories/2.0.1": {
         "dependencies": {
-          "DanaZhangCms.Core": "2.0.1",
-          "DanaZhangCms.Models": "2.0.1",
-          "DanaZhangCms.ViewModels": "2.0.1"
+          "CompanyCms.Core": "2.0.1",
+          "CompanyCms.Models": "2.0.1",
+          "CompanyCms.ViewModels": "2.0.1"
         },
         "runtime": {
-          "DanaZhangCms.IRepositories.dll": {}
+          "CompanyCms.IRepositories.dll": {}
         },
         "compile": {
-          "DanaZhangCms.IRepositories.dll": {}
+          "CompanyCms.IRepositories.dll": {}
         }
       },
-      "DanaZhangCms.Models/2.0.1": {
+      "CompanyCms.Models/2.0.1": {
         "dependencies": {
-          "DanaZhangCms.Core": "2.0.1"
+          "CompanyCms.Core": "2.0.1"
         },
         "runtime": {
-          "DanaZhangCms.Models.dll": {}
+          "CompanyCms.Models.dll": {}
         },
         "compile": {
-          "DanaZhangCms.Models.dll": {}
+          "CompanyCms.Models.dll": {}
         }
       },
-      "DanaZhangCms.Repositories/2.0.1": {
+      "CompanyCms.Repositories/2.0.1": {
         "dependencies": {
-          "DanaZhangCms.Core": "2.0.1",
-          "DanaZhangCms.IRepositories": "2.0.1",
-          "DanaZhangCms.Models": "2.0.1",
+          "CompanyCms.Core": "2.0.1",
+          "CompanyCms.IRepositories": "2.0.1",
+          "CompanyCms.Models": "2.0.1",
           "TinyMapper": "3.0.2-beta"
         },
         "runtime": {
-          "DanaZhangCms.Repositories.dll": {}
+          "CompanyCms.Repositories.dll": {}
         },
         "compile": {
-          "DanaZhangCms.Repositories.dll": {}
+          "CompanyCms.Repositories.dll": {}
         }
       },
-      "DanaZhangCms.ViewModels/2.0.1": {
+      "CompanyCms.ViewModels/2.0.1": {
         "dependencies": {
-          "DanaZhangCms.Core": "2.0.1",
-          "DanaZhangCms.Models": "2.0.1"
+          "CompanyCms.Core": "2.0.1",
+          "CompanyCms.Models": "2.0.1"
         },
         "runtime": {
-          "DanaZhangCms.ViewModels.dll": {}
+          "CompanyCms.ViewModels.dll": {}
         },
         "compile": {
-          "DanaZhangCms.ViewModels.dll": {}
+          "CompanyCms.ViewModels.dll": {}
         }
       },
       "Libuv/1.10.0": {
@@ -5713,32 +5713,32 @@
       "path": "z.entityframework.plus.efcore/1.8.10",
       "hashPath": "z.entityframework.plus.efcore.1.8.10.nupkg.sha512"
     },
-    "DanaZhangCms.Controllers/2.0.1": {
+    "CompanyCms.Controllers/2.0.1": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "DanaZhangCms.Core/2.0.1": {
+    "CompanyCms.Core/2.0.1": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "DanaZhangCms.IRepositories/2.0.1": {
+    "CompanyCms.IRepositories/2.0.1": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "DanaZhangCms.Models/2.0.1": {
+    "CompanyCms.Models/2.0.1": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "DanaZhangCms.Repositories/2.0.1": {
+    "CompanyCms.Repositories/2.0.1": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "DanaZhangCms.ViewModels/2.0.1": {
+    "CompanyCms.ViewModels/2.0.1": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
