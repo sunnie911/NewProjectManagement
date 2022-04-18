@@ -28,6 +28,7 @@ namespace DanaZhangCms.Controllers
         [ActionDescription(Name = "新闻列表")]
         public IActionResult Index()
         {
+            GetPosition();
             return View();
         }
         [ActionDescription(Name = "添加新闻")]
@@ -85,14 +86,20 @@ namespace DanaZhangCms.Controllers
         }
 
         [AjaxRequestOnly]
-        public Task<IActionResult> GetEntitiesByPaged(int limit, int page)
+        public Task<IActionResult> GetEntitiesByPaged(int limit, int page, int CategoryId=0)
         {
             return Task.Factory.StartNew<IActionResult>(() =>
             {
                 var total = _repository.Count(m => true);
+
                 Func<IQueryable<Article>, IQueryable<Article>> @include = o => o.Include("Category");
                 var rows = _repository.GetByPaginationWithInclude(m => true, @include, limit, page, true,
-                    m => m.Id).Select(o => new { o.Id, o.Title, o.Author, CreatedDate = o.CreatedDate.ToString("yyyy-MM-dd"), CateName = o.Category.Name }).ToList();
+                    m => m.Id).Select(o => new { o.Id, o.Title, o.Author, CreatedDate = o.CreatedDate.ToString("yyyy-MM-dd"),CategoryId=o.CategoryId ,CateName = o.Category.Name }).ToList();
+                if (CategoryId > 0)
+                {
+                      rows = _repository.GetByPaginationWithInclude(m => m.CategoryId==CategoryId, @include, limit, page, true,
+                       m => m.Id).Select(o => new { o.Id, o.Title, o.Author, CreatedDate = o.CreatedDate.ToString("yyyy-MM-dd"), CategoryId = o.CategoryId, CateName = o.Category.Name }).ToList();
+                }
                 return Json(LayUIPaginationResult.PagedResult(true, rows, total));
             });
         }
