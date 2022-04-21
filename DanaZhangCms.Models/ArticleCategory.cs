@@ -20,6 +20,13 @@ namespace DanaZhangCms.Models
         public string Name { get; set; }
 
         /// <summary>
+        /// 分类名称
+        /// </summary>
+        
+        [Display(Name = "分类英文名称")]
+        public string NameEn { get; set; }
+
+        /// <summary>
         /// 父分类id
         /// </summary>
         [Display(Name = "父分类id")]
@@ -51,6 +58,16 @@ namespace DanaZhangCms.Models
 
         [Display(Name = "SEO描述")]
         public string Description { get; set; }
+
+
+        [Display(Name = "SEO标题")]
+        public string TitleEn { get; set; }
+
+        [Display(Name = "SEO关键字")]
+        public string KeyWordEn { get; set; }
+
+        [Display(Name = "SEO描述")]
+        public string DescriptionEn { get; set; }
 
         public virtual ICollection<ArticleCategory> ChildList { get; set; }
 

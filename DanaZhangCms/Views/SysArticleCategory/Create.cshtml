@@ -22,6 +22,19 @@
 
         </div>
     </div>
+
+    <div class="layui-form-item">
+
+        @Html.LabelFor(model => model.NameEn, new { @class = "layui-form-label" })
+        <div class="layui-input-inline">
+            @Html.TextBoxFor(model => model.NameEn, new { @class = "layui-input", @required = "", @lay_verify = "required", autocomplete = "off" })
+
+        </div>
+        <div class="layui-form-mid layui-word-aux">
+            <span class="x-red">*</span>
+
+        </div>
+    </div>
     <div class="layui-form-item">
         @Html.LabelFor(model => model.ParentId, new { @class = "layui-form-label" })
         <div class="layui-input-inline">
@@ -66,6 +79,43 @@
 
         </div>
     </div>
+    <div class="layui-form-item">
+
+        @Html.LabelFor(model => model.TitleEn, new { @class = "layui-form-label" })
+        <div class="layui-input-inline">
+            @Html.TextAreaFor(model => model.TitleEn, new { @class = "layui-textarea", autocomplete = "off" })
+
+        </div>
+        <div class="layui-form-mid layui-word-aux">
+            <span class="x-red">*</span>
+
+        </div>
+    </div>
+    <div class="layui-form-item">
+
+        @Html.LabelFor(model => model.KeyWordEn, new { @class = "layui-form-label" })
+        <div class="layui-input-inline">
+            @Html.TextAreaFor(model => model.KeyWordEn, new { @class = "layui-textarea", autocomplete = "off" })
+
+        </div>
+        <div class="layui-form-mid layui-word-aux">
+            <span class="x-red">*</span>
+
+        </div>
+    </div>
+    <div class="layui-form-item">
+
+        @Html.LabelFor(model => model.DescriptionEn, new { @class = "layui-form-label" })
+        <div class="layui-input-inline">
+            @Html.TextAreaFor(model => model.DescriptionEn, new { @class = "layui-textarea", autocomplete = "off" })
+
+        </div>
+        <div class="layui-form-mid layui-word-aux">
+            <span class="x-red">*</span>
+
+        </div>
+    </div>
+
     <div class="layui-form-item">
 
         @Html.LabelFor(model => model.SortId, new { @class = "layui-form-label" })

@@ -98,7 +98,7 @@ namespace DanaZhangCms.Controllers
 
                 Func<IQueryable<ProductCategory>, IQueryable<ProductCategory>> @include = o => o.Include("Parent");
                 var rows = _repository.GetByPaginationWithInclude(m => true, @include, limit, page, true,
-                    m => m.Id).Select(o => new { o.Id, o.Name, CreatedDate = o.CreatedDate.ToString("yyyy-MM-dd"), CateName = o.Parent == null ? "" : o.Parent.Name }).ToList();
+                    m => m.Id).Select(o => new { o.Id, o.Name,o.NameEn, CreatedDate = o.CreatedDate.ToString("yyyy-MM-dd"), CateName = o.Parent == null ? "" : o.Parent.Name }).ToList();
                 return Json(LayUIPaginationResult.PagedResult(true, rows, total));
 
                 //   return Json(PageModel.Result(rows,true,total));

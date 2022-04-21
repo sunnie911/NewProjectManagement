@@ -20,6 +20,15 @@
         </div>
     </div>
     <div class="layui-form-item">
+
+        @Html.LabelFor(model => model.NameEn, new { @class = "layui-form-label" })
+        <div class="layui-input-inline">
+            @Html.TextBoxFor(model => model.NameEn, new { @class = "layui-input", autocomplete = "off" })
+
+        </div>
+
+    </div>
+    <div class="layui-form-item">
         @Html.LabelFor(model => model.CategoryId, new { @class = "layui-form-label" })
         <div class="layui-input-inline">
 
@@ -59,7 +68,7 @@
                 @if (!string.IsNullOrEmpty(Model.VedioUrl))
                 {
                     <video width="100%" controls="" preload="auto" autoplay="autoplay">
-                        <source src="@Model.VedioUrl"  />
+                        <source src="@Model.VedioUrl" />
                     </video>
                 }
                 else
@@ -69,7 +78,7 @@
             </div>
             <div class="left">
                 <div class="uploadProgressBar"></div>
-                <div id="UploadVedio"  class="uploadBut">选择视频</div>
+                <div id="UploadVedio" class="uploadBut">选择视频</div>
             </div>
             <div class="clear"></div>
         </div>
@@ -106,7 +115,15 @@
 
         </div>
     </div>
+    <div class="layui-form-item">
 
+        @Html.LabelFor(model => model.ContentEn, new { @class = "layui-form-label" })
+        <div class="layui-input-inline" style="width:600px;min-height:500px;">
+            @Html.TextAreaFor(model => model.ContentEn, new { @class = "", autocomplete = "off", rows = "30" })
+
+        </div>
+         
+    </div>
     <div class="layui-form-item">
         <label for="L_repass" class="layui-form-label">
         </label>

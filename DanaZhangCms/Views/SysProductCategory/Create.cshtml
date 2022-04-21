@@ -23,6 +23,15 @@
         </div>
     </div>
     <div class="layui-form-item">
+
+        @Html.LabelFor(model => model.NameEn, new { @class = "layui-form-label" })
+        <div class="layui-input-inline">
+            @Html.TextBoxFor(model => model.NameEn, new { @class = "layui-input",  autocomplete = "off" })
+
+        </div>
+       
+    </div>
+    <div class="layui-form-item">
         @Html.LabelFor(model => model.ParentId, new { @class = "layui-form-label" })
         <div class="layui-input-inline">
 

@@ -9,5 +9,7 @@ namespace DanaZhangCms.ViewModels
     {
         public List<Product> Products { get; set; }
         public List<Article> Articles { get; set; }
+
+        public List<Article> Vedios { get; set; }
     }
 }

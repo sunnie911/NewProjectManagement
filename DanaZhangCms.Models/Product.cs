@@ -30,6 +30,19 @@ namespace DanaZhangCms.Models
         [Required]
         [Display(Name = "产品名称")]
         public string Name { get; set; }
+
+        /// <summary>
+        /// 产品英文名称
+        /// </summary>
+
+        [Display(Name = "产品英文名称")]
+        public string NameEn { get; set; }
+
+        /// <summary>
+        /// 型号
+        /// </summary>
+        [Display(Name = "型号")]
+        public string Model { get; set; }
         /// <summary>
         /// 头图
         /// </summary>
@@ -46,6 +59,11 @@ namespace DanaZhangCms.Models
         [Display(Name = "内容")]
         public string Content { get; set; }
 
+        /// <summary>
+        /// 内容
+        /// </summary>
+        [Display(Name = "英文内容")]
+        public string ContentEn { get; set; }
         /// <summary>
         /// 标签 已,分隔
         /// </summary>

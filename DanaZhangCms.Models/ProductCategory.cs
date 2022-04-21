@@ -18,7 +18,12 @@ namespace DanaZhangCms.Models
         [Required]
         [Display(Name = "分类名称")]
         public string Name { get; set; }
-
+        /// <summary>
+        /// 分类英文名称
+        /// </summary>
+        [Required]
+        [Display(Name = "分类英文名称")]
+        public string NameEn { get; set; }
         /// <summary>
         /// 父分类id
         /// </summary>

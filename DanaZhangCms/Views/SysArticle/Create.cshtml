@@ -19,6 +19,19 @@
 
         </div>
     </div>
+
+    <div class="layui-form-item">
+
+        @Html.LabelFor(model => model.TitleEn, new { @class = "layui-form-label" })
+        <div class="layui-input-inline">
+            @Html.TextBoxFor(model => model.TitleEn, new { @class = "layui-input", @required = "", @lay_verify = "required", autocomplete = "off" })
+
+        </div>
+        <div class="layui-form-mid layui-word-aux">
+            <span class="x-red">*</span>
+
+        </div>
+    </div>
     <div class="layui-form-item">
         @Html.LabelFor(model => model.CategoryId, new { @class = "layui-form-label" })
         <div class="layui-input-inline">
@@ -52,36 +65,47 @@
     </div>
 
 
-    <div class="layui-form-item">
-        @Html.LabelFor(model => model.VedioUrl, new { @class = "layui-form-label" })
-        <div class="layui-input-inline">
-            <div class="uploadPreview" id="PreviewVedio">
-                @if (!string.IsNullOrEmpty(Model.VedioUrl))
-                {
+    @*<div class="layui-form-item">
+            @Html.LabelFor(model => model.VedioUrl, new { @class = "layui-form-label" })
+            <div class="layui-input-inline">
+                <div class="uploadPreview" id="PreviewVedio">
+                    @if (!string.IsNullOrEmpty(Model.VedioUrl))
+                    {
                     <video width="100%" controls="" preload="auto" autoplay="autoplay">
                         <source src="@Model.VedioUrl" />
                     </video>
-                }
-                else
-                {
+                    }
+                    else
+                    {
                     @:暂无视频
-                }
+                    }
+                </div>
+                <div class="left">
+                    <div class="uploadProgressBar"></div>
+                    <div id="UploadVedio" class="uploadBut">选择视频</div>
+                </div>
+                <div class="clear"></div>
             </div>
-            <div class="left">
-                <div class="uploadProgressBar"></div>
-                <div id="UploadVedio" class="uploadBut">选择视频</div>
-            </div>
-            <div class="clear"></div>
-        </div>
-        @Html.HiddenFor(x => x.VedioUrl)
+            @Html.HiddenFor(x => x.VedioUrl)
 
-    </div>
+        </div>*@
 
     <div class="layui-form-mid layui-word-aux">
         <span class="x-red"></span>
 
     </div>
+    <div class="layui-form-item">
 
+        @Html.LabelFor(model => model.VedioUrl, new { @class = "layui-form-label" })
+        <div class="layui-input-inline">
+            @Html.TextBoxFor(model => model.VedioUrl, new { @class = "layui-input", autocomplete = "off" })
+
+        </div>
+        <div class="layui-form-mid layui-word-aux">
+            <span class="x-red"></span>
+
+        </div>
+    </div>
 
     <div class="layui-form-item">
 
@@ -113,6 +137,18 @@
         @Html.LabelFor(model => model.Content, new { @class = "layui-form-label" })
         <div class="layui-input-inline" style="width:600px;min-height:500px;">
             @Html.TextAreaFor(model => model.Content, new { @class = "", autocomplete = "off", rows = "30" })
+
+        </div>
+        <div class="layui-form-mid layui-word-aux">
+            <span class="x-red">*</span>
+
+        </div>
+    </div>
+    <div class="layui-form-item">
+
+        @Html.LabelFor(model => model.ContentEn, new { @class = "layui-form-label" })
+        <div class="layui-input-inline" style="width:600px;min-height:500px;">
+            @Html.TextAreaFor(model => model.ContentEn, new { @class = "", autocomplete = "off", rows = "30" })
 
         </div>
         <div class="layui-form-mid layui-word-aux">
@@ -237,7 +273,7 @@
 
                 form.on('submit(add)', function (data) {
                     var url = $(".layui-form").attr("action");
-                     debugger;
+                   
                     // data.field.Content=editor.getData();
                     $("#Content").val(editor.getData());
                     $.ajax({

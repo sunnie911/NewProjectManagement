@@ -31,7 +31,12 @@ namespace DanaZhangCms.Models
         [Display(Name = "标题")]
         public string Title { get; set; }
 
-
+        /// <summary>
+        /// 标题
+        /// </summary>
+     
+        [Display(Name = "英文标题")]
+        public string TitleEn { get; set; }
         /// <summary>
         /// 头图
         /// </summary>
@@ -50,6 +55,12 @@ namespace DanaZhangCms.Models
         [Display(Name = "内容")]
         public string Content { get; set; }
 
+        /// <summary>
+        /// 内容
+        /// </summary>
+
+        [Display(Name = "英文内容")]
+        public string ContentEn { get; set; }
         /// <summary>
         /// 标签 已,分隔
         /// </summary>

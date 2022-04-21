@@ -20,7 +20,59 @@
         </div>
     </div>
 
+    <div class="layui-form-item">
 
+        @Html.LabelFor(model => model.Summary, new { @class = "layui-form-label" })
+        <div class="layui-input-inline">
+            @Html.TextBoxFor(model => model.Summary, new { @class = "layui-input", autocomplete = "off" })
+
+        </div>
+
+    </div>
+
+    <div class="layui-form-item">
+
+        @Html.LabelFor(model => model.NameEn, new { @class = "layui-form-label" })
+        <div class="layui-input-inline">
+            @Html.TextBoxFor(model => model.NameEn, new { @class = "layui-input", @required = "", @lay_verify = "required", autocomplete = "off" })
+
+        </div>
+        <div class="layui-form-mid layui-word-aux">
+            <span class="x-red">*</span>
+
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+
+        @Html.LabelFor(model => model.SummaryEn, new { @class = "layui-form-label" })
+        <div class="layui-input-inline">
+            @Html.TextBoxFor(model => model.SummaryEn, new { @class = "layui-input", autocomplete = "off" })
+
+        </div>
+
+    </div>
+
+
+    <div class="layui-form-item">
+
+        @Html.LabelFor(model => model.LinkUrl, new { @class = "layui-form-label" })
+        <div class="layui-input-inline">
+            @Html.TextBoxFor(model => model.LinkUrl, new { @class = "layui-input", autocomplete = "off" })
+
+        </div>
+
+    </div>
+
+
+    <div class="layui-form-item">
+
+        @Html.LabelFor(model => model.LinkUrlEn, new { @class = "layui-form-label" })
+        <div class="layui-input-inline">
+            @Html.TextBoxFor(model => model.LinkUrlEn, new { @class = "layui-input", autocomplete = "off" })
+        </div>
+
+    </div>
     <div class="layui-form-item">
 
         @Html.LabelFor(model => model.ImgUrl, new { @class = "layui-form-label" })

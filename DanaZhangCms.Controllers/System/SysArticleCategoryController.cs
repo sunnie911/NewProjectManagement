@@ -84,7 +84,7 @@ namespace DanaZhangCms.Controllers
         {
             return Task.Factory.StartNew<IActionResult>(() =>
             {
-                var rows = _repository.Get().Select(o => new { o.Id, o.ParentId, o.Name, pname = o.Parent == null ? "" : o.Parent.Name }).ToList();
+                var rows = _repository.Get().Select(o => new { o.Id, o.ParentId, o.Name,o.NameEn, pname = o.Parent == null ? "" : o.Parent.Name }).ToList();
                 return Json(new { code = 0, tip = "操作成功！", msg = "", @is = true, count = rows.Count(), data = rows });
             });
         }
