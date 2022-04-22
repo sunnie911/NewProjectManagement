@@ -27,7 +27,8 @@ layui.use('table', function(){
     ,page: true //开启分页
     ,cols: [[ //表头
       {field: 'index', title: 'ID', width:80, fixed: 'left',type:'numbers'},
-      {field: 'name', title: '标题'},
+        { field: 'name', title: '标题' },
+        { field: 'summary', title: '描述' },
       {field: 'createdDate', title: '添加时间', width:100},
        {field: 'id', title: '操作', width:100,templet: '<div><a href="/SysBanner/Edit?id={{d.id}}" class="layui-table-link">编辑</a></div>'},
     ]]

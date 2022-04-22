@@ -13,10 +13,13 @@ namespace DanaZhangCms.Controllers
     {
         private IProductRepository _proRepository;
         private IArticleRepository _artRepository;
-        public HomeController(IProductRepository proRepository, IArticleRepository artRepository)
+
+        private IBannerRepository _banRepository;
+        public HomeController(IProductRepository proRepository, IArticleRepository artRepository, IBannerRepository banRepository)
         {
             _proRepository = proRepository;
             _artRepository = artRepository;
+            _banRepository = banRepository;
         }
 
         ///首页
@@ -28,10 +31,11 @@ namespace DanaZhangCms.Controllers
             var pros = _proRepository.OrderByDescending(o => o.ClickCount).ThenByDescending(o => o.CreatedDate).Take(8).Select(o => new Product() { Name = o.Name, Id = o.Id, ImgUrl = o.ImgUrl }).ToList();
             var arts = articleList.Where(a=>a.CategoryId==4).OrderByDescending(o => o.Id).Take(20).Select(o => new Article() { Title = o.Title, Id = o.Id, ImgUrl = o.ImgUrl, CreatedDate = o.CreatedDate }).ToList();
             var vedios = articleList.Where(a => a.CategoryId == 3).OrderByDescending(o => o.Id).Take(20).Select(o => new Article() { Title = o.Title, Id = o.Id, ImgUrl = o.ImgUrl, CreatedDate = o.CreatedDate }).ToList();
-
+            var banners = _banRepository.ToList();
             model.Products = pros;
             model.Articles = arts;
             model.Vedios = vedios;
+            model.Banners = banners;
             return View(model);
         }
     }
