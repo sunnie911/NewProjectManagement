@@ -140,12 +140,12 @@ namespace DanaZhangCms.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        [AjaxRequestOnly]
+        [AjaxRequestOnly, HttpPost]
         public Task<IActionResult> Delete(int id)
         {
             return Task.Factory.StartNew<IActionResult>(() =>
             {
-                _repository.Delete(id, false);
+                _repository.Delete(id, true);
                 return Json(ExcutedResult.SuccessResult("成功删除一条数据。"));
             });
         }

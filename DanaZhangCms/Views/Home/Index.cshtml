@@ -29,46 +29,6 @@
                         }
 
                     }
-                    @*<div class="swiper-slide">
-                            <div class="slide-left">
-                                <div class="bt">6666 顶空进样器 </div>
-                                <span>为挥发性化合物的分析提供完整的智能互联系统。</span>
-                                <div class="readMore">阅读更多</div>
-                            </div>
-                            <div class="slide-right">
-                                <img src="images/banner1.jpeg">
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="slide-left">
-                                <div class="bt">7777 顶空进样器 </div>
-                                <span>为挥发性化合物的分析提供完整的智能互联系统。</span>
-                                <div class="readMore">阅读更多</div>
-                            </div>
-                            <div class="slide-right">
-                                <img src="images/banner2.jpeg">
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="slide-left">
-                                <div class="bt">88888 顶空进样器 </div>
-                                <span>为挥发性化合物的分析提供完整的智能互联系统。</span>
-                                <div class="readMore">阅读更多</div>
-                            </div>
-                            <div class="slide-right">
-                                <img src="images/banner3.jpeg">
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="slide-left">
-                                <div class="bt">9999 顶空进样器 </div>
-                                <span>为挥发性化合物的分析提供完整的智能互联系统。</span>
-                                <div class="readMore">阅读更多</div>
-                            </div>
-                            <div class="slide-right">
-                                <img src="images/banner1.jpeg">
-                            </div>
-                        </div>*@
                 </div>
                 <div class="swiper-pagination"></div>
             </div>
@@ -84,7 +44,7 @@
             <div class="main">
                 <span>{{titleArry[0].english}}</span>
                 <div class="more">
-                    <a href="list/productList.html" target="_blank">
+                    <a href="/Product" target="_blank">
                         <span>更多</span>
                         <img src="images/to1.png">
                     </a>
@@ -95,14 +55,27 @@
         </div>
         <div class="content">
             <ul>
-                <li v-for="item in hotSellArry">
-                    <a href="details/product_details.html" target="_blank">
-                        <img class="goods_img" :src="item.img">
-                        <span>{{item.text}}</span>
-                        <p>{{item.english}}</p>
-                        <img class="hot" v-show="item.flag" src="images/sale.png">
-                    </a>
-                </li>
+                @if (Model.Products != null && Model.Products.Any())
+                {
+                    foreach (var item in Model.Products)
+                    {
+                        <li>
+                            <a href="javascrpt:;" target="_blank">
+                                <img class="goods_img" src="@item.ImgUrl">
+                                <span>@item.Name</span>
+                                @*<p>@item.</p>*@
+                                @if (item.IsHot)
+                                {
+                                    <img class="hot" src="images/sale.png">
+                                }
+
+                            </a>
+                        </li>
+                    }
+
+                }
+
+
             </ul>
         </div>
     </div>
@@ -116,10 +89,12 @@
                         <span>{{titleArry[1].english}}</span>
                     </div>
                 </div>
-                <p>建研华测（杭州）科技有限公司是一家专业从事混凝土3D打印和高端测试仪器设备开发、生产和销售的国家高新技术企业。
-                生产研发基地设在杭州萧山区和沈阳浑南高新技术开发区。公司的主要产品有：混凝土3D打印系统、高性能低场磁共振微观分析仪、
-                全自动混凝土凝结时间测定仪、混凝土冻融试验机、混凝土碳化箱、非接触式混凝土收缩变形测定仪、钢筋混凝土电化学腐蚀测试仪、
-                混凝土热物理参数测定仪、混凝土气体渗透测试仪、混凝土温度-应力试验机、工业内窥镜、硬化混凝土气孔结构分析仪等...</p>
+                <p>
+                    建研华测（杭州）科技有限公司是一家专业从事混凝土3D打印和高端测试仪器设备开发、生产和销售的国家高新技术企业。
+                    生产研发基地设在杭州萧山区和沈阳浑南高新技术开发区。公司的主要产品有：混凝土3D打印系统、高性能低场磁共振微观分析仪、
+                    全自动混凝土凝结时间测定仪、混凝土冻融试验机、混凝土碳化箱、非接触式混凝土收缩变形测定仪、钢筋混凝土电化学腐蚀测试仪、
+                    混凝土热物理参数测定仪、混凝土气体渗透测试仪、混凝土温度-应力试验机、工业内窥镜、硬化混凝土气孔结构分析仪等...
+                </p>
                 <div class="btn"><a href="list/introduce.html" target="_blank"><img src="images/to.png"></a></div>
             </div>
             <div class="in_right">
@@ -148,14 +123,19 @@
 
             <div class="vedio_container swiper-container">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide" v-for="item in vedioArry">
-                        <div class="slide_main">
-                            <img :src="item.img">
-                            <div class="mainP">{{item.text}}</div>
-                            <span>{{item.time}}</span>
-                        </div>
-                    </div>
-
+                    @if (Model.Vedios != null && Model.Vedios.Any())
+                    {
+                        foreach (var item in Model.Vedios)
+                        {
+                            <div class="swiper-slide">
+                                <div class="slide_main">
+                                    <img src="@item.ImgUrl">
+                                    <div class="mainP">@item.Title</div>
+                                    <span>@item.CreatedDate</span>
+                                </div>
+                            </div>
+                        }
+                    }
                 </div>
 
             </div>
@@ -179,14 +159,23 @@
             </div>
         </div>
         <ul class="learning-box">
-            <li v-for="item in learningArry">
-                <img :src="item.img">
-                <div class="main">
-                    <div class="title">{{item.title}}</div>
-                    <div class="neirong">{{item.jieshao}}</div>
-                </div>
-                <div class="mengceng"></div>
-            </li>
+            @if (Model.Articles != null && Model.Articles.Any())
+            {
+                foreach (var item in Model.Articles)
+                {
+                    <li>
+                        <img src="@item.ImgUrl">
+                        <div class="main">
+                            <div class="title">@item.Title</div>
+                            <div class="neirong">
+                                /div>
+                            </div>
+                            <div class="mengceng"></div>
+                    </li>
+                }
+            }
+
+
         </ul>
     </div>
     <!-- 合作机构 -->
@@ -204,7 +193,14 @@
             </div>
         </div>
         <ul>
-            <li v-for="item in cooperativeArry"><img :src="item"></li>
+            @*<li v-for="item in cooperativeArry"><img :src="item"></li>*@
+            @if (Model.Logos != null && Model.Logos.Any())
+            {
+                foreach (var item in Model.Logos)
+                {
+                    <li><img src="@item.ImgUrl" title="@item.Title"></li>
+                }
+            }
         </ul>
     </div>
 

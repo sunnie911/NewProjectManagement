@@ -53,10 +53,35 @@
             });
 
             treeGrid.on('tool(' + tableId + ')', function (obj) {
-                console.log(obj)
+                var data = obj.data;
                 var id=obj.data.id;
                 if (obj.event === 'del') {//删除行
-                    del(obj);
+                    layer.confirm('真的删除产品分类么', function (index) {
+
+                        obj.del(); //删除对应行（tr）的DOM结构
+                        layer.close(index);
+
+                        var url = " /SysProductCategory/Delete?id=" + data.id;
+                        //向服务端发送删除指令
+                        $.ajax({
+                            url: url,
+                            type: "post",
+                            success: function (rep) {
+                                if (rep.success == true) {
+                                    layer.msg(rep.msg);
+                                }
+                                else {
+                                    layer.alert(rep.msg, { icon: 5 });
+                                }
+
+                            },
+                            error: function () {
+                                layer.alert("网络错误，请稍候再试。", { icon: 5 });
+                            }
+                        });
+
+
+                    });
                 } else if (obj.event === "add") {//添加行
                    // add(obj.data);
                     x_admin_show('新增','@(Url.Action("Edit"))'+'?id='+id)

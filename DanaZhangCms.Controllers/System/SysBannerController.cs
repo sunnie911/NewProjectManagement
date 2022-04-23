@@ -78,8 +78,8 @@ namespace DanaZhangCms.Controllers
         {
             return Task.Factory.StartNew<IActionResult>(() =>
             {
-                if (!ModelState.IsValid)
-                    return Json(ExcutedResult.FailedResult("数据验证失败"));
+                //if (!ModelState.IsValid)
+                //    return Json(ExcutedResult.FailedResult("数据验证失败"));
                 _repository.AddAsync(model, false);
                 return Json(ExcutedResult.SuccessResult());
             });
@@ -108,7 +108,7 @@ namespace DanaZhangCms.Controllers
         {
             return Task.Factory.StartNew<IActionResult>(() =>
             {
-                _repository.Delete(id, false);
+                _repository.Delete(id, true);
                 return Json(ExcutedResult.SuccessResult("成功删除一条数据。"));
             });
         }

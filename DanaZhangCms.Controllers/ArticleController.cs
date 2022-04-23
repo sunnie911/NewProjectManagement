@@ -26,7 +26,7 @@ namespace DanaZhangCms.Controllers
         public IActionResult Index(int page = 1, int pageSize = 12)
         {
             
-            var arts = _artRepository.OrderByDescending(o => o.ClickCount).ThenByDescending(o => o.CreatedDate).Skip((page - 1) * pageSize).Take(pageSize).Select(o => new Article() { Title = o.Title, Id = o.Id, ImgUrl = o.ImgUrl,CreatedDate=o.CreatedDate,ClickCount=o.ClickCount,Content=o.Content }).ToList();
+            var arts = _artRepository.Where(o=>o.IsDeleted==false).OrderByDescending(o => o.ClickCount).ThenByDescending(o => o.CreatedDate).Skip((page - 1) * pageSize).Take(pageSize).Select(o => new Article() { Title = o.Title, Id = o.Id, ImgUrl = o.ImgUrl,CreatedDate=o.CreatedDate,ClickCount=o.ClickCount,Content=o.Content }).ToList();
             var total = _artRepository.Count();
             ViewBag.Total = total;
             return View(arts);

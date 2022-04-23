@@ -270,10 +270,10 @@
             layui.use('form', function () {
                 var form = layui.form;
 
-
+              
                 form.on('submit(add)', function (data) {
                     var url = $(".layui-form").attr("action");
-                   
+
                     // data.field.Content=editor.getData();
                     $("#Content").val(editor.getData());
                     $.ajax({

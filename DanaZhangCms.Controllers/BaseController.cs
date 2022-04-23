@@ -12,10 +12,9 @@ namespace DanaZhangCms.Controllers
 {
     public abstract class BaseController : Controller
     {
-        
-        public BaseController()
-        {
-
+       
+        public BaseController( )
+        { 
         }
         //工作上下文
         public WebWorkContext WorkContext = new WebWorkContext();

@@ -9,7 +9,7 @@ layui.use(['laypage', 'layer'], function () {
         elem: 'page',
         count: total,
         theme: '#1E9FFF',
-        limit: 12,
+        limit: 10,
         curr: page,
         jump: function (obj, first) {
             //obj包含了当前分页的所有参数，比如：

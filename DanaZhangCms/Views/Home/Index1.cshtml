@@ -1,0 +1,106 @@
+@model DanaZhangCms.ViewModels.HomeVM
+@{
+
+}
+<div class="product_list_met_16_3 met-index-body text-xs-center     bgcolor" m-id='35'>
+    <div class="container">
+        <h2 class="title m-t-0 font-weight-600">热销产品</h2>
+        <div class="home-line"></div>
+
+
+        <div class="tab-content">
+            <ul class="blocks-xs-2blocks-md-2 blocks-lg-4 blocks-xxl-4 no-space imagesize index-product-list tab-pane active animation-scale-up"
+                id="all" role="tabpanel"
+                data-scale='$ui[img_y]x$ui[img_x]'>
+                @foreach (var item in Model.Products)
+                {
+                    <li class='p-r-10 m-b-10' data-type="list_4">
+                        <div class="card">
+                            <figure class="card-header cover">
+                                <a href="@(Url.Action("Detail","Product",new { id=item.Id}))" title="@item.Name">
+                                    <img class="cover-image lazy" data-original="@item.ImgUrl" alt="@item.Name">
+                                </a>
+                            </figure>
+                            <h4 class="card-title text-xs-left m-0 p-x-10 text-shadow-none font-szie-16 font-weight-300">
+                                <a href="@(Url.Action("Detail","Product",new { id=item.Id}))" title="@item.Name" class="block text-truncate" target=_self>
+                                    @item.Name								<span class="pull-xs-right"><i class="fa fa-eye m-r-5"></i>@item.ClickCount</span>
+                                </a>
+                                <p class='m-b-0 m-t-5 red-600'></p>
+                            </h4>
+                        </div>
+                    </li>
+                    
+                }
+
+
+            </ul>
+
+
+        </div>
+    </div>
+</div>
+
+<div class="news_list_met_16_3 met-index-body     bgcolor" m-id='28'>
+
+    <div class="container">
+        <div class="clearfix">
+            <div class="sec-title">
+                <h3>行业资讯</h3>
+                <span class="line"></span>
+                <a href="@Url.Action("index","article")" title="行业资讯">更多</a>
+            </div>
+            <div class="col-lg-7 left-news news-ul">
+
+                <ul class="p-l-0">
+                    @{ var i = 0;}
+                    @foreach (var item in Model.Articles.Take(10))
+                    {
+                        <li class="">
+                            <span class="badge badge-radius badge-default    @(i<2?"color":"")">
+                                @i
+                            </span>
+                            <a href="@(Url.Action("Detail","Article",new { id=item.Id}))" title="@item.Title">
+                                @item.Title
+                            </a>
+                            <span>[@item.CreatedDate.ToString("yyyy-MM-dd")]</span>
+                        </li>
+                        i++;
+                    }
+
+
+                </ul>
+            </div>
+            
+            <div class="col-lg-5 right-news news-ul">
+                @if (Model.Articles.Count > 10)
+                {
+                    <ul class="p-l-0">
+                    
+                        @foreach (var item in Model.Articles.Skip(10))
+                        {
+                            <li class="">
+                                <span class="badge badge-radius badge-default    @(i<2?"color":"")">
+                                    @i
+                                </span>
+                                <a href="@(Url.Action("Detail","Article",new { id=item.Id}))" title="@item.Title">
+                                    @item.Title
+                                </a>
+                                <span>[@item.CreatedDate.ToString("yyyy-MM-dd")]</span>
+                            </li>
+                        }
+
+
+                    </ul>
+                }
+
+            </div>
+
+
+        </div>
+
+    </div>
+</div>
+
+@section Scripts{
+    <script src="/js/index.js"></script>
+}

@@ -13,5 +13,7 @@ namespace DanaZhangCms.ViewModels
         public List<Article> Vedios { get; set; }
 
         public List<Banner> Banners { get; set; }
+
+        public List<Article> Logos { get; set; }
     }
 }
