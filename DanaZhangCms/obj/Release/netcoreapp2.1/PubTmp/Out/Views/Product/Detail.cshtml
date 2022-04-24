@@ -1,0 +1,79 @@
+﻿@model DanaZhangCms.Models.Product
+@{
+    ViewData["Title"] = Model.Name;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section css{
+    <link href="~/css/showproduct.css" rel="stylesheet" />
+}
+<!-- 标准模式 -->
+<main class="product_list_detail_met_16_1 page met-showproduct pagetype1" m-id='38'>
+    <div class="met-showproduct-head page-content block-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7">
+                    <div class='met-showproduct-list fngallery cover text-xs-center    ' id='met-imgs-slick' m-id='noset' m-type="displayimgs">
+                        <!--fngallery：启用lightGallery插件的类名-->
+                        <div class='slick-slide'>
+                            <a href='@Model.ImgUrl' data-size='400x300' data-med='@Model.ImgUrl' data-med-size='400x300' class='lg-item-box' data-src='@Model.ImgUrl' data-exthumbimage="@Model.ImgUrl" data-sub-html='@Model.Name'>
+                                <!--类名lg-item-box之前为initPhotoSwipeFromDOM插件所用参数；之后为lightGallery插件所用参数，lg-item-box：lightGallery插件对应的类名-->
+                                <img src="@Model.ImgUrl" class='img-fluid' alt='@Model.Name' />
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-lg-5">
+                    <div class="product-intro">
+                        <h1 class='m-t-0 font-size-24'>@Model.Name</h1>
+                        @*<p class='description'>阳历6月中下旬成熟，果个大，平均四两左右，果面端正，平整，无裂痕，落果现象，呈鲜红色，果肉无纤维化，核小肉厚，果实含糖量13.5%以上</p>*@
+                        <ul class="product-para paralist blocks-100 blocks-sm-2 blocks-md-3 blocks-lg-2 m-x-0">
+                            <li class="p-x-0 p-r-15 m-b-15">
+                                <span>类型：</span>
+                                @Model.Category.Name
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="met-showproduct-body page-content">
+        <div class="container">
+            <div class="row">
+
+                <!-- 内容选项卡 -->
+                <div class="container">
+
+                    <div class="row">
+                        <div class="panel panel-body m-b-0 product-detail" boxmh-mh>
+                            <ul class="nav nav-tabs nav-tabs-line m-b-20 met-showproduct-navtabs">
+                                <li class="nav-item">
+                                    <a class='nav-link active ' data-toggle="tab" href="#product-content0" data-get="product-details">详细信息</a>
+                                </li>
+                            </ul>
+                            <article class="tab-content">
+
+
+                                <section class="tab-pane met-editor clearfix animation-fade  active " id="product-content0">
+                                    @Html.Raw(Model.Content)
+                                </section>
+
+                            </article>
+                        </div>
+                    </div>
+                </div>
+                <!-- 内容选项卡 -->
+
+
+            </div>
+        </div>
+    </div>
+</main>
+<!-- 标准模式 -->
+
+@section Scripts{
+    <script src="/js/index.js"></script>
+
+}

@@ -1,0 +1,47 @@
+﻿@model List<DanaZhangCms.Models.Product>
+@{
+    ViewData["Title"] = "产品列表";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section css{
+    <link href="~/lib/layui/css/layui.css" rel="stylesheet" />
+}
+<div class="product_list_page_met_16_1 met-product animsition     type-1" m-id='11'>
+    <div class="container">
+        <ul class="blocks-xs-2	blocks-md-2 blocks-lg-4 blocks-xxl-4  met-pager-ajax imagesize cover met-product-list met-grid" id="met-grid" data-scale='400x400'>
+            @foreach (var item in Model)
+            {
+                <li class="shown">
+                    <div class="card card-shadow">
+                        <figure class="card-header cover">
+                            <a href="@(Url.Action("Detail","Product",new { id=item.Id}))" title="@item.Name" target=_self>
+                                <img class="cover-image" src="@item.ImgUrl" alt="@item.Name" height='100'>
+                            </a>
+                        </figure>
+                        <h4 class="card-title m-0 p-x-10 font-size-16 text-xs-center">
+                            <a href="@(Url.Action("Detail","Product",new { id=item.Id}))" title="@item.Name" class="block" target=_self>@item.Name</a>
+                            <p class='m-b-0 m-t-5 red-600'></p>
+                        </h4>
+                    </div>
+                </li>
+            }
+
+
+
+        </ul>
+        <div class='page' id="page">
+
+        </div>
+
+    </div>
+</div>
+
+@section Scripts{
+    <script src="/js/index.js"></script>
+    <script>
+        var total = '@(ViewBag.Total)';
+        var pageUrl = "@(Url.Action("Index", "Product"))";
+    </script>
+    <script src="~/lib/layui/layui.js"></script>
+    <script src="~/js/product.js"></script>
+}

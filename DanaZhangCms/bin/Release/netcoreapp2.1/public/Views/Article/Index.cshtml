@@ -1,0 +1,51 @@
+﻿@model List<DanaZhangCms.Models.Article>
+@{
+    ViewData["Title"] = "新闻中心";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section css{
+    <link href="~/lib/layui/css/layui.css" rel="stylesheet" />
+}
+<div class="container">
+    <div class="row">
+        <div class="col-md-9 met-news-body">
+            <div class="row">
+                <div class="met-news-list">
+                    <ul class="ulstyle met-pager-ajax imagesize" data-scale='400x400' m-id='9'>
+                        @foreach (var item in Model)
+                        {
+
+                            <li class='border-bottom1'>
+                                <h4>
+                                    <a href="@(Url.Action("Detail","Article",new { id=item.Id}))" title="@item.Title">@item.Title</a>
+                                </h4>
+                                <p class="des font-weight-300">@(DanaZhangCms.Core.Extensions.StringExtensions.StripHtml(item.Content,200))</p>
+                                <p class="info font-weight-300">
+                                    <span>@item.CreatedDate.ToString("yyyy-MM-dd")</span>
+                                    <span></span>
+                                    <span><i class="icon wb-eye m-r-5 font-weight-300" aria-hidden="true"></i>@(item.ClickCount)</span>
+                                </p>
+                            </li>
+                        }
+
+
+                    </ul>
+                    <div class='page' id="page">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script src="/js/index.js"></script>
+    <script>
+        var total = '@(ViewBag.Total)';
+        var pageUrl = "@(Url.Action("Index","Article"))";
+    </script>
+
+    <script src="~/lib/layui/layui.js"></script>
+    <script src="~/js/product.js"></script>
+}

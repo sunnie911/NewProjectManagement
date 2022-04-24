@@ -1,0 +1,9 @@
+C:\OldProject\NewProjectManagement\DanaZhangCms.Core\bin\Release\netcoreapp2.1\CompanyCms.Core.deps.json
+C:\OldProject\NewProjectManagement\DanaZhangCms.Core\bin\Release\netcoreapp2.1\CompanyCms.Core.dll
+C:\OldProject\NewProjectManagement\DanaZhangCms.Core\bin\Release\netcoreapp2.1\CompanyCms.Core.pdb
+C:\OldProject\NewProjectManagement\DanaZhangCms.Core\obj\Release\netcoreapp2.1\CompanyCms.Core.csprojAssemblyReference.cache
+C:\OldProject\NewProjectManagement\DanaZhangCms.Core\obj\Release\netcoreapp2.1\CompanyCms.Core.AssemblyInfoInputs.cache
+C:\OldProject\NewProjectManagement\DanaZhangCms.Core\obj\Release\netcoreapp2.1\CompanyCms.Core.AssemblyInfo.cs
+C:\OldProject\NewProjectManagement\DanaZhangCms.Core\obj\Release\netcoreapp2.1\CompanyCms.Core.csproj.CoreCompileInputs.cache
+C:\OldProject\NewProjectManagement\DanaZhangCms.Core\obj\Release\netcoreapp2.1\CompanyCms.Core.dll
+C:\OldProject\NewProjectManagement\DanaZhangCms.Core\obj\Release\netcoreapp2.1\CompanyCms.Core.pdb

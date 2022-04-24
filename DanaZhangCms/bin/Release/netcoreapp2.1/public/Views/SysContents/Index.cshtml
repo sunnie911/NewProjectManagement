@@ -1,0 +1,39 @@
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_SysLayout.cshtml";
+}
+<div class="layui-row">
+  <a href="@(Url.Action("Create"))">
+  <button class="layui-btn addCate"  ><i class="layui-icon"></i>增加</button>
+  </a>
+      
+    
+</div>
+<div>
+   <table id="demo" lay-filter="test"></table>
+</div>
+
+@section Scripts{
+<script>
+layui.use('table', function(){
+  var table = layui.table;
+  
+  //第一个实例
+  table.render({
+    elem: '#demo'
+    ,height: 312
+    ,url: '/SysContents/GetEntitiesByPaged' //数据接口
+    ,page: true //开启分页
+    ,cols: [[ //表头
+      {field: 'index', title: 'ID', width:80, fixed: 'left',type:'numbers'},
+      {field: 'title', title: '标题'},
+   
+      {field: 'createdDate', title: '添加时间', width:100},
+        { field: 'id', title: '操作', width: 100, templet: '<div><a href="/SysContents/Edit?id={{d.id}}" class="layui-table-link">编辑</a></div>'},
+    ]]
+  });
+  
+});
+</script>
+}

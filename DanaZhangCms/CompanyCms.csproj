@@ -3,12 +3,21 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <MvcRazorCompileOnPublish>false</MvcRazorCompileOnPublish>
     <Version>2.0.1</Version>
+    <UserSecretsId>cb3600eb-d523-4de7-85cc-57454e1582bf</UserSecretsId>
   </PropertyGroup>
   <ItemGroup>
     <Compile Remove="wwwroot\components\**" />
     <Content Remove="wwwroot\components\**" />
     <EmbeddedResource Remove="wwwroot\components\**" />
     <None Remove="wwwroot\components\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="App_Data\DanaZhangCms.db" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\DanaZhangCms.db">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <None Include="wwwroot\js\new\details\product_details.js" />
@@ -31,7 +40,6 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DanaZhangCms.Core\CompanyCms.Core.csproj" />
-    <ProjectReference Include="..\DanaZhangCms.Controllers\CompanyCms.Controllers.csproj" />
     <ProjectReference Include="..\DanaZhangCms.IRepositories\CompanyCms.IRepositories.csproj" />
     <ProjectReference Include="..\DanaZhangCms.Models\CompanyCms.Models.csproj" />
     <ProjectReference Include="..\DanaZhangCms.Repositories\CompanyCms.Repositories.csproj" />

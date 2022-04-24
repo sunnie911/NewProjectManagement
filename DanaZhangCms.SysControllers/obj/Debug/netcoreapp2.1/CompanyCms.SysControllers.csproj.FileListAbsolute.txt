@@ -1,0 +1,9 @@
+C:\OldProject\NewProjectManagement\DanaZhangCms.SysControllers\bin\Debug\netcoreapp2.1\CompanyCms.SysControllers.deps.json
+C:\OldProject\NewProjectManagement\DanaZhangCms.SysControllers\bin\Debug\netcoreapp2.1\CompanyCms.SysControllers.dll
+C:\OldProject\NewProjectManagement\DanaZhangCms.SysControllers\bin\Debug\netcoreapp2.1\CompanyCms.SysControllers.pdb
+C:\OldProject\NewProjectManagement\DanaZhangCms.SysControllers\obj\Debug\netcoreapp2.1\CompanyCms.SysControllers.csprojAssemblyReference.cache
+C:\OldProject\NewProjectManagement\DanaZhangCms.SysControllers\obj\Debug\netcoreapp2.1\CompanyCms.SysControllers.AssemblyInfoInputs.cache
+C:\OldProject\NewProjectManagement\DanaZhangCms.SysControllers\obj\Debug\netcoreapp2.1\CompanyCms.SysControllers.AssemblyInfo.cs
+C:\OldProject\NewProjectManagement\DanaZhangCms.SysControllers\obj\Debug\netcoreapp2.1\CompanyCms.SysControllers.csproj.CoreCompileInputs.cache
+C:\OldProject\NewProjectManagement\DanaZhangCms.SysControllers\obj\Debug\netcoreapp2.1\CompanyCms.SysControllers.dll
+C:\OldProject\NewProjectManagement\DanaZhangCms.SysControllers\obj\Debug\netcoreapp2.1\CompanyCms.SysControllers.pdb

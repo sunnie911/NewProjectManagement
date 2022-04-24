@@ -1,0 +1,94 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_SysLayout.cshtml";
+}
+<div class="layui-row">
+  
+        <button class="layui-btn addCate"  onclick="x_admin_show('新增','@(Url.Action("Create"))')"><i class="layui-icon"></i>增加</button>
+    
+</div>
+<div>
+    <table class="layui-hidden" id="treeTable" lay-filter="treeTable"></table>
+</div>
+
+@section Scripts{
+
+    <script>
+        var editObj = null, ptable = null, treeGrid = null, tableId = 'treeTable', layer = null;
+        layui.config({
+            base: '/lib/layui/extend/'
+        }).extend({
+            treeGrid: 'treeGrid'
+        }).use(['jquery', 'treeGrid', 'layer'], function () {
+            var $ = layui.jquery;
+            treeGrid = layui.treeGrid;//很重要
+            layer = layui.layer;
+            ptable = treeGrid.render({
+                id: tableId
+                , elem: '#' + tableId
+                , idField: 'id'
+                , url: '/SysProductCategory/GetEntitiesByPaged'
+                , cellMinWidth: 100
+                , treeId: 'id'//树形id字段名称
+                , treeUpId: 'parentId'//树形父id字段名称
+                , treeShowName: 'name'//以树形式显示的字段
+                , cols: [[
+                    { field: 'name', edit: 'text', width: 300, title: '分类名称' },
+                    { field: 'nameEn', title: '英文名称' },
+                    { field: 'pname', edit: 'text', width: 300, title: '父分类名称' },
+                    {
+                        width: 200, title: '操作', align: 'center'/*toolbar: '#barDemo'*/
+                        , templet: function (d) {
+                            var html = '';
+                            var addBtn = '<a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="add">修改</a>';
+                            var delBtn = '<a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>';
+                            return addBtn + delBtn;
+                        }
+                    }
+                  
+                  
+                ]]
+                , page: false
+            });
+
+            treeGrid.on('tool(' + tableId + ')', function (obj) {
+                var data = obj.data;
+                var id=obj.data.id;
+                if (obj.event === 'del') {//删除行
+                    layer.confirm('真的删除产品分类么', function (index) {
+
+                        obj.del(); //删除对应行（tr）的DOM结构
+                        layer.close(index);
+
+                        var url = " /SysProductCategory/Delete?id=" + data.id;
+                        //向服务端发送删除指令
+                        $.ajax({
+                            url: url,
+                            type: "post",
+                            success: function (rep) {
+                                if (rep.success == true) {
+                                    layer.msg(rep.msg);
+                                }
+                                else {
+                                    layer.alert(rep.msg, { icon: 5 });
+                                }
+
+                            },
+                            error: function () {
+                                layer.alert("网络错误，请稍候再试。", { icon: 5 });
+                            }
+                        });
+
+
+                    });
+                } else if (obj.event === "add") {//添加行
+                   // add(obj.data);
+                    x_admin_show('新增','@(Url.Action("Edit"))'+'?id='+id)
+                }
+            });
+        });
+
+    </script>
+}
+

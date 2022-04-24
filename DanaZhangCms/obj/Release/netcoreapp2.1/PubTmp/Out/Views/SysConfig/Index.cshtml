@@ -1,0 +1,253 @@
+﻿@model DanaZhangCms.Core.Models.SiteXml
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_SysLayout.cshtml";
+}
+
+<form class="layui-form">
+    @Html.AntiForgeryToken()
+    <div class="layui-form-item">
+
+        @Html.LabelFor(model => model.webname, new { @class = "layui-form-label" })
+        <div class="layui-input-inline">
+            @Html.TextBoxFor(model => model.webname, new { @class = "layui-input", @required = "", @lay_verify = "required", autocomplete = "off" })
+
+        </div>
+        <div class="layui-form-mid layui-word-aux">
+            <span class="x-red">*</span>
+
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+
+        @Html.LabelFor(model => model.weburl, new { @class = "layui-form-label" })
+        <div class="layui-input-inline">
+            @Html.TextBoxFor(model => model.weburl, new { @class = "layui-input", @required = "", @lay_verify = "required", autocomplete = "off" })
+
+        </div>
+        <div class="layui-form-mid layui-word-aux">
+            <span class="x-red">*</span>
+
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+
+        @Html.LabelFor(model => model.logo, new { @class = "layui-form-label" })
+        <div class="layui-input-inline">
+            <div class="uploadPreview">
+                @if (!string.IsNullOrEmpty(Model.logo))
+                {
+                    <img src="@Model.logo" />
+                }
+                else
+                {
+                    @:暂无图片
+                }
+            </div>
+            <div class="left">
+                <div class="uploadProgressBar"></div>
+                <div class="uploadBut">选择图片</div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        @Html.HiddenFor(x => x.logo)
+
+    
+        <div class="layui-form-mid layui-word-aux">
+            <span class="x-red">*</span>
+
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+
+        @Html.LabelFor(model => model.webcompany, new { @class = "layui-form-label" })
+        <div class="layui-input-inline">
+            @Html.TextBoxFor(model => model.webcompany, new { @class = "layui-input", @required = "", @lay_verify = "required", autocomplete = "off" })
+
+        </div>
+        <div class="layui-form-mid layui-word-aux">
+            <span class="x-red">*</span>
+
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+
+        @Html.LabelFor(model => model.webaddress, new { @class = "layui-form-label" })
+        <div class="layui-input-inline">
+            @Html.TextBoxFor(model => model.webaddress, new { @class = "layui-input", @required = "", @lay_verify = "required", autocomplete = "off" })
+
+        </div>
+        <div class="layui-form-mid layui-word-aux">
+            <span class="x-red">*</span>
+
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+
+        @Html.LabelFor(model => model.webtel, new { @class = "layui-form-label" })
+        <div class="layui-input-inline">
+            @Html.TextBoxFor(model => model.webtel, new { @class = "layui-input", @required = "", @lay_verify = "required", autocomplete = "off" })
+
+        </div>
+        <div class="layui-form-mid layui-word-aux">
+            <span class="x-red">*</span>
+
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+
+        @Html.LabelFor(model => model.webmail, new { @class = "layui-form-label" })
+        <div class="layui-input-inline">
+            @Html.TextBoxFor(model => model.webmail, new { @class = "layui-input", @required = "", @lay_verify = "required", autocomplete = "off" })
+
+        </div>
+        <div class="layui-form-mid layui-word-aux">
+            <span class="x-red">*</span>
+
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+
+        @Html.LabelFor(model => model.webcrod, new { @class = "layui-form-label" })
+        <div class="layui-input-inline">
+            @Html.TextBoxFor(model => model.webcrod, new { @class = "layui-input", @required = "", @lay_verify = "required", autocomplete = "off" })
+
+        </div>
+        <div class="layui-form-mid layui-word-aux">
+            <span class="x-red">*</span>
+
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+
+        @Html.LabelFor(model => model.SeoTitle, new { @class = "layui-form-label" })
+        <div class="layui-input-inline">
+            @Html.TextBoxFor(model => model.SeoTitle, new { @class = "layui-input", @required = "", @lay_verify = "required", autocomplete = "off" })
+
+        </div>
+        <div class="layui-form-mid layui-word-aux">
+            <span class="x-red">*</span>
+
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+
+        @Html.LabelFor(model => model.SeoKeyword, new { @class = "layui-form-label" })
+        <div class="layui-input-inline">
+            @Html.TextBoxFor(model => model.SeoKeyword, new { @class = "layui-input", @required = "", @lay_verify = "required", autocomplete = "off" })
+
+        </div>
+        <div class="layui-form-mid layui-word-aux">
+            <span class="x-red">*</span>
+
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+
+        @Html.LabelFor(model => model.SeoDescription, new { @class = "layui-form-label" })
+        <div class="layui-input-inline">
+            @Html.TextBoxFor(model => model.SeoDescription, new { @class = "layui-input", @required = "", @lay_verify = "required", autocomplete = "off" })
+
+        </div>
+        <div class="layui-form-mid layui-word-aux">
+            <span class="x-red">*</span>
+
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label for="L_repass" class="layui-form-label">
+        </label>
+        <button class="layui-btn" lay-filter="add" lay-submit="">
+            保存
+        </button>
+    </div>
+</form>
+
+
+@section scripts{
+    <link type="text/css" rel="stylesheet" href="/lib/webuploader/webuploader.css" />
+    <script type="text/javascript" src="/lib/webuploader/webuploader.js"></script>
+
+    <script>
+        $(function () {
+ 
+            var uploader = WebUploader.create({
+                pick: '.uploadBut',
+                auto: true,
+                swf: '/lib/webuploader/Uploader.swf',
+                server: '/tool/upload?operation=bimage',
+                fileVal: 'upload',
+                accept: {
+                    title: 'Images',
+                    mimeTypes: 'image/*'
+                },
+
+            });
+
+            uploader.on('uploadProgress', function (file, percentage) {
+                $(".uploadPreview").html("上传中...");
+            });
+
+            uploader.on('uploadSuccess', function (file, response) {
+                var data = eval("(" + response._raw + ")");;
+                if (!data.uploaded) {
+                    $(".uploadPreview").html(data.url);
+                }
+
+                else {
+                    $(".uploadPreview").html("<img src=\"" + data.url + "\"  />");
+                    $("#logo").val(data.url);
+                }
+            });
+
+            uploader.on('uploadError', function (file) {
+                $(".uploadPreview").html("上传失败");
+            });
+
+            layui.use('form', function () {
+                var form = layui.form;
+
+
+                form.on('submit(add)', function (data) {
+                    var url = $(".layui-form").attr("action");
+                     //debugger;
+                 
+                    $.ajax({
+                        url: url,
+                        data: $("form").serialize(),
+                        type:"post",
+                        success: function (rep) {
+                            if (rep.success == true) {
+                                layer.msg(rep.msg,function(){
+
+                                    window.location.href='@(Url.Action("Index"))';
+                                });
+                    }
+                    else {
+                                layer.alert(rep.msg, { icon: 5 });
+                    }
+
+                        },
+                        error: function () {
+                            layer.alert("网络错误，请稍候再试。", { icon: 5 });
+                        }
+                    });
+
+
+                    return false;
+                });
+            });
+        })
+    </script>
+}

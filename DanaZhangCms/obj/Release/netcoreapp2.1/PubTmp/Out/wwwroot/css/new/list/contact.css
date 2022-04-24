@@ -1,0 +1,33 @@
+*{margin: 0;padding:0;border:0;}
+ul,li{list-style: none;}
+a{text-decoration:none}
+img{display: block;}
+.common_containe{width: 1200px;margin: 0 auto;}
+
+.list_top{height: 52px;display: flex;flex-direction: row;align-items: center;border-bottom: 1px solid #E1E1E1;}
+.list_top i{ width: 0;height: 0;border-top: 5px solid transparent;border-left: 10px solid #007AFF;border-bottom: 5px solid transparent;}
+.list_top a{font-size: ;color: #000;margin-left:5px;font-size: 14px;}
+.list_top a:hover{color: #007AFF;}
+
+.contact_main{margin-top: 20px;display: flex;flex-direction: row;align-items: center;justify-content: space-between;}
+.contact_main .left{width: 47%;}
+.contact_main .left .address{display: flex;flex-direction: column;color: #333333;border-bottom: 1px solid #999;padding-bottom: 20px;}
+.contact_main .left h2{font-size: 20px;font-weight: normal;width:100%;}
+.contact_main .left .address div{display: flex;flex-direction: row;align-items: center;margin-top: 10px;}
+.contact_main .left .address div img{margin-right: 5px;}
+.contact_main .left .address div span{font-size: 14px;}
+.contact_main .left .province{margin-top: 20px;}
+.contact_main .left .province ul{margin-top: 10px;}
+.contact_main .left .province ul li{display: flex;flex-direction: row;justify-content: space-between;font-size: 14px;line-height: 30px;cursor: pointer;}
+.contact_main .left .province ul li:hover{background: #F5F5F5;}
+/* .contact_main .left .province .pro_img{width:100%;} */
+
+
+
+.contact_main .right{width:50%;}
+.contact_main .right li+li{margin-top: 15px;}
+.contact_main .right li img{width:100%;}
+
+
+
+

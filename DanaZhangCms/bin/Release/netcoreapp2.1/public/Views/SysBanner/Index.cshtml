@@ -1,0 +1,78 @@
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_SysLayout.cshtml";
+}
+<div class="layui-row">
+  <a href="@(Url.Action("Create"))">
+  <button class="layui-btn addCate"  ><i class="layui-icon"></i>增加</button>
+  </a>
+      
+    
+</div>
+<div>
+   <table id="demo" lay-filter="test"></table>
+</div>
+<script type="text/html" id="barDemo">
+    <div><a class="layui-table-link" lay-event="edit">编辑</a>&nbsp;&nbsp;<a lay-event="del" class="layui-table-link">删除</a></div>
+</script>
+@section Scripts{
+<script>
+layui.use('table', function(){
+  var table = layui.table;
+  
+  //第一个实例
+  table.render({
+    elem: '#demo'
+    ,height: 312
+      , url: '/SysBanner/GetEntitiesByPaged' //数据接口
+    ,page: true //开启分页
+    ,cols: [[ //表头
+      {field: 'index', title: 'ID', width:80, fixed: 'left',type:'numbers'},
+        { field: 'name', title: '标题' },
+        { field: 'summary', title: '描述' },
+        { field: 'createdDate', title: '添加时间', width: 100 },
+        { fixed: 'right', width: 150, align: 'center', toolbar: '#barDemo' },   
+       //{field: 'id', title: '操作', width:100,templet: '<div><a href="/SysBanner/Edit?id={{d.id}}" class="layui-table-link">编辑</a></div>'},
+    ]]
+  });
+    //监听头工具栏事件
+    table.on('tool(test)', function (obj) {
+        var data = obj.data//获取选中的数据
+        console.log(data.id)
+        switch (obj.event) {
+            case 'edit':
+                window.location.href = '/SysBanner/Edit?id=' + data.id;
+                break;
+            case 'del':
+                layer.confirm('真的删除幻灯片么', function (index) {
+                    obj.del(); //删除对应行（tr）的DOM结构
+                    layer.close(index);
+                    var url = " /SysBanner/Delete?id=" + data.id;
+                    //向服务端发送删除指令
+                    $.ajax({
+                        url: url,
+                        type: "post",
+                        success: function (rep) {
+                            if (rep.success == true) {
+                                layer.msg(rep.msg);
+                            }
+                            else {
+                                layer.alert(rep.msg, { icon: 5 });
+                            }
+
+                        },
+                        error: function () {
+                            layer.alert("网络错误，请稍候再试。", { icon: 5 });
+                        }
+                    });
+
+
+                });
+                break;
+        };
+    }); 
+  
+});
+</script>
+}

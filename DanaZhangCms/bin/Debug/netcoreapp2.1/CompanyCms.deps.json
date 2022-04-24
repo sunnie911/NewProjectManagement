@@ -24,7 +24,6 @@
     ".NETCoreApp,Version=v2.1": {
       "CompanyCms/2.0.1": {
         "dependencies": {
-          "CompanyCms.Controllers": "2.0.1",
           "CompanyCms.Core": "2.0.1",
           "CompanyCms.IRepositories": "2.0.1",
           "CompanyCms.Models": "2.0.1",
@@ -1453,22 +1452,6 @@
         },
         "compile": {
           "lib/netstandard2.0/Z.EntityFramework.Plus.EFCore.dll": {}
-        }
-      },
-      "CompanyCms.Controllers/2.0.1": {
-        "dependencies": {
-          "CompanyCms.IRepositories": "2.0.1",
-          "CompanyCms.ViewModels": "2.0.1",
-          "Microsoft.AspNetCore.Authentication": "2.1.2",
-          "Microsoft.AspNetCore.Authentication.Cookies": "2.1.2",
-          "Microsoft.AspNetCore.Mvc.Abstractions": "2.1.2",
-          "Microsoft.AspNetCore.Mvc.ViewFeatures": "2.1.2"
-        },
-        "runtime": {
-          "CompanyCms.Controllers.dll": {}
-        },
-        "compile": {
-          "CompanyCms.Controllers.dll": {}
         }
       },
       "CompanyCms.Core/2.0.1": {
@@ -5712,11 +5695,6 @@
       "sha512": "sha512-9WF4ODLgNEL/DvQ7jHaLXWeyRock+Ebab/nhmucx/T2jOpdrgv//2mSuxdzCV+iDPZ+Hu8Z3mvBSsGq4CFZnkA==",
       "path": "z.entityframework.plus.efcore/1.8.10",
       "hashPath": "z.entityframework.plus.efcore.1.8.10.nupkg.sha512"
-    },
-    "CompanyCms.Controllers/2.0.1": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
     },
     "CompanyCms.Core/2.0.1": {
       "type": "project",

@@ -234,7 +234,7 @@ namespace DanaZhangCms
                         {
                             menuRepository.Add(new Models.SysMenu()
                             {
-                                MenuName = type.GetCustomAttribute<Controllers.Filters.ControllerDescriptionAttribute>()?.Name ?? parentIdentity,
+                                MenuName = type.GetCustomAttribute<ControllerDescriptionAttribute>()?.Name ?? parentIdentity,
                                 Activable = true,
                                 Visiable = true,
                                 Identity = parentIdentity,
@@ -252,7 +252,7 @@ namespace DanaZhangCms
                                 {
                                     menuRepository.Add(new Models.SysMenu()
                                     {
-                                        MenuName = method.GetCustomAttribute<Controllers.Filters.ActionDescriptionAttribute>()?.Name ?? method.Name,
+                                        MenuName = method.GetCustomAttribute<ActionDescriptionAttribute>()?.Name ?? method.Name,
                                         Activable = true,
                                         Visiable = method.GetCustomAttribute<Core.Attributes.AjaxRequestOnlyAttribute>() == null,
                                         Identity = identity,

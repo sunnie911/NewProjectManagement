@@ -1,0 +1,58 @@
+﻿@model List<DanaZhangCms.Models.Product>
+@{
+    ViewData["Title"] = "产品列表";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section css{
+    @* <link href="~/lib/layui/css/layui.css" rel="stylesheet" />*@
+    <link href="~/css/new/list/productList.css" rel="stylesheet" />
+}
+<div class="whole_list" style="padding-top: 80px;">
+    <div class="common_containe">
+        <div class="list_top">
+            <i></i>
+            <a href="/">首页 > </a>
+            <a href="/Product">产品列表 </a>
+        </div>
+
+        <div class="list_main common_containe">
+            <div class="xian xian1"></div>
+            <div class="xian xian2"></div>
+            <ul id="pageMain">
+                @foreach (var pro in Model)
+                {
+                    <li style="display:list-item;">
+                        <div class="list_current">
+                            <div class="">
+                                <span>
+                                    <a href="#">
+                                        <div class="img_box">
+                                            <img src="@pro.ImgUrl" title="@pro.Name"> <img v-show="@pro.IsHot" class="hot" src="../images/sale.png">
+                                        </div>
+                                        <p>@pro.Name</p>
+                                    </a>
+                                </span>
+                            </div>
+
+                        </div>
+                    </li>
+                }
+
+            </ul>
+            <div id="pageBox">
+                <span id="prev">上一页</span>
+                <ul id="pageNav"></ul>
+                <span id="next">下一页</span>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts{
+    <script src="/js/index.js"></script>
+    <script>
+        var total = '@(ViewBag.Total)';
+        var pageUrl = "@(Url.Action("Index", "Product"))";
+    </script>
+    <script src="~/js/new/productList.js"></script>
+    <script src="~/js/product.js"></script>
+}

@@ -6,6 +6,6 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <_PublishTargetUrl>D:\GitHub\DanaZhangCms\src\DanaZhangCms\bin\Debug\netcoreapp2.1\publish\</_PublishTargetUrl>
+    <_PublishTargetUrl>C:\迅雷下载\new\public</_PublishTargetUrl>
   </PropertyGroup>
 </Project>

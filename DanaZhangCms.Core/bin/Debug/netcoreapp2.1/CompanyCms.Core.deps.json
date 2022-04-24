@@ -13,7 +13,7 @@
           "Autofac.Extensions.DependencyInjection": "4.3.0",
           "CSRedisCore": "2.6.6",
           "Caching.CSRedis": "2.6.6",
-          "DotNetCore.NPOI": "1.2.1",
+          "DotNetCore.NPOI": "1.2.0",
           "EntityFrameworkCore.Triggers": "1.1.1",
           "Jil": "2.16.0",
           "Microsoft.AspNetCore.Mvc": "2.1.2",
@@ -172,51 +172,51 @@
           }
         }
       },
-      "DotNetCore.NPOI/1.2.1": {
+      "DotNetCore.NPOI/1.2.0": {
         "dependencies": {
-          "DotNetCore.NPOI.Core": "1.2.1",
-          "DotNetCore.NPOI.OpenXml4Net": "1.2.1",
-          "DotNetCore.NPOI.OpenXmlFormats": "1.2.1"
+          "DotNetCore.NPOI.Core": "1.2.0",
+          "DotNetCore.NPOI.OpenXml4Net": "1.2.0",
+          "DotNetCore.NPOI.OpenXmlFormats": "1.2.0"
         },
         "runtime": {
           "lib/netstandard2.0/NPOI.OOXML.dll": {
-            "assemblyVersion": "1.2.1.0",
-            "fileVersion": "1.2.1.0"
+            "assemblyVersion": "1.2.0.0",
+            "fileVersion": "1.2.0.0"
           }
         }
       },
-      "DotNetCore.NPOI.Core/1.2.1": {
+      "DotNetCore.NPOI.Core/1.2.0": {
         "dependencies": {
-          "SharpZipLib": "1.0.0",
+          "SharpZipLib": "1.0.0-rc1",
           "System.Drawing.Common": "4.5.0",
           "System.Text.Encoding.CodePages": "4.5.0"
         },
         "runtime": {
           "lib/netstandard2.0/NPOI.dll": {
-            "assemblyVersion": "1.2.1.0",
-            "fileVersion": "1.2.1.0"
+            "assemblyVersion": "1.2.0.0",
+            "fileVersion": "1.2.0.0"
           }
         }
       },
-      "DotNetCore.NPOI.OpenXml4Net/1.2.1": {
+      "DotNetCore.NPOI.OpenXml4Net/1.2.0": {
         "dependencies": {
-          "DotNetCore.NPOI.Core": "1.2.1"
+          "DotNetCore.NPOI.Core": "1.2.0"
         },
         "runtime": {
           "lib/netstandard2.0/NPOI.OpenXml4Net.dll": {
-            "assemblyVersion": "1.2.1.0",
-            "fileVersion": "1.2.1.0"
+            "assemblyVersion": "1.2.0.0",
+            "fileVersion": "1.2.0.0"
           }
         }
       },
-      "DotNetCore.NPOI.OpenXmlFormats/1.2.1": {
+      "DotNetCore.NPOI.OpenXmlFormats/1.2.0": {
         "dependencies": {
-          "DotNetCore.NPOI.OpenXml4Net": "1.2.1"
+          "DotNetCore.NPOI.OpenXml4Net": "1.2.0"
         },
         "runtime": {
           "lib/netstandard2.0/NPOI.OpenXmlFormats.dll": {
-            "assemblyVersion": "1.2.1.0",
-            "fileVersion": "1.2.1.0"
+            "assemblyVersion": "1.2.0.0",
+            "fileVersion": "1.2.0.0"
           }
         }
       },
@@ -1667,11 +1667,11 @@
           }
         }
       },
-      "SharpZipLib/1.0.0": {
+      "SharpZipLib/1.0.0-rc1": {
         "runtime": {
           "lib/netstandard2.0/ICSharpCode.SharpZipLib.dll": {
-            "assemblyVersion": "1.0.0.999",
-            "fileVersion": "1.0.0.999"
+            "assemblyVersion": "1.0.0.3",
+            "fileVersion": "1.0.0.3"
           }
         }
       },
@@ -2987,33 +2987,33 @@
       "path": "csrediscore/2.6.6",
       "hashPath": "csrediscore.2.6.6.nupkg.sha512"
     },
-    "DotNetCore.NPOI/1.2.1": {
+    "DotNetCore.NPOI/1.2.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-2AMq9Dd3rD4pZlU3sT4EveRLzXFyw90OO5ShUh+IqBisrSssN4l0tYIrD6XEKL/J5gdlIxB/JsjKk7ieUCIW6g==",
-      "path": "dotnetcore.npoi/1.2.1",
-      "hashPath": "dotnetcore.npoi.1.2.1.nupkg.sha512"
+      "sha512": "sha512-I84WUzaFpXX50fFrmKfaBtE9DLQC1KdpaN3nAaqTN6xTf+HLIThBsY8k+wSvvcpBQheOHCvNyW3Gr8aJ0Zue2g==",
+      "path": "dotnetcore.npoi/1.2.0",
+      "hashPath": "dotnetcore.npoi.1.2.0.nupkg.sha512"
     },
-    "DotNetCore.NPOI.Core/1.2.1": {
+    "DotNetCore.NPOI.Core/1.2.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-/6t1vRqmxmvjlNolwyhfYbhQARZKiwmzx3bBoyhr3dZ/k3cod3hFxCsOwFczq4yGmFONiNFDOZBzcM+TNXL55w==",
-      "path": "dotnetcore.npoi.core/1.2.1",
-      "hashPath": "dotnetcore.npoi.core.1.2.1.nupkg.sha512"
+      "sha512": "sha512-91/JZ50lWIxlEvI0CO72rF2CLhBRcjKrk/dOYNLoLyiV/pVsO1OUhM7aS7ZGwjagooRAB2l7XFVhB6AiEGjnvQ==",
+      "path": "dotnetcore.npoi.core/1.2.0",
+      "hashPath": "dotnetcore.npoi.core.1.2.0.nupkg.sha512"
     },
-    "DotNetCore.NPOI.OpenXml4Net/1.2.1": {
+    "DotNetCore.NPOI.OpenXml4Net/1.2.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-KbqwRjatdEKmhzMFeRby5iHxh4DRuLu3VYqzah3RTCNfleczQjlsZwMM9DWQO1lUtdU1Q2keJm1IYAK92zfLqg==",
-      "path": "dotnetcore.npoi.openxml4net/1.2.1",
-      "hashPath": "dotnetcore.npoi.openxml4net.1.2.1.nupkg.sha512"
+      "sha512": "sha512-LwuzesHHxUdDq0thoQumXLyPZ8hEgTG/zAaxk8HUxRob1CYzyhINZ/7jXH3JlySBRBqqbHOBpgewKfIw/FHfGg==",
+      "path": "dotnetcore.npoi.openxml4net/1.2.0",
+      "hashPath": "dotnetcore.npoi.openxml4net.1.2.0.nupkg.sha512"
     },
-    "DotNetCore.NPOI.OpenXmlFormats/1.2.1": {
+    "DotNetCore.NPOI.OpenXmlFormats/1.2.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-uHynYPi/iDeQbHapCOrmTGBJRX4Il8F0qeCx3Xbqo/bo0FazY2dKGhD6CWb07ZCGe1DDgu4bmMRv/1l4/21+wQ==",
-      "path": "dotnetcore.npoi.openxmlformats/1.2.1",
-      "hashPath": "dotnetcore.npoi.openxmlformats.1.2.1.nupkg.sha512"
+      "sha512": "sha512-qf0qbqxn8aKdeRSQOU0ojJyyu5c0XZqLSW7fyaAW7wJ/Rphg/ykSS/MaGIJNrd6EQSoPYy1+3wZUmLlEFsTh1g==",
+      "path": "dotnetcore.npoi.openxmlformats/1.2.0",
+      "hashPath": "dotnetcore.npoi.openxmlformats.1.2.0.nupkg.sha512"
     },
     "EntityFrameworkCore.Triggers/1.1.1": {
       "type": "package",
@@ -3869,12 +3869,12 @@
       "path": "runtime.win-x86.runtime.native.system.data.sqlclient.sni/4.4.0",
       "hashPath": "runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512"
     },
-    "SharpZipLib/1.0.0": {
+    "SharpZipLib/1.0.0-rc1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-YuYztmY3jEb21F6e5LIPHJjApdtzdCPQ284UzsCKNfkgW71bukFHJES6RbKi+wm053XzFg0LX5/2vj/9gl8F/g==",
-      "path": "sharpziplib/1.0.0",
-      "hashPath": "sharpziplib.1.0.0.nupkg.sha512"
+      "sha512": "sha512-1ggoes7vEnHQvwINcuY0VDpSx4BnJKOjoslFVQjP0nSfio2RsOOfVT1loZ1iLC8w7bFTnjVazSBVM2JyOWsflQ==",
+      "path": "sharpziplib/1.0.0-rc1",
+      "hashPath": "sharpziplib.1.0.0-rc1.nupkg.sha512"
     },
     "Sigil/4.7.0": {
       "type": "package",
