@@ -15,8 +15,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CompanyCms", "DanaZhangCms\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CompanyCms.Core", "DanaZhangCms.Core\CompanyCms.Core.csproj", "{0F9D6C9D-EDCB-4960-9AFA-4F88E37E6739}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CompanyCms.SysControllers", "DanaZhangCms.SysControllers\CompanyCms.SysControllers.csproj", "{67494F4C-D8A7-4E0C-9F22-D9249611BDB1}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,10 +45,6 @@ Global
 		{0F9D6C9D-EDCB-4960-9AFA-4F88E37E6739}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0F9D6C9D-EDCB-4960-9AFA-4F88E37E6739}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0F9D6C9D-EDCB-4960-9AFA-4F88E37E6739}.Release|Any CPU.Build.0 = Release|Any CPU
-		{67494F4C-D8A7-4E0C-9F22-D9249611BDB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{67494F4C-D8A7-4E0C-9F22-D9249611BDB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{67494F4C-D8A7-4E0C-9F22-D9249611BDB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{67494F4C-D8A7-4E0C-9F22-D9249611BDB1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
