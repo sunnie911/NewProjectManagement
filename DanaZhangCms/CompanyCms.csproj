@@ -48,6 +48,9 @@
     <Content Update="log4net.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Update="Views\Vedio\Detail.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
     <Content Update="Views\Content\Index.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>

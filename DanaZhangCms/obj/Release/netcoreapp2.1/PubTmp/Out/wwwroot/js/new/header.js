@@ -59,12 +59,12 @@
         }, 200);
 
         $(this).addClass('navStyle').stop().siblings('li').removeClass('navStyle');
-        $(this).find(".list_current,.lianxi").slideDown(100)
+        $(this).find(".navlist_current,.lianxi").slideDown(100)
         $(this).find(".list_box").show();
-        $(this).stop().siblings('li').find(".list_current,.lianxi").slideUp(100)
+        $(this).stop().siblings('li').find(".navlist_current,.lianxi").slideUp(100)
         $(this).stop().siblings('li').find(".list_box").hide();
     })
-    $('.nav .list .list_current,.lianxi').mouseleave(function () {
+    $('.nav .list .navlist_current,.lianxi').mouseleave(function () {
         $(this).slideUp(100);
         $(".list_box").hide();
 

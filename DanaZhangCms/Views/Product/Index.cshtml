@@ -4,7 +4,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @section css{
-    @* <link href="~/lib/layui/css/layui.css" rel="stylesheet" />*@
+     @*<link href="~/lib/layui/css/layui.css" rel="stylesheet" />*@
     <link href="~/css/new/list/productList.css" rel="stylesheet" />
 }
 <div class="whole_list" style="padding-top: 80px;">
@@ -44,15 +44,18 @@
                 <ul id="pageNav"></ul>
                 <span id="next">下一页</span>
             </div>
+
+
         </div>
+       
     </div>
 </div>
 @section Scripts{
-    <script src="/js/index.js"></script>
+
     <script>
         var total = '@(ViewBag.Total)';
         var pageUrl = "@(Url.Action("Index", "Product"))";
     </script>
-    <script src="~/js/new/productList.js"></script>
-    <script src="~/js/product.js"></script>
+    <script src="~/js/new/list/productList.js"></script>
+    
 }
