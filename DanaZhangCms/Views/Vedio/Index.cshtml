@@ -26,10 +26,11 @@
                             </div>
                             <div class="v_shipin"></div>
                             <div class="v_main">
-                                <video width="800" height="400" controls>
+                                @*<video preload="metadata" conrtols="true" src="@item.VedioUrl"
+        style="width: 100%; height: 100%; background-color: rgb(0, 0, 0);"></video>*@
+                                <video width="800" height="400">
                                     <source src="@item.VedioUrl" type="video/mp4">
                                     </source>
-
                                 </video>
                             </div>
                         </li>
@@ -37,7 +38,7 @@
                 }
             </ul>
         </div>
-        <div id="pageBox">
+        <div id="nav_pageBox">
             <span id="prev">上一页</span>
             <ul id="pageNav"></ul>
             <span id="next">下一页</span>

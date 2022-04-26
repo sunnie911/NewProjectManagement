@@ -2,24 +2,7 @@ $(function(){
 	var app = new Vue({
 	  el: '.video_whole',
 	  data: {
-		  videoArry:[
-			  {img:'../images/video/img.jpg',mp:'../images/details/movie.mp4'},
-			  {img:'../images/video/img2.jpg',mp:'../images/details/movie2.mp4'},
-			  {img:'../images/video/img.jpg',mp:'../images/details/movie2.mp4'},
-			  {img:'../images/video/img2.jpg',mp:'../images/details/movie.mp4'},
-			  {img:'../images/video/img2.jpg',mp:'../images/details/movie.mp4'},
-			  {img:'../images/video/img.jpg',mp:'../images/details/movie2.mp4'},
-			  {img:'../images/video/img.jpg',mp:'../images/details/movie2.mp4'},
-			  {img:'../images/video/img2.jpg',mp:'../images/details/movie.mp4'},
-			  {img:'../images/video/img.jpg',mp:'../images/details/movie.mp4'},
-			  {img:'../images/video/img.jpg',mp:'../images/details/movie2.mp4'},
-			  {img:'../images/video/img2.jpg',mp:'../images/details/movie2.mp4'},
-			  {img:'../images/video/img.jpg',mp:'../images/details/movie.mp4'},
-			  {img:'../images/video/img.jpg',mp:'../images/details/movie.mp4'},
-			  {img:'../images/video/img2.jpg',mp:'../images/details/movie2.mp4'},
-			  {img:'../images/video/img2.jpg',mp:'../images/details/movie2.mp4'},
-			  {img:'../images/video/img.jpg',mp:'../images/details/movie.mp4'}
-		  ],
+	 
 	  },
 	})
 	

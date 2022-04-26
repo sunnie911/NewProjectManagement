@@ -38,7 +38,7 @@
                         {
                             var proList = productList.Where(p => p.CategoryId == cate.Id).OrderBy(o=>o.IsHot).ToList();
                             <li>
-                                <a href="#">
+                                <a href="/Product?categoryId=@cate.Id">
                                     <span>@cate.Name</span>
                                 </a>
                                 <div class="list_box">
@@ -49,7 +49,7 @@
                                                 <span>
                                                     <a href="#">
                                                         <div class="img_box">
-                                                            <img src="@pro.ImgUrl" title="@pro.Name"> <img v-show="@pro.IsHot" class="hot" src="/images/sale.png">
+                                                            <img src="@pro.ImgUrl" title="@pro.Name"> <img v-show="@pro.IsHot" class="hot" src="/images/sale.png" />
                                                         </div>
                                                         <p>@pro.Name</p>
                                                     </a>
@@ -65,106 +65,7 @@
 
                         }
                     }
-                    @*<li>
-                        <a href="#">
-                            <span>混凝土(砂浆)3D打印系统</span>
-                        </a>
-                        <div class="list_box">
-                            <div class="list_current">
-                                <div class="common_containe">
-                                    <span v-for="item in navObject.yi">
-                                        <a href="#">
-                                            <div class="img_box">
-                                                <img :src="item.img"> <img v-show="item.flag" class="hot" src="/images/sale.png">
-                                            </div>
-                                            <p>{{item.text}}</p>
-                                        </a>
-                                    </span>
-                                </div>
-
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span>混凝土耐久性测试仪器</span>
-                        </a>
-                        <div class="list_box">
-                            <div class="list_current">
-                                <div class="common_containe">
-                                    <span v-for="item in navObject.er">
-                                        <a href="#">
-                                            <div class="img_box">
-                                                <img :src="item.img"> <img v-show="item.flag" class="hot" src="/images/sale.png">
-                                            </div>
-                                            <p>{{item.text}}</p>
-                                        </a>
-                                    </span>
-                                </div>
-
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span>特殊性能高端测试仪器</span>
-                        </a>
-                        <div class="list_box">
-                            <div class="list_current">
-                                <div class="common_containe">
-                                    <span v-for="item in navObject.san">
-                                        <a href="#">
-                                            <div class="img_box">
-                                                <img :src="item.img"> <img v-show="item.flag" class="hot" src="/images/sale.png">
-                                            </div>
-                                            <p>{{item.text}}</p>
-                                        </a>
-                                    </span>
-                                </div>
-
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span>建材常规实验设备</span>
-                        </a>
-                        <div class="list_box">
-                            <div class="list_current">
-                                <div class="common_containe">
-                                    <span v-for="item in navObject.si">
-                                        <a href="#">
-                                            <div class="img_box">
-                                                <img :src="item.img"> <img v-show="item.flag" class="hot" src="/images/sale.png">
-                                            </div>
-                                            <p>{{item.text}}</p>
-                                        </a>
-                                    </span>
-                                </div>
-
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span>合作研发</span>
-                        </a>
-                        <div class="list_box">
-                            <div class="list_current">
-                                <div class="common_containe">
-                                    <span v-for="item in navObject.wu">
-                                        <a href="#">
-                                            <div class="img_box">
-                                                <img :src="item.img"> <img v-show="item.flag" class="hot" src="/images/sale.png">
-                                            </div>
-                                            <p>{{item.text}}</p>
-                                        </a>
-                                    </span>
-                                </div>
-
-                            </div>
-                        </div>
-                    </li>*@
+                   
                     <li>
                         <a href="#">
                             <span>联系我们</span>

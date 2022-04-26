@@ -260,6 +260,7 @@ img {
 
     .foot_box,
     .foot_box .foot_left {
+        margin-left:65px;
         display: flex;
         flex-direction: row;
         align-items: center;

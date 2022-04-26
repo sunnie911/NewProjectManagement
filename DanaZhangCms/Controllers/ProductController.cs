@@ -4,6 +4,7 @@ using DanaZhangCms.IRepositories;
 using DanaZhangCms.Models;
 using DanaZhangCms.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -25,21 +26,33 @@ namespace DanaZhangCms
         }
 
         ///首页
-        public IActionResult Index(int page, int pageSize = 10)
+        public IActionResult Index(int page,  int categoryId, int pageSize = 10)
         {
             if (page == 0)
             {
                 page = 1;
             }
 
-            var pros = _proRepository.OrderBy(o=>o.IsHot).Skip((page - 1) * pageSize).Take(pageSize).Select(o => new Product() { Name = o.Name, Id = o.Id, ImgUrl = o.ImgUrl ,IsHot=o.IsHot}).ToList();
+            List<Product> productList = new List<Product>();
             var total = _proRepository.Count();
+            if (categoryId > 0)
+            {
+                productList = _proRepository.Where(p=>p.CategoryId == categoryId).OrderBy(o => o.IsHot).Skip((page - 1) * pageSize).ToList();
+                total = _proRepository.Where(p=>p.CategoryId==categoryId).Count();
+            }
+            else
+            {
+                productList = _proRepository.OrderBy(o => o.IsHot).Skip((page - 1) * pageSize).Take(pageSize).Select(o => new Product() { Name = o.Name, Id = o.Id, ImgUrl = o.ImgUrl, IsHot = o.IsHot }).ToList();
+
+            }  
+            
+            
             ViewBag.Total = total;
 
             var position = _proRepository.ToList();
             ViewBag.ProductList = position;
             ViewBag.CategoryList = _cateRepository.ToList();
-            return View(pros);
+            return View(productList);
         }
 
         /// <summary>

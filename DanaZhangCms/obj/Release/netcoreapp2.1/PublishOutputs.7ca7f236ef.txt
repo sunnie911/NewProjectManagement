@@ -33,6 +33,8 @@ C:\OldProject\NewProjectManagement\DanaZhangCms\obj\Release\netcoreapp2.1\PubTmp
 C:\OldProject\NewProjectManagement\DanaZhangCms\obj\Release\netcoreapp2.1\PubTmp\Out\Views\SysProduct\Index.cshtml
 C:\OldProject\NewProjectManagement\DanaZhangCms\obj\Release\netcoreapp2.1\PubTmp\Out\Views\SysUser\EditPwd.cshtml
 C:\OldProject\NewProjectManagement\DanaZhangCms\obj\Release\netcoreapp2.1\PubTmp\Out\Views\SysUser\Index.cshtml
+C:\OldProject\NewProjectManagement\DanaZhangCms\obj\Release\netcoreapp2.1\PubTmp\Out\Views\Vedio\Detail.cshtml
+C:\OldProject\NewProjectManagement\DanaZhangCms\obj\Release\netcoreapp2.1\PubTmp\Out\Views\Vedio\Index.cshtml
 C:\OldProject\NewProjectManagement\DanaZhangCms\obj\Release\netcoreapp2.1\PubTmp\Out\Views\_ViewImports.cshtml
 C:\OldProject\NewProjectManagement\DanaZhangCms\obj\Release\netcoreapp2.1\PubTmp\Out\Views\_ViewStart.cshtml
 C:\OldProject\NewProjectManagement\DanaZhangCms\obj\Release\netcoreapp2.1\PubTmp\Out\wwwroot\css\basic.css

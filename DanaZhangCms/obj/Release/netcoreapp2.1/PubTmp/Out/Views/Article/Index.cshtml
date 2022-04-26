@@ -4,48 +4,60 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @section css{
-    <link href="~/lib/layui/css/layui.css" rel="stylesheet" />
+
+    <link href="~/css/new/list/learning.css" rel="stylesheet" />
 }
-<div class="container">
-    <div class="row">
-        <div class="col-md-9 met-news-body">
-            <div class="row">
-                <div class="met-news-list">
-                    <ul class="ulstyle met-pager-ajax imagesize" data-scale='400x400' m-id='9'>
-                        @foreach (var item in Model)
-                        {
+<div class="whole_list" style="padding-top: 80px;">
+    <div class="common_containe">
+        <div class="list_top">
+            <i></i>
+            <a href="#">首页 > </a>
+            <a href="#">学术交流 </a>
+        </div>
 
-                            <li class='border-bottom1'>
-                                <h4>
-                                    <a href="@(Url.Action("Detail","Article",new { id=item.Id}))" title="@item.Title">@item.Title</a>
-                                </h4>
-                                <p class="des font-weight-300">@(DanaZhangCms.Core.Extensions.StringExtensions.StripHtml(item.Content,200))</p>
-                                <p class="info font-weight-300">
-                                    <span>@item.CreatedDate.ToString("yyyy-MM-dd")</span>
-                                    <span></span>
-                                    <span><i class="icon wb-eye m-r-5 font-weight-300" aria-hidden="true"></i>@(item.ClickCount)</span>
-                                </p>
-                            </li>
-                        }
+        <div class="list_main common_containe">
+            <ul id="pageMain">
+                @if (Model != null && Model.Any())
+                {
+                    foreach (var item in Model)
+                    {
+                        <li>
+                            <div class="list_current">
+                                <div class="common_containe">
+                                    <span>
+                                        <a href="javascript:;">
+                                            <div class="img_box">
+                                                <img src="@item.ImgUrl">
+                                            </div>
+                                            <p>@item.Title</p>
+                                            <span>@item.CreatedDate</span>
+                                        </a>
+                                    </span>
+                                </div>
 
+                            </div>
+                        </li>
 
-                    </ul>
-                    <div class='page' id="page">
+                      
+                    }
+                }
 
-                    </div>
-                </div>
+            </ul>
+            <div id="pageBox">
+                <span id="prev">上一页</span>
+                <ul id="pageNav"></ul>
+                <span id="next">下一页</span>
             </div>
         </div>
     </div>
 </div>
 
 @section Scripts{
-    <script src="/js/index.js"></script>
+
     <script>
         var total = '@(ViewBag.Total)';
-        var pageUrl = "@(Url.Action("Index","Article"))";
+        var pageUrl = "@(Url.Action("Index", "Article"))";
     </script>
+    <script src="~/js/new/list/learning.js"></script>
 
-    <script src="~/lib/layui/layui.js"></script>
-    <script src="~/js/product.js"></script>
 }
