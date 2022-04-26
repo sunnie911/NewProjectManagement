@@ -1,0 +1,44 @@
+﻿@model DanaZhangCms.Models.Article
+@{
+    ViewData["Title"] = Model.Title;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section css{
+    
+    <link href="~/css/showArtile.css" rel="stylesheet" />
+}
+<!-- 标准模式 -->
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-9 met-shownews-body" m-id='18'>
+            <div class="row">
+                <section class="details-title border-bottom1">
+                    <h1 class='m-t-10 m-b-5'>@Model.Title</h1>
+                    <div class="info font-weight-300">
+                        <span><i class="icon wb-time m-r-5" aria-hidden="true"></i>@Model.CreatedDate.ToString("yyyy-MM-dd")</span>
+                        <span><i class="icon wb-user m-r-5" aria-hidden="true"></i></span>
+                        <span><i class="icon wb-eye m-r-5" aria-hidden="true"></i>@Model.ClickCount</span>
+                    </div>
+                </section>
+                <section class="met-editor clearfix">
+                    @Html.Raw(Model.Content)
+                </section>
+                <div class="tag">
+                    <span></span>
+                    <a href="#" title=""></a>
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<!-- 标准模式 -->
+
+@section Scripts{
+    <script src="/js/index.js"></script>
+
+}
