@@ -43,7 +43,7 @@
             },
         },
     })
-	$('.nav .list ul').prepend("<li><a href=\"#\">首页</a></li>")
+	$('.nav .list ul').prepend("<li><a href=\"/home\">首页</a></li>")
 	$('.nav .list ul li').eq(0).addClass('navStyle')
 
 	var navHeight = $('.nav').height();

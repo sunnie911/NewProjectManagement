@@ -103,12 +103,19 @@ img {
         display: none;
     }
 
+
         .nav .list ul li .lianxi span {
             padding: 8px 0;
             font-size: 14px;
             display: block;
+            color: #000000;
         }
-
+        .nav .list ul li .lianxi a {
+            color: #000000;
+        }
+        .nav .list ul li .lianxi a:hover {
+            color: #007cff;
+        }
             .nav .list ul li .lianxi span:hover {
                 color: #007cff;
             }

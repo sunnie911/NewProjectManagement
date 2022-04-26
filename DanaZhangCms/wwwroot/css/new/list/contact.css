@@ -9,7 +9,7 @@ img{display: block;}
 .list_top a{font-size: ;color: #000;margin-left:5px;font-size: 14px;}
 .list_top a:hover{color: #007AFF;}
 
-.contact_main{margin-top: 20px;display: flex;flex-direction: row;align-items: center;justify-content: space-between;}
+.contact_main{margin-top: 20px;display: flex;flex-direction: row;align-items: center;justify-content: space-between;margin-bottom:50px;}
 .contact_main .left{width: 47%;}
 .contact_main .left .address{display: flex;flex-direction: column;color: #333333;border-bottom: 1px solid #999;padding-bottom: 20px;}
 .contact_main .left h2{font-size: 20px;font-weight: normal;width:100%;}

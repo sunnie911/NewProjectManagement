@@ -28,7 +28,8 @@
     <div class="nav" ref="dataCon">
         <div class="common_containe" ref="pageContainer">
             <div class="logo">
-                <img src="/images/logo1.png">
+                <a href="/home"> <img src="/images/logo1.png"></a>
+
             </div>
             <div class="list">
                 <ul>
@@ -37,44 +38,44 @@
                         foreach (var cate in cateList)
                         {
                             var proList = productList.Where(p => p.CategoryId == cate.Id).OrderBy(o=>o.IsHot).ToList();
-                            <li>
-                                <a href="/Product?categoryId=@cate.Id">
-                                    <span>@cate.Name</span>
-                                </a>
-                                <div class="list_box">
-                                    <div class="navlist_current">
-                                        <div class="common_containe">
-                                            @foreach (var pro in proList)
+                    <li>
+                        <a href="/Product?categoryId=@cate.Id">
+                            <span>@cate.Name</span>
+                        </a>
+                        <div class="list_box">
+                            <div class="navlist_current">
+                                <div class="common_containe">
+                                    @foreach (var pro in proList)
                                             {
-                                                <span>
-                                                    <a href="#">
-                                                        <div class="img_box">
-                                                            <img src="@pro.ImgUrl" title="@pro.Name"> <img v-show="@pro.IsHot" class="hot" src="/images/sale.png" />
-                                                        </div>
-                                                        <p>@pro.Name</p>
-                                                    </a>
-                                                </span>
+                                    <span>
+                                        <a href="#">
+                                            <div class="img_box">
+                                                <img src="@pro.ImgUrl" title="@pro.Name"> <img v-show="@pro.IsHot" class="hot" src="/images/sale.png" />
+                                            </div>
+                                            <p>@pro.Name</p>
+                                        </a>
+                                    </span>
                                             }
 
 
-                                        </div>
-
-                                    </div>
                                 </div>
-                            </li>
+
+                            </div>
+                        </div>
+                    </li>
 
                         }
                     }
-                   
+
                     <li>
-                        <a href="#">
+                        <a href="/contact" target="_blank">
                             <span>联系我们</span>
                         </a>
                         <div class="lianxi">
-                            <span>公司简介</span>
+                            <a href="/about" target="_blank"><span>公司简介  </span></a>
                             <span>公司优势</span>
                             <span>服务客户</span>
-                            <span>学术交流</span>
+                            <span><a href="/article" target="_blank">学术交流</a></span>
                         </div>
                     </li>
                 </ul>
