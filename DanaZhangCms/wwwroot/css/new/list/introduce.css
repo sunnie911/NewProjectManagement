@@ -28,5 +28,5 @@ img{display: block;}
 .in_bottom img{width:100%;}
 .in_bottom 	.swiper-container{height: 400px;}
 .in_bottom .swiper-button-next,.in_bottom .swiper-button-prev{width: 40px;}
-.in_bottom .swiper-button-next{background-image: url("/images/details/jian_right.png");background-size: 100%;right: -60px;}
-.in_bottom .swiper-button-prev{background-image: url("/images/details/jian_left.png");background-size: 100%;left: -60px;}
+.in_bottom .swiper-button-next{background-image: url("../images/details/jian_right.png");background-size: 100%;right: -60px;}
+.in_bottom .swiper-button-prev{background-image: url("../images/details/jian_left.png");background-size: 100%;left: -60px;}
