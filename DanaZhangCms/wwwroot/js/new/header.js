@@ -16,7 +16,6 @@
                     { img: '../images/nav/Hp25.png', text: '混凝土氯离子扩散系数测定仪', flag: false },
                     { img: '../images/nav/Hp26.png', text: '混凝土氯离子扩散系数电通量测定仪 ', flag: false },
                     { img: '../images/nav/Hp21.png', text: '混凝土氯离子扩散系数电通量测定仪 ', flag: false },
-                 
                     { img: '../images/nav/Hp21.png', text: '混凝土氯离子扩散系数电通量测定仪 ', flag: false },
                 ],
                 san: [
@@ -43,106 +42,99 @@
             },
         },
     })
-	$('.nav .list ul').prepend("<li><a href=\"/home\">首页</a></li>")
-	$('.nav .list ul li').eq(0).addClass('navStyle')
 
-	var navHeight = $('.nav').height();
-	top.postMessage(navHeight, '*');
-	$('.nav .list ul li').mouseenter(function () {
-		var navIndex = $(this).index();
-		setTimeout(() => {
-			navHeight = window.screen.height;
-			top.postMessage(navHeight, '*');
-		}, 200);
+    $('.nav .list ul').prepend("<li><a href=\"#\">首页</a></li>")
+    $('.nav .list ul li').eq(0).addClass('navStyle')
 
-		$(this).addClass('navStyle').stop().siblings('li').removeClass('navStyle');
-		$(this).find(".navlist_current,.lianxi").slideDown(100)
-		$(this).find(".list_box").show();
-		$(this).stop().siblings('li').find(".navlist_current,.lianxi").slideUp(100)
-		$(this).stop().siblings('li').find(".list_box").hide();
+    $('.nav .list ul li').mouseenter(function () {
+        $(this).addClass('navStyle').stop().siblings('li').removeClass('navStyle');
+        $(this).find(".navlist_current,.lianxi").slideDown(100)
+        $(this).find(".list_box").show();
+        $(this).stop().siblings('li').find(".navlist_current,.lianxi").slideUp(100)
+        $(this).stop().siblings('li').find(".list_box").hide();
 
-		var nav_curNum = 5;/*每页显示的条数*/
-		var nav_iNum = 0;/*生成页码*/
-		var nav_pageMain = $('.nav .list ul li').eq(navIndex).find('.list_box span').length;
-		// console.log(nav_pageMain);
-		var len = Math.ceil(nav_pageMain / nav_curNum);/*每页显示数*/
-		console.log(len);
-		if (len <= 1) {
-			$('.nav .list ul li').eq(navIndex).find('#nav_pageBox').hide();
-		} else {
-			$('.nav .list ul li').eq(navIndex).find('#nav_pageBox').show();
-		}
+        var navIndex = $(this).index();
 
-		var nav_prev = $('.nav .list ul li').eq(navIndex).find('#nav_prev');
-		var nav_next = $('.nav .list ul li').eq(navIndex).find('#nav_next');
-		if (nav_iNum == 0) {
-			nav_prev.hide();
-		} else {
-			nav_prev.show();
-		}
-		/*上一页*/
-		$('.nav .list ul li').eq(navIndex).find('#nav_pageMain span').hide();
-		for (var i = 0; i < nav_curNum; i++) {
-			$('.nav .list ul li').eq(navIndex).find('#nav_pageMain span').eq(i).show()
-		}
 
-		nav_prev.click(function () {
-			console.log('上一页')
-			$('.nav .list ul li').eq(navIndex).find('#nav_pageMain span').hide();
-			if (nav_iNum != 0) {
-				nav_iNum--;
-				nav_next.show();
+        var nav_curNum = 5;/*每页显示的条数*/
+        var nav_iNum = 0;/*生成页码*/
+        var nav_pageMain = $('.nav .list ul li').eq(navIndex).find('.list_box span').length;
+        // console.log(nav_pageMain);
+        var navlen = Math.ceil(nav_pageMain / nav_curNum);/*每页显示数*/
+        console.log(navlen);
+        if (navlen <= 1) {
+            $('.nav .list ul li').eq(navIndex).find('.nav_pageBox').hide();
+        } else {
+            $('.nav .list ul li').eq(navIndex).find('.nav_pageBox').show();
+        }
 
-			}
-			if (nav_iNum == 0) {
-				nav_prev.hide();
-				nav_next.show();
-			}
-			for (var i = nav_iNum * nav_curNum; i < (nav_iNum + 1) * nav_curNum; i++) {
-				$('.nav .list ul li').eq(navIndex).find('#nav_pageMain span').eq(i).show();
-			}
+        var nav_prev = $('.nav .list ul li').eq(navIndex).find('.nav_prev');
+        var nav_next = $('.nav .list ul li').eq(navIndex).find('.nav_next');
+        if (nav_iNum == 0) {
+            nav_prev.hide();
+        } else {
+            nav_prev.show();
+        }
+        $('.nav .list ul li').eq(navIndex).find('.nav_pageMain span').hide();
+        for (var i = 0; i < nav_curNum; i++) {
+            $('.nav .list ul li').eq(navIndex).find('.nav_pageMain span').eq(i).show()
+        }
+        /*上一页*/
+        nav_prev.click(function () {
+            // console.log('上一页')
+            $('.nav .list ul li').eq(navIndex).find('.nav_pageMain span').hide();
+            if (nav_iNum != 0) {
+                nav_iNum--;
+                nav_next.show();
 
-		})
-		/*下一页*/
-		nav_next.click(function () {
-			console.log('下一页')
-			$('.nav .list ul li').eq(navIndex).find('#nav_pageMain span').hide();
-			if (nav_iNum != len - 1) {
-				nav_iNum++;
-				nav_prev.show();
-			}
-			if (nav_iNum == len - 1) {
-				nav_next.hide();
-			}
-			for (var i = nav_iNum * nav_curNum; i < (nav_iNum + 1) * nav_curNum; i++) {
-				$('.nav .list ul li').eq(navIndex).find('#nav_pageMain span').eq(i).show();
-			}
-		})
+            }
+            if (nav_iNum == 0) {
+                nav_prev.hide();
+                nav_next.show();
+            }
+            for (var i = nav_iNum * nav_curNum; i < (nav_iNum + 1) * nav_curNum; i++) {
+                $('.nav .list ul li').eq(navIndex).find('.nav_pageMain span').eq(i).show();
+            }
 
-	})
-	$('.nav .list .navlist_current,.lianxi').mouseleave(function () {
-		$(this).slideUp(100);
-		$(".list_box").hide();
+        })
+        /*下一页*/
+        nav_next.click(function () {
+            // console.log('下一页')
+            $('.nav .list ul li').eq(navIndex).find('.nav_pageMain span').hide();
+            if (nav_iNum != navlen - 1) {
+                nav_iNum++;
+                nav_prev.show();
+            }
+            if (nav_iNum == navlen - 1) {
+                nav_next.hide();
+            }
+            for (var i = nav_iNum * nav_curNum; i < (nav_iNum + 1) * nav_curNum; i++) {
+                $('.nav .list ul li').eq(navIndex).find('.nav_pageMain span').eq(i).show();
+            }
+        })
 
-		top.postMessage($('.nav').height(), '*');
+    })
+    $('.nav .list .navlist_current,.lianxi').mouseleave(function () {
+        $(this).slideUp(100);
+        $(".list_box").hide();
 
-	})
-	// 搜索
-	$('.search img').click(function () {
-		$('.search input').show();
-	})
-	$('.search input').mouseleave(function () {
-		$('.search img').show();
-		$(this).hide();
-	})
+    })
+    // 搜索
+    $('.search img').click(function () {
+        $('.search input').show();
+    })
+    $('.search input').mouseleave(function () {
+        $('.search img').show();
+        $(this).hide();
+    })
 
-	$(".search div").hover(function () {
-		$('.search img').hide();
-		return false;
-	}, function () {
-		$('.search img').show();
-		return false;
-	});
+    $(".search div").hover(function () {
+        $('.search img').hide();
+        return false;
+    }, function () {
+        $('.search img').show();
+        return false;
+    });
 
 
 

@@ -12,14 +12,11 @@ namespace DanaZhangCms
     [Ignore]
     public class ArticleController : BaseController
     {
-        private IProductCategoryRepository _cateRepository;
-        private IProductRepository _proRepository;
+      
         private IArticleRepository _artRepository;
-        public ArticleController(IProductRepository proRepository, IProductCategoryRepository cateRepository,  IArticleRepository artRepository, IProductCategoryRepository pcateRepository)
+        public ArticleController(  IArticleRepository artRepository )
         {
-            _cateRepository = cateRepository;
-            _proRepository = proRepository;
-            _proRepository = proRepository;
+          
             _artRepository = artRepository;
              
         }
@@ -31,9 +28,7 @@ namespace DanaZhangCms
             var arts = _artRepository.Where(o=>o.CategoryId==4).OrderByDescending(o => o.ClickCount).ThenByDescending(o => o.CreatedDate).Skip((page - 1) * pageSize).Take(pageSize).Select(o => new Article() { Title = o.Title, Id = o.Id, ImgUrl = o.ImgUrl,VedioUrl=o.VedioUrl,CreatedDate=o.CreatedDate,ClickCount=o.ClickCount,Content=o.Content }).ToList();
             var total = _artRepository.Where(o=>o.CategoryId==4).Count();
             ViewBag.Total = total;
-            var position = _proRepository.ToList();
-            ViewBag.ProductList = position;
-            ViewBag.CategoryList = _cateRepository.ToList();
+      
             return View(arts);
         }
 

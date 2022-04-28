@@ -44,14 +44,9 @@ namespace DanaZhangCms
             {
                 productList = _proRepository.OrderBy(o => o.IsHot).Skip((page - 1) * pageSize).Take(pageSize).Select(o => new Product() { Name = o.Name, Id = o.Id, ImgUrl = o.ImgUrl, IsHot = o.IsHot }).ToList();
 
-            }  
+            }   
             
-            
-            ViewBag.Total = total;
-
-            var position = _proRepository.ToList();
-            ViewBag.ProductList = position;
-            ViewBag.CategoryList = _cateRepository.ToList();
+            ViewBag.Total = total; 
             return View(productList);
         }
 

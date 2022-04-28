@@ -8,23 +8,16 @@ namespace DanaZhangCms
 {
     [Ignore]
     public class AboutController : BaseController
-    {
-
-        private IProductCategoryRepository _cateRepository;
-        private IProductRepository _proRepository;
+    { 
         private IContentsRepository _repository;
-        public AboutController(IContentsRepository repository,IProductRepository proRepository, IProductCategoryRepository cateRepository)
+        public AboutController(IContentsRepository repository )
         {
-            _repository = repository ?? throw new ArgumentNullException(nameof(repository));
-            _cateRepository = cateRepository;
-            _proRepository = proRepository;
+            _repository = repository ?? throw new ArgumentNullException(nameof(repository)); 
         }
 
         public  IActionResult Index(string spellname = "")
         {
-            var position = _proRepository.ToList();
-            ViewBag.ProductList = position;
-            ViewBag.CategoryList = _cateRepository.ToList();
+           
             var model =  _repository.FirstOrDefault(o => o.SpellName == spellname);
             return View(model);
         }

@@ -16,6 +16,8 @@ namespace DanaZhangCms
         public BaseController( )
         { 
         }
+
+
         //工作上下文
         public WebWorkContext WorkContext = new WebWorkContext();
         public override void OnActionExecuting(ActionExecutingContext context)
@@ -29,6 +31,12 @@ namespace DanaZhangCms
             WorkContext.Sites = site;
             WorkContext.Banners = banners;
             WorkContext.Content = contents;
+
+            var _proRepository = AspectCoreContainer.Resolve<IProductRepository>();
+            var _cateRepository = AspectCoreContainer.Resolve<IProductCategoryRepository>();
+            var position = _proRepository.ToList();
+            ViewBag.ProductList = position;
+            ViewBag.CategoryList = _cateRepository.ToList();
         }
 
         public override void OnActionExecuted(ActionExecutedContext context)

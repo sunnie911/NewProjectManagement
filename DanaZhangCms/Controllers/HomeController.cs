@@ -14,18 +14,17 @@ namespace DanaZhangCms
     {
         private IProductRepository _proRepository;
         private IArticleRepository _artRepository;
-
         private IBannerRepository _banRepository;
 
-        private IProductCategoryRepository _cateRepository;
+      
 
         
-        public HomeController(IProductCategoryRepository cateRepository,IProductRepository proRepository, IArticleRepository artRepository, IBannerRepository banRepository)
+        public HomeController( IProductRepository proRepository, IArticleRepository artRepository, IBannerRepository banRepository)
         {
             _proRepository = proRepository;
             _artRepository = artRepository;
             _banRepository = banRepository;
-            _cateRepository = cateRepository;
+        
         }
 
         ///首页
@@ -46,10 +45,7 @@ namespace DanaZhangCms
             model.Banners = banners;
             model.Logos = logos;
 
-            var position = _proRepository.ToList();
-            ViewBag.ProductList = position;
-            ViewBag.CategoryList = _cateRepository.ToList();
-
+          
             return View(model);
         }
 
