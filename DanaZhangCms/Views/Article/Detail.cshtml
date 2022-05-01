@@ -5,40 +5,57 @@
 }
 
 @section css{
-    
-    <link href="~/css/showArtile.css" rel="stylesheet" />
+
+    <link href="~/css/new/details/lea_details.css" rel="stylesheet" />
 }
-<!-- 标准模式 -->
-<div class="container">
-    <div class="row">
-
-        <div class="col-md-9 met-shownews-body" m-id='18'>
-            <div class="row">
-                <section class="details-title border-bottom1">
-                    <h1 class='m-t-10 m-b-5'>@Model.Title</h1>
-                    <div class="info font-weight-300">
-                        <span><i class="icon wb-time m-r-5" aria-hidden="true"></i>@Model.CreatedDate.ToString("yyyy-MM-dd")</span>
-                        <span><i class="icon wb-user m-r-5" aria-hidden="true"></i></span>
-                        <span><i class="icon wb-eye m-r-5" aria-hidden="true"></i>@Model.ClickCount</span>
-                    </div>
-                </section>
-                <section class="met-editor clearfix">
-                    @Html.Raw(Model.Content)
-                </section>
-                <div class="tag">
-                    <span></span>
-                    <a href="#" title=""></a>
-                </div>
-
+<div class="lea_whole" style=" margin-top:80px; ">
+    <div class="common_containe">
+        <div class="list_top">
+            <i></i>
+            <a href="#">首页 > </a>
+            <a href="#">学术交流 </a>
+            <a href="#"> @Model.Title </a>
+        </div>
+        <div class="lea_main">
+            <h2>@Model.Title</h2>
+            <span class="time">@Model.CreatedDate</span>
+            <div class="leaBox">
+                @Html.Raw(Model.Content)
+                @*<img src="../images/introduce/img2.jpg">
+                <p class="leaP1"><b>在2022年2月4日冬奥会开幕之际，耐尔得用自研的3D打印机打印出混凝土制品的冰墩墩，为中国奥运健儿加油！</b></p>
+                <p class="leaP2">混凝土砂浆3D打印机NELD-3D730</p>
+                <img class="leaImg" src="../images/banner3.jpeg">
+                <p><b>大型：</b>尺寸可定制</p>
+                <p><b>实际打印尺寸：</b>1200*1200*1200(mm)  </p>
+                <p><b>中型：</b>实际打印尺寸600*600*600(mm)</p>
+                <p>本品采用四柱落地框架结构，适用于混凝土砂浆打印材料的研究，满足模型打印的要求；</p>
+                <p>设备配置40mm打印头，可定制需要尺寸。</p>
+                <p>标配3D打印机专用可无线遥控的输料系统，打印软件支持中英文界面，打印过程实时显示。</p>*@
             </div>
         </div>
-
-
+        <div class="lea_bott">
+            <a href="#">
+                <div>
+                    <img src="../images/vedio4.jpg">
+                </div>
+                <div class="lea_right">
+                    <span> < 上一篇</span>
+                    <p>耐尔得2021大事记</p>
+                </div>
+            </a>
+            <a href="#">
+                <div>
+                    <img src="../images/vedio4.jpg">
+                </div>
+                <div class="lea_right">
+                    <span> 下一篇 > </span>
+                    <p>耐尔得2021大事记耐尔得2021大事记</p>
+                </div>
+            </a>
+        </div>
     </div>
 </div>
-<!-- 标准模式 -->
-
 @section Scripts{
-    <script src="/js/index.js"></script>
-
+    
+    <script src="~/js/new/details/lea_details.js"></script>
 }

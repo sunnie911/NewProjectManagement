@@ -14,11 +14,7 @@ namespace DanaZhangCms
     {
         private IProductRepository _proRepository;
         private IArticleRepository _artRepository;
-        private IBannerRepository _banRepository;
-
-      
-
-        
+        private IBannerRepository _banRepository; 
         public HomeController( IProductRepository proRepository, IArticleRepository artRepository, IBannerRepository banRepository)
         {
             _proRepository = proRepository;

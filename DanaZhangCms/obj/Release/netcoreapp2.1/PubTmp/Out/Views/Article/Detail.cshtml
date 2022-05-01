@@ -5,40 +5,144 @@
 }
 
 @section css{
-    
-    <link href="~/css/showArtile.css" rel="stylesheet" />
+    <link href="~/css/new/details/product_details.css" rel="stylesheet" />
+
 }
-<!-- 标准模式 -->
-<div class="container">
-    <div class="row">
-
-        <div class="col-md-9 met-shownews-body" m-id='18'>
-            <div class="row">
-                <section class="details-title border-bottom1">
-                    <h1 class='m-t-10 m-b-5'>@Model.Title</h1>
-                    <div class="info font-weight-300">
-                        <span><i class="icon wb-time m-r-5" aria-hidden="true"></i>@Model.CreatedDate.ToString("yyyy-MM-dd")</span>
-                        <span><i class="icon wb-user m-r-5" aria-hidden="true"></i></span>
-                        <span><i class="icon wb-eye m-r-5" aria-hidden="true"></i>@Model.ClickCount</span>
+<div class="list_details" style="padding-top: 80px;">
+    <!-- 导航 -->
+    <div class="details_nav">
+        <div class="common_containe">
+            <div class="left">混凝土砂浆桌面3D打印机_NELD-3D736</div>
+            <div class="right" id="loutinav">
+                <ul>
+                    <li>产品大图</li>
+                    <li>产品视频</li>
+                    <li>技术参数</li>
+                    <li>细节亮点</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="louti_box">
+        <!-- banner -->
+        <div class="det_banner louti">
+            <div class="common_containe">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide" v-for="item in bannerArry">
+                            <img :src="item">
+                        </div>
                     </div>
-                </section>
-                <section class="met-editor clearfix">
-                    @Html.Raw(Model.Content)
-                </section>
-                <div class="tag">
-                    <span></span>
-                    <a href="#" title=""></a>
-                </div>
 
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+        <!-- 产品视频 -->
+        <div class="goods_video louti">
+            <div class="common_containe">
+                <div class="det_title">
+                    <div>产品视频</div>
+                    <span>Product video</span>
+                </div>
+                <ul>
+                    <li>
+                        <img class="goods_img" src="../images/details/tu.png">
+                        <img class="play" src="../images/details/video_img.png">
+                        <p>混凝土砂浆桌面3D打印机NELD-3D736</p>
+                        <div class="v_shipin"></div>
+                        <div class="v_main">
+                            <video width="800" height="400" controls>
+                                <source src="../images/details/movie.mp4" type="video/mp4">
+                                </source>
+
+                            </video>
+                        </div>
+                    </li>
+                    <li>
+                        <img class="goods_img" src="../images/details/tu.png">
+                        <img class="play" src="../images/details/video_img.png">
+                        <p>混凝土砂浆桌面3D打印机NELD-3D736</p>
+                        <div class="v_shipin"></div>
+                        <div class="v_main">
+                            <video width="800" height="400" controls>
+                                <source src="../images/details/movie2.mp4" type="video/mp4">
+                                </source>
+
+                            </video>
+                        </div>
+                    </li>
+                </ul>
             </div>
         </div>
 
+        <!-- 技术参数 -->
+        <div class="parameter louti">
+            <div class="common_containe">
+                <div class="det_title">
+                    <div>技术参数</div>
+                    <span>Technical data</span>
+                </div>
+                <div class="par_main">
+                    <div class="one">
+                        <h3>产品概述</h3>
+                        <div>
+                            <p>
+                                混凝土砂浆3D打印机是将混凝土砂浆或其它增材，通过喷嘴挤出，逐层打印生成3D实体。本打印机适用于大型结构设计的微观化评价、快速建房、多维度建筑等。公司研发的3D打印机集机械、自动化、信息化为一体，结合科研高校的实际应用，可对材料科学的研究提供多种方案的设计。
+                            </p>
+                            <p>桌面3D打印机多用于科研高校等研究单位建模、打印立体效果使用，具有打印速度快，节省材料，省时省空间，结构精巧，方便快捷等特点。</p>
+                        </div>
 
+                    </div>
+                    <div class="one">
+                        <h3>技术参数</h3>
+                        <div>
+                            <p>1.打印尺寸：500×400×300（mm）</p>
+                            <p>2.外形尺寸：1080×750×700（mm）</p>
+                            <p>3.驱动电机：步进电机</p>
+                            <p>4.XY移动速度：1~60mm/s</p>
+                            <p>5.Z移动速度：5~20mm/s</p>
+                            <p>6.定位精度：0.08mm</p>
+                            <p>7.打印头尺寸：10mm（可定制）</p>
+                            <p>8.控制柜：桌面控制柜与触摸屏一体</p>
+                            <p>9.操作界面：15寸触摸屏电脑</p>
+                            <p>10.打印路径显示：软件在线显示打印路径</p>
+                            <p>11.界面语言：中文和英文</p>
+                            <p>12.升级方式：网络传输，免费更新</p>
+                            <p>13.加料方式：手动或电动（无级变速）</p>
+                            <p>14.输入电压：AC220V±10％，50Hz</p>
+                            <p>15.最大功率：0.6kW</p>
+                            <p>16.打印机重量：200kg</p>
+                            <p>17.专用供料系统：NELD-JC21（选配）可无级变速控制</p>
+                        </div>
+
+                    </div>
+                    <div class="one">
+                        <h3>标准配置</h3>
+                        <div>
+                            <p>1.3D打印机三维运动架1台</p>
+                            <p>2.3D打印智能控制台1台</p>
+                            <p>3.3D打印软件预安装</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 细节亮点 -->
+        <div class="Highlights louti">
+            <div class="common_containe">
+                <div class="det_title">
+                    <div>细节亮点</div>
+                    <span>Details highlights</span>
+                </div>
+                <img src="../images/details/xijie.jpg">
+            </div>
+        </div>
     </div>
 </div>
-<!-- 标准模式 -->
 
 @section Scripts{
-    <script src="/js/index.js"></script>
-
+    <script src="~/js/new/details/product_details.js"></script>
 }

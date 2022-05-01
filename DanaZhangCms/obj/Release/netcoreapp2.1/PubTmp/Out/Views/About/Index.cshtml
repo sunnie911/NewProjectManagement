@@ -7,7 +7,19 @@
 @section css{
     <link rel="stylesheet" type="text/css" href="/css/new/list/introduce.css" />
     <link rel="stylesheet" type="text/css" href="/css/new/swiper.min.css" />
+    <style type="text/css">
+        .in_bottom .swiper-button-next {
+            background-image: url("../images/details/jian_right.png");
+            background-size: 100%;
+            right: -60px;
+        }
 
+        .in_bottom .swiper-button-prev {
+            background-image: url("../images/details/jian_left.png");
+            background-size: 100%;
+            left: -60px;
+        }
+    </style>
 
 }
 <div class="introduce_whole" style="padding-top: 80px;">
@@ -21,11 +33,11 @@
             <img src="../images/introduce/img1.jpg">
             <p>建研华测（杭州）科技有限公司是一家专业从事混凝土3D打印和高端测试仪器设备开发、生产和销售的国家高新技术企业。生产研发基地设在杭州萧山区和沈阳浑南高新技术开发区。</p>
             <p>公司的主要产品有：混凝土3D打印系统、高性能低场磁共振微观分析仪、全自动混凝土凝结时间测定仪、混凝土冻融试验机、混凝土碳化箱、非接触式混凝土收缩变形测定仪、钢筋混凝土电化学腐蚀测试仪、混凝土热物理参数测定仪、混凝土气体渗透测试仪、混凝土温度-应力试验机、工业内窥镜、硬化混凝土气孔结构分析仪等。</p>
-            <ul class="in_box">
+            @*<ul class="in_box">
                 <li><img src="/images/introduce/img2.jpg"></li>
                 <li><img src="../images/introduce/img2.jpg"></li>
                 <li><img src="../images/introduce/img2.jpg"></li>
-            </ul>
+            </ul>*@
             <p>公司近年参编了《混凝土3D打印技术规程》、《透水混凝土试验方法》、《预制混凝土构件质量验收标准》、《混凝土氯离子扩散系数测定仪检定规程》等行业和协会标准。</p>
             <ul class="in_icon">
                 <li>
@@ -65,8 +77,6 @@
                 </div>
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
-
-
             </div>
         </div>
     </div>

@@ -6542,6 +6542,19 @@
           "lib/netstandard1.3/TinyMapper.dll": {}
         }
       },
+      "UEditor.Core/1.0.6": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore": "2.0.0",
+          "Newtonsoft.Json": "11.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/UEditor.Core.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/UEditor.Core.dll": {}
+        }
+      },
       "WindowsAzure.Storage/8.1.4": {
         "type": "package",
         "dependencies": {
@@ -17054,6 +17067,19 @@
         "tinymapper.nuspec"
       ]
     },
+    "UEditor.Core/1.0.6": {
+      "sha512": "pZfMSVeAGDAOFmN3yq6vsZTSv/ygmFa0ZqRvQrmIt2+wPQrHSyDW5KHjnJqNPWGCpuCdjzqpa8gHB8YJXcTOFQ==",
+      "type": "package",
+      "path": "ueditor.core/1.0.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net35/UEditor.Core.dll",
+        "lib/netstandard2.0/UEditor.Core.dll",
+        "ueditor.core.1.0.6.nupkg.sha512",
+        "ueditor.core.nuspec"
+      ]
+    },
     "WindowsAzure.Storage/8.1.4": {
       "sha512": "W6ZZ0/o7+3Qb77mRAQyLjPudHG3OMeeQ4p9yY13PUdJArmRCx2cLMm5F4tpIjJXxzHC0ew0oK7DMDGILMdfCnw==",
       "type": "package",
@@ -17131,7 +17157,8 @@
       "CompanyCms.Repositories >= 2.0.1",
       "Microsoft.AspNetCore.All >= 2.1.3",
       "Microsoft.NETCore.App >= 2.1.0",
-      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.1.3"
+      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.1.3",
+      "UEditor.Core >= 1.0.6"
     ]
   },
   "packageFolders": {
@@ -17208,6 +17235,10 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",
             "version": "[2.1.3, )"
+          },
+          "UEditor.Core": {
+            "target": "Package",
+            "version": "[1.0.6, )"
           }
         },
         "imports": [

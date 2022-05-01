@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "KVi9eds/J8pqkUbH25kXic2E2Kps7fPmKmfuEGI4PQ8VwK/9gSaaI5xXK0CDhYMeaalkRtFRPHW8F61JhqlMYw==",
+  "dgSpecHash": "sefgHEyP19FA+lINOA2jFNE7hTWQni3sOcIyavOheud2/9FVMn90uFCnXqECvNpeWKLUqFRxS1bYWebpPy4juw==",
   "success": true,
   "projectFilePath": "C:\\OldProject\\NewProjectManagement\\DanaZhangCms\\CompanyCms.csproj",
   "expectedPackageFiles": [
@@ -398,6 +398,7 @@
     "C:\\Users\\sunnie\\.nuget\\packages\\system.xml.xpath.xdocument\\4.3.0\\system.xml.xpath.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\sunnie\\.nuget\\packages\\system.xml.xpath.xmldocument\\4.0.1\\system.xml.xpath.xmldocument.4.0.1.nupkg.sha512",
     "C:\\Users\\sunnie\\.nuget\\packages\\tinymapper\\3.0.2-beta\\tinymapper.3.0.2-beta.nupkg.sha512",
+    "C:\\Users\\sunnie\\.nuget\\packages\\ueditor.core\\1.0.6\\ueditor.core.1.0.6.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\windowsazure.storage\\8.1.4\\windowsazure.storage.8.1.4.nupkg.sha512",
     "C:\\Users\\sunnie\\.nuget\\packages\\z.entityframework.plus.efcore\\1.8.10\\z.entityframework.plus.efcore.1.8.10.nupkg.sha512"
   ],

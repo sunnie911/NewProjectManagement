@@ -16,14 +16,14 @@
         </div>
 
         <div class="list_main common_containe">
-            <ul id="pageMain">
+            <ul class="pageMain">
                 @if (Model != null && Model.Any())
                 {
                     foreach (var item in Model)
                     {
                         <li>
                             <div class="list_current">
-                                <div class="common_containe">
+                                <div class="">
                                     <span>
                                         <a href="javascript:;">
                                             <div class="img_box">
@@ -43,10 +43,10 @@
                 }
 
             </ul>
-            <div id="pageBox">
-                <span id="prev">上一页</span>
-                <ul id="pageNav"></ul>
-                <span id="next">下一页</span>
+            <div class="pageBox">
+                <span class="prev">上一页</span>
+                <ul class="pageNav"></ul>
+                <span class="next">下一页</span>
             </div>
         </div>
     </div>

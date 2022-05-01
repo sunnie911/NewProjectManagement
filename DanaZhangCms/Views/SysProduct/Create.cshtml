@@ -91,7 +91,7 @@
             @Html.CheckBoxFor(model => model.IsHot, new { @class = "layui-checkbox" })
 
         </div>
-        
+
     </div>
 
     <div class="layui-form-item">
@@ -111,13 +111,15 @@
 
         @Html.LabelFor(model => model.Content, new { @class = "layui-form-label" })
         <div class="layui-input-inline" style="width:600px;min-height:500px;">
-            @Html.TextAreaFor(model => model.Content, new { @class = "", autocomplete = "off", rows = "30" })
+            @*@Html.TextAreaFor(model => model.Content, new { @class = "", autocomplete = "off", rows = "30" })*@
+            @*<textarea id="Content" name="Content"></textarea>*@
 
+            <script id="Content" name="Content" type="text/plain">
+                    @Model.Content
+            </script>
+            <input type="hidden" name="Content1" id="Content1" value="@Model.Content" />
         </div>
-        <div class="layui-form-mid layui-word-aux">
-            <span class="x-red">*</span>
 
-        </div>
     </div>
     <div class="layui-form-item">
 
@@ -128,6 +130,25 @@
         </div>
 
     </div>
+    <div class="layui-form-item">
+
+        @Html.LabelFor(model => model.Paramter, new { @class = "layui-form-label" })
+        <div class="layui-input-inline" style="width:600px;min-height:500px;">
+            @Html.TextAreaFor(model => model.Paramter, new { @class = "paramter", autocomplete = "off", rows = "30" })
+
+        </div>
+
+    </div>
+    <div class="layui-form-item">
+
+        @Html.LabelFor(model => model.ParamterEn, new { @class = "layui-form-label" })
+        <div class="layui-input-inline" style="width:600px;min-height:500px;">
+            @Html.TextAreaFor(model => model.ParamterEn, new { @class = "paramterEn", autocomplete = "off", rows = "30" })
+
+        </div>
+
+    </div>
+
     <div class="layui-form-item">
         <label for="L_repass" class="layui-form-label">
         </label>
@@ -149,29 +170,53 @@
     <script type="text/javascript" src="/lib/webuploader/webuploader.js"></script>
     <script src="/lib/ckeditor/translations/zh-cn.js"></script>
     <script src="/lib/ckeditor/ckeditor.js"></script>
+
+    <script src="/lib/ueditor/ueditor.config.js"></script>
+    <script src="/lib/ueditor/ueditor.all.min.js"></script>
+
+
     <script>
-            var editor;
+            var editor,editor1,editor2,editor3;
+        var ue = UE.getEditor('Content', {
+            initialFrameHeight: 500
+        });
+        var oldhtml = $("#Content1").val();
 
-        $(function () {
-           ClassicEditor
-        .create( document.querySelector( '#Content' ) , {
-        language: 'zh-cn',
-        height:500,
-         ckfinder: {
-                      uploadUrl : '/Tool/Upload'//后端处理上传逻辑返回json数据,包括uploaded(选项true/false)和url两个字段
-                   }
-
-
-    } )
-    .then( newEditor => {
-        editor = newEditor;//editor.getData();取值
-    } )
-        .catch( error => {
-            console.error( error );
+        ue.ready(function () {
+            ue.setContent(oldhtml);
         });
 
+       
+        $(function () {
+
+
+    //       ClassicEditor
+    //    .create( document.querySelector( '#Content' ) ,  config)
+    //.then( newEditor => {
+    //    editor = newEditor;//editor.getData();取值
+    //} )
+    //    .catch( error => {
+    //        console.error( error );
+    //    });
+
+    //        ClassicEditor
+    //            .create(document.querySelector('#ContentEn'), {
+    //                language: 'zh-cn',
+    //                height: 500,
+    //                ckfinder: {
+    //                    uploadUrl: '/Tool/Upload'//后端处理上传逻辑返回json数据,包括uploaded(选项true/false)和url两个字段
+    //                },
+
+    //            })
+    //            .then(newEditor => {
+    //                editor1= newEditor;//editor.getData();取值
+    //            })
+    //            .catch(error => {
+    //                console.error(error);
+    //            });
+
             ClassicEditor
-                .create(document.querySelector('.ContentEn'), {
+                .create(document.querySelector('#ParamterEn'), {
                     language: 'zh-cn',
                     height: 500,
                     ckfinder: {
@@ -181,7 +226,24 @@
 
                 })
                 .then(newEditor => {
-                    editor = newEditor;//editor.getData();取值
+                    editor2 = newEditor;//editor.getData();取值
+                })
+                .catch(error => {
+                    console.error(error);
+                });
+
+            ClassicEditor
+                .create(document.querySelector('#Paramter'), {
+                    language: 'zh-cn',
+                    height: 500,
+                    ckfinder: {
+                        uploadUrl: '/Tool/Upload'//后端处理上传逻辑返回json数据,包括uploaded(选项true/false)和url两个字段
+                    }
+
+
+                })
+                .then(newEditor => {
+                    editor3 = newEditor;//editor.getData();取值
                 })
                 .catch(error => {
                     console.error(error);
@@ -260,9 +322,12 @@
 
                 form.on('submit(add)', function (data) {
                     var url = $(".layui-form").attr("action");
-                     debugger;
+                     //debugger;
                     // data.field.Content=editor.getData();
                     $("#Content").val(editor.getData());
+                    $("#ContentEn").val(editor1.getData());
+                    $("#ParamterEn").val(editor2.getData());
+                    $("#Paramter").val(editor3.getData());
                     $.ajax({
                         url: url,
                         data: $("form").serialize(),

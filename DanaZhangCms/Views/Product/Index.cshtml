@@ -3,8 +3,7 @@
     ViewData["Title"] = "产品列表";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@section css{
-     @*<link href="~/lib/layui/css/layui.css" rel="stylesheet" />*@
+@section css{    
     <link href="~/css/new/list/productList.css" rel="stylesheet" />
 }
 <div class="whole_list" style="padding-top: 80px;">
@@ -18,14 +17,14 @@
         <div class="list_main common_containe">
             <div class="xian xian1"></div>
             <div class="xian xian2"></div>
-            <ul id="pageMain">
+            <ul class="pageMain">
                 @foreach (var pro in Model)
                 {
                     <li style="display:list-item;">
                         <div class="list_current">
                             <div class="">
                                 <span>
-                                    <a href="#">
+                                    <a href="@(Url.Action("Detail","Product",new { id=pro.Id}))">
                                         <div class="img_box">
                                             <img src="@pro.ImgUrl" title="@pro.Name"> <img v-show="@pro.IsHot" class="hot" src="../images/sale.png">
                                         </div>
@@ -47,7 +46,7 @@
 
 
         </div>
-       
+
     </div>
 </div>
 @section Scripts{
@@ -57,5 +56,5 @@
         var pageUrl = "@(Url.Action("Index", "Product"))";
     </script>
     <script src="~/js/new/list/productList.js"></script>
-    
+
 }

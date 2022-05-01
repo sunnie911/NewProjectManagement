@@ -1,79 +1,107 @@
 ﻿@model DanaZhangCms.Models.Product
 @{
-    ViewData["Title"] = Model.Name;
+   
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 @section css{
-    <link href="~/css/showproduct.css" rel="stylesheet" />
+    <link href="~/css/new/details/product_details.css" rel="stylesheet" />
+
 }
-<!-- 标准模式 -->
-<main class="product_list_detail_met_16_1 page met-showproduct pagetype1" m-id='38'>
-    <div class="met-showproduct-head page-content block-bg">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-7">
-                    <div class='met-showproduct-list fngallery cover text-xs-center    ' id='met-imgs-slick' m-id='noset' m-type="displayimgs">
-                        <!--fngallery：启用lightGallery插件的类名-->
-                        <div class='slick-slide'>
-                            <a href='@Model.ImgUrl' data-size='400x300' data-med='@Model.ImgUrl' data-med-size='400x300' class='lg-item-box' data-src='@Model.ImgUrl' data-exthumbimage="@Model.ImgUrl" data-sub-html='@Model.Name'>
-                                <!--类名lg-item-box之前为initPhotoSwipeFromDOM插件所用参数；之后为lightGallery插件所用参数，lg-item-box：lightGallery插件对应的类名-->
-                                <img src="@Model.ImgUrl" class='img-fluid' alt='@Model.Name' />
-                            </a>
+<div class="list_details" style="padding-top: 80px;">
+    <!-- 导航 -->
+    <div class="details_nav">
+        <div class="common_containe">
+            <div class="left">@Model.Name</div>
+            <div class="right" id="loutinav">
+                <ul>
+                    <li>产品大图</li>
+                    <li>产品视频</li>
+                    <li>技术参数</li>
+                    <li>细节亮点</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="louti_box">
+        <!-- banner -->
+        <div class="det_banner louti">
+            <div class="common_containe">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide" v-for="item in bannerArry">
+                            <img :src="item">
                         </div>
                     </div>
 
                 </div>
-                <div class="col-lg-5">
-                    <div class="product-intro">
-                        <h1 class='m-t-0 font-size-24'>@Model.Name</h1>
-                        @*<p class='description'>阳历6月中下旬成熟，果个大，平均四两左右，果面端正，平整，无裂痕，落果现象，呈鲜红色，果肉无纤维化，核小肉厚，果实含糖量13.5%以上</p>*@
-                        <ul class="product-para paralist blocks-100 blocks-sm-2 blocks-md-3 blocks-lg-2 m-x-0">
-                            <li class="p-x-0 p-r-15 m-b-15">
-                                <span>类型：</span>
-                                @Model.Category.Name
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
             </div>
         </div>
-    </div>
-    <div class="met-showproduct-body page-content">
-        <div class="container">
-            <div class="row">
+        <!-- 产品视频 -->
+        <div class="goods_video louti">
+            <div class="common_containe">
+                <div class="det_title">
+                    <div>产品视频</div>
+                    <span>Product video</span>
+                </div>
+                <ul>
+                    <li>
+                        <img class="goods_img" src="../images/details/tu.png">
+                        <img class="play" src="../images/details/video_img.png">
+                        <p>混凝土砂浆桌面3D打印机NELD-3D736</p>
+                        <div class="v_shipin"></div>
+                        <div class="v_main">
+                            <video width="800" height="400" controls>
+                                <source src="../images/details/movie.mp4" type="video/mp4">
+                                </source>
 
-                <!-- 内容选项卡 -->
-                <div class="container">
-
-                    <div class="row">
-                        <div class="panel panel-body m-b-0 product-detail" boxmh-mh>
-                            <ul class="nav nav-tabs nav-tabs-line m-b-20 met-showproduct-navtabs">
-                                <li class="nav-item">
-                                    <a class='nav-link active ' data-toggle="tab" href="#product-content0" data-get="product-details">详细信息</a>
-                                </li>
-                            </ul>
-                            <article class="tab-content">
-
-
-                                <section class="tab-pane met-editor clearfix animation-fade  active " id="product-content0">
-                                    @Html.Raw(Model.Content)
-                                </section>
-
-                            </article>
+                            </video>
                         </div>
-                    </div>
+                    </li>
+                    <li>
+                        <img class="goods_img" src="../images/details/tu.png">
+                        <img class="play" src="../images/details/video_img.png">
+                        <p>混凝土砂浆桌面3D打印机NELD-3D736</p>
+                        <div class="v_shipin"></div>
+                        <div class="v_main">
+                            <video width="800" height="400" controls>
+                                <source src="../images/details/movie2.mp4" type="video/mp4">
+                                </source>
+
+                            </video>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 技术参数 -->
+        <div class="parameter louti">
+            <div class="common_containe">
+                <div class="det_title">
+                    <div>技术参数</div>
+                    <span>Technical data</span>
                 </div>
-                <!-- 内容选项卡 -->
-
-
+                <div class="par_main">
+                  @Html.Raw(Model.Paramter)
+                </div>
+            </div>
+        </div>
+        <!-- 细节亮点 -->
+        <div class="Highlights louti">
+            <div class="common_containe">
+                <div class="det_title">
+                    <div>细节亮点</div>
+                    <span>Details highlights</span>
+                </div>
+                @Html.Raw(Model.Content)
             </div>
         </div>
     </div>
-</main>
-<!-- 标准模式 -->
+</div>
 
 @section Scripts{
-    <script src="/js/index.js"></script>
-
+    <script src="~/js/new/details/product_details.js"></script>
 }

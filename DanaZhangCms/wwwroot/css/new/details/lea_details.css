@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+ul, li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none
+}
+
+img {
+    display: block;
+}
+
+.common_containe {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.list_top {
+    height: 52px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: 1px solid #E1E1E1;
+}
+
+    .list_top i {
+        width: 0;
+        height: 0;
+        border-top: 5px solid transparent;
+        border-left: 10px solid #007AFF;
+        border-bottom: 5px solid transparent;
+    }
+
+    .list_top a {
+        font-size:;
+        color: #000;
+        margin-left: 5px;
+        font-size: 14px;
+    }
+
+        .list_top a:hover {
+            color: #007AFF;
+        }
+
+.lea_whole .lea_main {
+    border-bottom: 1px solid #999999;
+    padding-bottom: 40px;
+}
+
+    .lea_whole .lea_main h2 {
+        line-height: 2;
+        width: 100%;
+        text-align: center;
+        font-size: 20px;
+        color: #333333;
+    }
+
+    .lea_whole .lea_main .time {
+        width: 100%;
+        color: #999999;
+        font-size: 12px;
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 22px;
+        display: block;
+    }
+
+    .lea_whole .lea_main .leaBox img {
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .lea_whole .lea_main .leaBox p {
+        color: #333333;
+        font-size: 14px;
+        line-height: 30px;
+    }
+
+    .lea_whole .lea_main .leaP1 {
+        margin: 35px 0 30px;
+    }
+
+    .lea_whole .lea_main .leaP2 {
+        margin-bottom: 30px;
+    }
+
+    .lea_whole .lea_main .leaImg {
+        margin-bottom: 30px !important;
+    }
+
+.lea_bott {
+    display: flex;
+    flex-direction: row;
+    align-items: auto;
+    justify-content: center;
+    padding: 20px 0 30px;
+}
+
+.lea_whole .lea_bott > a {
+    display: flex;
+    flex-direction: row;
+    color: #000;
+    margin: 0 60px;
+    width: 350px;
+}
+
+.lea_bott img {
+    width: 119px;
+    height: 77px;
+    margin-right: 20px !important;
+}
+
+.lea_bott .lea_right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+    .lea_bott .lea_right span {
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .lea_bott .lea_right p {
+        line-height: 22px;
+        font-size: 14px;
+    }

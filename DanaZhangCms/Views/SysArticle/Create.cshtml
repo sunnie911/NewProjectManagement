@@ -136,7 +136,7 @@
 
         @Html.LabelFor(model => model.Content, new { @class = "layui-form-label" })
         <div class="layui-input-inline" style="width:600px;min-height:500px;">
-            @Html.TextAreaFor(model => model.Content, new { @class = "", autocomplete = "off", rows = "30" })
+            @Html.TextAreaFor(model => model.Content, new { @class = "ckeditor", autocomplete = "off", rows = "30" })
 
         </div>
         <div class="layui-form-mid layui-word-aux">
@@ -178,10 +178,14 @@
     <script type="text/javascript" src="/lib/webuploader/webuploader.js"></script>
     <script src="/lib/ckeditor/translations/zh-cn.js"></script>
     <script src="/lib/ckeditor/ckeditor.js"></script>
-    <script>
-            var editor;
+    @*<script src="/lib/ckeditor/ckeditor.config.js"></script>
+    <script src="~/lib/ckeditor/config.js"></script>*@
+    <script>   
+        var editor, editor1;
 
         $(function () {
+         
+
            ClassicEditor
         .create( document.querySelector( '#Content' ) , {
         language: 'zh-cn',
@@ -198,7 +202,22 @@
         .catch( error => {
             console.error( error );
         } );
+            ClassicEditor
+                .create(document.querySelector('#ContentEn'), {
+                    language: 'zh-cn',
+                    height: 500,
+                    ckfinder: {
+                        uploadUrl: '/Tool/Upload'//后端处理上传逻辑返回json数据,包括uploaded(选项true/false)和url两个字段
+                    }
 
+
+                })
+                .then(newEditor => {
+                    editor1 = newEditor;//editor.getData();取值
+                })
+                .catch(error => {
+                    console.error(error);
+                });
 
             var uploader = WebUploader.create({
                 pick: '#UploadImg',
@@ -270,12 +289,13 @@
             layui.use('form', function () {
                 var form = layui.form;
 
-              
+
                 form.on('submit(add)', function (data) {
                     var url = $(".layui-form").attr("action");
 
                     // data.field.Content=editor.getData();
                     $("#Content").val(editor.getData());
+                    $("#ContentEn").val(editor1.getData());
                     $.ajax({
                         url: url,
                         data: $("form").serialize(),

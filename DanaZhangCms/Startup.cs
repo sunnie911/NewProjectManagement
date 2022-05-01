@@ -14,12 +14,14 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.FileProviders;
 using System;
 using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using UEditor.Core;
 
 namespace DanaZhangCms
 {
@@ -51,6 +53,10 @@ namespace DanaZhangCms
                 options.MinimumSameSitePolicy = SameSiteMode.None;
 
             });
+            services.AddUEditorService();
+            //      services.AddUEditorService(configFileRelativePath: "ueditor.json",
+            //isCacheConfig: false);
+            services.AddMvc();
             return InitIoC(services);
         }
 
@@ -89,6 +95,16 @@ namespace DanaZhangCms
                         name: "default",
                         template: "{controller=Home}/{action=Index}/{id?}");
                 });
+
+            app.UseStaticFiles(new StaticFileOptions
+            {
+                FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "Uploads")),
+                RequestPath = "/Uploads",
+                OnPrepareResponse = ctx =>
+                  {
+                      ctx.Context.Response.Headers.Append("Cache-Control", "public,max-age=36000");
+                  }
+            });
 
             InitializeDatabase(app);
         }

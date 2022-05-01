@@ -35,6 +35,7 @@ namespace DanaZhangCms
               var url = SaveFile(file);
               return Json(new{uploaded=true,url=url});
         }
+      
         private string SaveFile(IFormFile file)
         {
             var originalFileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Value.Trim('"');

@@ -8,10 +8,10 @@ using System.Text;
 namespace DanaZhangCms.Models
 {
     [Table("Product")]
-    public  class Product : BaseModel<int>
+    public class Product : BaseModel<int>
     {
-        
-        
+
+
         /// <summary>
         ///文章分类Id 
         /// </summary>
@@ -52,18 +52,32 @@ namespace DanaZhangCms.Models
         /// 视频地址
         /// </summary>
         [Display(Name = "视频地址")]
-        public string VedioUrl { get; set; } 
+        public string VedioUrl { get; set; }
         /// <summary>
         /// 内容
         /// </summary>
-        [Display(Name = "内容")]
+        [Display(Name = "产品细节")]
         public string Content { get; set; }
 
         /// <summary>
         /// 内容
         /// </summary>
-        [Display(Name = "英文内容")]
+        [Display(Name = "产品细节英文")]
         public string ContentEn { get; set; }
+        /// <summary>
+        /// 技术参数
+        /// </summary>
+        [Display(Name = "技术参数")]
+        public string Paramter { get; set; }
+
+        /// <summary>
+        /// 产品细节英文
+        /// </summary>
+        [Display(Name = "产品细节英文")]
+        public string ParamterEn { get; set; }
+
+
+
         /// <summary>
         /// 标签 已,分隔
         /// </summary>
@@ -87,7 +101,7 @@ namespace DanaZhangCms.Models
         /// <summary>
         /// 排序id
         /// </summary>
-         [Display(Name = "排序")]
+        [Display(Name = "排序")]
         public int SortId { get; set; }
 
     }

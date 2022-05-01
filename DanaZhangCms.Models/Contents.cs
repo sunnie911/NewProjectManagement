@@ -5,11 +5,11 @@ using DanaZhangCms.Core.Models;
 
 namespace DanaZhangCms.Models
 {
-   [Table("Content"), Serializable]
- public class Contents : BaseModel<int>
+    [Table("Content"), Serializable]
+    public class Contents : BaseModel<int>
     {
-        
-        
+
+
         /// <summary>
         /// 标题
         /// </summary>
@@ -32,5 +32,5 @@ namespace DanaZhangCms.Models
         [Display(Name = "简拼")]
         public string SpellName { get; set; }
 
-}
+    }
 }

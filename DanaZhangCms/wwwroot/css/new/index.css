@@ -75,8 +75,8 @@ img{display: block;}
 .learning ul li .main{color:#FFFFFF;z-index: 10;position: absolute;bottom:0;top:0;width: 350px;background:rgba(0,0,0,0.3);padding: 0 20px 30px;display: flex;justify-content: flex-end;flex-direction: column;}
 .learning ul li .main .title{font-size: 24px;line-height: 28px;}
 .learning ul li .main .neirong{line-height: 20px;font-size: 18px;margin-top: 10px;display: none;}
-.learning ul li .mengceng{display: none;width: 390px;height: 390px;background:rgba(0,0,0,0.3);position: absolute;top: 0;left: 0;}
-
+.learning ul li .mengceng{display: none;width: 390px;height: 390px;background:rgba(0,0,0,0.3);position: absolute;top: 0;left: 0;} 
+.learning ul li .main .title a{		font-size: 24px;		line-height: 28px; color:#fff;	}
 
 /* 合作机构 */
 .cooperative ul{display:flex;flex-direction: row;align-items:center;flex-wrap: wrap}

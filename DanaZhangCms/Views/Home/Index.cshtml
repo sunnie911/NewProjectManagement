@@ -1,6 +1,6 @@
 @model DanaZhangCms.ViewModels.HomeVM
 @{
-
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @section css{
     <link rel="stylesheet" type="text/css" href="/css/new/index.css" />
@@ -60,9 +60,9 @@
                     foreach (var item in Model.Products)
                     {
                         <li>
-                            <a href="javascrpt:;" target="_blank">
+                            <a href="@(Url.Action("Detail","Product",new { id=item.Id}))" target="_blank">
                                 <img class="goods_img" src="@item.ImgUrl">
-                                <span>@item.Name</span>                              
+                                <span>@item.Name</span>
                                 @if (item.IsHot)
                                 {
                                     <img class="hot" src="images/sale.png">
@@ -71,7 +71,7 @@
                             </a>
                         </li>
                     }
-                } 
+                }
             </ul>
         </div>
     </div>
@@ -162,11 +162,11 @@
                     <li>
                         <img src="@item.ImgUrl">
                         <div class="main">
-                            <div class="title">@item.Title</div>
+                            <div class="title">  <a href="@(Url.Action("Detail","Article",new { id=item.Id}))"> @item.Title </a></div>
                             <div class="neirong">
-                                /div>
                             </div>
-                            <div class="mengceng"></div>
+                        </div>
+                        <div class="mengceng"></div>
                     </li>
                 }
             }

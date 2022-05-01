@@ -1,28 +1,28 @@
-$(function(){
+$(function () {
 	var app = new Vue({
-	  el: '.whole_list',
-	  data: {
-		  listArry:[
-			  {img:'../images/learning/img.jpg',text:'【工业级】 混凝土（砂浆）3D打印系统混凝土（砂浆）3D打印系统',flag:true,time:'2021-12-20 14:33:08'},
-			  {img:'../images/learning/img.jpg',text:'【实验室级】混凝土（砂浆）3D打印系统混凝土（砂浆）3D打印系统',flag:true,time:'2021-12-20 14:33:08'},
-			  {img:'../images/learning/img.jpg',text:'【桌面级】混凝土（砂浆）3D打印系统混凝土（砂浆）3D打印系统',flag:true,time:'2021-12-20 14:33:08'},
-			  {img:'../images/learning/img.jpg',text:'【机械臂】混凝土（砂浆）3D打印系统混凝土（砂浆）3D打印系统',flag:false,time:'2021-12-20 14:33:08'},
-			  {img:'../images/learning/img.jpg',text:'【工业级】 混凝土（砂浆）3D打印系统混凝土（砂浆）3D打印系统',flag:true,time:'2021-12-20 14:33:08'},
-			  {img:'../images/learning/img.jpg',text:'【实验室级】混凝土（砂浆）3D打印系统混凝土（砂浆）3D打印系统',flag:true,time:'2021-12-20 14:33:08'},
-			  {img:'../images/learning/img.jpg',text:'【机械臂】混凝土（砂浆）3D打印系统混凝土（砂浆）3D打印系统',flag:false,time:'2021-12-20 14:33:08'},
-			  {img:'../images/learning/img.jpg',text:'【工业级】 混凝土（砂浆）3D打印系统混凝土（砂浆）3D打印系统',flag:true,time:'2021-12-20 14:33:08'},
-			  {img:'../images/learning/img.jpg',text:'【实验室级】混凝土（砂浆）3D打印系统混凝土（砂浆）3D打印系统',flag:true,time:'2021-12-20 14:33:08'}
-		  ]
-	  },
+		el: '.whole_list',
+		data: {
+			listArry: [
+				{ img: '../images/learning/img.jpg', text: '【工业级】 混凝土（砂浆）3D打印系统混凝土（砂浆）3D打印系统', flag: true, time: '2021-12-20 14:33:08' },
+				{ img: '../images/learning/img.jpg', text: '【实验室级】混凝土（砂浆）3D打印系统混凝土（砂浆）3D打印系统', flag: true, time: '2021-12-20 14:33:08' },
+				{ img: '../images/learning/img.jpg', text: '【桌面级】混凝土（砂浆）3D打印系统混凝土（砂浆）3D打印系统', flag: true, time: '2021-12-20 14:33:08' },
+				{ img: '../images/learning/img.jpg', text: '【机械臂】混凝土（砂浆）3D打印系统混凝土（砂浆）3D打印系统', flag: false, time: '2021-12-20 14:33:08' },
+				{ img: '../images/learning/img.jpg', text: '【工业级】 混凝土（砂浆）3D打印系统混凝土（砂浆）3D打印系统', flag: true, time: '2021-12-20 14:33:08' },
+				{ img: '../images/learning/img.jpg', text: '【实验室级】混凝土（砂浆）3D打印系统混凝土（砂浆）3D打印系统', flag: true, time: '2021-12-20 14:33:08' },
+				{ img: '../images/learning/img.jpg', text: '【机械臂】混凝土（砂浆）3D打印系统混凝土（砂浆）3D打印系统', flag: false, time: '2021-12-20 14:33:08' },
+				{ img: '../images/learning/img.jpg', text: '【工业级】 混凝土（砂浆）3D打印系统混凝土（砂浆）3D打印系统', flag: true, time: '2021-12-20 14:33:08' },
+				{ img: '../images/learning/img.jpg', text: '【实验室级】混凝土（砂浆）3D打印系统混凝土（砂浆）3D打印系统', flag: true, time: '2021-12-20 14:33:08' }
+			]
+		},
 	})
-	
-	
+
+
 	tabPage({
-		pageMain: '#pageMain',
-		pageNav: '#pageNav',
-		pagePrev: '#prev',
-		pageNext: '#next',
-		curNum: 6, /*每页显示的条数*/
+		pageMain: '.pageMain',
+		pageNav: '.pageNav',
+		pagePrev: '.prev',
+		pageNext: '.next',
+		curNum: 9, /*每页显示的条数*/
 		activeClass: 'active', /*高亮显示的class*/
 		ini: 0/*初始化显示的页面*/
 	});
@@ -40,49 +40,47 @@ $(function(){
 		/*每页显示数*/
 		var len = Math.ceil(pageMain.find("li").length / curNum);
 		/*计算总页数*/
-		// console.log(len);
 		var pageList = '';
 		/*生成页码*/
 		var iNum = 0;
 		/*当前的索引值*/
+
 		for (var i = 0; i < len; i++) {
 			pageList += '<a href="javascript:;">' + (i + 1) + '</a>';
 		}
+
 		pageNav.html(pageList);
-		
-		if(iNum==0){
-			$('#prev').hide();
-		}else{
-			$('#prev').show();
+
+		if (iNum == 0) {
+			$('.prev').hide();
+		} else {
+			$('.prev').show();
 		}
-		
+
 		/*头一页加高亮显示*/
 		pageNav.find("a:first").addClass(tabPage.activeClass);
-			/*******标签页的点击事件*******/
-			pageNav.find("a").each(function(){
-				$(this).click(function () {
-					pageNav.find("a").removeClass(tabPage.activeClass);
-					$(this).addClass(tabPage.activeClass);
-					iNum = $(this).index();
-					console.log(123)
-					console.log(iNum)
-					if(iNum==len-1){
-						$('#next').hide();
-						$('#prev').show();
-					}else{
-						$('#next').show();
-					}
-					if(iNum>0){
-						$('#prev').show();
-					}
-					if(iNum==0){
-						$('#prev').hide();
-						$('#next').show();
-					}
-					console.log(123)
-					$(pageMain).find("li").hide();
-					for (var i = ($(this).html() - 1) * curNum; i < ($(this).html()) * curNum; i++) {
-						$(pageMain).find("li").eq(i).show()
+		/*******标签页的点击事件*******/
+		pageNav.find("a").each(function () {
+			$(this).click(function () {
+				pageNav.find("a").removeClass(tabPage.activeClass);
+				$(this).addClass(tabPage.activeClass);
+				iNum = $(this).index();
+				if (iNum == len - 1) {
+					$('.next').hide();
+					$('.prev').show();
+				} else {
+					$('.next').show();
+				}
+				if (iNum > 0) {
+					$('.prev').show();
+				}
+				if (iNum == 0) {
+					$('.prev').hide();
+					$('.next').show();
+				}
+				$(pageMain).find("li").hide();
+				for (var i = ($(this).html() - 1) * curNum; i < ($(this).html()) * curNum; i++) {
+					$(pageMain).find("li").eq(i).show()
 				}
 
 			});
@@ -102,11 +100,11 @@ $(function(){
 			if (iNum != len - 1) {
 				pageNav.find("a").removeClass(tabPage.activeClass);
 				iNum++;
-				$('#prev').show();
+				$('.prev').show();
 				pageNav.find("a").eq(iNum).addClass(tabPage.activeClass);
 			}
 			if (iNum == len - 1) {
-				$('#next').hide();
+				$('.next').hide();
 			}
 			for (var i = iNum * curNum; i < (iNum + 1) * curNum; i++) {
 				$(pageMain).find("li").eq(i).show()
@@ -119,11 +117,11 @@ $(function(){
 				pageNav.find("a").removeClass(tabPage.activeClass);
 				iNum--;
 				pageNav.find("a").eq(iNum).addClass(tabPage.activeClass);
-				$('#next').show();
+				$('.next').show();
 			}
 			if (iNum == 0) {
-				$('#prev').hide();
-				$('#next').show();
+				$('.prev').hide();
+				$('.next').show();
 			}
 			for (var i = iNum * curNum; i < (iNum + 1) * curNum; i++) {
 				$(pageMain).find("li").eq(i).show()
@@ -131,7 +129,7 @@ $(function(){
 		})
 
 	}
-			
-			
-			
+
+
+
 })

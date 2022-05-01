@@ -11,19 +11,27 @@ using DanaZhangCms.Core.Options;
  
 using DanaZhangCms.IRepositories;
 using DanaZhangCms.Models;
+ 
+using DanaZhangCms.ViewModels;
 
 namespace DanaZhangCms
 {
     [Ignore, ControllerDescription(Name = "首页")]
     public class SysManageController : SysBaseController
     {
+
+        private IProductRepository _proRepository;
+        private IArticleRepository _artRepository;
         private ISysMenuRepository menuRepository;
         private ISysUserRepository userRepository;
-        public SysManageController(ISysMenuRepository menuRepository, ISysUserRepository userRepository)
+        public SysManageController(IProductRepository proRepository, IArticleRepository artRepository, ISysMenuRepository menuRepository, ISysUserRepository userRepository)
         {
+           
             CodeGenerator.Generate();//生成所有实体类对应的Repository层代码文件
             this.menuRepository = menuRepository;
             this.userRepository = userRepository;
+            this._proRepository = proRepository;
+            this._artRepository = artRepository;
         }
         [ActionDescription(Name = "首页")]
         public IActionResult Index()
@@ -36,6 +44,14 @@ namespace DanaZhangCms
         public IActionResult Welcome()
         {
             ViewData["Title"] = "系统信息";
+
+            SiteView view = new SiteView();
+            view.Articles = _artRepository.Where(o => o.CategoryId == 4).Count();
+            view.Logos= _artRepository.Where(o => o.CategoryId == 5).Count();
+            view.Vedios = _artRepository.Where(o => o.CategoryId == 3).Count();
+            view.Products = _proRepository.Count();
+
+            ViewBag.SiteView = view;
             return View();
         }
 

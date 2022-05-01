@@ -1,6 +1,6 @@
 @model DanaZhangCms.ViewModels.HomeVM
 @{
-
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @section css{
     <link rel="stylesheet" type="text/css" href="/css/new/index.css" />
@@ -62,8 +62,7 @@
                         <li>
                             <a href="javascrpt:;" target="_blank">
                                 <img class="goods_img" src="@item.ImgUrl">
-                                <span>@item.Name</span>
-                                @*<p>@item.</p>*@
+                                <span>@item.Name</span>                              
                                 @if (item.IsHot)
                                 {
                                     <img class="hot" src="images/sale.png">
@@ -72,10 +71,7 @@
                             </a>
                         </li>
                     }
-
-                }
-
-
+                } 
             </ul>
         </div>
     </div>
@@ -95,7 +91,7 @@
                     全自动混凝土凝结时间测定仪、混凝土冻融试验机、混凝土碳化箱、非接触式混凝土收缩变形测定仪、钢筋混凝土电化学腐蚀测试仪、
                     混凝土热物理参数测定仪、混凝土气体渗透测试仪、混凝土温度-应力试验机、工业内窥镜、硬化混凝土气孔结构分析仪等...
                 </p>
-                <div class="btn"><a href="list/introduce.html" target="_blank"><img src="images/to.png"></a></div>
+                <div class="btn"><a href="/contact" target="_blank"><img src="images/to.png"></a></div>
             </div>
             <div class="in_right">
                 <img class="leftop" src="images/leftop.png">
@@ -140,7 +136,7 @@
 
             </div>
 
-            <div class="vedio_more"><a href="list/video.html" target="_blank">查看更多视频</a></div>
+            <div class="vedio_more"><a href="/vedio" target="_blank">查看更多视频</a></div>
 
         </div>
     </div>
@@ -151,7 +147,7 @@
             <div class="main">
                 <span>{{titleArry[3].english}}</span>
                 <div class="more">
-                    <a href="/Article" target="_blank">
+                    <a href="/article" target="_blank">
                         <span>更多</span>
                         <img src="images/to1.png">
                     </a>

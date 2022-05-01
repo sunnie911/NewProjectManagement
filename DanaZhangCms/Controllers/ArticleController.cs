@@ -2,7 +2,6 @@ using DanaZhangCms.Core.Attributes;
 using DanaZhangCms.Core.Extensions;
 using DanaZhangCms.IRepositories;
 using DanaZhangCms.Models;
-using DanaZhangCms.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 using System.Threading.Tasks;
@@ -12,11 +11,10 @@ namespace DanaZhangCms
     [Ignore]
     public class ArticleController : BaseController
     {
-      
         private IArticleRepository _artRepository;
-        public ArticleController(  IArticleRepository artRepository )
+        public ArticleController( IArticleRepository artRepository )
         {
-          
+        
             _artRepository = artRepository;
              
         }
@@ -25,7 +23,7 @@ namespace DanaZhangCms
         public IActionResult Index(int page = 1, int pageSize = 12)
         {
             
-            var arts = _artRepository.Where(o=>o.CategoryId==4).OrderByDescending(o => o.ClickCount).ThenByDescending(o => o.CreatedDate).Skip((page - 1) * pageSize).Take(pageSize).Select(o => new Article() { Title = o.Title, Id = o.Id, ImgUrl = o.ImgUrl,VedioUrl=o.VedioUrl,CreatedDate=o.CreatedDate,ClickCount=o.ClickCount,Content=o.Content }).ToList();
+            var arts = _artRepository.Where(o=>o.CategoryId==4).OrderByDescending(o => o.ClickCount).ThenByDescending(o => o.CreatedDate).Select(o => new Article() { Title = o.Title, Id = o.Id, ImgUrl = o.ImgUrl,VedioUrl=o.VedioUrl,CreatedDate=o.CreatedDate,ClickCount=o.ClickCount,Content=o.Content }).ToList();
             var total = _artRepository.Where(o=>o.CategoryId==4).Count();
             ViewBag.Total = total;
       

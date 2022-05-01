@@ -30,7 +30,8 @@
           "CompanyCms.Repositories": "2.0.1",
           "Microsoft.AspNetCore.All": "2.1.3",
           "Microsoft.NETCore.App": "2.1.0",
-          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.1.3"
+          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.1.3",
+          "UEditor.Core": "1.0.6"
         },
         "runtime": {
           "CompanyCms.dll": {}
@@ -1438,6 +1439,21 @@
         },
         "compile": {
           "lib/netstandard1.3/TinyMapper.dll": {}
+        }
+      },
+      "UEditor.Core/1.0.6": {
+        "dependencies": {
+          "Microsoft.AspNetCore": "2.1.3",
+          "Newtonsoft.Json": "11.0.2"
+        },
+        "runtime": {
+          "lib/netstandard2.0/UEditor.Core.dll": {
+            "assemblyVersion": "1.0.6.0",
+            "fileVersion": "1.0.6.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/UEditor.Core.dll": {}
         }
       },
       "Z.EntityFramework.Plus.EFCore/1.8.10": {
@@ -5688,6 +5704,13 @@
       "sha512": "sha512-d3OHKu2vUcEA9/VrWYmtRliJyg8agdlvPV7f6PTa+dcaEvOlrTYh7rz2fnrQQhh4F4NF5X6cV1NmQDl9iOXuLg==",
       "path": "tinymapper/3.0.2-beta",
       "hashPath": "tinymapper.3.0.2-beta.nupkg.sha512"
+    },
+    "UEditor.Core/1.0.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-pZfMSVeAGDAOFmN3yq6vsZTSv/ygmFa0ZqRvQrmIt2+wPQrHSyDW5KHjnJqNPWGCpuCdjzqpa8gHB8YJXcTOFQ==",
+      "path": "ueditor.core/1.0.6",
+      "hashPath": "ueditor.core.1.0.6.nupkg.sha512"
     },
     "Z.EntityFramework.Plus.EFCore/1.8.10": {
       "type": "package",

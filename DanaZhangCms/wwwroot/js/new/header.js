@@ -56,7 +56,7 @@
         var navIndex = $(this).index();
 
 
-        var nav_curNum = 5;/*每页显示的条数*/
+        var nav_curNum = 10;/*每页显示的条数*/
         var nav_iNum = 0;/*生成页码*/
         var nav_pageMain = $('.nav .list ul li').eq(navIndex).find('.list_box span').length;
         // console.log(nav_pageMain);

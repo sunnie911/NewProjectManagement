@@ -1,0 +1,252 @@
+*——*——*——*——*——*——Begin——*——*——*——*——*——*
+记录时间：2022-04-28 23:18:07,664
+线程ID：9
+日志等级：ERROR
+日志类型：DanaZhangCms.Core.Filters.GlobalExceptionFilter
+Error
+*——*——*——*——*——*——End——*——*——*——*——*——*
+System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at DanaZhangCms.Core.CodeGenerator.CodeGenerator.Generate(Boolean ifExsitedCovered) in C:\OldProject\NewProjectManagement\DanaZhangCms.Core\CodeGenerator\CodeGenerator.cs:line 64
+   at DanaZhangCms.SysManageController..ctor(IProductRepository proRepository, ISysMenuRepository menuRepository, ISysUserRepository userRepository) in C:\OldProject\NewProjectManagement\DanaZhangCms\Controllers\System\SysManageController.cs:line 29
+   at invoker-3472e104-ea92-42f0-9e24-4f20ae666f4c(Object[] )
+   at AspectCore.Injector.ServiceCallSiteResolver.<>c__DisplayClass4_0.<ResolveCallback>b__0(ServiceResolver resolver)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.AspNetCore.Mvc.Controllers.ServiceBasedControllerActivator.Create(ControllerContext actionContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextExceptionFilterAsync()
+*——*——*——*——*——*——Begin——*——*——*——*——*——*
+记录时间：2022-04-28 23:18:22,980
+线程ID：17
+日志等级：ERROR
+日志类型：DanaZhangCms.Core.Filters.GlobalExceptionFilter
+Error
+*——*——*——*——*——*——End——*——*——*——*——*——*
+System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at DanaZhangCms.Core.CodeGenerator.CodeGenerator.Generate(Boolean ifExsitedCovered) in C:\OldProject\NewProjectManagement\DanaZhangCms.Core\CodeGenerator\CodeGenerator.cs:line 64
+   at DanaZhangCms.SysManageController..ctor(IProductRepository proRepository, ISysMenuRepository menuRepository, ISysUserRepository userRepository) in C:\OldProject\NewProjectManagement\DanaZhangCms\Controllers\System\SysManageController.cs:line 29
+   at invoker-3472e104-ea92-42f0-9e24-4f20ae666f4c(Object[] )
+   at AspectCore.Injector.ServiceCallSiteResolver.<>c__DisplayClass4_0.<ResolveCallback>b__0(ServiceResolver resolver)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.AspNetCore.Mvc.Controllers.ServiceBasedControllerActivator.Create(ControllerContext actionContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextExceptionFilterAsync()
+*——*——*——*——*——*——Begin——*——*——*——*——*——*
+记录时间：2022-04-28 23:18:39,714
+线程ID：13
+日志等级：ERROR
+日志类型：DanaZhangCms.Core.Filters.GlobalExceptionFilter
+Error
+*——*——*——*——*——*——End——*——*——*——*——*——*
+System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at DanaZhangCms.Core.CodeGenerator.CodeGenerator.Generate(Boolean ifExsitedCovered) in C:\OldProject\NewProjectManagement\DanaZhangCms.Core\CodeGenerator\CodeGenerator.cs:line 64
+   at DanaZhangCms.SysManageController..ctor(IProductRepository proRepository, ISysMenuRepository menuRepository, ISysUserRepository userRepository) in C:\OldProject\NewProjectManagement\DanaZhangCms\Controllers\System\SysManageController.cs:line 29
+   at invoker-3472e104-ea92-42f0-9e24-4f20ae666f4c(Object[] )
+   at AspectCore.Injector.ServiceCallSiteResolver.<>c__DisplayClass4_0.<ResolveCallback>b__0(ServiceResolver resolver)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.AspNetCore.Mvc.Controllers.ServiceBasedControllerActivator.Create(ControllerContext actionContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextExceptionFilterAsync()
+*——*——*——*——*——*——Begin——*——*——*——*——*——*
+记录时间：2022-04-28 23:18:40,949
+线程ID：9
+日志等级：ERROR
+日志类型：DanaZhangCms.Core.Filters.GlobalExceptionFilter
+Error
+*——*——*——*——*——*——End——*——*——*——*——*——*
+System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at DanaZhangCms.Core.CodeGenerator.CodeGenerator.Generate(Boolean ifExsitedCovered) in C:\OldProject\NewProjectManagement\DanaZhangCms.Core\CodeGenerator\CodeGenerator.cs:line 64
+   at DanaZhangCms.SysManageController..ctor(IProductRepository proRepository, ISysMenuRepository menuRepository, ISysUserRepository userRepository) in C:\OldProject\NewProjectManagement\DanaZhangCms\Controllers\System\SysManageController.cs:line 29
+   at invoker-3472e104-ea92-42f0-9e24-4f20ae666f4c(Object[] )
+   at AspectCore.Injector.ServiceCallSiteResolver.<>c__DisplayClass4_0.<ResolveCallback>b__0(ServiceResolver resolver)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.AspNetCore.Mvc.Controllers.ServiceBasedControllerActivator.Create(ControllerContext actionContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextExceptionFilterAsync()
+*——*——*——*——*——*——Begin——*——*——*——*——*——*
+记录时间：2022-04-28 23:18:41,743
+线程ID：13
+日志等级：ERROR
+日志类型：DanaZhangCms.Core.Filters.GlobalExceptionFilter
+Error
+*——*——*——*——*——*——End——*——*——*——*——*——*
+System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at DanaZhangCms.Core.CodeGenerator.CodeGenerator.Generate(Boolean ifExsitedCovered) in C:\OldProject\NewProjectManagement\DanaZhangCms.Core\CodeGenerator\CodeGenerator.cs:line 64
+   at DanaZhangCms.SysManageController..ctor(IProductRepository proRepository, ISysMenuRepository menuRepository, ISysUserRepository userRepository) in C:\OldProject\NewProjectManagement\DanaZhangCms\Controllers\System\SysManageController.cs:line 29
+   at invoker-3472e104-ea92-42f0-9e24-4f20ae666f4c(Object[] )
+   at AspectCore.Injector.ServiceCallSiteResolver.<>c__DisplayClass4_0.<ResolveCallback>b__0(ServiceResolver resolver)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.AspNetCore.Mvc.Controllers.ServiceBasedControllerActivator.Create(ControllerContext actionContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextExceptionFilterAsync()
+*——*——*——*——*——*——Begin——*——*——*——*——*——*
+记录时间：2022-04-28 23:18:42,753
+线程ID：12
+日志等级：ERROR
+日志类型：DanaZhangCms.Core.Filters.GlobalExceptionFilter
+Error
+*——*——*——*——*——*——End——*——*——*——*——*——*
+System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at DanaZhangCms.Core.CodeGenerator.CodeGenerator.Generate(Boolean ifExsitedCovered) in C:\OldProject\NewProjectManagement\DanaZhangCms.Core\CodeGenerator\CodeGenerator.cs:line 64
+   at DanaZhangCms.SysManageController..ctor(IProductRepository proRepository, ISysMenuRepository menuRepository, ISysUserRepository userRepository) in C:\OldProject\NewProjectManagement\DanaZhangCms\Controllers\System\SysManageController.cs:line 29
+   at invoker-3472e104-ea92-42f0-9e24-4f20ae666f4c(Object[] )
+   at AspectCore.Injector.ServiceCallSiteResolver.<>c__DisplayClass4_0.<ResolveCallback>b__0(ServiceResolver resolver)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.AspNetCore.Mvc.Controllers.ServiceBasedControllerActivator.Create(ControllerContext actionContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextExceptionFilterAsync()
+*——*——*——*——*——*——Begin——*——*——*——*——*——*
+记录时间：2022-04-28 23:18:43,671
+线程ID：10
+日志等级：ERROR
+日志类型：DanaZhangCms.Core.Filters.GlobalExceptionFilter
+Error
+*——*——*——*——*——*——End——*——*——*——*——*——*
+System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at DanaZhangCms.Core.CodeGenerator.CodeGenerator.Generate(Boolean ifExsitedCovered) in C:\OldProject\NewProjectManagement\DanaZhangCms.Core\CodeGenerator\CodeGenerator.cs:line 64
+   at DanaZhangCms.SysManageController..ctor(IProductRepository proRepository, ISysMenuRepository menuRepository, ISysUserRepository userRepository) in C:\OldProject\NewProjectManagement\DanaZhangCms\Controllers\System\SysManageController.cs:line 29
+   at invoker-3472e104-ea92-42f0-9e24-4f20ae666f4c(Object[] )
+   at AspectCore.Injector.ServiceCallSiteResolver.<>c__DisplayClass4_0.<ResolveCallback>b__0(ServiceResolver resolver)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.AspNetCore.Mvc.Controllers.ServiceBasedControllerActivator.Create(ControllerContext actionContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextExceptionFilterAsync()
+*——*——*——*——*——*——Begin——*——*——*——*——*——*
+记录时间：2022-04-28 23:21:42,895
+线程ID：9
+日志等级：ERROR
+日志类型：DanaZhangCms.Core.Filters.GlobalExceptionFilter
+Error
+*——*——*——*——*——*——End——*——*——*——*——*——*
+System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at DanaZhangCms.Core.CodeGenerator.CodeGenerator.Generate(Boolean ifExsitedCovered) in C:\OldProject\NewProjectManagement\DanaZhangCms.Core\CodeGenerator\CodeGenerator.cs:line 64
+   at DanaZhangCms.SysManageController..ctor(IProductRepository proRepository, ISysMenuRepository menuRepository, ISysUserRepository userRepository) in C:\OldProject\NewProjectManagement\DanaZhangCms\Controllers\System\SysManageController.cs:line 29
+   at invoker-87c1339e-a19c-42ff-87bc-2f0e4194f60e(Object[] )
+   at AspectCore.Injector.ServiceCallSiteResolver.<>c__DisplayClass4_0.<ResolveCallback>b__0(ServiceResolver resolver)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.AspNetCore.Mvc.Controllers.ServiceBasedControllerActivator.Create(ControllerContext actionContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextExceptionFilterAsync()
+*——*——*——*——*——*——Begin——*——*——*——*——*——*
+记录时间：2022-04-28 23:22:08,097
+线程ID：6
+日志等级：ERROR
+日志类型：DanaZhangCms.Core.Filters.GlobalExceptionFilter
+Error
+*——*——*——*——*——*——End——*——*——*——*——*——*
+System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at DanaZhangCms.Core.CodeGenerator.CodeGenerator.Generate(Boolean ifExsitedCovered) in C:\OldProject\NewProjectManagement\DanaZhangCms.Core\CodeGenerator\CodeGenerator.cs:line 64
+   at DanaZhangCms.SysManageController..ctor(IProductRepository proRepository, ISysMenuRepository menuRepository, ISysUserRepository userRepository) in C:\OldProject\NewProjectManagement\DanaZhangCms\Controllers\System\SysManageController.cs:line 29
+   at invoker-87c1339e-a19c-42ff-87bc-2f0e4194f60e(Object[] )
+   at AspectCore.Injector.ServiceCallSiteResolver.<>c__DisplayClass4_0.<ResolveCallback>b__0(ServiceResolver resolver)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.AspNetCore.Mvc.Controllers.ServiceBasedControllerActivator.Create(ControllerContext actionContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextExceptionFilterAsync()
+*——*——*——*——*——*——Begin——*——*——*——*——*——*
+记录时间：2022-04-28 23:28:02,124
+线程ID：7
+日志等级：ERROR
+日志类型：DanaZhangCms.Core.Filters.GlobalExceptionFilter
+Error
+*——*——*——*——*——*——End——*——*——*——*——*——*
+System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at DanaZhangCms.Core.CodeGenerator.CodeGenerator.Generate(Boolean ifExsitedCovered) in C:\OldProject\NewProjectManagement\DanaZhangCms.Core\CodeGenerator\CodeGenerator.cs:line 64
+   at DanaZhangCms.SysManageController..ctor(IProductRepository proRepository, IArticleRepository artRepository, ISysMenuRepository menuRepository, ISysUserRepository userRepository) in C:\OldProject\NewProjectManagement\DanaZhangCms\Controllers\System\SysManageController.cs:line 29
+   at invoker-f7174aca-b4e3-4181-a06c-fc6f12dc300e(Object[] )
+   at AspectCore.Injector.ServiceCallSiteResolver.<>c__DisplayClass4_0.<ResolveCallback>b__0(ServiceResolver resolver)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.AspNetCore.Mvc.Controllers.ServiceBasedControllerActivator.Create(ControllerContext actionContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextExceptionFilterAsync()
+*——*——*——*——*——*——Begin——*——*——*——*——*——*
+记录时间：2022-04-28 23:28:16,569
+线程ID：10
+日志等级：ERROR
+日志类型：DanaZhangCms.Core.Filters.GlobalExceptionFilter
+Error
+*——*——*——*——*——*——End——*——*——*——*——*——*
+System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at DanaZhangCms.Core.CodeGenerator.CodeGenerator.Generate(Boolean ifExsitedCovered) in C:\OldProject\NewProjectManagement\DanaZhangCms.Core\CodeGenerator\CodeGenerator.cs:line 64
+   at DanaZhangCms.SysManageController..ctor(IProductRepository proRepository, IArticleRepository artRepository, ISysMenuRepository menuRepository, ISysUserRepository userRepository) in C:\OldProject\NewProjectManagement\DanaZhangCms\Controllers\System\SysManageController.cs:line 29
+   at invoker-f7174aca-b4e3-4181-a06c-fc6f12dc300e(Object[] )
+   at AspectCore.Injector.ServiceCallSiteResolver.<>c__DisplayClass4_0.<ResolveCallback>b__0(ServiceResolver resolver)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.AspNetCore.Mvc.Controllers.ServiceBasedControllerActivator.Create(ControllerContext actionContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextExceptionFilterAsync()
+*——*——*——*——*——*——Begin——*——*——*——*——*——*
+记录时间：2022-04-28 23:28:18,486
+线程ID：6
+日志等级：ERROR
+日志类型：DanaZhangCms.Core.Filters.GlobalExceptionFilter
+Error
+*——*——*——*——*——*——End——*——*——*——*——*——*
+System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at DanaZhangCms.Core.CodeGenerator.CodeGenerator.Generate(Boolean ifExsitedCovered) in C:\OldProject\NewProjectManagement\DanaZhangCms.Core\CodeGenerator\CodeGenerator.cs:line 64
+   at DanaZhangCms.SysManageController..ctor(IProductRepository proRepository, IArticleRepository artRepository, ISysMenuRepository menuRepository, ISysUserRepository userRepository) in C:\OldProject\NewProjectManagement\DanaZhangCms\Controllers\System\SysManageController.cs:line 29
+   at invoker-f7174aca-b4e3-4181-a06c-fc6f12dc300e(Object[] )
+   at AspectCore.Injector.ServiceCallSiteResolver.<>c__DisplayClass4_0.<ResolveCallback>b__0(ServiceResolver resolver)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.AspNetCore.Mvc.Controllers.ServiceBasedControllerActivator.Create(ControllerContext actionContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextExceptionFilterAsync()
+*——*——*——*——*——*——Begin——*——*——*——*——*——*
+记录时间：2022-04-28 23:30:47,423
+线程ID：6
+日志等级：ERROR
+日志类型：DanaZhangCms.Core.Filters.GlobalExceptionFilter
+Error
+*——*——*——*——*——*——End——*——*——*——*——*——*
+System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at DanaZhangCms.Core.CodeGenerator.CodeGenerator.Generate(Boolean ifExsitedCovered) in C:\OldProject\NewProjectManagement\DanaZhangCms.Core\CodeGenerator\CodeGenerator.cs:line 64
+   at DanaZhangCms.SysManageController..ctor(IProductRepository proRepository, IArticleRepository artRepository, ISysMenuRepository menuRepository, ISysUserRepository userRepository) in C:\OldProject\NewProjectManagement\DanaZhangCms\Controllers\System\SysManageController.cs:line 29
+   at invoker-3c2f0b5a-f911-4a01-a2b9-2a6dbd10be12(Object[] )
+   at AspectCore.Injector.ServiceCallSiteResolver.<>c__DisplayClass4_0.<ResolveCallback>b__0(ServiceResolver resolver)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.AspNetCore.Mvc.Controllers.ServiceBasedControllerActivator.Create(ControllerContext actionContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextExceptionFilterAsync()
+*——*——*——*——*——*——Begin——*——*——*——*——*——*
+记录时间：2022-04-28 23:31:03,981
+线程ID：11
+日志等级：ERROR
+日志类型：DanaZhangCms.Core.Filters.GlobalExceptionFilter
+Error
+*——*——*——*——*——*——End——*——*——*——*——*——*
+System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at DanaZhangCms.Core.CodeGenerator.CodeGenerator.Generate(Boolean ifExsitedCovered) in C:\OldProject\NewProjectManagement\DanaZhangCms.Core\CodeGenerator\CodeGenerator.cs:line 64
+   at DanaZhangCms.SysManageController..ctor(IProductRepository proRepository, IArticleRepository artRepository, ISysMenuRepository menuRepository, ISysUserRepository userRepository) in C:\OldProject\NewProjectManagement\DanaZhangCms\Controllers\System\SysManageController.cs:line 29
+   at invoker-3c2f0b5a-f911-4a01-a2b9-2a6dbd10be12(Object[] )
+   at AspectCore.Injector.ServiceCallSiteResolver.<>c__DisplayClass4_0.<ResolveCallback>b__0(ServiceResolver resolver)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.AspNetCore.Mvc.Controllers.ServiceBasedControllerActivator.Create(ControllerContext actionContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextExceptionFilterAsync()
