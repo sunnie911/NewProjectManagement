@@ -165,4 +165,8 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Uploads\images\20220502\" />
+    <Folder Include="wwwroot\Uploads\2022-05-02\" />
+  </ItemGroup>
 </Project> 

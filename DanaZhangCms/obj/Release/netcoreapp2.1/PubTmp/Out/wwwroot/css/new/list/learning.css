@@ -137,9 +137,8 @@ img {
 }
 
 .list_current span p {
-    font-size: 14px;
-    white-space: wrap;
-    text-align: center;
+    font-size: 14px; 
+    text-align:left;
     color: #000000;
     padding: 0 15px;
     line-height: 25px;

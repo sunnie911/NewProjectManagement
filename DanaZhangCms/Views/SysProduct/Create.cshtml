@@ -114,10 +114,10 @@
             @*@Html.TextAreaFor(model => model.Content, new { @class = "", autocomplete = "off", rows = "30" })*@
             @*<textarea id="Content" name="Content"></textarea>*@
 
-            <script id="Content" name="Content" type="text/plain">
+            <script id="Content1" name="Content1" type="text/plain">
                     @Model.Content
             </script>
-            <input type="hidden" name="Content1" id="Content1" value="@Model.Content" />
+            <input type="hidden" name="Content" id="Content" value="@Model.Content" />
         </div>
 
     </div>
@@ -125,17 +125,23 @@
 
         @Html.LabelFor(model => model.ContentEn, new { @class = "layui-form-label" })
         <div class="layui-input-inline" style="width:600px;min-height:500px;">
-            @Html.TextAreaFor(model => model.ContentEn, new { @class = "ContentEn", autocomplete = "off", rows = "30" })
-
+          
+            <script id="ContentEn1" name="ContentEn1" type="text/plain">
+                    @Model.ContentEn
+            </script>
+            <input type="hidden" name="ContentEn" id="ContentEn" value="@Model.ContentEn" />
         </div>
-
+      
     </div>
     <div class="layui-form-item">
 
         @Html.LabelFor(model => model.Paramter, new { @class = "layui-form-label" })
         <div class="layui-input-inline" style="width:600px;min-height:500px;">
-            @Html.TextAreaFor(model => model.Paramter, new { @class = "paramter", autocomplete = "off", rows = "30" })
-
+          
+            <script id="Paramter1" name="Paramter1" type="text/plain">
+                    @Model.Paramter
+            </script>
+            <input type="hidden" name="Paramter" id="Paramter" value="@Model.Paramter" />
         </div>
 
     </div>
@@ -143,8 +149,10 @@
 
         @Html.LabelFor(model => model.ParamterEn, new { @class = "layui-form-label" })
         <div class="layui-input-inline" style="width:600px;min-height:500px;">
-            @Html.TextAreaFor(model => model.ParamterEn, new { @class = "paramterEn", autocomplete = "off", rows = "30" })
-
+            <script id="ParamterEn1" name="ParamterEn1" type="text/plain">
+                    @Model.ParamterEn
+            </script>
+            <input type="hidden" name="ParamterEn" id="ParamterEn" value="@Model.ParamterEn" />
         </div>
 
     </div>
@@ -176,78 +184,45 @@
 
 
     <script>
-            var editor,editor1,editor2,editor3;
-        var ue = UE.getEditor('Content', {
+           
+        var ue = UE.getEditor('Content1', {
             initialFrameHeight: 500
         });
-        var oldhtml = $("#Content1").val();
+        var oldhtml = $("#Content").val();
 
         ue.ready(function () {
             ue.setContent(oldhtml);
         });
 
-       
+
+        var ue1 = UE.getEditor('ContentEn1', {
+            initialFrameHeight: 500
+        });
+          var oldhtml1 = $("#ContentEn").val();
+
+        ue1.ready(function () {
+            ue1.setContent(oldhtml1);
+        });
+
+        var ue2 = UE.getEditor('ParamterEn1', {
+            initialFrameHeight: 500
+        });
+         var oldhtml2 = $("#ParamterEn").val();
+
+        ue2.ready(function () {
+            ue2.setContent(oldhtml2);
+        });
+
+
+        var ue3 = UE.getEditor('Paramter1', {
+            initialFrameHeight: 500
+        });
+       var oldhtml3 = $("#Paramter").val();
+
+        ue3.ready(function () {
+            ue3.setContent(oldhtml3);
+        });
         $(function () {
-
-
-    //       ClassicEditor
-    //    .create( document.querySelector( '#Content' ) ,  config)
-    //.then( newEditor => {
-    //    editor = newEditor;//editor.getData();取值
-    //} )
-    //    .catch( error => {
-    //        console.error( error );
-    //    });
-
-    //        ClassicEditor
-    //            .create(document.querySelector('#ContentEn'), {
-    //                language: 'zh-cn',
-    //                height: 500,
-    //                ckfinder: {
-    //                    uploadUrl: '/Tool/Upload'//后端处理上传逻辑返回json数据,包括uploaded(选项true/false)和url两个字段
-    //                },
-
-    //            })
-    //            .then(newEditor => {
-    //                editor1= newEditor;//editor.getData();取值
-    //            })
-    //            .catch(error => {
-    //                console.error(error);
-    //            });
-
-            ClassicEditor
-                .create(document.querySelector('#ParamterEn'), {
-                    language: 'zh-cn',
-                    height: 500,
-                    ckfinder: {
-                        uploadUrl: '/Tool/Upload'//后端处理上传逻辑返回json数据,包括uploaded(选项true/false)和url两个字段
-                    }
-
-
-                })
-                .then(newEditor => {
-                    editor2 = newEditor;//editor.getData();取值
-                })
-                .catch(error => {
-                    console.error(error);
-                });
-
-            ClassicEditor
-                .create(document.querySelector('#Paramter'), {
-                    language: 'zh-cn',
-                    height: 500,
-                    ckfinder: {
-                        uploadUrl: '/Tool/Upload'//后端处理上传逻辑返回json数据,包括uploaded(选项true/false)和url两个字段
-                    }
-
-
-                })
-                .then(newEditor => {
-                    editor3 = newEditor;//editor.getData();取值
-                })
-                .catch(error => {
-                    console.error(error);
-                });
 
   var uploader = WebUploader.create({
                 pick: '#UploadImg',
@@ -324,10 +299,10 @@
                     var url = $(".layui-form").attr("action");
                      //debugger;
                     // data.field.Content=editor.getData();
-                    $("#Content").val(editor.getData());
-                    $("#ContentEn").val(editor1.getData());
-                    $("#ParamterEn").val(editor2.getData());
-                    $("#Paramter").val(editor3.getData());
+                    //$("#Content").val(editor.getData());
+                    //$("#ContentEn").val(editor1.getData());
+                    //$("#ParamterEn").val(editor2.getData());
+                    //$("#Paramter").val(editor3.getData());
                     $.ajax({
                         url: url,
                         data: $("form").serialize(),

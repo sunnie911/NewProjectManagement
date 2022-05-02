@@ -11,8 +11,8 @@
     <div class="common_containe">
         <div class="list_top">
             <i></i>
-            <a href="#">首页 > </a>
-            <a href="#">学术交流 </a>
+            <a href="/home">首页 > </a>
+            <a href="/Article">学术交流 </a>
         </div>
 
         <div class="list_main common_containe">
@@ -25,7 +25,7 @@
                             <div class="list_current">
                                 <div class="">
                                     <span>
-                                        <a href="javascript:;">
+                                        <a href="@(Url.Action("Detail","Article",new { id=item.Id}))">
                                             <div class="img_box">
                                                 <img src="@item.ImgUrl">
                                             </div>

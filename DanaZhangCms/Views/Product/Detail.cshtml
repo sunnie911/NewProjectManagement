@@ -1,6 +1,6 @@
 ﻿@model DanaZhangCms.Models.Product
 @{
-   
+
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -10,7 +10,7 @@
 }
 <div class="list_details" style="padding-top: 80px;">
     <!-- 导航 -->
-    <div class="details_nav">
+    <div class="details_nav nav_style">
         <div class="common_containe">
             <div class="left">@Model.Name</div>
             <div class="right" id="loutinav">
@@ -29,9 +29,12 @@
             <div class="common_containe">
                 <div class="swiper-container">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide" v-for="item in bannerArry">
-                            <img :src="item">
-                        </div>
+                        @if (!string.IsNullOrEmpty(Model.ImgUrl))
+                        {
+                            <div class="swiper-slide">
+                                <img src="@Model.ImgUrl">
+                            </div>
+                        }
                     </div>
 
                 </div>
@@ -46,7 +49,7 @@
                     <div>产品视频</div>
                     <span>Product video</span>
                 </div>
-                <ul>
+                <ul> 
                     <li>
                         <img class="goods_img" src="../images/details/tu.png">
                         <img class="play" src="../images/details/video_img.png">
@@ -85,7 +88,7 @@
                     <span>Technical data</span>
                 </div>
                 <div class="par_main">
-                  @Html.Raw(Model.Paramter)
+                    @Html.Raw(Model.Paramter)
                 </div>
             </div>
         </div>

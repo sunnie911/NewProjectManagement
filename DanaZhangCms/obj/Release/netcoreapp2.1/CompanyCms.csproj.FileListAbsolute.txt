@@ -30,3 +30,4 @@ C:\OldProject\NewProjectManagement\DanaZhangCms\obj\Release\netcoreapp2.1\Compan
 C:\OldProject\NewProjectManagement\DanaZhangCms\obj\Release\netcoreapp2.1\CompanyCms.pdb
 C:\OldProject\NewProjectManagement\DanaZhangCms\obj\Release\netcoreapp2.1\CompanyCms.genruntimeconfig.cache
 C:\OldProject\NewProjectManagement\DanaZhangCms\bin\Release\netcoreapp2.1\App_Data\DanaZhangCms.db
+C:\OldProject\NewProjectManagement\DanaZhangCms\bin\Release\netcoreapp2.1\ueditor.json
