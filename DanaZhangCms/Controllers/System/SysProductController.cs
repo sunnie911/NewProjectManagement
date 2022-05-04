@@ -86,7 +86,7 @@ namespace DanaZhangCms
         }
 
         [AjaxRequestOnly]
-        public Task<IActionResult> GetEntitiesByPaged(int limit, int page, int CategoryId = 0)
+        public Task<IActionResult> GetEntitiesByPaged(int limit, int page, int CategoryId = 0,string title="")
         {
             return Task.Factory.StartNew<IActionResult>(() =>
             {
@@ -104,6 +104,13 @@ namespace DanaZhangCms
              m => m.Id).Select(o => new { o.Id, o.Name, o.NameEn, o.ContentEn, o.Model, CreatedDate = o.CreatedDate.ToString("yyyy-MM-dd"), CateName = o.Category == null ? "" : o.Category.Name }).ToList();
 
                 }
+                if (!string.IsNullOrWhiteSpace(title))
+                {
+                    rows = _repository.GetByPaginationWithInclude(m => m.Name.Contains(title.Trim()), @include, limit, page, true,
+              m => m.Id).Select(o => new { o.Id, o.Name, o.NameEn, o.ContentEn, o.Model, CreatedDate = o.CreatedDate.ToString("yyyy-MM-dd"), CateName = o.Category == null ? "" : o.Category.Name }).ToList();
+
+                }
+
                 return Json(LayUIPaginationResult.PagedResult(true, rows, total));
             });
         }

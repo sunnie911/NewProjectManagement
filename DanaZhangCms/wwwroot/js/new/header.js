@@ -43,7 +43,22 @@
         },
     })
 
-    $('.nav .list ul').prepend("<li><a href=\"#\">首页</a></li>")
+    var lau = $('.nav').find(".chiness").length;
+    if (lau == 1) {
+        $('.nav .list ul').prepend("<li><a href=\"/english\">index</a></li>")
+    }
+    else {
+        $('.nav .list ul').prepend("<li><a href=\"/home\">首页</a></li>")
+    }
+    //$('.nav .list ul').prepend("<li><a href=\"#\">首页</a></li>")
+
+    $('.nav .chiness').click(function () {
+        window.location.href = "/home";
+    })
+
+    $('.nav .english').click(function () {
+        window.location.href = "/english";
+    })
     $('.nav .list ul li').eq(0).addClass('navStyle')
 
     $('.nav .list ul li').mouseenter(function () {

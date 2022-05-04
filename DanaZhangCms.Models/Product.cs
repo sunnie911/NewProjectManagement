@@ -104,5 +104,27 @@ namespace DanaZhangCms.Models
         [Display(Name = "排序")]
         public int SortId { get; set; }
 
+        /// <summary>
+        /// 轮播图
+        /// </summary>
+        [Display(Name = "轮播图1")]
+        public string Banner1 { get; set; }
+        /// <summary>
+        /// 轮播图
+        /// </summary>
+        [Display(Name = "轮播图2")]
+        public string Banner2 { get; set; }
+        /// <summary>
+        /// 轮播图
+        /// </summary>
+        [Display(Name = "轮播图3")]
+        public string Banner3 { get; set; }
+        /// <summary>
+        /// 轮播图
+        /// </summary>
+        [Display(Name = "轮播图4")]
+        public string Banner4 { get; set; }
+       
+
     }
 }

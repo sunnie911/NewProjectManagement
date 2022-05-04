@@ -40,7 +40,7 @@
                             var proList = productList.Where(p => p.CategoryId == cate.Id).OrderBy(o => o.IsHot).ToList();
                             <li>
                                 <a href="/Product?categoryId=@cate.Id">
-                                    <span>@cate.Name</span>
+                                    <span>@cate.NameEn</span>
                                 </a>
                                 <div class="list_box">
                                     <div class="navlist_current">
@@ -69,13 +69,13 @@
 
                     <li>
                         <a href="/contact" target="_blank">
-                            <span>联系我们</span>
+                            <span>CONTACT</span>
                         </a>
                         <div class="lianxi">
-                            <a href="/about" target="_blank"><span>公司简介  </span></a>
-                            <span>公司优势</span>
-                            <span>服务客户</span>
-                            <span><a href="/article" target="_blank">学术交流</a></span>
+                            <a href="/about" target="_blank"><span>Company profile  </span></a>
+                            <span>Company advantages</span>
+                            <span>Customers</span>
+                            <span><a href="/article" target="_blank">NEWS</a></span>
                         </div>
                     </li>
                 </ul>
@@ -83,7 +83,7 @@
             <div class="search">
                 <p><img src="/images/sousuo.png"></p>
                 <input type="text" />
-                <div>En</div>
+                <div class="chiness">中</div>
             </div>
             <div class="text"></div>
         </div>
@@ -94,77 +94,78 @@
 
 
 
-    <div class="footer_box">
-        <div class="footer_main">
-            <div class="foot_box common_containe">
-                <div class="foot_left">
-                    <dl>
-                        <dt>售前咨询</dt>
-                        <dd><a href="#">产品咨询</a></dd>
-                        <dd><a href="#">服务咨询</a></dd>
-                        <dd><a href="#">合作咨询</a></dd>
-                    </dl>
-                    <dl>
-                        <dt>售后服务</dt>
-                        <dd><a href="#">安装培训</a></dd>
-                        <dd><a href="#">维修保养</a></dd>
-                        <dd><a href="#">资料下载</a></dd>
-                    </dl>
-                    <dl>
-                        <dt>新闻动态</dt>
-                        <dd><a href="/article">学术交流</a></dd>
-                        <dd><a href="#">科研标准</a></dd>
-                        <dd><a href="#">学术交流</a></dd>
-                    </dl>
-                    <dl>
-                        <dt>关于我们</dt>
-                        <dd><a href="/about">了解冠力</a></dd>
-                        <dd><a href="/about">公司荣誉</a></dd>
-                        <dd><a href="#">加入我们</a></dd>
-                    </dl>
-                    <dl>
-                        <dt>媒体矩阵</dt>
-                        <dd><a href="#">微信公众号</a></dd>
-                        <dd><a href="http://mp.sohu.com/profile?xpt=OTVjZWVmNWQtNmNjMi00NGRhLWI4NzEtMmEzMTQ3MGRiNjll">搜狐号</a></dd>
-                        <dd><a href="#">抖音号</a></dd>
-                    </dl>
-                </div>
-                <div class="foot_right">
-                    <img src="../images/ewm.jpg">
-                    <span>关注官方微信</span>
-                </div>
+<div class="footer_box">
+    <div class="footer_main">
+        <div class="foot_box common_containe">
+            <div class="foot_left">
+                <dl>
+                    <dt>CONTACT</dt>
+                    <dd><a href="#">Product Consultation </a></dd>
+                    <dd><a href="#">Service Consultation</a></dd>
+                    <dd><a href="#">Cooperation Consultation</a></dd>
+                </dl>
+                <dl>
+                    <dt>SERVICES&SUPPORT</dt>
+                    <dd><a href="#">Installation Training</a></dd>
+                    <dd><a href="#">Maintenance</a></dd>
+                    <dd><a href="#">Data Download</a></dd>
+                </dl>
+                <dl>
+                    <dt>News&Notices </dt>
+                    <dd><a href="/article">Academic Exchange</a></dd>
+                    <dd><a href="#">Research and Standard</a></dd>
+                    <dd><a href="#">Company News</a></dd>
+                </dl>
+                <dl>
+                    <dt>ABOUT US</dt>
+                    <dd><a href="/about">ABOUT Guanli</a></dd>
+                    <dd><a href="/about">Company Honor</a></dd>
+                    <dd><a href="#">Careers</a></dd>
+                </dl>
+                <dl>
+                    <dt>Official Social Media Accounts</dt>
+                    <dd><a href="#">WeChat Official Account</a></dd>
+                    <dd><a href="http://mp.sohu.com/profile?xpt=OTVjZWVmNWQtNmNjMi00NGRhLWI4NzEtMmEzMTQ3MGRiNjll">Sohu</a></dd>
+                    <dd><a href="#">Tiktok</a></dd>
+                </dl>
             </div>
-
+            <div class="foot_right">
+                <img src="/images/ewm.jpg">
+                <span>关注官方微信</span>
+            </div>
         </div>
-        <div class="foot_wrap">
-            <div class="footer">
-                <ul>
-                    <li>
-                        <div><img src="../images/sign1.png"></div>
-                        <span>国家高新技术企业</span>
-                    </li>
-                    <li>
-                        <div><img src="../images/sign2.png"></div>
-                        <span>杭州市高新技术企业</span>
-                    </li>
-                    <li>
-                        <div><img src="../images/sign3.png"></div>
-                        <span>ISO9001认证</span>
-                    </li>
 
-                </ul>
-                <div class="right">
-                    <p><a style="color:white" href="http://beian.miit.gov.cn">版权所有 © 建研华测（杭州）科技有限公司 浙ICP备20006756号-1 </a></p>
+    </div>
+    <div class="foot_wrap">
+        <div class="footer">
+            <ul>
+                <li>
+                    <div><img src="/images/sign1.png"></div>
+                    <span>ational high tech enterprise</span>
+                </li>
+                <li>
+                    <div><img src="/images/sign2.png"></div>
+                    <span>HangZhou High Tech Enterprise</span>
+                </li>
+                <li>
+                    <div><img src="/images/sign3.png"></div>
+                    <span>ISO9001 certification</span>
+                </li>
 
-                    <p>地址：萧山区南秀路3089号新塘科创园1号楼4层 &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;邮编：311200</p>
-                    <p>
-                        电话： 0571-82875561/82755615
-                    </p>
-                </div>
+            </ul>
+            <div class="right">
+                <p><a style="color:white" href="http://beian.miit.gov.cn">Copyright © Jianyanhua testing (Hangzhou) Technology Co., Ltd. </a></p>
 
+                <p>Address: No. 3089, nanxiu Road, Xintang street, Xiaoshan District, Hangzhou City, Zhejiang</p>
+                <p>Province, China. zip code: 311200</p>
+                <p>
+                    Tel:： 0571-82875561/82755615
+                </p>
             </div>
+
         </div>
     </div>
+</div>
 
 
     @RenderSection("Scripts", required: false)

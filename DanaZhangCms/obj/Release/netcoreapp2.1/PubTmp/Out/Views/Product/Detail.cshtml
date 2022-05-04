@@ -1,14 +1,57 @@
 ﻿@model DanaZhangCms.Models.Product
 @{
-   
+
     Layout = "~/Views/Shared/_Layout.cshtml";
+
+    List<string> imglist = new List<string>();
+
+    if (!string.IsNullOrWhiteSpace(Model.ImgUrl))
+    {
+        imglist.Add(Model.ImgUrl);
+    }
+
+    if (!string.IsNullOrWhiteSpace(Model.Banner1))
+    {
+        imglist.Add(Model.Banner1);
+    }
+
+    if (!string.IsNullOrWhiteSpace(Model.Banner2))
+    {
+        imglist.Add(Model.Banner2);
+    }
+
+    if (!string.IsNullOrWhiteSpace(Model.Banner3))
+    {
+        imglist.Add(Model.Banner3);
+    }
+
+    if (!string.IsNullOrWhiteSpace(Model.Banner4))
+    {
+        imglist.Add(Model.Banner4);
+    }
+
 }
 
 @section css{
     <link href="~/css/new/details/product_details.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="/css/new/swiper.min.css" />
+    <style type="text/css">
+        .det_banner .swiper-button-next {
+            background-image: url("/images/details/jian_right.png");
+            background-size: 100%;
+        }
 
+        .det_banner .swiper-button-prev {
+            background-image: url("/images/details/jian_left.png");
+            background-size: 100%;
+        }
+
+        .par_main img {
+            display: inline-table;
+        }
+    </style>
 }
-<div class="list_details" style="padding-top: 80px;">
+<div class="list_details" style="margin-top:80px;">
     <!-- 导航 -->
     <div class="details_nav">
         <div class="common_containe">
@@ -29,9 +72,14 @@
             <div class="common_containe">
                 <div class="swiper-container">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide" v-for="item in bannerArry">
-                            <img :src="item">
-                        </div>
+                        @foreach (var img in imglist)
+                        {
+                            <div class="swiper-slide">
+                                <img src="@img">
+                            </div>
+                        }
+
+                       
                     </div>
 
                 </div>
@@ -85,7 +133,7 @@
                     <span>Technical data</span>
                 </div>
                 <div class="par_main">
-                  @Html.Raw(Model.Paramter)
+                    @Html.Raw(Model.Paramter)
                 </div>
             </div>
         </div>
@@ -96,12 +144,17 @@
                     <div>细节亮点</div>
                     <span>Details highlights</span>
                 </div>
-                @Html.Raw(Model.Content)
+
+                <div class="par_main">
+                    @Html.Raw(Model.Content)
+                </div>
+
             </div>
         </div>
     </div>
 </div>
 
 @section Scripts{
+    <script src="/js/new/swiper.min.js" type="text/javascript"></script>
     <script src="~/js/new/details/product_details.js"></script>
 }

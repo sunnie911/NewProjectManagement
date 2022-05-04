@@ -19,9 +19,12 @@
                 }
 
             </select>
-
-
         </div>
+        <div class="layui-inline">
+            <input class="layui-input" name="name" id="demoReload" autocomplete="off">
+        </div>
+        <button class="layui-btn" data-type="reload">搜索</button>
+
     </div>
 
     <a href="@(Url.Action("Create"))">
@@ -62,14 +65,15 @@ layui.use('table', function(){
     var $ = layui.$, active = {
         reload: function () {
             var type = $('#catagoryId');
-
+            var name = $('#demoReload');
             //执行重载
             table.reload('testReload', {
                 page: {
                     curr: 1 //重新从第 1 页开始
                 }
                 , where: {
-                    categoryId: type.val()
+                    categoryId: type.val(),
+                    title: name.val(),
                 }
             });
         }
@@ -79,7 +83,10 @@ layui.use('table', function(){
         var type = $(this).data('type');
         active[type] ? active[type].call(this) : '';
     });
-
+    $('#demoTable .layui-btn').on('click', function () {
+        var type = $(this).data('type');
+        active[type] ? active[type].call(this) : '';
+    });
 
     //监听头工具栏事件
     table.on('tool(test)', function (obj) {

@@ -43,11 +43,11 @@
             <div class="uploadPreview" id="PreviewImg">
                 @if (!string.IsNullOrEmpty(Model.ImgUrl))
                 {
-                    <img src="@Model.ImgUrl" />
+                <img src="@Model.ImgUrl" />
                 }
                 else
                 {
-                    @:暂无图片
+                @:暂无图片
                 }
             </div>
             <div class="left">
@@ -61,18 +61,90 @@
     </div>
 
     <div class="layui-form-item">
+
+        @Html.LabelFor(model => model.Banner1, new { @class = "layui-form-label" })
+        <div class="layui-input-inline">
+            <div class="uploadPreview" id="PreviewImg1">
+                @if (!string.IsNullOrEmpty(Model.Banner1))
+                {
+                <img src="@Model.Banner1" />
+                }
+                else
+                {
+                @:暂无图片
+                }
+            </div>
+            <div class="left">
+                <div class="uploadProgressBar"></div>
+                <div id="UploadImg1" class="uploadBut">选择图片</div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        @Html.HiddenFor(x => x.Banner1)
+
+    </div>
+
+    <div class="layui-form-item">
+
+        @Html.LabelFor(model => model.Banner2, new { @class = "layui-form-label" })
+        <div class="layui-input-inline">
+            <div class="uploadPreview" id="PreviewImg2">
+                @if (!string.IsNullOrEmpty(Model.Banner2))
+                {
+                <img src="@Model.Banner2" />
+                }
+                else
+                {
+                @:暂无图片
+                }
+            </div>
+            <div class="left">
+                <div class="uploadProgressBar"></div>
+                <div id="UploadImg2" class="uploadBut">选择图片</div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        @Html.HiddenFor(x => x.Banner2)
+
+    </div>
+
+    <div class="layui-form-item">
+
+        @Html.LabelFor(model => model.Banner3, new { @class = "layui-form-label" })
+        <div class="layui-input-inline">
+            <div class="uploadPreview" id="PreviewImg3">
+                @if (!string.IsNullOrEmpty(Model.Banner3))
+                {
+                <img src="@Model.Banner3" />
+                }
+                else
+                {
+                @:暂无图片
+                }
+            </div>
+            <div class="left">
+                <div class="uploadProgressBar"></div>
+                <div id="UploadImg3" class="uploadBut">选择图片</div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        @Html.HiddenFor(x => x.Banner3)
+
+    </div>
+
+    <div class="layui-form-item">
         @Html.LabelFor(model => model.VedioUrl, new { @class = "layui-form-label" })
         <div class="layui-input-inline">
             <div class="uploadPreview" id="PreviewVedio">
                 @if (!string.IsNullOrEmpty(Model.VedioUrl))
                 {
-                    <video width="100%" controls="" preload="auto" autoplay="autoplay">
-                        <source src="@Model.VedioUrl" />
-                    </video>
+                <video width="100%" controls="" preload="auto" autoplay="autoplay">
+                    <source src="@Model.VedioUrl" />
+                </video>
                 }
                 else
                 {
-                    @:暂无视频
+                @:暂无视频
                 }
             </div>
             <div class="left">
@@ -106,56 +178,56 @@
 
         </div>
     </div>
+    <div class="layui-form-item">
+
+        @Html.LabelFor(model => model.Paramter, new { @class = "layui-form-label" })
+        <div class="layui-input-inline" style="width:900px;min-height:500px;">
+
+            <script id="Paramter" name="Paramter" type="text/plain">
+                    @Model.Paramter
+            </script>
+            <input type="hidden" name="Paramter1" id="Paramter1" value="@Model.Paramter" />
+        </div>
+
+    </div>
 
     <div class="layui-form-item">
 
         @Html.LabelFor(model => model.Content, new { @class = "layui-form-label" })
-        <div class="layui-input-inline" style="width:600px;min-height:500px;">
-            @*@Html.TextAreaFor(model => model.Content, new { @class = "", autocomplete = "off", rows = "30" })*@
-            @*<textarea id="Content" name="Content"></textarea>*@
+        <div class="layui-input-inline" style="width:900px;min-height:500px;">
 
-            <script id="Content1" name="Content1" type="text/plain">
+            <script id="Content" name="Content" type="text/plain">
                     @Model.Content
             </script>
-            <input type="hidden" name="Content" id="Content" value="@Model.Content" />
-        </div>
-
-    </div>
-    <div class="layui-form-item">
-
-        @Html.LabelFor(model => model.ContentEn, new { @class = "layui-form-label" })
-        <div class="layui-input-inline" style="width:600px;min-height:500px;">
-          
-            <script id="ContentEn1" name="ContentEn1" type="text/plain">
-                    @Model.ContentEn
-            </script>
-            <input type="hidden" name="ContentEn" id="ContentEn" value="@Model.ContentEn" />
-        </div>
-      
-    </div>
-    <div class="layui-form-item">
-
-        @Html.LabelFor(model => model.Paramter, new { @class = "layui-form-label" })
-        <div class="layui-input-inline" style="width:600px;min-height:500px;">
-          
-            <script id="Paramter1" name="Paramter1" type="text/plain">
-                    @Model.Paramter
-            </script>
-            <input type="hidden" name="Paramter" id="Paramter" value="@Model.Paramter" />
+            <input type="hidden" name="Content1" id="Content1" value="@Model.Content" />
         </div>
 
     </div>
     <div class="layui-form-item">
 
         @Html.LabelFor(model => model.ParamterEn, new { @class = "layui-form-label" })
-        <div class="layui-input-inline" style="width:600px;min-height:500px;">
-            <script id="ParamterEn1" name="ParamterEn1" type="text/plain">
+        <div class="layui-input-inline" style="width:900px;min-height:500px;">
+            <script id="ParamterEn" name="ParamterEn" type="text/plain">
                     @Model.ParamterEn
             </script>
-            <input type="hidden" name="ParamterEn" id="ParamterEn" value="@Model.ParamterEn" />
+            <input type="hidden" name="ParamterEn1" id="ParamterEn1" value="@Model.ParamterEn" />
         </div>
 
     </div>
+
+    <div class="layui-form-item">
+
+        @Html.LabelFor(model => model.ContentEn, new { @class = "layui-form-label" })
+        <div class="layui-input-inline" style="width:900px;min-height:500px;">
+
+            <script id="ContentEn" name="ContentEn" type="text/plain">
+                    @Model.ContentEn
+            </script>
+            <input type="hidden" name="ContentEn1" id="ContentEn1" value="@Model.ContentEn" />
+        </div>
+
+    </div>
+
 
     <div class="layui-form-item">
         <label for="L_repass" class="layui-form-label">
@@ -184,40 +256,40 @@
 
 
     <script>
-           
-        var ue = UE.getEditor('Content1', {
-            initialFrameHeight: 500
+
+        var ue = UE.getEditor('Content', {
+            initialFrameHeight:800
         });
-        var oldhtml = $("#Content").val();
+        var oldhtml = $("#Content1").val();
 
         ue.ready(function () {
             ue.setContent(oldhtml);
         });
 
 
-        var ue1 = UE.getEditor('ContentEn1', {
+        var ue1 = UE.getEditor('ContentEn', {
             initialFrameHeight: 500
         });
-          var oldhtml1 = $("#ContentEn").val();
+          var oldhtml1 = $("#ContentEn1").val();
 
         ue1.ready(function () {
             ue1.setContent(oldhtml1);
         });
 
-        var ue2 = UE.getEditor('ParamterEn1', {
+        var ue2 = UE.getEditor('ParamterEn', {
             initialFrameHeight: 500
         });
-         var oldhtml2 = $("#ParamterEn").val();
+         var oldhtml2 = $("#ParamterEn1").val();
 
         ue2.ready(function () {
             ue2.setContent(oldhtml2);
         });
 
 
-        var ue3 = UE.getEditor('Paramter1', {
+        var ue3 = UE.getEditor('Paramter', {
             initialFrameHeight: 500
         });
-       var oldhtml3 = $("#Paramter").val();
+       var oldhtml3 = $("#Paramter1").val();
 
         ue3.ready(function () {
             ue3.setContent(oldhtml3);
@@ -257,6 +329,104 @@
                 $("#PreviewImg").html("上传失败");
             });
 
+            var uploader2 = WebUploader.create({
+                pick: '#UploadImg2',
+                auto: true,
+                swf: '/lib/webuploader/Uploader.swf',
+                server: '/tool/upload?operation=bimage',
+                fileVal: 'upload',
+                accept: {
+                    title: 'Images',
+                    mimeTypes: 'image/*'
+                },
+
+            });
+
+            uploader2.on('uploadProgress', function (file, percentage) {
+                $("#PreviewImg2").html("上传中...");
+            });
+
+            uploader2.on('uploadSuccess', function (file, response) {
+                var data = eval("(" + response._raw + ")");;
+                if (!data.uploaded) {
+                    $("#PreviewImg2").html(data.url);
+                }
+
+                else {
+                    $("#PreviewImg2").html("<img src=\"" + data.url + "\"  />");
+                    $("#Banner2").val(data.url);
+                }
+            });
+
+            uploader2.on('uploadError', function (file) {
+                $("#PreviewImg2").html("上传失败");
+            });
+
+            var uploader3 = WebUploader.create({
+                pick: '#PreviewImg3',
+                auto: true,
+                swf: '/lib/webuploader/Uploader.swf',
+                server: '/tool/upload?operation=bimage',
+                fileVal: 'upload',
+                accept: {
+                    title: 'Images',
+                    mimeTypes: 'image/*'
+                },
+
+            });
+
+            uploader3.on('uploadProgress', function (file, percentage) {
+                $("#PreviewImg3").html("上传中...");
+            });
+
+            uploader3.on('uploadSuccess', function (file, response) {
+                var data = eval("(" + response._raw + ")");;
+                if (!data.uploaded) {
+                    $("#PreviewImg3").html(data.url);
+                }
+
+                else {
+                    $("#PreviewImg3").html("<img src=\"" + data.url + "\"  />");
+                    $("#Banner3").val(data.url);
+                }
+            });
+
+            uploader3.on('uploadError', function (file) {
+                $("#PreviewImg3").html("上传失败");
+            });
+
+            var uploader4 = WebUploader.create({
+                pick: '#UploadImg1',
+                auto: true,
+                swf: '/lib/webuploader/Uploader.swf',
+                server: '/tool/upload?operation=bimage',
+                fileVal: 'upload',
+                accept: {
+                    title: 'Images',
+                    mimeTypes: 'image/*'
+                },
+
+            });
+
+            uploader4.on('uploadProgress', function (file, percentage) {
+                $("#PreviewImg1").html("上传中...");
+            });
+
+            uploader4.on('uploadSuccess', function (file, response) {
+                var data = eval("(" + response._raw + ")");;
+                if (!data.uploaded) {
+                    $("#PreviewImg1").html(data.url);
+                }
+
+                else {
+                    $("#PreviewImg1").html("<img src=\"" + data.url + "\"  />");
+                    $("#Banner1").val(data.url);
+                }
+            });
+
+            uploader4.on('uploadError', function (file) {
+                $("#PreviewImg1").html("上传失败");
+            });
             var uploader1 = WebUploader.create({
                 pick: '#UploadVedio',
                 auto: true,

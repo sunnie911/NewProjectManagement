@@ -90,5 +90,8 @@ namespace DanaZhangCms.Models
          [Display(Name = "排序")]
         public int SortId { get; set; }
 
+
+
+      
     }
 }
