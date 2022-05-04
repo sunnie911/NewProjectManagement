@@ -1,7 +1,7 @@
 ﻿@model List<DanaZhangCms.Models.Product>
 @{
     ViewData["Title"] = "产品列表";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_LayoutEn.cshtml";
 }
 @section css{    
     <link href="~/css/new/list/productList.css" rel="stylesheet" />
@@ -10,8 +10,8 @@
     <div class="common_containe">
         <div class="list_top">
             <i></i>
-            <a href="/">首页 > </a>
-            <a href="/Product">产品列表 </a>
+            <a href="/english">Index > </a>
+            <a href="/english/Product">Products </a>
         </div>
 
         <div class="list_main common_containe">
@@ -26,10 +26,10 @@
                                 <span>
                                     <a href="@(Url.Action("Detail","Product",new { id=pro.Id}))">
                                         <div class="img_box">
-                                            <img src="@pro.ImgUrl" title="@pro.Name">
+                                            <img src="@pro.ImgUrl" title="@pro.NameEn">
                                             @if (pro.IsHot)
                                             {
-                                                <img   class="hot" src="/images/sale.png">
+                                                <img class="hot" src="/images/sale.png">
                                             }
 
                                         </div>

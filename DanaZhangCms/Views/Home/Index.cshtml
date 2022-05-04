@@ -125,9 +125,12 @@
                         {
                             <div class="swiper-slide">
                                 <div class="slide_main">
-                                    <img src="@item.ImgUrl">
-                                    <div class="mainP">@item.Title</div>
-                                    <span>@item.CreatedDate</span>
+
+                                    <a href="/Vedio/Detail/@item.Id">
+                                        <img src="@item.ImgUrl">
+                                        </a>
+                                        <div class="mainP">@item.Title</div>
+                                        <span>@item.CreatedDate</span>
                                 </div>
                             </div>
                         }

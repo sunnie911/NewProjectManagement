@@ -1,7 +1,7 @@
 ﻿@model List<DanaZhangCms.Models.Article>
 @{
     ViewData["Title"] = "新闻中心";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_LayoutEn.cshtml";
 }
 @section css{  
     <link rel="stylesheet" type="text/css" href="/css/new/list/video.css" />
@@ -10,8 +10,8 @@
     <div class="common_containe">
         <div class="list_top">
             <i></i>
-            <a href="/">首页 > </a>
-            <a href="/vedio">产品视频 </a>
+            <a href="/english">Index > </a>
+            <a href="/english/vedio">Vedios </a>
         </div>
         <div class="goods_video">
             <ul id="pageMain">
@@ -22,14 +22,13 @@
                         <li>
                             <img class="goods_img" src="@item.ImgUrl">
                             <div class="img_bj">
-                              <a href="/Vedio/Detail/@item.Id"> <img class="play" src="/images/details/video_img.png"></a>  
+                                <img class="play" src="/images/details/video_img.png">
                             </div>
                             <div class="v_shipin"></div>
-                            <div class="v_main" data-id="@item.Id">                        
-
- 
+                            <div class="v_main">
+                               
                             </div>
-                        </li>
+                        </li>          
                     }
                 }
             </ul>
@@ -44,9 +43,6 @@
 </div>
 @section Scripts{
 
-    <script>
-        var total = '@(ViewBag.Total)';
-        var pageUrl = "@(Url.Action("Index", "Article"))";
-    </script>
+  
     <script src="~/js/new/list/video.js"></script>
 }

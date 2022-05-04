@@ -42,7 +42,7 @@ namespace DanaZhangCms
             }
             else
             {
-                productList = _proRepository.OrderBy(o => o.IsHot).Skip((page - 1) * pageSize).Take(pageSize).Select(o => new Product() { Name = o.Name, Id = o.Id, ImgUrl = o.ImgUrl, IsHot = o.IsHot }).ToList();
+                productList = _proRepository.OrderBy(o => o.IsHot).Select(o => new Product() { Name = o.Name, Id = o.Id, ImgUrl = o.ImgUrl, IsHot = o.IsHot }).ToList();
 
             }   
             
@@ -58,7 +58,7 @@ namespace DanaZhangCms
         public async Task<IActionResult> Detail(int id)
         {
             var model = await _proRepository.GetSingleAsync(id);
-            // var cateName =await _pcateRepository.GetSingleAsync(model.CategoryId);
+           
             return View(model);
         }
     }

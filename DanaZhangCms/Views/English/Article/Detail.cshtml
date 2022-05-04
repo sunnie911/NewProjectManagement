@@ -1,0 +1,52 @@
+﻿@model DanaZhangCms.Models.Article
+@{
+    ViewData["Title"] = Model.Title;
+    Layout = "~/Views/Shared/_LayoutEn.cshtml";
+}
+
+@section css{
+
+    <link href="~/css/new/details/lea_details.css" rel="stylesheet" />
+}
+<div class="lea_whole" style=" margin-top:80px; ">
+    <div class="common_containe">
+        <div class="list_top">
+            <i></i>
+            <a href="#">首页 > </a>
+            <a href="#">学术交流 </a>
+            <a href="#"> @Model.Title </a>
+        </div>
+        <div class="lea_main">
+            <h2>@Model.Title</h2>
+            <span class="time">@Model.CreatedDate</span>
+            <div class="leaBox">
+                @Html.Raw(Model.ContentEn)
+             
+            </div>
+        </div>
+        <div class="lea_bott">
+            <a href="#">
+                <div>
+                    <img src="../images/vedio4.jpg">
+                </div>
+                <div class="lea_right">
+                    <span> < 上一篇</span>
+                    <p>耐尔得2021大事记</p>
+                </div>
+            </a>
+            <a href="#">
+                <div>
+                    <img src="../images/vedio4.jpg">
+                </div>
+                <div class="lea_right">
+                    <span> 下一篇 > </span>
+                    <p>耐尔得2021大事记耐尔得2021大事记</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+@section Scripts{
+    
+    <script src="~/js/new/details/lea_details.js"></script>
+}

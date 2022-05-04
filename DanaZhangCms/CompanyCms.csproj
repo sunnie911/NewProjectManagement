@@ -150,6 +150,12 @@
     <Content Update="Views\About\Index.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
+    <Content Update="Views\English\Article\Detail.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\English\Vedio\Detail.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
     <Content Update="Views\Vedio\Detail.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
