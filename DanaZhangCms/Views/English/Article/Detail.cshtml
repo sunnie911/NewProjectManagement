@@ -1,6 +1,10 @@
 ﻿@model DanaZhangCms.Models.Article
 @{
     ViewData["Title"] = Model.Title;
+
+    var preArticle = ViewBag.PreArticle as Article;
+
+    var lastArticle = ViewBag.LastArticle as Article;
     Layout = "~/Views/Shared/_LayoutEn.cshtml";
 }
 
@@ -12,37 +16,44 @@
     <div class="common_containe">
         <div class="list_top">
             <i></i>
-            <a href="#">首页 > </a>
-            <a href="#">学术交流 </a>
-            <a href="#"> @Model.Title </a>
+            <a href="/english">Index > </a>
+            <a href="/english/article">News </a>
+            <a href="javascript:;"> @Model.TitleEn </a>
         </div>
         <div class="lea_main">
-            <h2>@Model.Title</h2>
+            <h2>@Model.TitleEn</h2>
             <span class="time">@Model.CreatedDate</span>
             <div class="leaBox">
                 @Html.Raw(Model.ContentEn)
-             
+
             </div>
         </div>
         <div class="lea_bott">
-            <a href="#">
-                <div>
-                    <img src="../images/vedio4.jpg">
-                </div>
-                <div class="lea_right">
-                    <span> < 上一篇</span>
-                    <p>耐尔得2021大事记</p>
-                </div>
-            </a>
-            <a href="#">
-                <div>
-                    <img src="../images/vedio4.jpg">
-                </div>
-                <div class="lea_right">
-                    <span> 下一篇 > </span>
-                    <p>耐尔得2021大事记耐尔得2021大事记</p>
-                </div>
-            </a>
+            @if (preArticle != null && preArticle.Id > 0)
+            {
+                <a href="/english/NewDetail/@preArticle.Id">
+                    <div>
+                        <img src="@preArticle.ImgUrl">
+                    </div>
+                    <div class="lea_right">
+                        <span>  上一篇</span>
+                        <p>@preArticle.TitleEn</p>
+                    </div>
+                </a>
+            }
+            @if (lastArticle != null && lastArticle.Id > 0)
+            {
+
+                <a href="/english/NewDetail/@lastArticle.Id">
+                    <div>
+                        <img src="@lastArticle.ImgUrl">
+                    </div>
+                    <div class="lea_right">
+                        <span> 下一篇 > </span>
+                        <p>@lastArticle.TitleEn</p>
+                    </div>
+                </a>
+            }
         </div>
     </div>
 </div>

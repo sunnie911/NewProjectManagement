@@ -37,7 +37,8 @@ namespace DanaZhangCms
             var total = _proRepository.Count();
             if (categoryId > 0)
             {
-                productList = _proRepository.Where(p=>p.CategoryId == categoryId).OrderBy(o => o.IsHot).Skip((page - 1) * pageSize).ToList();
+                //productList = _proRepository.Where(p=>p.CategoryId == categoryId).OrderBy(o => o.IsHot).Skip((page - 1) * pageSize).ToList();
+                productList = _proRepository.Where(p => p.CategoryId == categoryId).OrderBy(o => o.IsHot).ToList();
                 total = _proRepository.Where(p=>p.CategoryId==categoryId).Count();
             }
             else

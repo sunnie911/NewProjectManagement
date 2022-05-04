@@ -64,8 +64,19 @@ namespace DanaZhangCms
         /// <returns></returns>
         public async Task<IActionResult> NewDetail(int id)
         {
-            var model = await _artRepository.GetSingleAsync(id);           
+            var model = await _artRepository.GetSingleAsync(id);
+            var preArticle = _artRepository.Where(p => p.CategoryId == model.CategoryId && p.Id > id).Skip(1).ToList();
+            var LastArticle = _artRepository.Where(p => p.CategoryId == model.CategoryId && p.Id < id).Skip(1).ToList();
 
+            if (preArticle != null && preArticle.Count > 0)
+            {
+                ViewBag.PreArticle = preArticle[0];
+            }
+
+            if (LastArticle != null && LastArticle.Count > 0)
+            {
+                ViewBag.LastArticle = LastArticle[0];
+            }
             return View("~/Views/English/Article/Index.cshtml", model);
         }
         ///首页
