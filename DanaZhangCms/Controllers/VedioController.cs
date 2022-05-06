@@ -23,7 +23,10 @@ namespace DanaZhangCms
         ///首页
         public IActionResult Index(int page = 1 )
         {
-            
+            if (RequestExtensions.IsMobile(HttpContext.Request))
+            {
+                return Redirect("/mobile/vedio");
+            }
             var arts = _artRepository.Where(o=>o.IsDeleted==false&&o.CategoryId==3).OrderByDescending(o => o.ClickCount).ThenByDescending(o => o.CreatedDate).Select(o => new Article() { Title = o.Title, Id = o.Id, ImgUrl = o.ImgUrl,VedioUrl=o.VedioUrl,CreatedDate=o.CreatedDate,ClickCount=o.ClickCount,Content=o.Content }).ToList();
             var total = _artRepository.Where(o=>o.IsDeleted==false&&o.CategoryId==3).Count();
             ViewBag.Total = total;

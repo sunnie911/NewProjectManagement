@@ -2,7 +2,6 @@ using DanaZhangCms.Core.Attributes;
 using DanaZhangCms.Core.Extensions;
 using DanaZhangCms.IRepositories;
 using DanaZhangCms.Models;
-using DanaZhangCms.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,7 +31,10 @@ namespace DanaZhangCms
             {
                 page = 1;
             }
-
+            if (RequestExtensions.IsMobile(HttpContext.Request))
+            {
+                return Redirect("/mobile/product");
+            }
             List<Product> productList = new List<Product>();
             var total = _proRepository.Count();
             if (categoryId > 0)
@@ -58,8 +60,7 @@ namespace DanaZhangCms
         /// <returns></returns>
         public async Task<IActionResult> Detail(int id)
         {
-            var model = await _proRepository.GetSingleAsync(id);
-           
+            var model = await _proRepository.GetSingleAsync(id);           
             return View(model);
         }
     }

@@ -54,7 +54,7 @@ namespace DanaZhangCms
             var total = _artRepository.Where(o => o.CategoryId == 4).Count();
             ViewBag.Total = total;
 
-            return View("~/Views/English/Article/Index.cshtml", arts);
+            return View("~/Views/Mobile/Article/Index.cshtml", arts);
         }
 
         /// <summary>
@@ -77,7 +77,7 @@ namespace DanaZhangCms
             {
                 ViewBag.LastArticle = LastArticle[0];
             }
-            return View("~/Views/English/Article/Index.cshtml", model);
+            return View("~/Views/Mobile/Article/Index.cshtml", model);
         }
         ///首页
         public IActionResult Product(int page, int categoryId, int pageSize = 10)
@@ -101,7 +101,7 @@ namespace DanaZhangCms
             }
 
             ViewBag.Total = total;
-            return View("~/Views/English/Product/Index.cshtml", productList);
+            return View("~/Views/Mobile/Product/Index.cshtml", productList);
         }
 
         /// <summary>
@@ -113,7 +113,7 @@ namespace DanaZhangCms
         {
             var model = await _proRepository.GetSingleAsync(id);
 
-            return View("~/Views/English/Product/Detail.cshtml", model);
+            return View("~/Views/Mobile/Product/Detail.cshtml", model);
         }
         /// <summary>
         /// 关于我们
@@ -132,7 +132,7 @@ namespace DanaZhangCms
             var total = _artRepository.Where(o => o.IsDeleted == false && o.CategoryId == 3).Count();
             ViewBag.Total = total;
 
-            return View("~/Views/English/Vedio/Index.cshtml", arts);
+            return View("~/Views/Mobile/Vedio/Index.cshtml", arts);
         }
 
         /// <summary>
@@ -143,7 +143,7 @@ namespace DanaZhangCms
         public async Task<IActionResult> VedioDetail(int id)
         {
             var model = await _artRepository.GetSingleAsync(id);
-            return View("~/Views/English/Vedio/Detail.cshtml", model);
+            return View("~/Views/Mobile/Vedio/Detail.cshtml", model);
         }
     }
 }

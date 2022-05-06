@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace CompanyCms.Filters
+namespace DanaZhangCms
 {
     public static class RequestExtensions
     {
