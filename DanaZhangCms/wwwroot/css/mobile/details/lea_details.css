@@ -1,0 +1,30 @@
+body,div,span,p,em,ul,li,h1,h2,h3,dl,dt,dd,img,header,footer,nav,section,article,video,aside,dialog,figure,figcaption,time{margin:0;padding:0;border:0 none; outline:none;}
+body {font-family:sans-serif "Microsoft YaHei";-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;-webkit-tap-highlight-color: transparent;margin: 0 auto;}
+ul,li{list-style: none;}
+input{border: 0;background: none;}
+
+a{text-decoration: none;color:inherit;}
+.clearfix:after{ clear:both; display:block; visibility:hidden; height:0; line-height:0; content:'';}
+.clearfix{ zoom:1;}
+.lea_whole{width: 100%;max-width: 29rem;margin: 0 auto;padding: 6rem 0 7rem;}
+.lea_whole img{width: 100%;display: block;}
+
+.list_top{padding-bottom: 1rem;display: flex;flex-direction: row;align-items: center;border-bottom: 1px solid #E1E1E1;}
+.list_top i{ width: 0;height: 0;border-top: 0.6rem solid transparent;border-left: 0.5rem solid #007AFF;border-bottom: 0.6rem solid transparent;margin-right: 0.5rem;}
+.list_top a{color: #000;margin-left:0.25rem;font-size:1.3rem;display: contents;}
+.list_top a:hover{color: #007AFF;}
+
+.lea_whole .lea_main{border-bottom: 1px solid #999999;padding-bottom: 2rem;margin-top: 1rem;}
+.lea_whole .lea_main h2{line-height: 1.5;width: 100%;text-align: center;font-size: 1.5rem;color: #333333;}
+.lea_whole .lea_main .time{width: 100%;color: #999999;font-size: 1.2rem;text-align: center;margin-top: 0.5rem;margin-bottom: 1.1rem;display: block;}
+.lea_whole .lea_main .leaBox img{text-align: center;margin: 0 auto;}
+.lea_whole .lea_main .leaBox p{color: #333333;font-size: 1.3rem;}
+.lea_whole .lea_main .leaP1{margin: 1.75rem 0 1.5rem;}
+.lea_whole .lea_main .leaP2{margin-bottom: 1.5rem;}
+.lea_whole .lea_main .leaImg{margin-bottom: 1.5rem !important;}
+.lea_bott{display: flex;flex-direction: row;align-items: auto;justify-content: center;padding:1rem 0 1.5rem;}
+.lea_whole .lea_bott>a{display: flex;flex-direction: row;color:#000;justify-content: center;width: 50%;}
+.lea_bott img{width: 5.97rem; height: 3.85rem;margin-right: 1rem!important;}
+.lea_bott .lea_right{display: flex;flex-direction: column;justify-content: start;}
+.lea_bott .lea_right span{font-size: 1.1rem;cursor: pointer;}
+.lea_bott .lea_right p{font-size: 1.2rem;}

@@ -27,6 +27,13 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <None Include="wwwroot\js\mobile\details\product_details.js" />
+    <None Include="wwwroot\js\mobile\list\contact.js" />
+    <None Include="wwwroot\js\mobile\list\introduce.js" />
+    <None Include="wwwroot\js\mobile\list\join.js" />
+    <None Include="wwwroot\js\mobile\list\learning.js" />
+    <None Include="wwwroot\js\mobile\list\productList.js" />
+    <None Include="wwwroot\js\mobile\list\video.js" />
     <None Include="wwwroot\js\new\details\product_details.js" />
     <None Include="wwwroot\js\new\index.js" />
     <None Include="wwwroot\js\new\jquery-1.10.1.min.js" />
@@ -154,6 +161,12 @@
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
     <Content Update="Views\English\Vedio\Detail.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Mobile\Article\Detail.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Mobile\Vedio\Detail.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
     <Content Update="Views\Vedio\Detail.cshtml">

@@ -1,3 +1,4 @@
+using CompanyCms.Filters;
 using DanaZhangCms.Core.Attributes;
 using DanaZhangCms.Core.Extensions;
 using DanaZhangCms.IRepositories;
@@ -26,6 +27,11 @@ namespace DanaZhangCms
         ///首页
         public IActionResult Index()
         {
+            
+            if (RequestExtensions.IsMobile(HttpContext.Request))
+            {
+                return Redirect("/mobile/index");
+            }
 
             var articleList = _artRepository.ToList();
             var model = new HomeVM();
