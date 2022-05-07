@@ -211,8 +211,8 @@ namespace DanaZhangCms
                     {
                         SysUserName = "admin",
                         Activable = true,
-                        EMail = "admin@danazhangcms.com",
-                        Password = "123456",
+                        EMail = "lufeiya119@qq.com",
+                        Password = "guanli890",
                         Telephone = "15588888888"
                     });
                 }

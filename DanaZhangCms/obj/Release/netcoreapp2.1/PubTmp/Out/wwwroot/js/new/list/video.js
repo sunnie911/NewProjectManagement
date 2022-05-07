@@ -10,13 +10,15 @@ $(function(){
 		$(this).find('.v_shipin,.v_main,.v_main video').show();
 	})
 	
-	$('.v_shipin').on('click',function(e){
-		event.stopPropagation(); //组织事件冒泡
-		$(this).hide();
-		$(this).next('.v_main').children().hide();
-		$(this).next('.v_main').hide();
-		$('.v_main video').trigger('pause');
-	})
+	//$('.v_shipin').on('click',function(e){
+	//	event.stopPropagation(); //组织事件冒泡
+	//	$(this).hide();
+	//	$(this).next('.v_main').children().hide();
+	//	$(this).next('.v_main').hide();
+	//	var id = $(this).data("id");
+	//	console.log(id)
+	//	window.location.href = "/Vedio/Detail/"+id;
+	//})
 	
 	
 	tabPage({

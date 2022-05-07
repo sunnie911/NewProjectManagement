@@ -20,7 +20,7 @@
                                 <div class="slide-left">
                                     <div class="bt">@item.NameEn </div>
                                     <span>@item.SummaryEn</span>
-                                    <a class="readMore" target="_blank" href="@item.LinkUrlEn">阅读更多</a>
+                                    <a class="readMore" target="_blank" href="@item.LinkUrlEn">Read More</a>
                                 </div>
                                 <div class="slide-right">
                                     <img src="@item.ImgUrl">
@@ -60,7 +60,7 @@
                     foreach (var item in Model.Products)
                     {
                         <li>
-                            <a href="@(Url.Action("Detail","Product",new { id=item.Id}))" target="_blank">
+                            <a href="@(Url.Action("ProDetail","english",new { id=item.Id}))" target="_blank">
                                 <img class="goods_img" src="@item.ImgUrl">
                                 <span>@item.NameEn</span>
                                 @if (item.IsHot)
@@ -92,7 +92,7 @@
                     "Continuous research and development, cost reduction and efficiency increase, and being the longest friend of users" is our vision.
                     We have established a research and development team composed of doctors, masters and well-known experts from Tsinghua University and Zhejiang University......
                 </p>
-                <div class="btn"><a href="/contact" target="_blank"><img src="images/to.png"></a></div>
+                <div class="btn"><a href="/english/contact" target="_blank"><img src="images/to.png"></a></div>
             </div>
             <div class="in_right">
                 <img class="leftop" src="images/leftop.png">
@@ -109,7 +109,7 @@
                 <div class="main">
                     <span>{{titleArry[2].english}}</span>
                     <div class="more">
-                        <a href="/vedio" target="_blank">
+                        <a href="/english/vedio" target="_blank">
                             <span>More</span>
                             <img src="images/to1.png">
                         </a>
@@ -126,9 +126,11 @@
                         {
                             <div class="swiper-slide">
                                 <div class="slide_main">
-                                    <img src="@item.ImgUrl">
-                                    <div class="mainP">@item.Title</div>
-                                    <span>@item.CreatedDate</span>
+                                    <a href="/english/VedioDetail/@item.Id">
+                                        <img src="@item.ImgUrl">
+                                        </a>
+                                        <div class="mainP">@item.TitleEn</div>
+                                        <span>@item.CreatedDate</span>
                                 </div>
                             </div>
                         }
@@ -137,7 +139,7 @@
 
             </div>
 
-            <div class="vedio_more"><a href="/vedio" target="_blank">More</a></div>
+            <div class="vedio_more"><a href="/english/vedio" target="_blank">Read More</a></div>
 
         </div>
     </div>
@@ -148,7 +150,7 @@
             <div class="main">
                 <span>{{titleArry[3].english}}</span>
                 <div class="more">
-                    <a href="/article" target="_blank">
+                    <a href="/english/article" target="_blank">
                         <span>More</span>
                         <img src="images/to1.png">
                     </a>
@@ -163,7 +165,7 @@
                     <li>
                         <img src="@item.ImgUrl">
                         <div class="main">
-                            <div class="title">  <a href="@(Url.Action("Detail","Article",new { id=item.Id}))"> @item.Title </a></div>
+                            <div class="title">  <a href="@(Url.Action("newDetail","english",new { id=item.Id}))"> @item.Title </a></div>
                             <div class="neirong">
                             </div>
                         </div>

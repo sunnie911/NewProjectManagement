@@ -1,6 +1,10 @@
 ﻿@model DanaZhangCms.Models.Article
 @{
     ViewData["Title"] = Model.Title;
+    var preArticle = ViewBag.PreArticle as Article;
+
+    var lastArticle = ViewBag.LastArticle as Article;
+
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -21,38 +25,36 @@
             <span class="time">@Model.CreatedDate</span>
             <div class="leaBox">
                 @Html.Raw(Model.Content)
-                @*<img src="../images/introduce/img2.jpg">
-                <p class="leaP1"><b>在2022年2月4日冬奥会开幕之际，耐尔得用自研的3D打印机打印出混凝土制品的冰墩墩，为中国奥运健儿加油！</b></p>
-                <p class="leaP2">混凝土砂浆3D打印机NELD-3D730</p>
-                <img class="leaImg" src="../images/banner3.jpeg">
-                <p><b>大型：</b>尺寸可定制</p>
-                <p><b>实际打印尺寸：</b>1200*1200*1200(mm)  </p>
-                <p><b>中型：</b>实际打印尺寸600*600*600(mm)</p>
-                <p>本品采用四柱落地框架结构，适用于混凝土砂浆打印材料的研究，满足模型打印的要求；</p>
-                <p>设备配置40mm打印头，可定制需要尺寸。</p>
-                <p>标配3D打印机专用可无线遥控的输料系统，打印软件支持中英文界面，打印过程实时显示。</p>*@
+               
             </div>
         </div>
         <div class="lea_bott">
-            <a href="#">
-                <div>
-                    <img src="../images/vedio4.jpg">
-                </div>
-                <div class="lea_right">
-                    <span> < 上一篇</span>
-                    <p>耐尔得2021大事记</p>
-                </div>
-            </a>
-            <a href="#">
-                <div>
-                    <img src="../images/vedio4.jpg">
-                </div>
-                <div class="lea_right">
-                    <span> 下一篇 > </span>
-                    <p>耐尔得2021大事记耐尔得2021大事记</p>
-                </div>
-            </a>
-        </div>
+            @if (preArticle != null && preArticle.Id > 0)
+            {
+                <a href="/Article/Detail/@preArticle.Id">
+                    <div>
+                        <img src="@preArticle.ImgUrl">
+                    </div>
+                    <div class="lea_right">
+                        <span>  上一篇</span>
+                        <p>@preArticle.Title</p>
+                    </div>
+                </a>
+            }
+            @if (lastArticle != null && lastArticle.Id > 0)
+            {
+
+                <a href="/Article/Detail/@lastArticle.Id">
+                    <div>
+                        <img src="@lastArticle.ImgUrl">
+                    </div>
+                    <div class="lea_right">
+                        <span> 下一篇 > </span>
+                        <p>@lastArticle.Title</p>
+                    </div>
+                </a>
+            }
+            </div>
     </div>
 </div>
 @section Scripts{

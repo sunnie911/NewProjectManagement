@@ -10,10 +10,10 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
-    <title>@Html.Raw(workContext.Sites.SeoTitle)</title>
+    <title>@Html.Raw(ViewBag.SeoTitle)</title>
     <meta name="renderer" content="webkit">
-    <meta name="description" content="@Html.Raw(workContext.Sites.SeoDescription)" />
-    <meta name="keywords" content="@Html.Raw(workContext.Sites.SeoKeyword)" />
+    <meta name="description" content="@Html.Raw(ViewBag.SeoDescription)" />
+    <meta name="keywords" content="@Html.Raw(ViewBag.SeoKeyword)" />
     <meta name="generator" content="" data-variable="" />
     <link href="~/css/mobile/layout.css" rel="stylesheet" />
     <script src="/js/mobile/jquery-1.10.1.min.js" type="text/javascript"></script>

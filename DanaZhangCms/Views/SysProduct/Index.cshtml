@@ -53,9 +53,10 @@ layui.use('table', function(){
       , id: 'testReload'
     ,cols: [[ //表头
       {field: 'index', title: 'ID', width:80, fixed: 'left',type:'numbers'},
-        { field: 'name', title: '标题' },
-        { field: 'nameEn', title: '英文名称' },
-      {field: 'cateName', title: '分类', width:100},
+        //{ field: 'name', title: '标题' },
+        { field: 'name', title: '标题',  templet: '<div><a href="/Product/detail/{{d.id}}"  target="_blank" class="layui-table-link">{{d.name}}</a></div>' },
+        { field: 'nameEn', title: '英文名称' ,width: 300, },
+      {field: 'cateName', title: '分类', width:200},
         { field: 'createdDate', title: '添加时间', width: 150 },
         { fixed: 'right', width: 150, align: 'center', toolbar: '#barDemo' },   
        //{field: 'id', title: '操作', width:100,templet: '<div><a href="/SysProduct/Edit?id={{d.id}}" class="layui-table-link">编辑</a></div>'},

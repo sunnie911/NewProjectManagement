@@ -49,7 +49,7 @@ namespace DanaZhangCms
         {
             return Task.Factory.StartNew<IActionResult>(() =>
             {
-                var rows = menuRepository.GetHomeMenusByTreeView(m => m.Activable && m.Visiable && m.ParentId ==null).OrderBy(m => m.SortId).ToList();
+                var rows = menuRepository.GetHomeMenusByTreeView(m => m.Activable && m.Visiable && m.IsDeleted==false && m.ParentId ==null).OrderBy(m => m.SortId).ToList();
                 return Json(ExcutedResult.SuccessResult(rows));
             });
         }

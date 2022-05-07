@@ -26,7 +26,12 @@
                                 <span>
                                     <a href="@(Url.Action("Detail","Product",new { id=pro.Id}))">
                                         <div class="img_box">
-                                            <img src="@pro.ImgUrl" title="@pro.Name"> <img v-show="@pro.IsHot" class="hot" src="../images/sale.png">
+                                            <img src="@pro.ImgUrl" title="@pro.Name">
+                                            @if (pro.IsHot)
+                                            {
+                                                <img   class="hot" src="/images/sale.png">
+                                            }
+
                                         </div>
                                         <p>@pro.Name</p>
                                     </a>

@@ -37,6 +37,10 @@ namespace DanaZhangCms
             var position = _proRepository.ToList();
             ViewBag.ProductList = position;
             ViewBag.CategoryList = _cateRepository.ToList();
+
+            ViewBag.SeoTitle = site.SeoTitle;
+            ViewBag.SeoKeyword = site.SeoKeyword;
+            ViewBag.SeoDescription = site.SeoDescription;
         }
 
         public override void OnActionExecuted(ActionExecutedContext context)

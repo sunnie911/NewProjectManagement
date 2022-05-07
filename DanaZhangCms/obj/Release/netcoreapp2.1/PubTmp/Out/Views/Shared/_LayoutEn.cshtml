@@ -39,7 +39,7 @@
                         {
                             var proList = productList.Where(p => p.CategoryId == cate.Id).OrderBy(o => o.IsHot).ToList();
                             <li>
-                                <a href="/Product?categoryId=@cate.Id">
+                                <a href="/english/Product?categoryId=@cate.Id">
                                     <span>@cate.NameEn</span>
                                 </a>
                                 <div class="list_box">
@@ -48,7 +48,7 @@
                                             @foreach (var pro in proList)
                                             {
                                                 <span>
-                                                    <a href="#">
+                                                    <a href="/english/proDetail?Id=@pro.Id">
                                                         <div class="img_box">
                                                             <img src="@pro.ImgUrl" title="@pro.NameEn"> <img v-show="@pro.IsHot" class="hot" src="/images/sale.png" />
                                                         </div>
@@ -68,14 +68,14 @@
                     }
 
                     <li>
-                        <a href="/contact" target="_blank">
+                        <a href="/english/contact" target="_blank">
                             <span>CONTACT</span>
                         </a>
                         <div class="lianxi">
-                            <a href="/about" target="_blank"><span>Company profile  </span></a>
+                            <a href="/english/about" target="_blank"><span>Company profile  </span></a>
                             <span>Company advantages</span>
                             <span>Customers</span>
-                            <span><a href="/article" target="_blank">NEWS</a></span>
+                            <span><a href="/english/article" target="_blank">NEWS</a></span>
                         </div>
                     </li>
                 </ul>
@@ -118,8 +118,8 @@
                 </dl>
                 <dl>
                     <dt>ABOUT US</dt>
-                    <dd><a href="/about">ABOUT Guanli</a></dd>
-                    <dd><a href="/about">Company Honor</a></dd>
+                    <dd><a href="/english/about">Company Profile</a></dd>
+                    <dd><a href="/english/about">Company Honor</a></dd>
                     <dd><a href="#">Careers</a></dd>
                 </dl>
                 <dl>

@@ -125,9 +125,12 @@
                         {
                             <div class="swiper-slide">
                                 <div class="slide_main">
-                                    <img src="@item.ImgUrl">
-                                    <div class="mainP">@item.Title</div>
-                                    <span>@item.CreatedDate</span>
+
+                                    <a href="/Vedio/Detail/@item.Id">
+                                        <img src="@item.ImgUrl">
+                                        </a>
+                                        <div class="mainP">@item.Title</div>
+                                        <span>@item.CreatedDate</span>
                                 </div>
                             </div>
                         }
@@ -181,7 +184,7 @@
             <div class="main">
                 <span>{{titleArry[4].english}}</span>
                 <div class="more">
-                    <a href="list/learning.html" target="_blank">
+                    <a href="javascript:;" target="_blank">
                         <span>更多</span>
                         <img src="images/to1.png">
                     </a>
