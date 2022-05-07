@@ -1,63 +1,53 @@
 ﻿@model List<DanaZhangCms.Models.Article>
 @{
     ViewData["Title"] = "新闻中心";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_LayoutMobile.cshtml";
 }
 @section css{
 
-    <link href="~/css/new/list/learning.css" rel="stylesheet" />
+    <link href="~/css/mobile/list/learning.css" rel="stylesheet" />
 }
 <div class="whole_list" style="padding-top: 80px;">
-    <div class="common_containe">
-        <div class="list_top">
-            <i></i>
-            <a href="/home">首页 > </a>
-            <a href="/Article">学术交流 </a>
-        </div>
 
-        <div class="list_main common_containe">
-            <ul class="pageMain">
-                @if (Model != null && Model.Any())
-                {
-                    foreach (var item in Model)
-                    {
-                        <li>
-                            <div class="list_current">
-                                <div class="">
-                                    <span>
-                                        <a href="@(Url.Action("Detail","Article",new { id=item.Id}))">
-                                            <div class="img_box">
-                                                <img src="@item.ImgUrl">
-                                            </div>
-                                            <p>@item.Title</p>
-                                            <span>@item.CreatedDate</span>
-                                        </a>
-                                    </span>
-                                </div>
-
-                            </div>
-                        </li>
-
-                      
-                    }
-                }
-
-            </ul>
-            <div class="pageBox">
-                <span class="prev">上一页</span>
-                <ul class="pageNav"></ul>
-                <span class="next">下一页</span>
-            </div>
-        </div>
+    <div class="list_top">
+        <i></i>
+        <a href="/home">首页 > </a>
+        <a href="/Article">学术交流 </a>
     </div>
+
+    <div class="lea_main">
+        <ul>
+            @if (Model != null && Model.Any())
+            {
+                foreach (var item in Model)
+                {
+                    <li>
+                        <a href="/mobile/newDetail/@item.Id]">
+                            <div class="img_box">
+                                <img src="@item.ImgUrl">
+                            </div>
+                            <div class="jieshao">
+                                <p>@item.Title</p>
+                                <span>@item.CreatedDate</span>
+                            </div>
+                        </a>
+
+
+                    </li>
+
+
+                }
+            }
+
+        </ul>
+        
+    </div>
+
 </div>
 
 @section Scripts{
 
-    <script>
-        var total = '@(ViewBag.Total)';
-        var pageUrl = "@(Url.Action("Index", "Article"))";
-    </script>
-    <script src="~/js/new/list/learning.js"></script>
+     
+    <script src="~/js/mobile/list/learning.js"></script>
 
 }

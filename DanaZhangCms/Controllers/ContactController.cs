@@ -20,7 +20,11 @@ namespace DanaZhangCms
 
         public  IActionResult Index(string spellname = "")
         {
-            
+            if (RequestExtensions.IsMobile(HttpContext.Request))
+            {
+                return Redirect("/mobile/contact");
+            }
+
             var model =  _repository.FirstOrDefault(o => o.SpellName == spellname);
             return View(model);
         }

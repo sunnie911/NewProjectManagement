@@ -1,16 +1,16 @@
 ﻿@model DanaZhangCms.Models.Contents
 @{
     //ViewData["Title"] = Model.Title;
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_LayoutMobile.cshtml";
 }
 
-@section css{
-    <link rel="stylesheet" type="text/css" href="/css/new/list/contact.css" />
-    <link rel="stylesheet" type="text/css" href="/css/new/swiper.min.css" />
+@section css{mobile
+    <link rel="stylesheet" type="text/css" href="/css/mobile/list/contact.css" />
+    <link rel="stylesheet" type="text/css" href="/css/mobile/swiper.min.css" />
   
 }
 <div class="contact_whole" style="padding-top: 80px; padding-bottom:50px;">
-    <div class="common_containe">
+     
         <div class="list_top">
             <i></i>
             <a href="/home">首页 > </a>
@@ -73,9 +73,9 @@
 
         </div>
     </div>
-</div>
+ 
 @section Scripts{
-    <script src="/js/new/list/contact.js" type="text/javascript"></script>
-    <script src="/js/new/swiper.min.js" type="text/javascript"></script>
+    <script src="/js/mobile/list/contact.js" type="text/javascript"></script>
+    <script src="/js/mobile/swiper.min.js" type="text/javascript"></script>
 
 }

@@ -1,0 +1,112 @@
+﻿@model DanaZhangCms.Models.Contents
+@{
+    //ViewData["Title"] = Model.Title;
+    Layout = "~/Views/Shared/_LayoutMobile.cshtml";
+}
+
+@section css{
+    <link rel="stylesheet" type="text/css" href="/css/mobile/list/introduce.css" />
+    <link rel="stylesheet" type="text/css" href="/css/mobile/swiper.min.css" />
+    <style type="text/css">
+        .in_bottom .swiper-button-next {
+            background-image: url("/images/details/jian_right.png");
+            background-size: 100%;
+            right: -60px;
+        }
+
+        .in_bottom .swiper-button-prev {
+            background-image: url("/images/details/jian_left.png");
+            background-size: 100%;
+            left: -60px;
+        }
+    </style>
+
+}
+<div class="introduce_whole" style="padding-top: 80px;">
+   
+        <div class="list_top">
+            <i></i>
+            <a href="/home">首页 > </a>
+            <a href="/about">公司介绍 </a>
+        </div>
+        <div class="introduce_main">
+            <img src="/images/introduce/img1.jpg">
+            <p>
+                我们是杭州市萧山区通过高层次人才创业创新“5213计划”引进的领航类企业，是一家专业从事混凝土3D打印和高端测试仪器设备开发、生产和销售的国家高新技术企业，
+                研发生产基地设在杭州市萧山区新塘科创园和山西省晋城市。“持续研发，降本增效，做用户最长久的朋友”是我们的愿景。
+                我们组建了一支由清华大学、浙江大学的博士、硕士及行业知名专家构成的研发团队，
+                在软件、硬件方面同时攻关，持续创新，已在混凝土（砂浆）3D打印领域实现了核心控制系统的完全自主化，解决了国内普存的软件控制瓶颈问题。
+
+
+            </p>
+            <p>
+                公司的主要产品有：混凝土（砂浆）3D打印系统（桌面级、实验室级、机械臂和工业级）、混凝土气体渗透测试仪、非接触收缩变形测定仪、快速冻融试验机、碳化箱、硫酸盐干湿循环试验机、
+                电通量&扩散系数联合测定仪、混凝土温度-应力试验机、混凝土热物理参数测定仪、全自动混凝土凝结时间测定仪、Mariotte透水系数测定仪、硬化混凝土气孔结构分析仪、氯含量快速测定仪、
+                钢筋混凝土电化学测试系统等。产品性能质量处于国际同行领先水平，
+                获得了国内外大专院校、科研院所、建筑企业研发中心、检测机构的广泛认可，远销新加坡、美国、澳大利亚、新西兰、阿联酋、马拉西亚等海外市场。
+            </p>
+            @*<ul class="in_box">
+                <li><img src="/images/introduce/img2.jpg"></li>
+                <li><img src="../images/introduce/img2.jpg"></li>
+                <li><img src="../images/introduce/img2.jpg"></li>
+            </ul>*@
+        <p>
+            近3年，我们已经主编和参编了《混凝土3D打印技术规程》、《透水混凝土试验方法》、《预制混凝土构件质量验收标准》、《混凝土氯离子扩散系数测定仪检定规程》等行业和协会标准，
+            正在主编《建筑3D打印材料通用技术规程》、
+            《混凝土拌合物性能试验仪器设备管理规程》、《混凝土物理力学性能试验仪器设备管理规程》和《混凝土长期性能和耐久性能试验仪器设备管理规程》等行业和协会标准。
+
+        </p>
+            <ul class="in_icon">
+                <li>
+                    <img src="/images/introduce/icon1.png">
+                    <div>16<span>年</span></div>
+                    <p>深耕智慧检测行业</p>
+                </li>
+                <li>
+                    <img src="/images/introduce/icon1.png">
+                    <div>80<span>款</span></div>
+                    <p>5大类产品</p>
+                </li>
+                <li>
+                    <img src="/images/introduce/icon1.png">
+                    <div>1000<span>+</span></div>
+                    <p>知名客户遍布世界各地</p>
+                </li>
+            </ul>
+            <p>
+                我们是国家高新技术企业、国家科技创新型中小企业、浙江省科技型中小企业、杭州市高新技术企业、杭州市萧山区5213重点引进人才项目、
+                清华X-lab培训项目、CCPA-3D打印分会副理事长单位等；拥有发明专利2项，实用新型专利16项，外观专利8项、软著3项。
+                公司创始人近年来获得省部级科技进步奖二等奖3项、三等奖5项。各类专利30多项。
+            </p>
+        </div>
+        <div class="in_bottom">
+            <div class="title">荣誉证书</div>
+            <div class="bottom_lunbo">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="/images/introduce/rongyu1.png">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="/images/introduce/rongyu2.jpg">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="/images/introduce/rongyu3.jpg">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+    </div>
+ 
+
+
+
+@section Scripts{
+    <script src="/js/mobile/list/introduce.js" type="text/javascript"></script>
+    <script src="/js/mobile/swiper.min.js" type="text/javascript"></script>
+
+}

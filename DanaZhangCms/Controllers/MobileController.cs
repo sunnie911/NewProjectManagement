@@ -27,7 +27,6 @@ namespace DanaZhangCms
         ///首页
         public IActionResult Index()
         {
-
             var articleList = _artRepository.ToList();
             var model = new HomeVM();
             var pros = _proRepository.Where(o=>o.IsHot==true).Take(8).Select(o => new Product() { Name = o.Name, Id = o.Id, ImgUrl = o.ImgUrl,IsHot=o.IsHot }).ToList();
@@ -40,9 +39,7 @@ namespace DanaZhangCms
             model.Articles = arts;
             model.Vedios = vedios;
             model.Banners = banners;
-            model.Logos = logos;
-
-          
+            model.Logos = logos;          
             return View("~/Views/Mobile/Index.cshtml", model);
         }
 
@@ -112,7 +109,6 @@ namespace DanaZhangCms
         public async Task<IActionResult> ProDetail(int id)
         {
             var model = await _proRepository.GetSingleAsync(id);
-
             return View("~/Views/Mobile/Product/Detail.cshtml", model);
         }
         /// <summary>
@@ -121,17 +117,24 @@ namespace DanaZhangCms
         /// <returns></returns>
         public IActionResult About()
         {
-            return View("~/Views/About/AboutEn.cshtml");
+            return View("~/Views/About/mobile.cshtml");
+        }
+
+        /// <summary>
+        /// 联系我们
+        /// </summary>
+        /// <returns></returns>
+        public IActionResult Contact()
+        {
+            return View("~/Views/Contact/mobile.cshtml");
         }
 
         ///首页
         public IActionResult Vedio(int page = 1)
         {
-
             var arts = _artRepository.Where(o => o.IsDeleted == false && o.CategoryId == 3).OrderByDescending(o => o.ClickCount).ThenByDescending(o => o.CreatedDate).Select(o => new Article() { Title = o.Title, Id = o.Id, ImgUrl = o.ImgUrl, VedioUrl = o.VedioUrl, CreatedDate = o.CreatedDate, ClickCount = o.ClickCount, Content = o.Content }).ToList();
             var total = _artRepository.Where(o => o.IsDeleted == false && o.CategoryId == 3).Count();
             ViewBag.Total = total;
-
             return View("~/Views/Mobile/Vedio/Index.cshtml", arts);
         }
 

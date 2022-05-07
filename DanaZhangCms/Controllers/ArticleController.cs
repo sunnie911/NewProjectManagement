@@ -40,7 +40,11 @@ namespace DanaZhangCms
         /// <returns></returns>
         public async Task<IActionResult> Detail(int id)
         {
-            
+            if (RequestExtensions.IsMobile(HttpContext.Request))
+            {
+                return Redirect("/mobile/newDetail/"+id);
+            }
+
             var model = await _artRepository.GetSingleAsync(id);
 
             var preArticle = _artRepository.Where(p => p.CategoryId == model.CategoryId&&p.Id>id).Skip(1).ToList(); 
