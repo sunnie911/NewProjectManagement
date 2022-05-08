@@ -28,6 +28,15 @@
         </div>
 
     </div>
+
+    <div class="layui-form-item">
+
+        @Html.LabelFor(model => model.Model1, new { @class = "layui-form-label" })
+        <div class="layui-input-inline">
+            @Html.TextBoxFor(model => model.Model1, new { @class = "layui-input", autocomplete = "off" })
+        </div>
+
+    </div>
     <div class="layui-form-item">
         @Html.LabelFor(model => model.CategoryId, new { @class = "layui-form-label" })
         <div class="layui-input-inline">
@@ -43,11 +52,11 @@
             <div class="uploadPreview" id="PreviewImg">
                 @if (!string.IsNullOrEmpty(Model.ImgUrl))
                 {
-                <img src="@Model.ImgUrl" />
+                    <img src="@Model.ImgUrl" />
                 }
                 else
                 {
-                @:暂无图片
+                    @:暂无图片
                 }
             </div>
             <div class="left">
@@ -67,11 +76,11 @@
             <div class="uploadPreview" id="PreviewImg1">
                 @if (!string.IsNullOrEmpty(Model.Banner1))
                 {
-                <img src="@Model.Banner1" />
+                    <img src="@Model.Banner1" />
                 }
                 else
                 {
-                @:暂无图片
+                    @:暂无图片
                 }
             </div>
             <div class="left">
@@ -91,11 +100,11 @@
             <div class="uploadPreview" id="PreviewImg2">
                 @if (!string.IsNullOrEmpty(Model.Banner2))
                 {
-                <img src="@Model.Banner2" />
+                    <img src="@Model.Banner2" />
                 }
                 else
                 {
-                @:暂无图片
+                    @:暂无图片
                 }
             </div>
             <div class="left">
@@ -115,11 +124,11 @@
             <div class="uploadPreview" id="PreviewImg3">
                 @if (!string.IsNullOrEmpty(Model.Banner3))
                 {
-                <img src="@Model.Banner3" />
+                    <img src="@Model.Banner3" />
                 }
                 else
                 {
-                @:暂无图片
+                    @:暂无图片
                 }
             </div>
             <div class="left">
@@ -138,13 +147,13 @@
             <div class="uploadPreview" id="PreviewVedio">
                 @if (!string.IsNullOrEmpty(Model.VedioUrl))
                 {
-                <video width="100%" controls="" preload="auto" autoplay="autoplay">
-                    <source src="@Model.VedioUrl" />
-                </video>
+                    <video width="100%" controls="" preload="auto" autoplay="autoplay">
+                        <source src="@Model.VedioUrl" />
+                    </video>
                 }
                 else
                 {
-                @:暂无视频
+                    @:暂无视频
                 }
             </div>
             <div class="left">
@@ -247,10 +256,7 @@
     </style>
 
     <link type="text/css" rel="stylesheet" href="/lib/webuploader/webuploader.css" />
-    <script type="text/javascript" src="/lib/webuploader/webuploader.js"></script>
-    <script src="/lib/ckeditor/translations/zh-cn.js"></script>
-    <script src="/lib/ckeditor/ckeditor.js"></script>
-
+    <script type="text/javascript" src="/lib/webuploader/webuploader.js"></script>  
     <script src="/lib/ueditor/ueditor.config.js"></script>
     <script src="/lib/ueditor/ueditor.all.min.js"></script>
 
@@ -473,14 +479,15 @@
                     //$("#ContentEn").val(editor1.getData());
                     //$("#ParamterEn").val(editor2.getData());
                     //$("#Paramter").val(editor3.getData());
+                    var data = $("form").serialize();
+                    console.log(data);
                     $.ajax({
                         url: url,
-                        data: $("form").serialize(),
+                        data: data,
                         type:"post",
                         success: function (rep) {
                             if (rep.success == true) {
                                 layer.msg(rep.msg,function(){
-
                                     window.location.href='@(Url.Action("Index"))';
                                 });
                     }

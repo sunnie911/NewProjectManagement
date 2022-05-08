@@ -151,7 +151,7 @@ img {
             width: 100%;
             background: #fff;
             overflow: hidden;
-            padding: 35px 0;
+            padding: 15px 0;
         }
 
         .navlist_current span .img_box {
@@ -183,7 +183,7 @@ img {
         }
 
         .navlist_current span p {
-            font-size: 14px;
+            font-size: 12px;
             text-align: center;
             color: #000000;
             padding: 0 15px;
@@ -229,7 +229,7 @@ img {
     display: flex;
     flex-direction: row;
     justify-content: end;
-    margin: 20px 0 50px;
+ /*   margin: 20px 0 50px;*/
     font-size: 16px;
     width: 100%;
 }

@@ -62,7 +62,7 @@
                         <li>
                             <a href="@(Url.Action("Detail","Product",new { id=item.Id}))" target="_blank">
                                 <img class="goods_img" src="@item.ImgUrl">
-                                <span>@item.Name</span>
+                                <span>@item.Name @item.Model1</span>
                                 @if (item.IsHot)
                                 {
                                     <img class="hot" src="images/sale.png">

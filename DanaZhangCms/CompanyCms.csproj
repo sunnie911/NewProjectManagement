@@ -15,13 +15,9 @@
     <Content Remove="wwwroot\lib\ckeditor\ckeditor.config.js" />
   </ItemGroup>
   <ItemGroup>
-    <None Remove="App_Data\DanaZhangCms.db" />
     <None Remove="Uploads\images\20220502\6378709956833766059167058.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\DanaZhangCms.db">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Uploads\images\20220502\6378709956833766059167058.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

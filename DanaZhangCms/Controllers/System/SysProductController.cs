@@ -96,18 +96,18 @@ namespace DanaZhangCms
                 // return Json(PaginationResult.PagedResult(rows, total, pageSize, pageIndex));
                 Func<IQueryable<Product>, IQueryable<Product>> @include = o => o.Include("Category");
                 var rows = _repository.GetByPaginationWithInclude(m => true, @include, limit, page, true,
-              m => m.Id).Select(o => new { o.Id, o.Name,o.NameEn,o.ContentEn,o.Model, CreatedDate = o.CreatedDate.ToString("yyyy-MM-dd"), CateName = o.Category == null ? "" : o.Category.Name }).ToList();
+              m => m.Id).Select(o => new { o.Id, o.Name,o.NameEn,o.ContentEn,o.Model1, CreatedDate = o.CreatedDate.ToString("yyyy-MM-dd"), CateName = o.Category == null ? "" : o.Category.Name }).ToList();
 
                 if (CategoryId > 0)
                 {
                       rows = _repository.GetByPaginationWithInclude(m => m.CategoryId==CategoryId, @include, limit, page, true,
-             m => m.Id).Select(o => new { o.Id, o.Name, o.NameEn, o.ContentEn, o.Model, CreatedDate = o.CreatedDate.ToString("yyyy-MM-dd"), CateName = o.Category == null ? "" : o.Category.Name }).ToList();
+             m => m.Id).Select(o => new { o.Id, o.Name, o.NameEn, o.ContentEn, o.Model1, CreatedDate = o.CreatedDate.ToString("yyyy-MM-dd"), CateName = o.Category == null ? "" : o.Category.Name }).ToList();
 
                 }
                 if (!string.IsNullOrWhiteSpace(title))
                 {
                     rows = _repository.GetByPaginationWithInclude(m => m.Name.Contains(title.Trim()), @include, limit, page, true,
-              m => m.Id).Select(o => new { o.Id, o.Name, o.NameEn, o.ContentEn, o.Model, CreatedDate = o.CreatedDate.ToString("yyyy-MM-dd"), CateName = o.Category == null ? "" : o.Category.Name }).ToList();
+              m => m.Id).Select(o => new { o.Id, o.Name, o.NameEn, o.ContentEn, o.Model1, CreatedDate = o.CreatedDate.ToString("yyyy-MM-dd"), CateName = o.Category == null ? "" : o.Category.Name }).ToList();
 
                 }
 

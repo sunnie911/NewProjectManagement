@@ -42,7 +42,7 @@ namespace DanaZhangCms.Models
         /// 型号
         /// </summary>
         [Display(Name = "型号")]
-        public string Model { get; set; }
+        public string Model1 { get; set; }
         /// <summary>
         /// 头图
         /// </summary>

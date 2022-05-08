@@ -59,7 +59,11 @@
             <div class="right" id="loutinav">
                 <ul>
                     <li>产品大图</li>
-                    <li>产品视频</li>
+                    @if (!string.IsNullOrWhiteSpace(Model.VedioUrl))
+                    {
+
+                        <li>产品视频</li>
+                    }
                     <li>技术参数</li>
                     <li>细节亮点</li>
                 </ul>
@@ -79,7 +83,7 @@
                             </div>
                         }
 
-                       
+
                     </div>
 
                 </div>
@@ -88,43 +92,45 @@
             </div>
         </div>
         <!-- 产品视频 -->
-        <div class="goods_video louti">
-            <div class="common_containe">
-                <div class="det_title">
-                    <div>产品视频</div>
-                    <span>Product video</span>
+        @if (!string.IsNullOrWhiteSpace(Model.VedioUrl))
+        {
+            <div class="goods_video louti">
+                <div class="common_containe">
+                    <div class="det_title">
+                        <div>产品视频</div>
+                        <span>Product video</span>
+                    </div>
+                    <ul>
+                        <li>
+                            <img class="goods_img" src="/images/details/tu.png">
+                            <img class="play" src="/images/details/video_img.png">
+                            <p>@Model.Name</p>
+                            <div class="v_shipin"></div>
+                            <div class="v_main">
+                                <video width="800" height="400" controls>
+                                    <source src="@Model.VedioUrl " type="video/mp4">
+                                    </source>
+
+                                </video>
+                            </div>
+                        </li>
+                        @*<li>
+                                <img class="goods_img" src="../images/details/tu.png">
+                                <img class="play" src="../images/details/video_img.png">
+                                <p>混凝土砂浆桌面3D打印机NELD-3D736</p>
+                                <div class="v_shipin"></div>
+                                <div class="v_main">
+                                    <video width="800" height="400" controls>
+                                        <source src="../images/details/movie2.mp4" type="video/mp4">
+                                        </source>
+
+                                    </video>
+                                </div>
+                            </li>*@
+                    </ul>
                 </div>
-                <ul>
-                    <li>
-                        <img class="goods_img" src="../images/details/tu.png">
-                        <img class="play" src="../images/details/video_img.png">
-                        <p>混凝土砂浆桌面3D打印机NELD-3D736</p>
-                        <div class="v_shipin"></div>
-                        <div class="v_main">
-                            <video width="800" height="400" controls>
-                                <source src="../images/details/movie.mp4" type="video/mp4">
-                                </source>
-
-                            </video>
-                        </div>
-                    </li>
-                    <li>
-                        <img class="goods_img" src="../images/details/tu.png">
-                        <img class="play" src="../images/details/video_img.png">
-                        <p>混凝土砂浆桌面3D打印机NELD-3D736</p>
-                        <div class="v_shipin"></div>
-                        <div class="v_main">
-                            <video width="800" height="400" controls>
-                                <source src="../images/details/movie2.mp4" type="video/mp4">
-                                </source>
-
-                            </video>
-                        </div>
-                    </li>
-                </ul>
             </div>
-        </div>
-
+        }
         <!-- 技术参数 -->
         <div class="parameter louti">
             <div class="common_containe">

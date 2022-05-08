@@ -6,7 +6,6 @@ C:\OldProject\NewProjectManagement\DanaZhangCms\bin\Debug\netcoreapp2.1\appsetti
 C:\OldProject\NewProjectManagement\DanaZhangCms\bin\Debug\netcoreapp2.1\bower.json
 C:\OldProject\NewProjectManagement\DanaZhangCms\bin\Debug\netcoreapp2.1\bundleconfig.json
 C:\OldProject\NewProjectManagement\DanaZhangCms\bin\Debug\netcoreapp2.1\ueditor.json
-C:\OldProject\NewProjectManagement\DanaZhangCms\bin\Debug\netcoreapp2.1\App_Data\DanaZhangCms.db
 C:\OldProject\NewProjectManagement\DanaZhangCms\bin\Debug\netcoreapp2.1\Uploads\images\20220502\6378709956833766059167058.png
 C:\OldProject\NewProjectManagement\DanaZhangCms\bin\Debug\netcoreapp2.1\CompanyCms.deps.json
 C:\OldProject\NewProjectManagement\DanaZhangCms\bin\Debug\netcoreapp2.1\CompanyCms.runtimeconfig.json
