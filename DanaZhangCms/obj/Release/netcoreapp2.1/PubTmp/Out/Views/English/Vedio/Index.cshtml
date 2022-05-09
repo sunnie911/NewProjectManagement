@@ -1,0 +1,48 @@
+﻿@model List<DanaZhangCms.Models.Article>
+@{
+    ViewData["Title"] = "新闻中心";
+    Layout = "~/Views/Shared/_LayoutEn.cshtml";
+}
+@section css{  
+    <link rel="stylesheet" type="text/css" href="/css/new/list/video.css" />
+}
+<div class="video_whole" style="padding-top: 80px;">
+    <div class="common_containe">
+        <div class="list_top">
+            <i></i>
+            <a href="/english">Index > </a>
+            <a href="/english/vedio">Vedios </a>
+        </div>
+        <div class="goods_video">
+            <ul id="pageMain">
+                @if (Model != null && Model.Any())
+                {
+                    foreach (var item in Model)
+                    {
+                        <li>
+                            <img class="goods_img" src="@item.ImgUrl">
+                            <div class="img_bj">
+                                <img class="play" src="/images/details/video_img.png">
+                            </div>
+                            <div class="v_shipin"></div>
+                            <div class="v_main">
+                               
+                            </div>
+                        </li>          
+                    }
+                }
+            </ul>
+        </div>
+        <div id="pageBox">
+            <span id="prev">上一页</span>
+            <ul id="pageNav"></ul>
+            <span id="next">下一页</span>
+        </div>
+
+    </div>
+</div>
+@section Scripts{
+
+  
+    <script src="~/js/new/list/video.js"></script>
+}

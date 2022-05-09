@@ -1,0 +1,307 @@
+﻿ 
+body, div, span, p, em, ul, li, h1, h2, h3, dl, dt, dd, img, header, footer, nav, section, article, video, aside, dialog, figure, figcaption, time {
+    margin: 0;
+    padding: 0;
+    border: 0 none;
+    outline: none;
+}
+
+body {
+    font-family: sans-serif "Microsoft YaHei";
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+    margin: 0 auto;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+ul, li {
+    list-style: none;
+}
+
+input {
+    border: 0;
+    background: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.public_nav {
+    position: fixed;
+    top: 0;
+    z-index: 11111;
+    width: 100%;
+}
+
+    .public_nav .logo {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        padding: 1rem 0;
+        box-shadow: 0 7px 7px -7px #5e5e5e;
+        background: #F5F5F5;
+    }
+
+        .public_nav .logo img {
+            width: 7.3rem;
+            margin-left: 2rem;
+        }
+
+    .public_nav .menu .menu_img {
+        width: 2rem;
+        height: 1.7rem;
+        position: absolute;
+        top: 1.8rem;
+        right: 2rem;
+        background: url(../images/caidan.png) no-repeat center;
+        background-size: 100% 100%;
+    }
+
+    .public_nav .menu .delStyle {
+        background: url(../images/shanchu.png) no-repeat center;
+        background-size: 100% 100%;
+    }
+
+    .public_nav .menu .menu_main {
+        width: 100%;
+        z-index: 111;
+        position: absolute;
+        top: 5rem;
+        left: 0;
+        background: #fff;
+        display: none;
+        box-shadow: 0 7px 7px -7px #5e5e5e;
+    }
+
+    .public_nav .menu_main .sousuo {
+        width: 95%;
+        margin: 1rem auto 0.5rem;
+        background: #E8E8E8;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+        .public_nav .menu_main .sousuo input {
+            width: 90%;
+            background: no-repeat;
+            border: 0;
+            height: 2rem;
+            font-size: 1rem;
+        }
+
+        .public_nav .menu_main .sousuo img {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+
+    .public_nav .menu ul li {
+        border-bottom: 1px solid #E8E8E8;
+        padding: 0 1rem;
+        font-size: 0.9rem;
+    }
+
+        .public_nav .menu ul li a {
+            height: 3rem;
+            display: block;
+            line-height: 3rem;
+        }
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.public_footer {
+    background-color: #555B6E;
+    height: 6rem;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    z-index: 111;
+}
+
+    .public_footer ul {
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+        .public_footer ul li a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .public_footer ul li img {
+            width: 2.5rem;
+            height: 2.5rem;
+        }
+
+        .public_footer ul li span {
+            color: #ffffff;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+    .public_footer .zhezhao {
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5);
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: none;
+    }
+
+    .public_footer .zixun_box .zixun_main {
+        position: fixed;
+        top: 50%;
+        margin-top: -3rem;
+        left: 8rem;
+        padding: 1rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        background: #FFFFFF;
+        z-index: 11;
+        border-radius: 1rem;
+    }
+
+    .public_footer .zixun_box, .public_footer .liuyan {
+        display: none;
+    }
+
+    .public_footer .zixun_main img {
+        width: 4rem;
+        height: 4rem;
+    }
+
+    .public_footer .zixun_main p {
+        font-size: 1.5rem;
+    }
+
+    .public_footer .zixun_main a {
+        font-size: 1.3rem;
+        margin-top: 0.5rem;
+        color: #000;
+    }
+
+    .public_footer .liuyan_main {
+        width: 28rem;
+        background: #FFFFFF;
+        position: fixed;
+        top: 6rem;
+        left: 1rem;
+        border-radius: 1rem;
+        padding: 1rem
+    }
+
+        .public_footer .liuyan_main .bt {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+            .public_footer .liuyan_main .bt span {
+                font-size: 1.5rem;
+            }
+
+        .public_footer .liuyan_main .shanchu img {
+            width: 1.6rem;
+            height: 1.6rem;
+        }
+
+        .public_footer .liuyan_main form {
+            border: 1px solid #EBEDF0;
+            border-radius: 0.5rem;
+            margin: 1.5rem 0;
+        }
+
+            .public_footer .liuyan_main form div + div {
+                border-top: 1px solid #EBEDF0;
+            }
+
+            .public_footer .liuyan_main form div span {
+                color: #CB2E37;
+                margin-right: 0.2rem;
+            }
+
+            .public_footer .liuyan_main form div {
+                color: #666;
+                font-size: 1rem;
+                width: 95%;
+                margin: 0 auto;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+                .public_footer .liuyan_main form div input, .public_footer .liuyan_main form select {
+                    width: 75%;
+                    height: 3rem;
+                }
+
+                .public_footer .liuyan_main form div:last-child input {
+                    height: 5rem;
+                }
+
+            .public_footer .liuyan_main form select {
+                border: 0;
+            }
+
+.tijiao {
+    width: 100%;
+    height: 3rem;
+    background: #007AFF;
+    line-height: 3rem;
+    text-align: center;
+    color: #fff;
+    font-size: 1.4rem;
+    border-radius: 0.5rem;
+}
+body, div, span, p, em, ul, li, h1, h2, h3, dl, dt, dd, img, header, footer, nav, section, article, video, aside, dialog, figure, figcaption, time {
+    margin: 0;
+    padding: 0;
+    border: 0 none;
+    outline: none;
+}
+
+body {
+    font-family: sans-serif "Microsoft YaHei";
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+    margin: 0 auto;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+ul, li {
+    list-style: none;
+}
+
+input {
+    border: 0;
+    background: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+ 

@@ -1,0 +1,39 @@
+body,div,span,p,em,ul,li,h1,h2,h3,dl,dt,dd,img,header,footer,nav,section,article,video,aside,dialog,figure,figcaption,time{margin:0;padding:0;border:0 none; outline:none;}
+body {font-family:sans-serif "Microsoft YaHei";-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;-webkit-tap-highlight-color: transparent;margin: 0 auto;}
+ul,li{list-style: none;}
+input{border: 0;background: none;}
+
+a{text-decoration: none;color:inherit;}
+.clearfix:after{ clear:both; display:block; visibility:hidden; height:0; line-height:0; content:'';}
+.clearfix{ zoom:1;}
+.join_whole{width: 100%;max-width: 29rem;margin: 0 auto;padding: 6rem 0 7rem;}
+.join_whole img{width: 100%;display: block;}
+
+.list_top{padding-bottom: 1rem;display: flex;flex-direction: row;align-items: center;border-bottom: 1px solid #E1E1E1;}
+.list_top i{ width: 0;height: 0;border-top: 0.6rem solid transparent;border-left: 0.5rem solid #007AFF;border-bottom: 0.6rem solid transparent;margin-right: 0.5rem;}
+.list_top a{color: #000;margin-left:0.25rem;font-size:1.3rem;display: contents;}
+.list_top a:hover{color: #007AFF;}
+
+.join_whole .join_main{margin: 1rem 0;}
+.join_whole .join_main .title{width:100%;line-height: 3rem;border-bottom: 1px solid #999;font-size: 1.3rem;color: #333333;margin:1.5rem 0;}
+.join_whole .join_main .post{}
+.join_whole .join_main .post li{}
+.join_whole .join_main .post li .bt{border-bottom: 1px solid #E1E1E1;display: flex;flex-direction: row;align-items: center;justify-content: space-between;padding: 0.5rem;}
+.join_whole .join_main .post li .bt img{width: 0.7rem;}
+.join_whole .join_main .post li .bt .xuanzhuan{transform: rotateX(-180deg);}
+.join_whole .join_main .post li .bt span{color: #333333;font-size: 1.2rem;}
+.join_whole .join_main .post li .post_main{padding:0 0.5rem;display: none;}
+.join_whole .join_main .post_main h4{font-weight: normal;font-size: 1.2rem;color: #FEAF17;margin: 0.25rem 0;}
+.join_whole .join_main .post_main p{color: #333333;font-size: 1.2rem;margin:1rem 0;}
+.join_whole .join_main .post_main img{width: 6rem;height: 6rem;margin: 8px 0;}
+
+
+
+
+
+
+
+
+
+
+

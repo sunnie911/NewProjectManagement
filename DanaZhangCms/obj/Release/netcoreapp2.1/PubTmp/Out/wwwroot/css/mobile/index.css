@@ -1,0 +1,85 @@
+body,div,span,p,em,ul,li,h1,h2,h3,dl,dt,dd,img,header,footer,nav,section,article,video,aside,dialog,figure,figcaption,time{margin:0;padding:0;border:0 none; outline:none;}
+body {font-family:sans-serif "Microsoft YaHei";-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;-webkit-tap-highlight-color: transparent;margin: 0 auto;}
+ul,li{list-style: none;}
+input{border: 0;background: none;}
+
+a{text-decoration: none;color:inherit;}
+.clearfix:after{ clear:both; display:block; visibility:hidden; height:0; line-height:0; content:'';}
+.clearfix{ zoom:1;}
+.index_whole img{width: 100%;display: block;}
+
+.index_whole{width: 100%;max-width: 32rem;margin: 0 auto;padding: 5rem 0 7rem;}
+.index_title{font-family: 微软雅黑;padding: 2rem 1rem 2rem 2rem;}
+.index_title .title{font-size: 1.3rem;color: #333333;position: relative;visibility: inherit;}
+.index_title .title::after{content: '';position: absolute;top: 0.4rem;left: -1.2rem;width: 3px;height:1.2rem;background:#1e85e4;}
+.index_title .main{display: flex;flex-direction: row;align-items: center;justify-content: space-between;margin-top: 0.5rem;}
+.index_title .main>span{color: #666666;font-size: 1rem;}
+.index_title .main .more a{display: flex;flex-direction: row;align-items: center;}
+.index_title .main .more span{color: #333333;font-size: 0.9rem;margin-right: 1rem;}
+.index_title .main .more img{width:0.9rem;height: 0.5rem;}
+
+
+
+.index_main{}
+/* banner */
+.banner{padding: 1rem 0;position: relative;background: #EDEFF0;}
+.banner .swiper-container {padding: 2rem 0;background: #fff;}
+.banner .swiper-slide{display: flex;flex-direction: row;justify-content:center;align-items: flex-start;}
+.banner .swiper-slide img{width:100%;}
+.banner .swiper-slide>div{width:14rem;}
+.banner .swiper-container .swiper-pagination{bottom:0.5rem;}
+.banner .swiper-container .swiper-pagination span{background: #000000;opacity: 1;}
+.banner .swiper-container .swiper-pagination span.swiper-pagination-bullet-active{background: #007aff;}
+.banner .swiper-button-next,.banner .swiper-button-prev{width: 1.5rem;height: 1.5rem;background-size: 1.5rem 1.5rem;}
+.banner .slide-left .bt{font-size: 1.4rem;line-height: 1.7rem;margin-bottom: 0.75rem;}
+.banner .slide-left span{font-size: 0.9rem;line-height: 1.5rem;display: block;}
+.banner .slide-left .readMore{height: 1.85rem;line-height: 1.8rem;font-size: 0.7rem !important;color: #FFF;background: #0085D5;display: inline-block;padding:0 1rem;margin-top: 0.9rem;}
+.banner .slide-right{display: flex;align-items:center;}
+/* 热卖详情 */
+.hotSell{}
+.hotSell ul{display: flex;flex-direction: row;flex-wrap: wrap;justify-content: space-between;}
+.hotSell ul li{width: 47%;position: relative;font-size: 0.65rem;text-align: center;border: solid 3px #f7f7f7;padding: 0.75rem 0;margin: 0.5rem 0;}
+.hotSell ul li span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.hotSell ul li a{color:#000;}
+.hotSell ul li .goods_img{width: 100%;height: 12rem;margin-bottom: 1rem;}
+.hotSell ul li .hot{position: absolute;right: 0.75rem;width: 2.6rem;height: 2.5rem;bottom: 3.5rem;}
+
+/* 简介 */
+.introduce_bj{width: 100%;background: url(../images/jianjie.jpg) no-repeat center;background-size: 100% 100%;padding: 0.5rem 0;padding-bottom: 2rem;display: flex;flex-direction: column;align-items: center;justify-content: space-between;margin: 2rem auto 0;}
+.introduce_bj .index_title{padding: 1rem;}
+.introduce_bj .index_title .main{margin-top: 1.5rem;}
+.introduce_bj .in_left{display: flex;flex-direction: column;align-items: flex-start;width: 28rem;}
+.introduce_bj .in_left p{font-size: 0.7rem;color: #CBCBCB;line-height: 1.9;padding-left: 1rem;margin-bottom: 1rem;}
+.introduce_bj .in_left .btn img{margin-left:1rem;width:2rem;height: 2rem;}
+.introduce_bj .in_right{width: 18rem;height: 15.5rem;position: relative;}
+.introduce_bj .in_right img{width: 100%;}
+.introduce_bj .in_right .leftop,.introduce_bj .in_right .rightdown{position: absolute;width: 1rem;height: 1rem;}
+.introduce_bj .in_right .leftop{top: -0.5rem;left:-1rem;}
+.introduce_bj .in_right .rightdown{right:-0.5rem;bottom:-1rem;}
+/* 精彩视频 */
+.vedio{width: 100%;height:28rem;background:#F5F5F5;}
+.vedio_container {width: 95%;overflow: hidden;padding-bottom: 1rem;} 
+.vedio_container .swiper-wrapper {-webkit-transition-timing-function: linear;-moz-transition-timing-function: linear;-ms-transition-timing-function: linear;-o-transition-timing-function: linear;transition-timing-function: linear;margin: 0 auto;display: flex;flex-direction: row;justify-content: space-between;}
+.vedio_container .swiper-slide {width: 48%!important;display: flex;flex-direction: row;align-items: flex-start;}
+.vedio_container .swiper-slide+.swiper-slide{margin-left: 2%;}
+.vedio_container .swiper-slide img{width: 100%;}
+.vedio_container .slide_main {display: flex;flex-direction: column;justify-content: flex-start;width: 100%;padding-bottom: 2rem;background-color: #ffffff;border-radius: 5px;overflow: hidden;}
+.vedio_container .slide_main .mainP{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size: 0.9rem;margin: 3rem 0 0.5rem 0;padding: 0 1rem;}.vedio_container .slide_main span{font-size: 0.6rem;color:#666666;padding: 0 1rem;}
+.vedio_container .slide_main:hover .mainP {color:#007cff}
+.vedio .vedio_more{position: relative;font-size: 0.9rem;text-align: center;}
+.vedio .vedio_more a{color: #888888;}
+.vedio .vedio_more::before{position: absolute;content: '';width: 0.3rem;height: 0.3rem;border-right: solid 1px #888888;border-top: solid 1px #888888;transform: rotate(45deg);left: 50%;margin-left: 3rem;top: 0.4rem;}
+/* 学术会议 */
+.learning ul{overflow: hidden;display: flex;flex-direction: row;justify-content: space-between;flex-wrap: wrap;}
+.learning ul li{width: 48%;float: left;position: relative;margin-bottom: 1rem;}
+.learning ul li img{width: 100%;}
+.learning ul li .main{color:#FFFFFF;z-index: 10;position: absolute;bottom:0;top:0;background:rgba(0,0,0,0.3);padding: 0 1rem 1rem;display: flex;justify-content: flex-end;flex-direction: column;}
+.learning ul li .main .title{font-size: 1.2rem;margin-bottom: 0.5rem;}
+.learning ul li .main .neirong{line-height: 1.2rem;font-size: 0.9rem;margin-top: 0.5rem;}
+.learning ul li .mengceng{display: none;width: 19.5rem;height: 19.5rem;background:rgba(0,0,0,0.3);position: absolute;top: 0;left: 0;}
+
+/* 合作机构 */
+.cooperative ul{display:flex;flex-direction: row;align-items:center;flex-wrap: wrap}
+.cooperative ul li{width:33%;display:flex;flex-direction: row;justify-content: space-between;
+    margin: 0.5rem 0;} 
+

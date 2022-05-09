@@ -1,0 +1,54 @@
+﻿@model List<DanaZhangCms.Models.Product>
+@{
+    ViewData["Title"] = "产品列表";
+    Layout = "~/Views/Shared/_LayoutMobile.cshtml";
+}
+@section css{
+    <link href="~/css/mobile/list/productList.css" rel="stylesheet" />
+}
+<div class="whole_list" style="padding-top: 80px;">
+
+    <div class="list_top">
+        <i></i>
+        <a href="/mobile">首页 > </a>
+        <a href="/mobile/Product">产品列表 </a>
+    </div>
+
+    <div class="pro_main">
+
+        <ul>
+            @foreach (var pro in Model)
+            {
+                <li>
+                    <a href="/mobile/proDetail/@pro.Id">
+                        <div class="img_box">
+                            <img src="@pro.ImgUrl" title="@pro.Name">
+                            @if (pro.IsHot)
+                            {
+                                <img class="hot" src="/images/sale.png">
+                            }
+                        </div>
+                        <p>@pro.Name @pro.Model1</p>
+                    </a>
+                </li>
+
+            }
+
+        </ul>
+        @*<div id="pageBox">
+                <span id="prev">上一页</span>
+                <ul id="pageNav"></ul>
+                <span id="next">下一页</span>
+            </div>*@
+
+
+    </div>
+
+
+</div>
+@section Scripts{
+
+
+    <script src="~/js/mobile/list/productList.js"></script>
+
+}

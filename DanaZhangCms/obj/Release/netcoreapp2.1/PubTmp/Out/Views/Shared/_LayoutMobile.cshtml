@@ -1,0 +1,247 @@
+﻿@{
+    var workContext = ViewBag.WorkContext as DanaZhangCms.ViewModels.WebWorkContext;
+    List<Product> productList = ViewBag.ProductList;
+    List<ProductCategory> cateList = ViewBag.CategoryList;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <title>@Html.Raw(ViewBag.SeoTitle)</title>
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="@Html.Raw(ViewBag.SeoDescription)" />
+    <meta name="keywords" content="@Html.Raw(ViewBag.SeoKeyword)" />
+    <meta name="generator" content="" data-variable="" />
+    <link href="~/css/mobile/layout.css" rel="stylesheet" />
+    <script src="/js/mobile/jquery-1.10.1.min.js" type="text/javascript"></script>
+    <script src="/js/mobile/rem.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            var navHeight = $('.public_nav').height();
+            var data = { nHeight: navHeight, temp: 1 }
+            window.parent.postMessage(data, '*');
+            // console.log(navHeight)
+            var flag = true;
+            $('.menu .menu_img').click(function () {
+
+                if (flag) {
+                    $(this).next('.menu_main').slideDown()
+                    $(this).addClass('delStyle');
+                    setTimeout(() => {
+                        navHeight = window.screen.height;
+                        var data = { nHeight: navHeight, temp: 1 }
+                        window.parent.postMessage(data, '*');
+                    }, 200);
+                    flag = false;
+                } else {
+                    $(this).next('.menu_main').slideUp()
+                    $(this).removeClass('delStyle');
+
+                    navHeight = $('.public_nav').height();
+                    var data = { nHeight: navHeight, temp: 1 }
+                    window.parent.postMessage(data, '*');
+
+                    flag = true;
+
+                }
+            })
+        })
+    </script>
+    @RenderSection("css", required: false)
+</head>
+<body>
+
+    <div class="public_nav">
+        <!-- logo -->
+        <div class="logo">
+            <a href="/home"> <img src="/images/logo1.png"></a>
+        </div>
+        <!-- 菜单 -->
+        <div class="menu">
+            <div class="menu_img"></div>
+            <div class="menu_main">
+                <div class="sousuo">
+                    <input type="text" placeholder="请输入您要搜索的内容" />
+                    <img src="../images/sea.png">
+                </div>
+                <ul>
+                    <li><a href="/">首页</a></li>
+
+                    @if (cateList != null && cateList.Any())
+                    {
+                        foreach (var cate in cateList)
+                        {
+
+                            <li>
+                                <a href="/mobile/Product?categoryId=@cate.Id" target="_blank">
+                                  @cate.Name
+                                </a>
+                            </li>
+                            @*<li><a href="../list/nav/nav1.html" target="_blank">混凝土(砂浆)3D打印系统</a></li>
+                                <li><a href="../list/nav/nav2.html" target="_blank">混凝土耐久性测试仪器</a></li>
+                                <li><a href="../list/nav/nav3.html" target="_blank">特殊性能高端测试仪器</a></li>
+                                <li><a href="../list/nav/nav4.html" target="_blank">建材常规实验设备</a></li>
+                                <li><a href="../list/nav/nav5.html" target="_blank">合作研发</a></li>*@
+                        }
+                    }
+                    <li><a href="list/contact.html" target="_blank">联系我们</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    @RenderBody()
+    <div class="public_footer">
+        <ul>
+            <li>
+                <a href="../list/contact.html" target="_blank">
+                    <img src="../images/footer/icon1.png">
+                    <span>售后服务</span>
+                </a>
+            </li>
+            <li>
+                <a href="../list/join.html" target="_blank">
+                    <img src="/images/footer/icon2.png">
+                    <span>加入我们</span>
+                </a>
+            </li>
+            <li id="zixun">
+                <a href="#">
+                    <img src="../images/footer/icon3.png">
+                    <span>咨询热线</span>
+                </a>
+            </li>
+            <li id="liuyan">
+                <a href="#">
+                    <img src="/images/footer/icon4.png">
+                    <span>给我留言</span>
+                </a>
+            </li>
+        </ul>
+        <!--咨询热线  -->
+        <div class="zixun_box">
+            <div class="zhezhao"></div>
+            <div class="zixun_main">
+                <img src="/images/footer/zixun.png">
+                <div>
+                    <p>免费咨询热线:</p>
+                    <a href="tel:0571-82755615">0571-82755615</a>
+                </div>
+            </div>
+        </div>
+        <!-- 给我留言 -->
+        <div class="liuyan">
+            <div class="zhezhao"></div>
+            <div class="liuyan_main">
+                <div class="bt">
+                    <span>申请试用</span>
+                    <div class="shanchu">
+                        <img src="/images/footer/del.png">
+                    </div>
+                </div>
+
+                <form>
+                    <div><p><span>*</span>姓名</p><input type="text" name="name" placeholder="请选择姓名" /></div>
+                    <div><p><span>*</span>手机</p><input type="text" name="shouji" placeholder="请选择手机号码" /></div>
+                    <div><p><span>*</span>邮箱</p><input type="text" name="youxiang" placeholder="请选择邮箱" /></div>
+                    <div><p><span>*</span>公司名称</p><input type="text" name="gongsi" placeholder="请选择公司名称" /></div>                    
+
+                    <div><p><span>*</span>备注</p><input type="text" name="beizhu" /></div>
+                </form>
+                <div class="tijiao">提交</div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(function () {
+            var footerHeight = $('.public_footer').height();
+            var data = { fHeight: footerHeight, temp: 2 }
+            window.parent.postMessage(data, "*");
+
+            $('#zixun').click(function () {
+                setTimeout(() => {
+                    footerHeight = window.screen.height;
+                    var data = { fHeight: footerHeight, temp: 2 }
+                    window.parent.postMessage(data, "*");
+                }, 200);
+                $('.zixun_box,.zixun_box .zhezhao').show();
+            })
+            $('.zixun_box .zhezhao').click(function () {
+                var footerHeight = $('.public_footer').height();
+                var data = { fHeight: footerHeight, temp: 2 }
+                window.parent.postMessage(data, "*");
+
+                $(this).hide();
+                $('.zixun_box').hide();
+            })
+            $('#liuyan').click(function () {
+                setTimeout(() => {
+                    footerHeight = window.screen.height;
+                    var data = { fHeight: footerHeight, temp: 2 }
+                    window.parent.postMessage(data, "*");
+                }, 200);
+                $('.liuyan,.liuyan .zhezhao').show();
+            })
+            $('.liuyan_main .shanchu').click(function () {
+                $('.liuyan,.liuyan .zhezhao').hide();
+
+                var footerHeight = $('.public_footer').height();
+                var data = { fHeight: footerHeight, temp: 2 }
+                window.parent.postMessage(data, "*");
+            })
+            $('.tijiao').click(function () {
+                var name = document.querySelector('[name="name"]').value;
+                var shouji = document.querySelector('[name="shouji"]').value;
+                var youxiang = document.querySelector('[name="youxiang"]').value;
+                var gongsi = document.querySelector('[name="gongsi"]').value;
+                var hangye = document.querySelector('[name="hangye"]').value;
+                var beizhu = document.querySelector('[name="beizhu"]').value;
+                if (name == '') {
+                    alert('请选择姓名');
+                    return false;
+                }
+                if (shouji == '') {
+                    alert('请选择手机号码');
+                    return false;
+                }
+                if (youxiang == '') {
+                    alert('请选择邮箱');
+                    return false;
+                }
+                if (gongsi == '') {
+                    alert('请选择公司名称');
+                    return false;
+                }
+                if (hangye == '请选择') {
+                    alert('请选择行业');
+                    return false;
+                }
+                if (beizhu == '') {
+                    alert('请填写备注');
+                    return false;
+                }
+                var content = '有客人提交了信息：<br/>' + '<br/>姓名:' + name + '<br/>手机号码:' + shouji + '<br/>邮箱:' + youxiang + '<br/>公司名称:' + gongsi + '<br/>行业:' + hangye + '<br/>备注:' + beizhu
+                // console.log(content)
+                if (typeof openZoosUrl != "undefined") {
+                    openZoosUrl('chatwin', '&e=' + escape(content));
+                    alert("预约成功！");
+                }
+                $.post("http://app.yestar.com/plus/sendEmail.php", { "content": content, "email": '2316971538@qq.com' }, function (data) {
+                    if (data == '1') {
+                        i_num = 1;
+                        alert('恭喜你！提交成功');
+                    }
+                })
+            })
+        })
+    </script>
+    @RenderSection("Scripts", required: false)
+
+</body>
+
+</html>

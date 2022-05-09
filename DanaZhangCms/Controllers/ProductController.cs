@@ -62,5 +62,15 @@ namespace DanaZhangCms
             var model = await _proRepository.GetSingleAsync(id);
             return View(model);
         }
+
+        /// <summary>
+        /// 售后服务
+        /// </summary>
+        /// <returns></returns>
+        public IActionResult Service()
+        {
+            return View("~/Views/About/service.cshtml");
+        }
+
     }
 }

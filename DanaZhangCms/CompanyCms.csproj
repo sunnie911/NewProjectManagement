@@ -147,6 +147,9 @@
     <Content Update="Views\About\AboutEn.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
+    <Content Update="Views\About\service.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
     <Content Update="Views\About\mobile.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
