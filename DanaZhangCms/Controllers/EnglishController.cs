@@ -80,27 +80,29 @@ namespace DanaZhangCms
             return View("~/Views/English/Article/Index.cshtml", model);
         }
         ///首页
-        public IActionResult Product(int page, int categoryId, int pageSize = 10)
+        public IActionResult Product(int categoryId, string word)
         {
-            if (page == 0)
-            {
-                page = 1;
-            }
+           
 
             List<Product> productList = new List<Product>();
-            var total = _proRepository.Count();
+           
             if (categoryId > 0)
             {
-                productList = _proRepository.Where(p => p.CategoryId == categoryId).OrderBy(o => o.IsHot).Skip((page - 1) * pageSize).ToList();
-                total = _proRepository.Where(p => p.CategoryId == categoryId).Count();
+                productList = _proRepository.Where(p => p.CategoryId == categoryId).OrderBy(o => o.IsHot).ToList();
+              
             }
             else
             {
-                productList = _proRepository.OrderBy(o => o.IsHot).Skip((page - 1) * pageSize).Take(pageSize).Select(o => new Product() { Name = o.Name, Id = o.Id, ImgUrl = o.ImgUrl, IsHot = o.IsHot }).ToList();
+                productList = _proRepository.OrderBy(o => o.IsHot).Select(o => new Product() { Name = o.Name, Id = o.Id, ImgUrl = o.ImgUrl, IsHot = o.IsHot }).ToList();
+
+            }
+            if (!string.IsNullOrWhiteSpace(word))
+            {
+                productList = _proRepository.Where(p => p.NameEn.Contains(word) || p.Model1.Contains(word)).OrderBy(o => o.IsHot).Select(o => new Product() { Name = o.Name, Id = o.Id, ImgUrl = o.ImgUrl, IsHot = o.IsHot }).ToList();
 
             }
 
-            ViewBag.Total = total;
+
             return View("~/Views/English/Product/Index.cshtml", productList);
         }
 

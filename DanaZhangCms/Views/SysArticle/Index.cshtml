@@ -49,9 +49,8 @@ layui.use('table', function(){
       , id: 'testReload'
     ,cols: [[ //表头
       {field: 'index', title: 'ID', width:80, fixed: 'left',type:'numbers'},
-        { field: 'title', title: '标题', width: 200, templet: '<div><a href="/Article/detail/{{d.id}}"  target="_blank" class="layui-table-link">{{d.title}}</a></div>' },
-      { field: 'cateName', title: '分类', width: 100 },
-      {field: 'author', title: '作者', width:100},
+        { field: 'title', title: '标题', width: 300, templet: '<div><a href="/Article/detail/{{d.id}}"  target="_blank" class="layui-table-link">{{d.title}}</a></div>' },
+      { field: 'cateName', title: '分类', width: 100 },      
       { field: 'createdDate', title: '添加时间', width: 140 },
       { fixed: 'right', width: 150, align: 'center', toolbar: '#barDemo' },        
     ]]

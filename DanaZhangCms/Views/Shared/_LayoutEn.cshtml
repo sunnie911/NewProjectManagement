@@ -38,35 +38,35 @@
                         foreach (var cate in cateList)
                         {
                             var proList = productList.Where(p => p.CategoryId == cate.Id).OrderBy(o => o.IsHot).ToList();
-                            <li>
-                                <a href="/english/Product?categoryId=@cate.Id">
-                                    <span>@cate.NameEn</span>
-                                </a>
-                                <div class="list_box">
-                                    <div class="navlist_current">
-                                        <div class="common_containe nav_pageMain">
-                                            @foreach (var pro in proList)
+                    <li>
+                        <a href="/english/Product?categoryId=@cate.Id">
+                            <span>@cate.NameEn</span>
+                        </a>
+                        <div class="list_box">
+                            <div class="navlist_current">
+                                <div class="common_containe nav_pageMain">
+                                    @foreach (var pro in proList)
                                             {
-                                                <span>
-                                                    <a href="/english/proDetail?Id=@pro.Id">
-                                                        <div class="img_box">
-                                                            <img src="@pro.ImgUrl" title="@pro.NameEn"> <img v-show="@pro.IsHot" class="hot" src="/images/sale.png" />
-                                                        </div>
-                                                        <p>@pro.NameEn @pro.Model1</p>
-                                                    </a>
-                                                </span>
-                                            }
-                                        </div>
-                                        <div class="common_containe">
-                                            <div class="nav_pageBox">
-                                                <img class="nav_prev" src="/images/page_left.png">
-                                                <img class="nav_next" src="/images/page_right.png">
+                                    <span>
+                                        <a href="/english/proDetail?Id=@pro.Id">
+                                            <div class="img_box">
+                                                <img src="@pro.ImgUrl" title="@pro.NameEn"> <img v-show="@pro.IsHot" class="hot" src="/images/sale.png" />
                                             </div>
-                                        </div>
-                                    </div>
-
+                                            <p>@pro.NameEn @pro.Model1</p>
+                                        </a>
+                                    </span>
+                                            }
                                 </div>
-                            </li>
+                                <div class="common_containe">
+                                    <div class="nav_pageBox">
+                                        <img class="nav_prev" src="/images/page_left.png">
+                                        <img class="nav_next" src="/images/page_right.png">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
 
                         }
                     }
@@ -79,7 +79,7 @@
                             <a href="/english/about" target="_blank"><span>Company profile  </span></a>
                             <span>Company advantages</span>
                             <span>Customers</span>
-                            <span><a href="/english/article" target="_blank">NEWS</a></span>
+                            <a href="/english/article" target="_blank"> <span>NEWS</span></a>
                         </div>
                     </li>
                 </ul>
@@ -89,10 +89,11 @@
                 <div class="chiness">中</div>
             </div>
             <div class="search_input">
+                <div class="search_zhezhao"></div>
                 <div class="search_box">
-                    <input type="text" name="Keyword" id="Keyword" class="goods"  placeholder="搜索关键词" />
+                    <input type="text" id="keyword" name="keyword" placeholder="Enter a Keyword" />
                     <div>
-                        <img class="searchgoods" src="/images/sousuo.png">
+                        <img class="searchgoods" src="images/sousuo.png">
                     </div>
                 </div>
             </div>

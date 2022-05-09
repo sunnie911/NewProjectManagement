@@ -111,6 +111,7 @@ img {
             padding: 8px 0;
             font-size: 14px;
             display: block;
+            color: black;
         }
 
             .nav .list ul li .lianxi span:hover {
@@ -210,6 +211,7 @@ img {
 
         .search p img {
             width: 100%;
+            cursor: pointer;
         }
 
     .search div {
@@ -235,6 +237,7 @@ img {
         position: absolute;
         top: 0;
         left: -120px;
+        cursor: pointer;
         display: none;
     }
 
@@ -245,11 +248,13 @@ img {
 
         .search p img {
             width: 100%;
+            cursor: pointer;
         }
 
     .search div {
         margin-left: 30px;
         color: #333;
+        cursor: pointer;
         font-size: 18px;
     }
 
@@ -356,7 +361,7 @@ img {
     display: flex;
     flex-direction: row;
     justify-content: end;
-    /*   margin: 20px 0 50px;*/
+    margin-top:60px;   
     font-size: 16px;
     width: 100%;
 }

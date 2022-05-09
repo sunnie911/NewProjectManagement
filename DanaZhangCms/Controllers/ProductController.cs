@@ -12,44 +12,43 @@ namespace DanaZhangCms
     [Ignore]
     public class ProductController : BaseController
     {
-        private IProductCategoryRepository _pcateRepository;
+
         private IProductRepository _proRepository;
-        private IArticleRepository _artRepository;
-        private IProductCategoryRepository _cateRepository;
-        public ProductController(IProductCategoryRepository cateRepository,   IProductRepository proRepository, IArticleRepository artRepository, IProductCategoryRepository pcateRepository)
+
+        public ProductController(IProductRepository proRepository)
         {
-            _cateRepository = cateRepository;
+
             _proRepository = proRepository;
-            _artRepository = artRepository;
-            _pcateRepository = pcateRepository;
+
         }
 
         ///首页
-        public IActionResult Index(int page,  int categoryId, int pageSize = 10)
+        public IActionResult Index(int categoryId, string word)
         {
-            if (page == 0)
-            {
-                page = 1;
-            }
+
             if (RequestExtensions.IsMobile(HttpContext.Request))
             {
                 return Redirect("/mobile/product");
             }
             List<Product> productList = new List<Product>();
-            var total = _proRepository.Count();
+
             if (categoryId > 0)
             {
                 //productList = _proRepository.Where(p=>p.CategoryId == categoryId).OrderBy(o => o.IsHot).Skip((page - 1) * pageSize).ToList();
                 productList = _proRepository.Where(p => p.CategoryId == categoryId).OrderBy(o => o.IsHot).ToList();
-                total = _proRepository.Where(p=>p.CategoryId==categoryId).Count();
+
             }
             else
             {
                 productList = _proRepository.OrderBy(o => o.IsHot).Select(o => new Product() { Name = o.Name, Id = o.Id, ImgUrl = o.ImgUrl, IsHot = o.IsHot }).ToList();
 
-            }   
-            
-            ViewBag.Total = total; 
+            }
+            if (!string.IsNullOrWhiteSpace(word))
+            {
+                productList = _proRepository.Where(p => p.Name.Contains(word)|| p.Model1.Contains(word)).OrderBy(o => o.IsHot).Select(o => new Product() { Name = o.Name, Id = o.Id, ImgUrl = o.ImgUrl, IsHot = o.IsHot }).ToList();
+            }
+
+
             return View(productList);
         }
 
@@ -60,7 +59,7 @@ namespace DanaZhangCms
         /// <returns></returns>
         public async Task<IActionResult> Detail(int id)
         {
-            var model = await _proRepository.GetSingleAsync(id);           
+            var model = await _proRepository.GetSingleAsync(id);
             return View(model);
         }
     }

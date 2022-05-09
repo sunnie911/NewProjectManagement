@@ -276,11 +276,7 @@
 
 
                 form.on('submit(add)', function (data) {
-                    var url = $(".layui-form").attr("action");
-
-                    // data.field.Content=editor.getData();
-                    $("#Content").val(editor.getData());
-                    $("#ContentEn").val(editor1.getData());
+                    var url = $(".layui-form").attr("action"); 
                     $.ajax({
                         url: url,
                         data: $("form").serialize(),

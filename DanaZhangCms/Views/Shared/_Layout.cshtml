@@ -38,38 +38,38 @@
                         foreach (var cate in cateList)
                         {
                             var proList = productList.Where(p => p.CategoryId == cate.Id).OrderByDescending(o => o.IsHot).ToList();
-                            <li>
-                                <a href="/Product?categoryId=@cate.Id">
-                                    <span>@cate.Name</span>
-                                </a>
-                                <div class="list_box">
-                                    <div class="navlist_current">
-                                        <div class="common_containe nav_pageMain">
-                                            @foreach (var pro in proList)
+                    <li>
+                        <a href="/Product?categoryId=@cate.Id">
+                            <span>@cate.Name</span>
+                        </a>
+                        <div class="list_box">
+                            <div class="navlist_current">
+                                <div class="common_containe nav_pageMain">
+                                    @foreach (var pro in proList)
                                             {
-                                                <span>
-                                                    <a href="@(Url.Action("Detail","Product",new { id=pro.Id}))">
-                                                        <div class="img_box">
-                                                            <img src="@pro.ImgUrl" title="@pro.Name">
-                                                            @if (pro.IsHot)
+                                    <span>
+                                        <a href="@(Url.Action("Detail","Product",new { id=pro.Id}))">
+                                            <div class="img_box">
+                                                <img src="@pro.ImgUrl" title="@pro.Name">
+                                                @if (pro.IsHot)
                                                             {
-                                                                <img class="hot" src="/images/sale.png" />
+                                                <img class="hot" src="/images/sale.png" />
                                                             }
-                                                        </div>
-                                                        <p>@pro.Name @pro.Model1</p>
-                                                    </a>
-                                                </span>
-                                            }
-                                        </div>
-                                        <div class="common_containe">
-                                            <div class="nav_pageBox">
-                                                <img class="nav_prev" src="/images/page_left.png">
-                                                <img class="nav_next" src="/images/page_right.png">
                                             </div>
-                                        </div>
+                                            <p>@pro.Name @pro.Model1</p>
+                                        </a>
+                                    </span>
+                                            }
+                                </div>
+                                <div class="common_containe">
+                                    <div class="nav_pageBox">
+                                        <img class="nav_prev" src="/images/page_left.png">
+                                        <img class="nav_next" src="/images/page_right.png">
                                     </div>
                                 </div>
-                            </li>
+                            </div>
+                        </div>
+                    </li>
 
                         }
                     }
@@ -82,7 +82,7 @@
                             <a href="/about" target="_blank"><span>公司简介  </span></a>
                             <span>公司优势</span>
                             <span>服务客户</span>
-                            <span><a href="/article" target="_blank">学术交流</a></span>
+                            <a href="/article" target="_blank"><span>学术交流</span></a>
                         </div>
                     </li>
                 </ul>
@@ -94,9 +94,9 @@
             <div class="search_input">
                 <div class="search_zhezhao"></div>
                 <div class="search_box">
-                    <input type="text" placeholder="搜索关键词" />
+                    <input type="text" id="keyword" name="keyword" placeholder="搜索关键词" />
                     <div>
-                        <img src="images/sousuo.png">
+                        <img class="searchgoods" src="images/sousuo.png">
                     </div>
                 </div>
             </div>
@@ -104,77 +104,77 @@
         </div>
     </div>
     @RenderBody()
-<div class="footer_box">
-    <div class="footer_main">
-        <div class="foot_box common_containe">
-            <div class="foot_left">
-                <dl>
-                    <dt>售前咨询</dt>
-                    <dd><a href="/contact">产品咨询</a></dd>
-                    <dd><a href="/contact">服务咨询</a></dd>
-                    <dd><a href="/contact">合作咨询</a></dd>
-                </dl>
-                <dl>
-                    <dt>售后服务</dt>
-                    <dd><a href="#">安装培训</a></dd>
-                    <dd><a href="#">维修保养</a></dd>
-                    <dd><a href="#">资料下载</a></dd>
-                </dl>
-                <dl>
-                    <dt>新闻动态</dt>
-                    <dd><a href="/article">学术交流</a></dd>
-                    <dd><a href="#">科研标准</a></dd>
-                    <dd><a href="/article">学术交流</a></dd>
-                </dl>
-                <dl>
-                    <dt>关于我们</dt>
-                    <dd><a href="/about">了解冠力</a></dd>
-                    <dd><a href="/about">公司荣誉</a></dd>
-                    <dd><a href="#">加入我们</a></dd>
-                </dl>
-                <dl>
-                    <dt>媒体矩阵</dt>
-                    <dd><a href="#">微信公众号</a></dd>
-                    <dd><a href="http://mp.sohu.com/profile?xpt=OTVjZWVmNWQtNmNjMi00NGRhLWI4NzEtMmEzMTQ3MGRiNjll">搜狐号</a></dd>
-                    <dd><a href="#">抖音号</a></dd>
-                </dl>
-            </div>
-            <div class="foot_right">
-                <img src="/images/ewm.jpg">
-                <span>关注官方微信</span>
-            </div>
-        </div>
-
-    </div>
-    <div class="foot_wrap">
-        <div class="footer">
-            <ul>
-                <li>
-                    <div><img src="/images/sign1.png"></div>
-                    <span>国家高新技术企业</span>
-                </li>
-                <li>
-                    <div><img src="/images/sign2.png"></div>
-                    <span>杭州市高新技术企业</span>
-                </li>
-                <li>
-                    <div><img src="/images/sign3.png"></div>
-                    <span>ISO9001认证</span>
-                </li>
-
-            </ul>
-            <div class="right">
-                <p><a style="color:white" href="http://beian.miit.gov.cn">版权所有 © 建研华测（杭州）科技有限公司 浙ICP备20006756号-1 </a></p>
-
-                <p>地址：萧山区南秀路3089号新塘科创园1号楼4层 &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;邮编：311200</p>
-                <p>
-                    电话： 0571-82875561/82755615
-                </p>
+    <div class="footer_box">
+        <div class="footer_main">
+            <div class="foot_box common_containe">
+                <div class="foot_left">
+                    <dl>
+                        <dt>售前咨询</dt>
+                        <dd><a href="/contact">产品咨询</a></dd>
+                        <dd><a href="/contact">服务咨询</a></dd>
+                        <dd><a href="/contact">合作咨询</a></dd>
+                    </dl>
+                    <dl>
+                        <dt>售后服务</dt>
+                        <dd><a href="#">安装培训</a></dd>
+                        <dd><a href="#">维修保养</a></dd>
+                        <dd><a href="#">资料下载</a></dd>
+                    </dl>
+                    <dl>
+                        <dt>新闻动态</dt>
+                        <dd><a href="/article">学术交流</a></dd>
+                        <dd><a href="#">科研标准</a></dd>
+                        <dd><a href="/article">学术交流</a></dd>
+                    </dl>
+                    <dl>
+                        <dt>关于我们</dt>
+                        <dd><a href="/about">了解冠力</a></dd>
+                        <dd><a href="/about">公司荣誉</a></dd>
+                        <dd><a href="#">加入我们</a></dd>
+                    </dl>
+                    <dl>
+                        <dt>媒体矩阵</dt>
+                        <dd><a href="#">微信公众号</a></dd>
+                        <dd><a href="http://mp.sohu.com/profile?xpt=OTVjZWVmNWQtNmNjMi00NGRhLWI4NzEtMmEzMTQ3MGRiNjll">搜狐号</a></dd>
+                        <dd><a href="#">抖音号</a></dd>
+                    </dl>
+                </div>
+                <div class="foot_right">
+                    <img src="/images/ewm.jpg">
+                    <span>关注官方微信</span>
+                </div>
             </div>
 
         </div>
+        <div class="foot_wrap">
+            <div class="footer">
+                <ul>
+                    <li>
+                        <div><img src="/images/sign1.png"></div>
+                        <span>国家高新技术企业</span>
+                    </li>
+                    <li>
+                        <div><img src="/images/sign2.png"></div>
+                        <span>杭州市高新技术企业</span>
+                    </li>
+                    <li>
+                        <div><img src="/images/sign3.png"></div>
+                        <span>ISO9001认证</span>
+                    </li>
+
+                </ul>
+                <div class="right">
+                    <p><a style="color:white" href="http://beian.miit.gov.cn">版权所有 © 建研华测（杭州）科技有限公司 浙ICP备20006756号-1 </a></p>
+
+                    <p>地址：萧山区南秀路3089号新塘科创园1号楼4层 &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;邮编：311200</p>
+                    <p>
+                        电话： 0571-82875561/82755615
+                    </p>
+                </div>
+
+            </div>
+        </div>
     </div>
-</div>
     @RenderSection("Scripts", required: false)
 
 </body>
