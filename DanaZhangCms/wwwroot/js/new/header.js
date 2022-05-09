@@ -86,9 +86,8 @@
         var nav_prev = $('.nav .list ul li').eq(navIndex).find('.nav_prev');
         var nav_next = $('.nav .list ul li').eq(navIndex).find('.nav_next');
         if (nav_iNum == 0) {
-            nav_prev.hide();
-        } else {
-            nav_prev.show();
+            nav_prev.css({ "pointer-events": "none", "cursor": "default", "filter": "grayscale(100%)" })
+            nav_next.css({ "pointer-events": "auto", "cursor": "pointer", "filter": "grayscale(0%)" })
         }
         $('.nav .list ul li').eq(navIndex).find('.nav_pageMain span').hide();
         for (var i = 0; i < nav_curNum; i++) {
@@ -100,6 +99,12 @@
             $('.nav .list ul li').eq(navIndex).find('.nav_pageMain span').hide();
             if (nav_iNum != 0) {
                 nav_iNum--;
+                nav_next.css({ "pointer-events": "auto", "cursor": "pointer", "filter": "grayscale(0%)" })
+
+            }
+            if (nav_iNum == 0) {
+                nav_prev.css({ "pointer-events": "none", "cursor": "default", "filter": "grayscale(100%)" })
+                nav_next.css({ "pointer-events": "auto", "cursor": "pointer", "filter": "grayscale(0%)" })
             }
             for (var i = nav_iNum * nav_curNum; i < (nav_iNum + 1) * nav_curNum; i++) {
                 $('.nav .list ul li').eq(navIndex).find('.nav_pageMain span').eq(i).show();
@@ -108,16 +113,18 @@
         })
         /*下一页*/
         nav_next.click(function () {
-            // console.log('下一页')
             $('.nav .list ul li').eq(navIndex).find('.nav_pageMain span').hide();
+            nav_iNum++;
             if (nav_iNum != navlen - 1) {
-                nav_iNum++;
+                nav_prev.css({ "pointer-events": "auto", "cursor": "pointer", "filter": "grayscale(0%)" })
+            } else {
+                nav_prev.css({ "pointer-events": "auto", "cursor": "pointer", "filter": "grayscale(0%)" })
+                nav_next.css({ "pointer-events": "none", "cursor": "default", "filter": "grayscale(100%)" })
             }
             for (var i = nav_iNum * nav_curNum; i < (nav_iNum + 1) * nav_curNum; i++) {
                 $('.nav .list ul li').eq(navIndex).find('.nav_pageMain span').eq(i).show();
             }
         })
-
     })
     $('.nav .list .navlist_current,.lianxi').mouseleave(function () {
         $(this).slideUp(100);

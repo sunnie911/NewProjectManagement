@@ -44,7 +44,7 @@
                                 </a>
                                 <div class="list_box">
                                     <div class="navlist_current">
-                                        <div class="common_containe">
+                                        <div class="common_containe nav_pageMain">
                                             @foreach (var pro in proList)
                                             {
                                                 <span>
@@ -52,7 +52,7 @@
                                                         <div class="img_box">
                                                             <img src="@pro.ImgUrl" title="@pro.NameEn"> <img v-show="@pro.IsHot" class="hot" src="/images/sale.png" />
                                                         </div>
-                                                        <p>@pro.NameEn</p>
+                                                        <p>@pro.NameEn @pro.Model1</p>
                                                     </a>
                                                 </span>
                                             }
@@ -60,6 +60,12 @@
 
                                         </div>
 
+                                    </div>
+                                    <div class="common_containe">
+                                        <div class="nav_pageBox">
+                                            <img class="nav_prev" src="/images/page_left.png">
+                                            <img class="nav_next" src="/images/page_right.png">
+                                        </div>
                                     </div>
                                 </div>
                             </li>

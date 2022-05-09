@@ -73,7 +73,7 @@ namespace DanaZhangCms.Models
         /// <summary>
         /// 产品细节英文
         /// </summary>
-        [Display(Name = "产品细节英文")]
+        [Display(Name = "技术参数英文")]
         public string ParamterEn { get; set; }
 
 

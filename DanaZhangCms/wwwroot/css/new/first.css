@@ -1,4 +1,4 @@
-
+ï»¿
 * {
     margin: 0;
     padding: 0;
@@ -24,7 +24,7 @@ img {
 }
 
 
-/* µ¼º½ */
+/* ï¿½ï¿½ï¿½ï¿½ */
 .nav {
     width: 100%;
     height:;
@@ -198,15 +198,6 @@ img {
     width: 75px;
 }
 
-    .search input {
-        width: 150px;
-        height: 30px;
-        background: #FFFFFF;
-        position: absolute;
-        top: 0;
-        left: -120px;
-        display: none;
-    }
 
     .search p {
         width: 20px;
@@ -224,12 +215,60 @@ img {
         cursor: pointer;
     }
 
+.search_input {
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+    .search_input .search_box {
+        width: 600px;
+        height: 100px;
+        background: #fff;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -300px;
+        margin-top: -50px;
+    }
+
+        .search_input .search_box input {
+            width: 500px;
+            height: 40px;
+            border: 1px solid #888888;
+            padding-left: 20px;
+        }
+
+        .search_input .search_box div {
+            width: 50px;
+            height: 40px;
+            background: #007AFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+            .search_input .search_box div img {
+                width: 30px;
+                height: 30px;
+            }
+
+
+
 .nav .nav_pageBox {
     padding: 10px 0 0 0;
     display: flex;
     flex-direction: row;
     justify-content: end;
- /*   margin: 20px 0 50px;*/
+    /*   margin: 20px 0 50px;*/
     font-size: 16px;
     width: 100%;
 }
@@ -243,7 +282,7 @@ img {
 
 
 
-/* µ×²¿ */
+/* ï¿½×²ï¿½ */
 .footer_box {
     display: flex;
     flex-direction: column;

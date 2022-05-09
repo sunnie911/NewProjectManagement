@@ -100,12 +100,6 @@
             $('.nav .list ul li').eq(navIndex).find('.nav_pageMain span').hide();
             if (nav_iNum != 0) {
                 nav_iNum--;
-                nav_next.show();
-
-            }
-            if (nav_iNum == 0) {
-                nav_prev.hide();
-                nav_next.show();
             }
             for (var i = nav_iNum * nav_curNum; i < (nav_iNum + 1) * nav_curNum; i++) {
                 $('.nav .list ul li').eq(navIndex).find('.nav_pageMain span').eq(i).show();
@@ -118,10 +112,6 @@
             $('.nav .list ul li').eq(navIndex).find('.nav_pageMain span').hide();
             if (nav_iNum != navlen - 1) {
                 nav_iNum++;
-                nav_prev.show();
-            }
-            if (nav_iNum == navlen - 1) {
-                nav_next.hide();
             }
             for (var i = nav_iNum * nav_curNum; i < (nav_iNum + 1) * nav_curNum; i++) {
                 $('.nav .list ul li').eq(navIndex).find('.nav_pageMain span').eq(i).show();
