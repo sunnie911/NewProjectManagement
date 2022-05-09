@@ -74,9 +74,13 @@
         var nav_curNum = 10;/*每页显示的条数*/
         var nav_iNum = 0;/*生成页码*/
         var nav_pageMain = $('.nav .list ul li').eq(navIndex).find('.list_box span').length;
-        // console.log(nav_pageMain);
         var navlen = Math.ceil(nav_pageMain / nav_curNum);/*每页显示数*/
-        console.log(navlen);
+        if (navlen > 1) {
+            $('.nav_pageMain').css('height', '560px');
+        } else {
+            $('.nav_pageMain').css('height', 'auto');
+        }
+
         if (navlen <= 1) {
             $('.nav .list ul li').eq(navIndex).find('.nav_pageBox').hide();
         } else {
@@ -125,6 +129,7 @@
                 $('.nav .list ul li').eq(navIndex).find('.nav_pageMain span').eq(i).show();
             }
         })
+
     })
     $('.nav .list .navlist_current,.lianxi').mouseleave(function () {
         $(this).slideUp(100);
@@ -133,11 +138,10 @@
     })
     // 搜索
     $('.search img').click(function () {
-        $('.search input').show();
+        $('.search_input').show();
     })
-    $('.search input').mouseleave(function () {
-        $('.search img').show();
-        $(this).hide();
+    $('.search_zhezhao').click(function () {
+        $('.search_input').hide();
     })
 
     $(".search div").hover(function () {
@@ -147,7 +151,5 @@
         $('.search img').show();
         return false;
     });
-
-
 
 })

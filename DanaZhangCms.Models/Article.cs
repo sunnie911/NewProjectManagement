@@ -47,18 +47,14 @@ namespace DanaZhangCms.Models
         /// </summary>
         [Display(Name = "视频地址")]
         public string VedioUrl { get; set; }
-
         /// <summary>
         /// 内容
         /// </summary>
-
         [Display(Name = "内容")]
         public string Content { get; set; }
-
         /// <summary>
-        /// 内容
+        /// 英文内容
         /// </summary>
-
         [Display(Name = "英文内容")]
         public string ContentEn { get; set; }
         /// <summary>
@@ -69,29 +65,20 @@ namespace DanaZhangCms.Models
 
         [Display(Name = "作者")]
         public string Author { get; set; }
-
-
         /// <summary>
         /// 点击量
         /// </summary>
         [Display(Name = "点击量")]
         public int ClickCount { get; set; }
-
         /// <summary>
         /// 是否精选文章
         /// </summary>
         [Display(Name = "是否精选文章")]
         public bool IsHot { get; set; }
-
-
         /// <summary>
         /// 排序id
         /// </summary>
          [Display(Name = "排序")]
-        public int SortId { get; set; }
-
-
-
-      
+        public int SortId { get; set; } 
     }
 }

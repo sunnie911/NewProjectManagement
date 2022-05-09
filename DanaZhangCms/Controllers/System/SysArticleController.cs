@@ -109,6 +109,7 @@ namespace DanaZhangCms
         /// <param name="model"></param>
         /// <returns></returns>
         [AjaxRequestOnly, HttpPost, ValidateAntiForgeryToken]
+        
         public Task<IActionResult> Add(Article model)
         {
             return Task.Factory.StartNew<IActionResult>(() =>

@@ -134,61 +134,65 @@ img {
     padding: 35px 0;
 }
 
-    .navlist_current > div {
+.nav_pageMain {
+    height: 560px;
+}
+
+.navlist_current > div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.navlist_current span {
+    width: 20%;
+}
+
+    .navlist_current span a {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        background: #fff;
+        overflow: hidden;
+        padding: 15px 0;
+    }
+
+    .navlist_current span .img_box {
+        height: 180px;
+        display: flex;
+        padding: 20px;
+        align-items: center;
+        justify-content: center;
+        position: relative;
         flex-wrap: wrap;
+        border-left: 1px solid #999999;
     }
 
-    .navlist_current span {
-        width: 20%;
+    .navlist_current span:nth-child(5n+1) .img_box {
+        border-left: 1px solid #fff;
     }
 
-        .navlist_current span a {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-            background: #fff;
-            overflow: hidden;
-            padding: 15px 0;
-        }
+    .navlist_current span .img_box img {
+        max-height: 100% !important;
+        width: 100%;
+    }
 
-        .navlist_current span .img_box {
-            height: 180px;
-            display: flex;
-            padding: 20px;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            flex-wrap: wrap;
-            border-left: 1px solid #999999;
-        }
+    .navlist_current span .hot {
+        width: 45px !important;
+        height: 43px !important;
+        position: absolute;
+        bottom: 30px;
+        right: 20px;
+    }
 
-        .navlist_current span:nth-child(5n+1) .img_box {
-            border-left: 1px solid #fff;
-        }
-
-        .navlist_current span .img_box img {
-            max-height: 100% !important;
-            width: 100%;
-        }
-
-        .navlist_current span .hot {
-            width: 45px !important;
-            height: 43px !important;
-            position: absolute;
-            bottom: 30px;
-            right: 20px;
-        }
-
-        .navlist_current span p {
-            font-size: 12px;
-            text-align: center;
-            color: #000000;
-            padding: 0 15px;
-            line-height: 25px;
-        }
+    .navlist_current span p {
+        font-size: 12px;
+        text-align: center;
+        color: #000000;
+        padding: 0 15px;
+        line-height: 25px;
+    }
 
 .search {
     display: flex;
@@ -214,6 +218,90 @@ img {
         font-size: 18px;
         cursor: pointer;
     }
+
+
+.search {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    width: 75px;
+}
+
+    .search input {
+        width: 150px;
+        height: 30px;
+        background: #FFFFFF;
+        position: absolute;
+        top: 0;
+        left: -120px;
+        display: none;
+    }
+
+    .search p {
+        width: 20px;
+        height: 20px;
+    }
+
+        .search p img {
+            width: 100%;
+        }
+
+    .search div {
+        margin-left: 30px;
+        color: #333;
+        font-size: 18px;
+    }
+
+.search_input {
+    display: none;
+}
+
+.search_zhezhao {
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.search_input .search_box {
+    width: 600px;
+    height: 100px;
+    background: #fff;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-left: -300px;
+    margin-top: -50px;
+}
+
+    .search_input .search_box input {
+        width: 500px;
+        height: 38px;
+        border: 1px solid #888888;
+        padding-left: 20px;
+    }
+
+    .search_input .search_box div {
+        width: 50px;
+        height: 40px;
+        background: #007AFF;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+        .search_input .search_box div img {
+            width: 30px;
+            height: 30px;
+        }
+
 
 .search_input {
     width: 100%;
