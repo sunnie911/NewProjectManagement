@@ -33,7 +33,7 @@
                                             }
 
                                         </div>
-                                        <p>@pro.Name @pro.Model1</p>
+                                        <p>@pro.NameEn @pro.Model1</p>
                                     </a>
                                 </span>
                             </div>
@@ -44,9 +44,12 @@
 
             </ul>
             <div id="pageBox">
-                <span id="prev">上一页</span>
+                <span id="prev">
+                    
+                    Previous Page
+                </span>
                 <ul id="pageNav"></ul>
-                <span id="next">下一页</span>
+                <span id="next">Next Page</span>
             </div>
 
 
@@ -56,10 +59,7 @@
 </div>
 @section Scripts{
 
-    <script>
-        var total = '@(ViewBag.Total)';
-        var pageUrl = "@(Url.Action("Index", "Product"))";
-    </script>
+  
     <script src="~/js/new/list/productList.js"></script>
 
 }

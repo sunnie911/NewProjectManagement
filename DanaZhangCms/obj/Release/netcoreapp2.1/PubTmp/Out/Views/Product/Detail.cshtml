@@ -66,6 +66,14 @@
                     }
                     <li>技术参数</li>
                     <li>细节亮点</li>
+
+                    @if (!string.IsNullOrWhiteSpace(Model.Files))
+                    {
+
+                        <li>相关下载</li>
+                    }
+
+                 
                 </ul>
             </div>
         </div>
@@ -114,19 +122,7 @@
                                 </video>
                             </div>
                         </li>
-                        @*<li>
-                                <img class="goods_img" src="../images/details/tu.png">
-                                <img class="play" src="../images/details/video_img.png">
-                                <p>混凝土砂浆桌面3D打印机NELD-3D736</p>
-                                <div class="v_shipin"></div>
-                                <div class="v_main">
-                                    <video width="800" height="400" controls>
-                                        <source src="../images/details/movie2.mp4" type="video/mp4">
-                                        </source>
 
-                                    </video>
-                                </div>
-                            </li>*@
                     </ul>
                 </div>
             </div>
@@ -158,6 +154,30 @@
 
             </div>
         </div>
+        @if (!string.IsNullOrWhiteSpace(Model.Files))
+        {
+            <div class="download louti">
+                <div class="common_containe">
+                    <div class="det_title">
+                        <div>相关下载</div>
+                        <span>Download File</span>
+                    </div>
+
+                    <div class="par_main">
+                        <div class="one">
+                            <h3>标准规范</h3>
+                            <div>
+                                @Html.Raw(Model.Files)
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        }
+
     </div>
 </div>
 

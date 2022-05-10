@@ -88,7 +88,7 @@
                                 <li><a href="../list/nav/nav5.html" target="_blank">合作研发</a></li>*@
                         }
                     }
-                    <li><a href="list/contact.html" target="_blank">联系我们</a></li>
+                    <li><a href="/mobile/contact" target="_blank">联系我们</a></li>
                 </ul>
             </div>
 
@@ -99,13 +99,13 @@
     <div class="public_footer">
         <ul>
             <li>
-                <a href="/mobile/contact" target="_blank">
+                <a href="/mobile/contact"  >
                     <img src="/images/footer/icon1.png">
                     <span>售后服务</span>
                 </a>
             </li>
             <li>
-                <a href="/mobile/join" target="_blank">
+                <a href="/mobile/join"  >
                     <img src="/images/footer/icon2.png">
                     <span>加入我们</span>
                 </a>
@@ -164,7 +164,7 @@
             var data = { fHeight: footerHeight, temp: 2 }
             window.parent.postMessage(data, "*");
 
-            $('#zixun').click(function () {
+            $('.liuyan').click(function () {
                 setTimeout(() => {
                     footerHeight = window.screen.height;
                     var data = { fHeight: footerHeight, temp: 2 }

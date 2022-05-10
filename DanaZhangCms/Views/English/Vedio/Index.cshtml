@@ -19,16 +19,16 @@
                 {
                     foreach (var item in Model)
                     {
-                        <li>
-                            <img class="goods_img" src="@item.ImgUrl">
-                            <div class="img_bj">
-                                <img class="play" src="/images/details/video_img.png">
-                            </div>
-                            <div class="v_shipin"></div>
-                            <div class="v_main">
-                               
-                            </div>
-                        </li>          
+                <li>
+                    <img class="goods_img" src="@item.ImgUrl">
+                    <div class="img_bj">
+                        <a href="/english/VedioDetail/@item.Id"> <img class="play" src="/images/details/video_img.png"> @item.TitleEn</a>
+                    </div>
+                    <div class="v_shipin"></div>
+                    <div class="v_main">
+
+                    </div>
+                </li>          
                     }
                 }
             </ul>
