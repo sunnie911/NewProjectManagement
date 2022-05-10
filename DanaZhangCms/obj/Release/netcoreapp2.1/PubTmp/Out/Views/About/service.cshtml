@@ -1,0 +1,106 @@
+﻿@model DanaZhangCms.Models.Contents
+@{
+    //ViewData["Title"] = Model.Title;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section css{
+    <link rel="stylesheet" type="text/css" href="/css/new/list/contact.css" />
+
+    <style type="text/css">
+        .policytitle {
+            width: 980px;
+            height: 150px;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+            .policytitle img {
+                width: 330px;
+                height: 75px;
+                margin: 72px auto 0;
+            }
+
+        .policyconten {
+            width: 980px;
+            height: 445px;
+            margin: 0 auto;
+            border-top: 1px solid #bfbfbf;
+        }
+
+            .policyconten ul {
+                width: 980px;
+                height: 425px;
+                margin: 10px auto;
+            }
+
+                .policyconten ul li {
+                    width: 325px;
+                    height: 425px;
+                    float: left;
+                    border-left: 1px solid #bfbfbf;
+                    text-align: center;
+                }
+
+            .policyconten .policyword span {
+                font-size: 18px;
+                height: 25px;
+                line-height: 25px;
+                font-weight: bold;
+                width: 286px;
+                float: left;
+                text-align: left;
+                color: #333333;
+            }
+
+            .policyconten ul li span img {
+                margin: 40px auto;
+                width: 129px;
+                height: 129px;
+            }
+
+            .policyconten .policyword {
+                width: 286px;
+                height: 216px;
+                margin: auto 20px;
+            }
+    </style>
+}
+<div class="contact_whole" style="padding-top: 80px; padding-bottom:50px;">
+    <div class="common_containe">
+        <div class="policytitle">
+            <img src="/images/server_policy_03.jpg" />
+
+        </div>
+
+        <div class="policyconten">
+            <ul class=" list-paddingleft-2">
+                <li>
+                    <p><span><img src="/images/server_policy_3.png"></span></p><div class="policyword">
+                        <span>一年保修、终身维护</span>
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 自主产品电子部分保修三年，机械部分保修一年，终身维护。
+                    </div>
+                </li>
+                <li>
+                    <p><span><img src="/images/server_policy_01.png" title="售后政策" alt="售后政策"></span></p>
+                    <div class="policyword">
+                        <span>专业人员，现场直达</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        货物抵达用户目的点，立即派遣专业人员上门安装、调试，确保设备运行正常。一对一指导操作，直至试验人员能独立使用。
+                    </div>
+                </li>
+                <li>
+                    <p><span><img src="/images/server_policy_02.png" title="售后政策" alt="售后政策"></span></p>
+                    <div class="policyword">
+                        <span>现场、微信、电话定期询访</span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        与用户零距离接触交流，了解设备使用情况，提供相关技术支持。防患于未然，将问题处理在发生之前。
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+@section Scripts{
+
+
+}

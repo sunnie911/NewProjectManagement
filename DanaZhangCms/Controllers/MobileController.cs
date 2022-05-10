@@ -15,13 +15,16 @@ namespace DanaZhangCms
     {
         private IProductRepository _proRepository;
         private IArticleRepository _artRepository;
-        private IBannerRepository _banRepository; 
-        public MobileController( IProductRepository proRepository, IArticleRepository artRepository, IBannerRepository banRepository)
+        private IBannerRepository _banRepository;
+        private IContentsRepository _repository;
+        public MobileController( IProductRepository proRepository, IArticleRepository artRepository, IBannerRepository banRepository, IContentsRepository repository)
         {
             _proRepository = proRepository;
             _artRepository = artRepository;
             _banRepository = banRepository;
-        
+            _repository = repository;
+
+
         }
 
         ///首页
@@ -147,6 +150,15 @@ namespace DanaZhangCms
         {
             var model = await _artRepository.GetSingleAsync(id);
             return View("~/Views/Mobile/Vedio/Detail.cshtml", model);
+        }
+
+        public IActionResult Join(string spellname = "")
+        {
+            
+
+            var model = _repository.FirstOrDefault(o => o.SpellName == spellname);
+
+            return View("~/Views/Contact/mobilejoin.cshtml", model);
         }
     }
 }

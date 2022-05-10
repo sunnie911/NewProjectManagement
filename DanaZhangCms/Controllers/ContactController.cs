@@ -29,6 +29,16 @@ namespace DanaZhangCms
             return View(model);
         }
 
+        public IActionResult Join(string spellname = "")
+        {
+            if (RequestExtensions.IsMobile(HttpContext.Request))
+            {
+                return Redirect("/mobile/join");
+            }
 
+            var model = _repository.FirstOrDefault(o => o.SpellName == spellname);
+          
+            return View("~/Views/Contact/join.cshtml", model);
+        }
     }
 }

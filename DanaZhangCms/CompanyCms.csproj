@@ -153,6 +153,12 @@
     <Content Update="Views\About\mobile.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
+    <Content Update="Views\Contact\mobilejoin.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Contact\join.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
     <Content Update="Views\Contact\mobile.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
