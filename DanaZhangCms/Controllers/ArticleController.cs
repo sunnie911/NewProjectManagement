@@ -20,17 +20,49 @@ namespace DanaZhangCms
         }
 
         ///首页
-        public IActionResult Index(int page = 1, int pageSize = 12)
+        public IActionResult Index(int categoryId=4)
         {
             if (RequestExtensions.IsMobile(HttpContext.Request))
             {
                 return Redirect("/mobile/article");
             }
-            var arts = _artRepository.Where(o=>o.CategoryId==4).OrderByDescending(o => o.ClickCount).ThenByDescending(o => o.CreatedDate).Select(o => new Article() { Title = o.Title, Id = o.Id, ImgUrl = o.ImgUrl,VedioUrl=o.VedioUrl,CreatedDate=o.CreatedDate,ClickCount=o.ClickCount,Content=o.Content }).ToList();
-            var total = _artRepository.Where(o=>o.CategoryId==4).Count();
+            var arts = _artRepository.Where(o=>o.CategoryId== categoryId).OrderByDescending(o => o.ClickCount).ThenByDescending(o => o.CreatedDate).Select(o => new Article() { Title = o.Title, Id = o.Id, ImgUrl = o.ImgUrl,VedioUrl=o.VedioUrl,CreatedDate=o.CreatedDate,ClickCount=o.ClickCount,Content=o.Content }).ToList();
+            var total = _artRepository.Where(o=>o.CategoryId== categoryId).Count();
             ViewBag.Total = total;
-      
+
+            ViewBag.CategoryId = categoryId;
+
+            var name = "学术交流";
+
+            if (categoryId == 7)
+            {
+                name = "科研标准";
+            }
+            ViewBag.CategoryName = name;
             return View(arts);
+        }
+
+        ///首页
+        public IActionResult Scient(int categoryId = 7)
+        {
+            if (RequestExtensions.IsMobile(HttpContext.Request))
+            {
+                return Redirect("/mobile/article");
+            }
+            var arts = _artRepository.Where(o => o.CategoryId == categoryId).OrderByDescending(o => o.ClickCount).ThenByDescending(o => o.CreatedDate).Select(o => new Article() { Title = o.Title, Id = o.Id, ImgUrl = o.ImgUrl, VedioUrl = o.VedioUrl, CreatedDate = o.CreatedDate, ClickCount = o.ClickCount, Content = o.Content }).ToList();
+            var total = _artRepository.Where(o => o.CategoryId == categoryId).Count();
+            ViewBag.Total = total;
+
+            ViewBag.CategoryId = categoryId;
+
+            var name = "学术交流";
+
+            if (categoryId == 7)
+            {
+                name = "科研标准";
+            }
+            ViewBag.CategoryName = name;
+            return View("~/Views/Article/index.cshtml", arts);
         }
 
         /// <summary>

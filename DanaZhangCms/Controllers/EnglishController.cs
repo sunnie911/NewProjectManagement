@@ -81,11 +81,8 @@ namespace DanaZhangCms
         }
         ///首页
         public IActionResult Product(int categoryId, string word)
-        {
-           
-
-            List<Product> productList = new List<Product>();
-           
+        { 
+            List<Product> productList = new List<Product>(); 
             if (categoryId > 0)
             {
                 productList = _proRepository.Where(p => p.CategoryId == categoryId).OrderBy(o => o.IsHot).ToList();
@@ -135,7 +132,14 @@ namespace DanaZhangCms
         { 
             return View("~/Views/About/AboutEn.cshtml");
         }
-
+        /// <summary>
+        /// 关于我们
+        /// </summary>
+        /// <returns></returns>
+        public IActionResult join()
+        {
+            return View("~/Views/Coontact/join.cshtml");
+        }
         ///首页
         public IActionResult Vedio(int page = 1)
         {

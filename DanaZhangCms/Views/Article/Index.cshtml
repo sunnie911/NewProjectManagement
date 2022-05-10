@@ -2,6 +2,10 @@
 @{
     ViewData["Title"] = "新闻中心";
     Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var type=  ViewBag.CategoryId;
+    var name = ViewBag.CategoryName;
+
 }
 @section css{
 
@@ -12,7 +16,16 @@
         <div class="list_top">
             <i></i>
             <a href="/home">首页 > </a>
-            <a href="/Article">学术交流 </a>
+
+            @if (type == 4)
+            {
+                <a href="/article">学术交流 </a>
+            }
+            else if (type == 7)
+            {
+                <a href="/article/Scient">科研标准 </a>
+            }
+         
         </div>
 
         <div class="list_main common_containe">
@@ -54,10 +67,7 @@
 
 @section Scripts{
 
-    <script>
-        var total = '@(ViewBag.Total)';
-        var pageUrl = "@(Url.Action("Index", "Article"))";
-    </script>
+    
     <script src="~/js/new/list/learning.js"></script>
 
 }

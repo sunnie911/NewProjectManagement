@@ -4,7 +4,7 @@ h1,h2,h3,h4,h5{font-weight: normal;}
 a{text-decoration:none}
 img{display: block;}
 .load_box{width: 980px;margin: 0 auto;}
-.load_title{text-align: center;margin-bottom: 50px;color: #585757;}
+.load_title{text-align: center;margin-bottom: 50px;color: #585757; padding-top:50px;}
 .load_title h3{font-size: 39px; margin: 50px 0 30px;}
 .load_title p{font-size: 22px;}
 

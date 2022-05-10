@@ -76,7 +76,7 @@ namespace DanaZhangCms
         /// 下载页面
         /// </summary>
         /// <returns></returns>
-        public IActionResult DownLoad()
+        public IActionResult Download()
         {
             if (RequestExtensions.IsMobile(HttpContext.Request))
             {

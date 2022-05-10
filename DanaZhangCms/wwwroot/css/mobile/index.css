@@ -80,6 +80,9 @@ a{text-decoration: none;color:inherit;}
 
 /* 合作机构 */
 .cooperative ul{display:flex;flex-direction: row;align-items:center;flex-wrap: wrap}
-.cooperative ul li{width:33%;display:flex;flex-direction: row;justify-content: space-between;
+.cooperative ul li{width:48%;display:flex;flex-direction: row;justify-content: space-between;
     margin: 0.5rem 0;} 
+.cooperative ul li img{ width:80%;
+    margin-left: 1rem;} 
+
 

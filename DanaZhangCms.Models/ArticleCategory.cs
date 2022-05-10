@@ -60,13 +60,13 @@ namespace DanaZhangCms.Models
         public string Description { get; set; }
 
 
-        [Display(Name = "SEO标题")]
+        [Display(Name = "SEO标题英文")]
         public string TitleEn { get; set; }
 
-        [Display(Name = "SEO关键字")]
+        [Display(Name = "SEO关键字英文")]
         public string KeyWordEn { get; set; }
 
-        [Display(Name = "SEO描述")]
+        [Display(Name = "SEO描述英文")]
         public string DescriptionEn { get; set; }
 
         public virtual ICollection<ArticleCategory> ChildList { get; set; }

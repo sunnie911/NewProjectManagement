@@ -20,7 +20,7 @@
                                 <div class="slide-left">
                                     <div class="bt">@item.Name </div>
                                     <span>@item.Summary</span>
-                                    <a class="readMore" target="_blank" href="@item.LinkUrl">阅读更多</a>
+                                    <a class="readMore"   href="@item.LinkUrl">阅读更多</a>
                                 </div>
                                 <div class="slide-right">
                                     <img src="@item.ImgUrl">
@@ -59,7 +59,7 @@
                         foreach (var item in Model.Products)
                         {
                             <li>
-                                <a href="/mobile/prodetail/@item.Id" target="_blank">
+                                <a href="/mobile/prodetail/@item.Id"  >
                                     <img class="goods_img" src="@item.ImgUrl">
                                     <span>@item.Name @item.Model1</span>
                                     @if (item.IsHot)
@@ -146,7 +146,7 @@
                         <li>
                             <img src="@item.ImgUrl">
                             <div class="main">
-                                <div class="title">  <a href="@(Url.Action("Detail","Article",new { id=item.Id}))"> @item.Title </a></div>
+                                <div class="title">  <a href="/mobile/newDetail/@item.Id"> @item.Title </a></div>
                                 <div class="neirong">
                                 </div>
                             </div>
