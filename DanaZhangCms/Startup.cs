@@ -87,6 +87,12 @@ namespace DanaZhangCms
 
           );
                     routes.MapRoute(
+            name: "productsDetail",
+            template: "products/{id}.html",
+            defaults: new { controller = "Product", action = "Detail" }
+
+        );
+                    routes.MapRoute(
                         name: "Content",
                         template: "{spellname}",
                         defaults: new { controller = "Content", action = "Index", spellname = "" },

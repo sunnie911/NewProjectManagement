@@ -40,12 +40,12 @@ namespace DanaZhangCms
             }
             else
             {
-                productList = _proRepository.OrderBy(o => o.IsHot).Select(o => new Product() { Name = o.Name, Id = o.Id, ImgUrl = o.ImgUrl, IsHot = o.IsHot }).ToList();
+                productList = _proRepository.OrderBy(o => o.IsHot).Select(o => new Product() { Name = o.Name,Model1=o.Model1,Id = o.Id, ImgUrl = o.ImgUrl, IsHot = o.IsHot }).ToList();
 
             }
             if (!string.IsNullOrWhiteSpace(word))
             {
-                productList = _proRepository.Where(p => p.Name.Contains(word)|| p.Model1.Contains(word)).OrderBy(o => o.IsHot).Select(o => new Product() { Name = o.Name, Id = o.Id, ImgUrl = o.ImgUrl, IsHot = o.IsHot }).ToList();
+                productList = _proRepository.Where(p => p.Name.Contains(word)|| p.Model1.Contains(word)).OrderBy(o => o.IsHot).Select(o => new Product() { Name = o.Name, Id = o.Id,Model1= o.Model1,ImgUrl = o.ImgUrl, IsHot = o.IsHot }).ToList();
             }
 
 
@@ -72,5 +72,23 @@ namespace DanaZhangCms
             return View("~/Views/About/service.cshtml");
         }
 
+        /// <summary>
+        /// 下载页面
+        /// </summary>
+        /// <returns></returns>
+        public IActionResult DownLoad()
+        {
+            if (RequestExtensions.IsMobile(HttpContext.Request))
+            {
+                return Redirect("/mobile/download");
+            }
+            //List<Product> productList = new List<Product>(); 
+
+
+            //    productList = _proRepository.Where(o=>!string.IsNullOrEmpty( o.Files)).OrderBy(o => o.IsHot).Select(o => new Product() { Name = o.Name, Model1=o.Model1,Id = o.Id, ImgUrl = o.ImgUrl, IsHot = o.IsHot }).ToList();
+
+             
+            return View("~/Views/Product/DownLoad.cshtml");
+        }
     }
 }

@@ -124,7 +124,12 @@ namespace DanaZhangCms.Models
         /// </summary>
         [Display(Name = "轮播图4")]
         public string Banner4 { get; set; }
-       
+        /// <summary>
+        /// 下载文件
+        /// </summary>
+        [Display(Name = "相关下载")]
+        public string Files { get; set; }
+
 
     }
 }
