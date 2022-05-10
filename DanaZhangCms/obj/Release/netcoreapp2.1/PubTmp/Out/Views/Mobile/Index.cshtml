@@ -20,7 +20,7 @@
                                 <div class="slide-left">
                                     <div class="bt">@item.Name </div>
                                     <span>@item.Summary</span>
-                                    <a class="readMore" target="_blank" href="@item.LinkUrl">阅读更多</a>
+                                    <a class="readMore"   href="@item.LinkUrl">阅读更多</a>
                                 </div>
                                 <div class="slide-right">
                                     <img src="@item.ImgUrl">
@@ -46,7 +46,7 @@
                     <div class="more">
                         <a href="/mobile/product" target="_blank">
                             <span>更多</span>
-                            <img src="images/to1.png">
+                            <img src="/images/to1.png">
                         </a>
                     </div>
 
@@ -59,7 +59,7 @@
                         foreach (var item in Model.Products)
                         {
                             <li>
-                                <a href="/mobile/prodetail/@item.Id" target="_blank">
+                                <a href="/mobile/prodetail/@item.Id"  >
                                     <img class="goods_img" src="@item.ImgUrl">
                                     <span>@item.Name @item.Model1</span>
                                     @if (item.IsHot)
@@ -80,13 +80,13 @@
         <div class="introduce_bj">
             <div class="in_left">
                 <div class="index_title">
-                    <div class="title"></div>
+                    <div class="title">公司简介</div>
                     <div class="main">
                         <span>COMPANY PROFILE</span>
                     </div>
                 </div>
                 <p>建研华测（杭州）科技有限公司是一家专业从事混凝土3D打印和高端测试仪器设备开发、生产和销售的国家高新技术企业。生产研发基地设在杭州萧山区和沈阳浑南高新技术开发区。公司的主要产品有：混凝土3D打印系统、高性能低场磁共振微观分析仪、全自动混凝土凝结时间测定仪、混凝土冻融试验机、混凝土碳化箱、非接触式混凝土收缩变形测定仪、钢筋混凝土电化学腐蚀测试仪、混凝土热物理参数测定仪、混凝土气体渗透测试仪、混凝土温度-应力试验机、工业内窥镜、硬化混凝土气孔结构分析仪等...</p>
-                <div class="btn"><a href="/mobile/about" target="_blank"><img src="images/to.png"></a></div>
+                <div class="btn"><a href="/mobile/about" target="_blank"><img src="/images/to.png"></a></div>
             </div>
             <div class="in_right">
                 <img class="leftop" src="/images/leftop.png">
@@ -122,7 +122,7 @@
                     }
                 </div>
             </div>
-            <div class="vedio_more"><a href="/mobile/vedio" target="_blank">查看更多视频</a></div>
+            <div class="vedio_more"><a href="/mobile/vedio">查看更多视频</a></div>
         </div>
         <!-- 学术交流 -->
         <div class="learning">
@@ -133,7 +133,7 @@
                     <div class="more">
                         <a href="list/learning.html" target="_blank">
                             <span>更多</span>
-                            <img src="images/to1.png">
+                            <img src="/images/to1.png">
                         </a>
                     </div>
                 </div>
@@ -146,7 +146,7 @@
                         <li>
                             <img src="@item.ImgUrl">
                             <div class="main">
-                                <div class="title">  <a href="@(Url.Action("Detail","Article",new { id=item.Id}))"> @item.Title </a></div>
+                                <div class="title">  <a href="/mobile/newDetail/@item.Id"> @item.Title </a></div>
                                 <div class="neirong">
                                 </div>
                             </div>
@@ -163,9 +163,9 @@
                 <div class="main">
                     <span>COOPERATIVE ORGANIZATRON</span>
                     <div class="more">
-                        <a href="javascript:;" target="_blank">
+                        <a href="javascript:;">
                             <span>更多</span>
-                            <img src="images/to1.png">
+                            <img src="/images/to1.png">
                         </a>
                     </div>
                 </div>

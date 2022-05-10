@@ -77,7 +77,7 @@ namespace DanaZhangCms
             {
                 ViewBag.LastArticle = LastArticle[0];
             }
-            return View("~/Views/Mobile/Article/Index.cshtml", model);
+            return View("~/Views/Mobile/Article/Detail.cshtml", model);
         }
         ///首页
         public IActionResult Product(  int categoryId,string word)

@@ -143,19 +143,19 @@
     $('.search_zhezhao').click(function () {
         $('.search_input').hide();
     })
-
+    //抖音
+    $('.douyin').click(function () {
+        $('.douBox').show();
+    })
+    $('.douBox').click(function () {
+        $('.douBox').hide();
+    })
     $('.searchgoods').click(function () {
         var text = $("#keyword").val();
         window.location.href = "/product?word=" + text;
         $('.search_input').hide();
     })
 
-    //$(".search div").hover(function () {
-    //    $('.search img').hide();
-    //    return false;
-    //}, function () {
-    //    $('.search img').show();
-    //    return false;
-    //});
+     
 
 })

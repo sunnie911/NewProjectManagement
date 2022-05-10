@@ -41,6 +41,11 @@ namespace DanaZhangCms
         /// <returns></returns>
         public async Task<IActionResult> Detail(int id)
         {
+            if (RequestExtensions.IsMobile(HttpContext.Request))
+            {
+                return Redirect("/mobile/VedioDetail/"+id);
+            }
+
             var model = await _artRepository.GetSingleAsync(id);
             return View(model);
         }

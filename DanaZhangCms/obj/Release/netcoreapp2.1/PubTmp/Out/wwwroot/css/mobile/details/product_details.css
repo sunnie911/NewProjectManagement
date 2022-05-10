@@ -17,7 +17,7 @@ a{text-decoration: none;color:inherit;}
 .nav_style{position: fixed;top: 5rem;left: 0;background: #fff;z-index: 111;width: 92%;padding: 0 4%}
 .details_nav>div,.details_nav .right ul{display: flex;flex-direction: row;align-items: center;width: 100%;}
 .details_nav>div{justify-content: space-between;}
-.details_nav .left{width:40%;}
+.details_nav .left{width:100%;}
 .details_nav .right{width:60%;}
 .details_nav .right ul li{width: 25%;height:3rem;line-height: 3rem;text-align: center;position: relative;}
 .details_nav .right ul li span{border-bottom: 3px solid #fff;}
@@ -29,8 +29,8 @@ a{text-decoration: none;color:inherit;}
 .det_banner img{width: 100%;}
 .det_banner .swiper-container{width: 100%;}
 .det_banner .swiper-button-next,.det_banner .swiper-button-prev{width: 2rem;}
-.det_banner .swiper-button-next{background-image: url("../../images/details/jian_right.png");background-size: 100%;right:0;}
-.det_banner .swiper-button-prev{background-image: url("../../images/details/jian_left.png");background-size: 100%;left:0;}
+.det_banner .swiper-button-next{background-image: url("/images/details/jian_right.png");background-size: 100%;right:0;}
+.det_banner .swiper-button-prev{background-image: url("/images/details/jian_left.png");background-size: 100%;left:0;}
 
 /* 产品视频 */
 .goods_video{width:100%;background: #E5E8EE;padding: 2.1rem 0;}
@@ -44,7 +44,7 @@ a{text-decoration: none;color:inherit;}
 .goods_video ul li .v_main video{background: #000;}
 
 /* 技术参数 */
-.parameter{padding: 2rem 0;}
+.parameter{padding: 2rem 0; margin-top:10rem;}
 .par_main{width:100%;border-bottom: 1px solid #999;}
 .par_main>div{display:flex;flex-direction: row;}
 .par_main .one{border-top: 1px solid #999;}
@@ -57,7 +57,4 @@ a{text-decoration: none;color:inherit;}
 .Highlights img{width: 100%;}
 
 
-/* 相关下载 */
-.parameter {
-    padding: 2rem 0;
-}
+ 

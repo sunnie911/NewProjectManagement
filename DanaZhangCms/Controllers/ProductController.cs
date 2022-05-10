@@ -59,6 +59,12 @@ namespace DanaZhangCms
         /// <returns></returns>
         public async Task<IActionResult> Detail(int id)
         {
+
+
+            if (RequestExtensions.IsMobile(HttpContext.Request))
+            {
+                return Redirect("/mobile/proDetail/"+id);
+            }
             var model = await _proRepository.GetSingleAsync(id);
             return View(model);
         }

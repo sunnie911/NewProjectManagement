@@ -16,9 +16,17 @@
     <div class="common_containe">
         <div class="list_top">
             <i></i>
-            <a href="#">首页 > </a>
-            <a href="#">学术交流 </a>
-            <a href="#"> @Model.Title </a>
+            <a href="/home">首页 > </a>
+            @if (Model.CategoryId == 4)
+            {
+                <a href="/article">学术交流 </a>
+            }
+            else if(Model.CategoryId == 7)
+            {
+                <a href="/article/Scient">科研标准 </a>
+            } 
+
+            <a href="javascript:;"> @Model.Title </a>
         </div>
         <div class="lea_main">
             <h2>@Model.Title</h2>
