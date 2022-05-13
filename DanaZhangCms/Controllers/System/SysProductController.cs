@@ -16,12 +16,14 @@ namespace DanaZhangCms
     [ControllerDescription(Name = "产品管理")]
     public class SysProductController : SysBaseController
     {
+        private IContentsRepository _contentRepository;
         private IProductRepository _repository;
         private IProductCategoryRepository _cateRepository;
-        public SysProductController(IProductRepository repository, IProductCategoryRepository cateRepository)
+        public SysProductController(IProductRepository repository, IProductCategoryRepository cateRepository,IContentsRepository ContentRepository)
         {
             _repository = repository ?? throw new ArgumentNullException(nameof(repository));
             _cateRepository = cateRepository;
+            _contentRepository = ContentRepository;
         }
 
         #region Views
@@ -111,6 +113,18 @@ namespace DanaZhangCms
 
                 }
 
+                return Json(LayUIPaginationResult.PagedResult(true, rows, total));
+            });
+        }
+
+        [AjaxRequestOnly]
+        public Task<IActionResult> GetEntitiesByProductId(int limit, int page,int pId=0)
+        {
+            return Task.Factory.StartNew<IActionResult>(() =>
+            {
+                var total = _contentRepository.Where(p => p.ProductId==pId).Count(m => true);
+                var rows = _contentRepository.GetByPagination(m =>m.ProductId==pId, limit, page, true,
+                    m => m.Id).Select(o => new { o.Id, o.Title, o.SpellName,o.Type, CreatedDate = o.CreatedDate.ToString("yyyy-MM-dd") }).ToList();
                 return Json(LayUIPaginationResult.PagedResult(true, rows, total));
             });
         }

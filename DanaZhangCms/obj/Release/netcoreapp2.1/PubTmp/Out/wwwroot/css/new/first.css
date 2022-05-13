@@ -455,6 +455,12 @@ img {
             width: 100px;
             height: 100px;
         }
+.foot_wrap .footer ul li span.en_text {
+    font-size: 13px;
+    color: #fff;
+    margin-top: 10px;
+    margin-left: 35px;
+}
 
         .foot_box .foot_right span {
             font-size: 14px;

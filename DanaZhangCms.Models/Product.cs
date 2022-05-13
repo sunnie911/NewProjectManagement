@@ -9,9 +9,7 @@ namespace DanaZhangCms.Models
 {
     [Table("Product")]
     public class Product : BaseModel<int>
-    {
-
-
+    { 
         /// <summary>
         ///文章分类Id 
         /// </summary>
@@ -74,17 +72,12 @@ namespace DanaZhangCms.Models
         /// 产品细节英文
         /// </summary>
         [Display(Name = "技术参数英文")]
-        public string ParamterEn { get; set; }
-
-
-
+        public string ParamterEn { get; set; } 
         /// <summary>
         /// 标签 已,分隔
         /// </summary>
         [Display(Name = "标签")]
         public string Tag { get; set; }
-
-
         /// <summary>
         /// 点击量
         /// </summary>
@@ -95,9 +88,7 @@ namespace DanaZhangCms.Models
         /// 是否热卖
         /// </summary>
         [Display(Name = "是否热卖")]
-        public bool IsHot { get; set; }
-
-
+        public bool IsHot { get; set; } 
         /// <summary>
         /// 排序id
         /// </summary>
@@ -128,8 +119,6 @@ namespace DanaZhangCms.Models
         /// 下载文件
         /// </summary>
         [Display(Name = "相关下载")]
-        public string Files { get; set; }
-
-
+        public string Files { get; set; } 
     }
 }

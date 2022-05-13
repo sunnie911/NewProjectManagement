@@ -8,45 +8,44 @@
     @Html.AntiForgeryToken()
     @Html.HiddenFor(model => model.Id)
     <div class="layui-form-item">
+        <div class="layui-inline">
+            @Html.LabelFor(model => model.Name, new { @class = "layui-form-label" })
+            <div class="layui-input-inline">
+                @Html.TextBoxFor(model => model.Name, new { @class = "layui-input", @required = "", @lay_verify = "required", autocomplete = "off" })
 
-        @Html.LabelFor(model => model.Name, new { @class = "layui-form-label" })
-        <div class="layui-input-inline">
-            @Html.TextBoxFor(model => model.Name, new { @class = "layui-input", @required = "", @lay_verify = "required", autocomplete = "off" })
+            </div>
+            <div class="layui-form-mid layui-word-aux">
+                <span class="x-red">*</span>
 
+            </div>
         </div>
-        <div class="layui-form-mid layui-word-aux">
-            <span class="x-red">*</span>
+        <div class="layui-inline">
+
+            @Html.LabelFor(model => model.NameEn, new { @class = "layui-form-label" })
+            <div class="layui-input-inline">
+                @Html.TextBoxFor(model => model.NameEn, new { @class = "layui-input", autocomplete = "off" })
+
+            </div>
 
         </div>
     </div>
     <div class="layui-form-item">
-
-        @Html.LabelFor(model => model.NameEn, new { @class = "layui-form-label" })
-        <div class="layui-input-inline">
-            @Html.TextBoxFor(model => model.NameEn, new { @class = "layui-input", autocomplete = "off" })
-
+        <div class="layui-inline">
+            @Html.LabelFor(model => model.Model1, new { @class = "layui-form-label" })
+            <div class="layui-input-inline">
+                @Html.TextBoxFor(model => model.Model1, new { @class = "layui-input", autocomplete = "off" })
+            </div>
         </div>
 
-    </div>
+        <div class="layui-inline">
+            @Html.LabelFor(model => model.CategoryId, new { @class = "layui-form-label" })
+            <div class="layui-input-inline">
 
-    <div class="layui-form-item">
-
-        @Html.LabelFor(model => model.Model1, new { @class = "layui-form-label" })
-        <div class="layui-input-inline">
-            @Html.TextBoxFor(model => model.Model1, new { @class = "layui-input", autocomplete = "off" })
-        </div>
-
-    </div>
-    <div class="layui-form-item">
-        @Html.LabelFor(model => model.CategoryId, new { @class = "layui-form-label" })
-        <div class="layui-input-inline">
-
-            @Html.DropDownListFor(model => model.CategoryId, parentList, "--请选择--", new { @class = "valid" })
+                @Html.DropDownListFor(model => model.CategoryId, parentList, "--请选择--", new { @class = "valid" })
+            </div>
         </div>
     </div>
-
     <div class="layui-form-item">
-
         @Html.LabelFor(model => model.ImgUrl, new { @class = "layui-form-label" })
         <div class="layui-input-inline">
             <div class="uploadPreview" id="PreviewImg">
@@ -68,78 +67,14 @@
         @Html.HiddenFor(x => x.ImgUrl)
 
     </div>
-
-    <div class="layui-form-item">
-
-        @Html.LabelFor(model => model.Banner1, new { @class = "layui-form-label" })
+    @*<div class="layui-form-item">
+        @Html.LabelFor(model => model.VedioUrl, new { @class = "layui-form-label" })
         <div class="layui-input-inline">
-            <div class="uploadPreview" id="PreviewImg1">
-                @if (!string.IsNullOrEmpty(Model.Banner1))
-                {
-                    <img src="@Model.Banner1" />
-                }
-                else
-                {
-                    @:暂无图片
-                }
-            </div>
-            <div class="left">
-                <div class="uploadProgressBar"></div>
-                <div id="UploadImg1" class="uploadBut">选择图片</div>
-            </div>
-            <div class="clear"></div>
+            @Html.TextBoxFor(model => model.VedioUrl, new { @class = "layui-input", @required = "",  autocomplete = "off" })
+
         </div>
-        @Html.HiddenFor(x => x.Banner1)
-
-    </div>
-
-    <div class="layui-form-item">
-
-        @Html.LabelFor(model => model.Banner2, new { @class = "layui-form-label" })
-        <div class="layui-input-inline">
-            <div class="uploadPreview" id="PreviewImg2">
-                @if (!string.IsNullOrEmpty(Model.Banner2))
-                {
-                    <img src="@Model.Banner2" />
-                }
-                else
-                {
-                    @:暂无图片
-                }
-            </div>
-            <div class="left">
-                <div class="uploadProgressBar"></div>
-                <div id="UploadImg2" class="uploadBut">选择图片</div>
-            </div>
-            <div class="clear"></div>
-        </div>
-        @Html.HiddenFor(x => x.Banner2)
-
-    </div>
-
-    <div class="layui-form-item">
-
-        @Html.LabelFor(model => model.Banner3, new { @class = "layui-form-label" })
-        <div class="layui-input-inline">
-            <div class="uploadPreview" id="PreviewImg3">
-                @if (!string.IsNullOrEmpty(Model.Banner3))
-                {
-                    <img src="@Model.Banner3" />
-                }
-                else
-                {
-                    @:暂无图片
-                }
-            </div>
-            <div class="left">
-                <div class="uploadProgressBar"></div>
-                <div id="UploadImg3" class="uploadBut">选择图片</div>
-            </div>
-            <div class="clear"></div>
-        </div>
-        @Html.HiddenFor(x => x.Banner3)
-
-    </div>
+      
+    </div>*@
 
     <div class="layui-form-item">
         @Html.LabelFor(model => model.VedioUrl, new { @class = "layui-form-label" })
@@ -165,40 +100,107 @@
         @Html.HiddenFor(x => x.VedioUrl)
 
     </div>
-    <div class="layui-form-item">
+    @*<div class="layui-form-item">
 
-        @Html.LabelFor(model => model.IsHot, new { @class = "layui-form-label" })
-        <div class="layui-input-inline">
-            @Html.CheckBoxFor(model => model.IsHot, new { @class = "layui-checkbox" })
+            @Html.LabelFor(model => model.Banner1, new { @class = "layui-form-label" })
+            <div class="layui-input-inline">
+                <div class="uploadPreview" id="PreviewImg1">
+                    @if (!string.IsNullOrEmpty(Model.Banner1))
+                    {
+                        <img src="@Model.Banner1" />
+                    }
+                    else
+                    {
+                        @:暂无图片
+                    }
+                </div>
+                <div class="left">
+                    <div class="uploadProgressBar"></div>
+                    <div id="UploadImg1" class="uploadBut">选择图片</div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            @Html.HiddenFor(x => x.Banner1)
 
         </div>
+
+        <div class="layui-form-item">
+
+            @Html.LabelFor(model => model.Banner2, new { @class = "layui-form-label" })
+            <div class="layui-input-inline">
+                <div class="uploadPreview" id="PreviewImg2">
+                    @if (!string.IsNullOrEmpty(Model.Banner2))
+                    {
+                        <img src="@Model.Banner2" />
+                    }
+                    else
+                    {
+                        @:暂无图片
+                    }
+                </div>
+                <div class="left">
+                    <div class="uploadProgressBar"></div>
+                    <div id="UploadImg2" class="uploadBut">选择图片</div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            @Html.HiddenFor(x => x.Banner2)
+
+        </div>*@
+
+    @*<div class="layui-form-item">
+
+            @Html.LabelFor(model => model.Banner3, new { @class = "layui-form-label" })
+            <div class="layui-input-inline">
+                <div class="uploadPreview" id="PreviewImg3">
+                    @if (!string.IsNullOrEmpty(Model.Banner3))
+                    {
+                        <img src="@Model.Banner3" />
+                    }
+                    else
+                    {
+                        @:暂无图片
+                    }
+                </div>
+                <div class="left">
+                    <div class="uploadProgressBar"></div>
+                    <div id="UploadImg3" class="uploadBut">选择图片</div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            @Html.HiddenFor(x => x.Banner3)
+
+        </div>*@
+
+    <div class="layui-form-item">
+
+        <label class="layui-form-label">产品规格</label>
+        <div class="layui-input-inline" style="width:700px;min-height:200px;">
+
+            <a class="layui-btn" onclick="x_admin_show('新增', '/SysContents/Create?pId=' +@Model.Id)"> 新增产品参数</a>
+            <a class="layui-btn" onclick="x_admin_show('新增', '/SysContents/Create?type=1&pId=' +@Model.Id)"> 新增相关下载</a>
+            <a class="layui-btn" onclick="x_admin_show('新增', '/SysContents/Create?lang=english&pId=' +@Model.Id)"> 新增产品参数英文</a>
+         
+            <table class="layui-hidden" id="treeTable" lay-filter="treeTable"></table>
+
+        </div>
+
 
     </div>
 
-    <div class="layui-form-item">
-
-        @Html.LabelFor(model => model.SortId, new { @class = "layui-form-label" })
-        <div class="layui-input-inline">
-            @Html.TextBoxFor(model => model.SortId, new { @class = "layui-input", @required = "", @lay_verify = "required", autocomplete = "off" })
-
-        </div>
-        <div class="layui-form-mid layui-word-aux">
-            <span class="x-red">*</span>
-
-        </div>
-    </div>
     <div class="layui-form-item">
 
         @Html.LabelFor(model => model.Paramter, new { @class = "layui-form-label" })
         <div class="layui-input-inline" style="width:900px;min-height:500px;">
 
             <script id="Paramter" name="Paramter" type="text/plain">
-                    @Model.Paramter
+                        @Model.Paramter
             </script>
             <input type="hidden" name="Paramter1" id="Paramter1" value="@Model.Paramter" />
         </div>
 
     </div>
+
     <div class="layui-form-item">
 
         @Html.LabelFor(model => model.Files, new { @class = "layui-form-label" })
@@ -212,41 +214,65 @@
 
     </div>
     <div class="layui-form-item">
+        <div class="layui-inline">
 
-        @Html.LabelFor(model => model.Content, new { @class = "layui-form-label" })
-        <div class="layui-input-inline" style="width:900px;min-height:500px;">
+            @Html.LabelFor(model => model.SortId, new { @class = "layui-form-label" })
+            <div class="layui-input-inline">
+                @Html.TextBoxFor(model => model.SortId, new { @class = "layui-input", @required = "", @lay_verify = "required", autocomplete = "off" })
 
-            <script id="Content" name="Content" type="text/plain">
-                    @Model.Content
-            </script>
-            <input type="hidden" name="Content1" id="Content1" value="@Model.Content" />
+            </div>
+            <div class="layui-form-mid layui-word-aux">
+                <span class="x-red">*</span>
+
+            </div>
+        </div>
+        <div class="layui-inline">
+            @Html.LabelFor(model => model.IsHot, new { @class = "layui-form-label" })
+            <div class="layui-input-inline">
+                @Html.CheckBoxFor(model => model.IsHot, new { @class = "layui-checkbox" })
+
+            </div>
+
+
         </div>
 
     </div>
-    <div class="layui-form-item">
+    @*<div class="layui-form-item">
 
-        @Html.LabelFor(model => model.ParamterEn, new { @class = "layui-form-label" })
-        <div class="layui-input-inline" style="width:900px;min-height:500px;">
-            <script id="ParamterEn" name="ParamterEn" type="text/plain">
-                    @Model.ParamterEn
-            </script>
-            <input type="hidden" name="ParamterEn1" id="ParamterEn1" value="@Model.ParamterEn" />
+            @Html.LabelFor(model => model.Content, new { @class = "layui-form-label" })
+            <div class="layui-input-inline" style="width:900px;min-height:500px;">
+
+                <script id="Content" name="Content" type="text/plain">
+                        @Model.Content
+                </script>
+                <input type="hidden" name="Content1" id="Content1" value="@Model.Content" />
+            </div>
+
+        </div>
+        <div class="layui-form-item">
+
+            @Html.LabelFor(model => model.ParamterEn, new { @class = "layui-form-label" })
+            <div class="layui-input-inline" style="width:900px;min-height:500px;">
+                <script id="ParamterEn" name="ParamterEn" type="text/plain">
+                        @Model.ParamterEn
+                </script>
+                <input type="hidden" name="ParamterEn1" id="ParamterEn1" value="@Model.ParamterEn" />
+            </div>
+
         </div>
 
-    </div>
+        <div class="layui-form-item">
 
-    <div class="layui-form-item">
+            @Html.LabelFor(model => model.ContentEn, new { @class = "layui-form-label" })
+            <div class="layui-input-inline" style="width:900px;min-height:500px;">
 
-        @Html.LabelFor(model => model.ContentEn, new { @class = "layui-form-label" })
-        <div class="layui-input-inline" style="width:900px;min-height:500px;">
+                <script id="ContentEn" name="ContentEn" type="text/plain">
+                        @Model.ContentEn
+                </script>
+                <input type="hidden" name="ContentEn1" id="ContentEn1" value="@Model.ContentEn" />
+            </div>
 
-            <script id="ContentEn" name="ContentEn" type="text/plain">
-                    @Model.ContentEn
-            </script>
-            <input type="hidden" name="ContentEn1" id="ContentEn1" value="@Model.ContentEn" />
-        </div>
-
-    </div>
+        </div>*@
 
 
     <div class="layui-form-item">
@@ -259,48 +285,114 @@
 </form>
 @section Scripts{
 
-    <style>
-        .ck-content {
-            max-height: 400px;
-            height: 400px;
-        }
-    </style>
+
 
     <link type="text/css" rel="stylesheet" href="/lib/webuploader/webuploader.css" />
-    <script type="text/javascript" src="/lib/webuploader/webuploader.js"></script>  
+    <script type="text/javascript" src="/lib/webuploader/webuploader.js"></script>
     <script src="/lib/ueditor/ueditor.config.js"></script>
     <script src="/lib/ueditor/ueditor.all.min.js"></script>
+    <script>
 
+        var editObj = null, ptable = null, treeGrid = null, tableId = 'treeTable', layer = null;
+        layui.config({
+            base: '/lib/layui/extend/'
+        }).extend({
+            treeGrid: 'treeGrid'
+        }).use(['jquery', 'treeGrid', 'layer'], function () {
+            var $ = layui.jquery;
+            treeGrid = layui.treeGrid;//很重要
+            layer = layui.layer;
+            ptable = treeGrid.render({
+                id: tableId
+                , elem: '#' + tableId
+                , idField: 'id'
+                , url: '/SysProduct/GetEntitiesByProductId?pId=' +@Model.Id
+                , cellMinWidth: 100
+                , treeId: 'id'//树形id字段名称
+                , treeUpId: 'parentId'//树形父id字段名称
+                , treeShowName: 'name'//以树形式显示的字段
+                , cols: [[
+                    { field: 'title', edit: 'text', width: 300, title: '参数名称' },
+                    { field: 'type', title: '类型' },
+                    {
+                        width: 200, title: '操作', align: 'center'/*toolbar: '#barDemo'*/
+                        , templet: function (d) {
+                            var html = '';
+                            var addBtn = '<a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="add">修改</a>';
+                            var delBtn = '<a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>';
+                            return addBtn + delBtn;
+                        }
+                    }
+                ]]
+                , page: false
+            });
+
+            treeGrid.on('tool(' + tableId + ')', function (obj) {
+                var data = obj.data;
+                var id=obj.data.id;
+                if (obj.event === 'del') {//删除行
+                    layer.confirm('真的删除内容吗？', function (index) {
+                        obj.del(); //删除对应行（tr）的DOM结构
+                        layer.close(index);
+                        var url = " /SysContents/Delete?id=" + data.id;
+                        //向服务端发送删除指令
+                        $.ajax({
+                            url: url,
+                            type: "post",
+                            success: function (rep) {
+                                if (rep.success == true) {
+                                    layer.msg(rep.msg);
+                                }
+                                else {
+                                    layer.alert(rep.msg, { icon: 5 });
+                                }
+
+                            },
+                            error: function () {
+                                layer.alert("网络错误，请稍候再试。", { icon: 5 });
+                            }
+                        });
+
+
+                    });
+                } else if (obj.event === "add") {//添加行
+                   // add(obj.data);
+                    x_admin_show('新增','/SysContents/Edit'+'?id='+id)
+                }
+            });
+        });
+
+    </script>
 
     <script>
 
-        var ue = UE.getEditor('Content', {
-            initialFrameHeight:800
-        });
-        var oldhtml = $("#Content1").val();
+       // var ue = UE.getEditor('Content', {
+       //     initialFrameHeight:800
+       // });
+       // var oldhtml = $("#Content1").val();
 
-        ue.ready(function () {
-            ue.setContent(oldhtml);
-        });
+       // ue.ready(function () {
+       //     ue.setContent(oldhtml);
+       // });
 
 
-        var ue1 = UE.getEditor('ContentEn', {
-            initialFrameHeight: 500
-        });
-          var oldhtml1 = $("#ContentEn1").val();
+       // var ue1 = UE.getEditor('ContentEn', {
+       //     initialFrameHeight: 500
+       // });
+       //   var oldhtml1 = $("#ContentEn1").val();
 
-        ue1.ready(function () {
-            ue1.setContent(oldhtml1);
-        });
+       // ue1.ready(function () {
+       //     ue1.setContent(oldhtml1);
+       // });
 
-        var ue2 = UE.getEditor('ParamterEn', {
-            initialFrameHeight: 500
-        });
-         var oldhtml2 = $("#ParamterEn1").val();
+       // var ue2 = UE.getEditor('ParamterEn', {
+       //     initialFrameHeight: 500
+       // });
+       //  var oldhtml2 = $("#ParamterEn1").val();
 
-        ue2.ready(function () {
-            ue2.setContent(oldhtml2);
-        });
+       // ue2.ready(function () {
+       //     ue2.setContent(oldhtml2);
+       // });
 
 
         var ue3 = UE.getEditor('Paramter', {
@@ -312,6 +404,7 @@
             ue3.setContent(oldhtml3);
         });
 
+
         var ue4 = UE.getEditor('Files', {
             initialFrameHeight: 500
         });
@@ -321,6 +414,7 @@
             ue4.setContent(oldhtml4);
         });
         $(function () {
+
 
   var uploader = WebUploader.create({
                 pick: '#UploadImg',
@@ -493,14 +587,9 @@
 
                 form.on('submit(add)', function (data) {
                     var url = $(".layui-form").attr("action");
-                     //debugger;
-                    // data.field.Content=editor.getData();
-                    //$("#Content").val(editor.getData());
-                    //$("#ContentEn").val(editor1.getData());
-                    //$("#ParamterEn").val(editor2.getData());
-                    //$("#Paramter").val(editor3.getData());
+
                     var data = $("form").serialize();
-                    console.log(data);
+
                     $.ajax({
                         url: url,
                         data: data,

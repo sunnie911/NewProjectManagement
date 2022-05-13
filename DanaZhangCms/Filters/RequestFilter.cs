@@ -17,21 +17,21 @@ namespace DanaZhangCms
             var identity = context.RouteData.Values["controller"] + "/" + context.RouteData.Values["action"];
             if (!context.Filters.Contains(new IgnoreAttribute()))
             {
-                var repository =
-                    (ISysMenuRepository) context.HttpContext.RequestServices.GetService(typeof(ISysMenuRepository));
-                if (repository.Count(
-                        m => m.Identity.Equals(identity, StringComparison.OrdinalIgnoreCase) && m.Activable) <= 0)
-                {
-                    if (context.HttpContext.Request.IsAjaxRequest())
-                    {
-                        context.Result = new JsonResult(new {success = false, msg = "您请求的地址不存在，或者已被停用."});
-                    }
-                    else
-                    {
-                        context.Result = new ViewResult() {ViewName = "NotFound"};
-                        context.HttpContext.Response.StatusCode = HttpStatusCode.NotFound.GetHashCode();
-                    }
-                }
+                //var repository =
+                //    (ISysMenuRepository) context.HttpContext.RequestServices.GetService(typeof(ISysMenuRepository));
+                //if (repository.Count(
+                //        m => m.Identity.Equals(identity, StringComparison.OrdinalIgnoreCase) && m.Activable) <= 0)
+                //{
+                //    if (context.HttpContext.Request.IsAjaxRequest())
+                //    {
+                //        context.Result = new JsonResult(new {success = false, msg = "您请求的地址不存在，或者已被停用."});
+                //    }
+                //    else
+                //    {
+                //        context.Result = new ViewResult() {ViewName = "NotFound"};
+                //        context.HttpContext.Response.StatusCode = HttpStatusCode.NotFound.GetHashCode();
+                //    }
+                //}
             }
 
             await base.OnActionExecutionAsync(context, next);

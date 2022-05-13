@@ -8,7 +8,7 @@ using DanaZhangCms.Core.Attributes;
 using System.Threading.Tasks;
 using DanaZhangCms.Core.Models;
 using System.Linq;
- 
+
 
 namespace DanaZhangCms
 {
@@ -16,7 +16,7 @@ namespace DanaZhangCms
     public class SysContentsController : SysBaseController
     {
         private IContentsRepository _repository;
-        
+
         public SysContentsController(IContentsRepository repository)
         {
             _repository = repository ?? throw new ArgumentNullException(nameof(repository));
@@ -30,9 +30,18 @@ namespace DanaZhangCms
             return View();
         }
         [ActionDescription(Name = "添加内容")]
-        public IActionResult Create()
+        public IActionResult Create(int pId = 0, string lang = "china", string type = "0")
         {
-            var model = new Contents();
+            var model = new Contents() { ProductId = pId, SpellName = lang };
+            if (type == "0")
+            {
+                model.Type = "规格参数";
+            }
+            else if (type == "1")
+            {
+                model.Type = "相关下载";
+            }
+
             return View(model);
         }
         [Ignore]
@@ -50,8 +59,8 @@ namespace DanaZhangCms
         {
             return Task.Factory.StartNew<IActionResult>(() =>
             {
-                    var rows = _repository.Get().ToList();
-                    return Json(ExcutedResult.SuccessResult(rows));
+                var rows = _repository.Get(p => p.ProductId == 0).ToList();
+                return Json(ExcutedResult.SuccessResult(rows));
             });
         }
 
@@ -60,28 +69,26 @@ namespace DanaZhangCms
         {
             return Task.Factory.StartNew<IActionResult>(() =>
             {
-                //var total = _repository.Count(m => true);
-                //var rows = _repository.GetByPagination(m => true, pageSize, pageIndex, true,
-                //    m => m.Id).ToList();
-                //return Json(PaginationResult.PagedResult(rows, total, pageSize, pageIndex));
-                var total = _repository.Count(m => true);
-           
-                var rows = _repository.GetByPagination(m => true, limit, page, true,
+                var total = _repository.Count(m => m.ProductId == 0);
+
+                var rows = _repository.GetByPagination(m => m.ProductId == 0, limit, page, true,
                     m => m.Id).Select(o => new { o.Id, o.Title, o.SpellName, CreatedDate = o.CreatedDate.ToString("yyyy-MM-dd") }).ToList();
                 return Json(LayUIPaginationResult.PagedResult(true, rows, total));
             });
         }
+
+
         /// <summary>
         /// 新建
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        [AjaxRequestOnly,HttpPost,ValidateAntiForgeryToken]
+        [AjaxRequestOnly, HttpPost, ValidateAntiForgeryToken]
         public Task<IActionResult> Add(Contents model)
         {
             return Task.Factory.StartNew<IActionResult>(() =>
             {
-                if(!ModelState.IsValid)
+                if (!ModelState.IsValid)
                     return Json(ExcutedResult.FailedResult("数据验证失败"));
                 _repository.AddAsync(model, false);
                 return Json(ExcutedResult.SuccessResult());
@@ -119,5 +126,5 @@ namespace DanaZhangCms
         }
 
         #endregion
-	}
+    }
 }

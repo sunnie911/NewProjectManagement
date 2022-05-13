@@ -1,7 +1,9 @@
+ 
 using DanaZhangCms.Core.Attributes;
 using DanaZhangCms.Core.Extensions;
 using DanaZhangCms.IRepositories;
 using DanaZhangCms.Models;
+using DanaZhangCms.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,11 +17,12 @@ namespace DanaZhangCms
 
         private IProductRepository _proRepository;
 
-        public ProductController(IProductRepository proRepository)
+        private IContentsRepository _conRepository;
+
+        public ProductController(IProductRepository proRepository, IContentsRepository contentRepository)
         {
-
             _proRepository = proRepository;
-
+            _conRepository = contentRepository;
         }
 
         ///首页
@@ -34,18 +37,18 @@ namespace DanaZhangCms
 
             if (categoryId > 0)
             {
-                //productList = _proRepository.Where(p=>p.CategoryId == categoryId).OrderBy(o => o.IsHot).Skip((page - 1) * pageSize).ToList();
-                productList = _proRepository.Where(p => p.CategoryId == categoryId).OrderBy(o => o.IsHot).ToList();
+            
+                productList = _proRepository.Where(p => p.CategoryId == categoryId).OrderByDescending(o => o.IsHot).ToList();
 
             }
             else
             {
-                productList = _proRepository.OrderBy(o => o.IsHot).Select(o => new Product() { Name = o.Name,Model1=o.Model1,Id = o.Id, ImgUrl = o.ImgUrl, IsHot = o.IsHot }).ToList();
+                productList = _proRepository.OrderByDescending(o => o.IsHot).ToList();
 
             }
             if (!string.IsNullOrWhiteSpace(word))
             {
-                productList = _proRepository.Where(p => p.Name.Contains(word)|| p.Model1.Contains(word)).OrderBy(o => o.IsHot).Select(o => new Product() { Name = o.Name, Id = o.Id,Model1= o.Model1,ImgUrl = o.ImgUrl, IsHot = o.IsHot }).ToList();
+                productList = _proRepository.Where(p => p.Name.Contains(word)|| p.Model1.Contains(word)).OrderByDescending(o => o.IsHot).ToList();
             }
 
 
@@ -60,13 +63,20 @@ namespace DanaZhangCms
         public async Task<IActionResult> Detail(int id)
         {
 
-
             if (RequestExtensions.IsMobile(HttpContext.Request))
             {
                 return Redirect("/mobile/proDetail/"+id);
             }
             var model = await _proRepository.GetSingleAsync(id);
-            return View(model);
+
+            var contents = _conRepository.Where(p => p.ProductId == id).ToList();
+
+            ProductView view = new ProductView() { Product=model };
+            view.Details = contents.Where(p => p.Type == "规格参数" && p.SpellName == "china").ToList();
+            view.DetailsEn = contents.Where(p => p.Type == "规格参数" && p.SpellName == "english").ToList();
+            view.Downfiles= contents.Where(p => p.Type == "相关下载").ToList();
+
+            return View(view);
         }
 
         /// <summary>
@@ -88,11 +98,7 @@ namespace DanaZhangCms
             {
                 return Redirect("/mobile/download");
             }
-            //List<Product> productList = new List<Product>(); 
-
-
-            //    productList = _proRepository.Where(o=>!string.IsNullOrEmpty( o.Files)).OrderBy(o => o.IsHot).Select(o => new Product() { Name = o.Name, Model1=o.Model1,Id = o.Id, ImgUrl = o.ImgUrl, IsHot = o.IsHot }).ToList();
-
+           
              
             return View("~/Views/Product/DownLoad.cshtml");
         }
