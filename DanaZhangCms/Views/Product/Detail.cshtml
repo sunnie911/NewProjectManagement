@@ -145,18 +145,7 @@
                 {
                     foreach (var item in Model.Downfiles)
                     {
-                        <div>
-                            <div class="guige_left">
-                                @item.Title
-                            </div>
-
-                            <div class="guige_right">
-                                @Html.Raw(item.Content)
-                            </div>
-
-                        </div>
-
-
+                       
                         <div class="xiazai_box">
 
                             <div class="xiazai_left"> @item.Title</div>
@@ -169,8 +158,7 @@
 
                                         <p>@(item.FileName).pdf </p>
                                         <a href="@item.FilePath" target="_blank"><img class="yulam_icon" src="/images/yulan.png"></a>
-                                        @*<img class="yulam_icon" src="../images/yulan.png">*@
-                                         <img class="xiazai_icon" data-id="@item.FilePath" src="/images/xiazai.png"> 
+                                        <img class="xiazai_icon" data-id="@item.FilePath" data-name="@(item.FileName).pdf" src="/images/xiazai.png">
                                     </li>
                                 </ul>
                             </div>
