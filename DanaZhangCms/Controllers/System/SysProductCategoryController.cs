@@ -53,7 +53,7 @@ namespace DanaZhangCms
         private void GetPosition()
         {
             var position = new List<ProductCategory>();
-            var category = _repository.Include(o => o.ChildList).Where(c => c.Parent == null)
+            var category = _repository.Where(m =>m.IsDeleted == false).Include(o => o.ChildList).Where(c => c.Parent == null)
                                  .ToList();
             if (category != null)
             {
@@ -91,13 +91,13 @@ namespace DanaZhangCms
         {
             return Task.Factory.StartNew<IActionResult>(() =>
             {
-                var total = _repository.Count(m => true);
+                var total = _repository.Count(m => m.IsDeleted == false);
                 //  var rows = _repository.GetByPagination(m => true, limit, page, true,
                 //      m => m.Id).ToList();
                 // return Json(PaginationResult.PagedResult(rows, total, limit, page));
 
                 Func<IQueryable<ProductCategory>, IQueryable<ProductCategory>> @include = o => o.Include("Parent");
-                var rows = _repository.GetByPaginationWithInclude(m => true, @include, limit, page, true,
+                var rows = _repository.GetByPaginationWithInclude(m => m.IsDeleted == false , @include, limit, page, true,
                     m => m.Id).Select(o => new { o.Id, o.Name,o.NameEn, CreatedDate = o.CreatedDate.ToString("yyyy-MM-dd"), CateName = o.Parent == null ? "" : o.Parent.Name }).ToList();
                 return Json(LayUIPaginationResult.PagedResult(true, rows, total));
 
@@ -147,7 +147,10 @@ namespace DanaZhangCms
         {
             return Task.Factory.StartNew<IActionResult>(() =>
             {
-                _repository.Delete(id, true);
+                //_repository.Delete(id, true);
+                var model = _repository.GetSingle(id);
+                model.IsDeleted = true;
+                _repository.Edit(model, false);
                 return Json(ExcutedResult.SuccessResult("成功删除一条数据。"));
             });
         }

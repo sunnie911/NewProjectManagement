@@ -62,8 +62,8 @@ namespace DanaZhangCms
         {
             return Task.Factory.StartNew<IActionResult>(() =>
             {
-                var total = _repository.Count(m => true);
-                var rows = _repository.GetByPagination(m => true, limit, page, true, m => m.Id).ToList();
+                var total = _repository.Count(m => m.IsDeleted == false);
+                var rows = _repository.GetByPagination(m => m.IsDeleted == false, limit, page, true, m => m.Id).ToList();
                 return Json(LayUIPaginationResult.PagedResult(true, rows, total));
 
             });
@@ -108,7 +108,11 @@ namespace DanaZhangCms
         {
             return Task.Factory.StartNew<IActionResult>(() =>
             {
-                _repository.Delete(id, true);
+                //_repository.Delete(id, true);
+
+                var model = _repository.GetSingle(id);
+                model.IsDeleted = true;
+                _repository.Edit(model, false);
                 return Json(ExcutedResult.SuccessResult("成功删除一条数据。"));
             });
         }

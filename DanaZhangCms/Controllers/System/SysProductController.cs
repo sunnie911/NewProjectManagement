@@ -97,18 +97,18 @@ namespace DanaZhangCms
                 //   m => m.Id).ToList();
                 // return Json(PaginationResult.PagedResult(rows, total, pageSize, pageIndex));
                 Func<IQueryable<Product>, IQueryable<Product>> @include = o => o.Include("Category");
-                var rows = _repository.GetByPaginationWithInclude(m => true, @include, limit, page, true,
+                var rows = _repository.GetByPaginationWithInclude(m => m.IsDeleted == false , @include, limit, page, true,
               m => m.Id).Select(o => new { o.Id, o.Name,o.NameEn,o.ContentEn,o.Model1, CreatedDate = o.CreatedDate.ToString("yyyy-MM-dd"), CateName = o.Category == null ? "" : o.Category.Name }).ToList();
 
                 if (CategoryId > 0)
                 {
-                      rows = _repository.GetByPaginationWithInclude(m => m.CategoryId==CategoryId, @include, limit, page, true,
+                      rows = _repository.GetByPaginationWithInclude(m => m.IsDeleted == false && m.CategoryId==CategoryId, @include, limit, page, true,
              m => m.Id).Select(o => new { o.Id, o.Name, o.NameEn, o.ContentEn, o.Model1, CreatedDate = o.CreatedDate.ToString("yyyy-MM-dd"), CateName = o.Category == null ? "" : o.Category.Name }).ToList();
 
                 }
                 if (!string.IsNullOrWhiteSpace(title))
                 {
-                    rows = _repository.GetByPaginationWithInclude(m => m.Name.Contains(title.Trim()), @include, limit, page, true,
+                    rows = _repository.GetByPaginationWithInclude(m => m.IsDeleted == false&& m.Name.Contains(title.Trim()), @include, limit, page, true,
               m => m.Id).Select(o => new { o.Id, o.Name, o.NameEn, o.ContentEn, o.Model1, CreatedDate = o.CreatedDate.ToString("yyyy-MM-dd"), CateName = o.Category == null ? "" : o.Category.Name }).ToList();
 
                 }
@@ -122,8 +122,8 @@ namespace DanaZhangCms
         {
             return Task.Factory.StartNew<IActionResult>(() =>
             {
-                var total = _contentRepository.Where(p => p.ProductId==pId).Count(m => true);
-                var rows = _contentRepository.GetByPagination(m =>m.ProductId==pId, limit, page, true,
+                var total = _contentRepository.Where(p =>p.IsDeleted==false&& p.ProductId==pId).Count(m => true);
+                var rows = _contentRepository.GetByPagination(m => m.IsDeleted == false && m.ProductId==pId, limit, page, true,
                     m => m.Id).Select(o => new { o.Id, o.Title, o.SpellName,o.Type, CreatedDate = o.CreatedDate.ToString("yyyy-MM-dd") }).ToList();
                 return Json(LayUIPaginationResult.PagedResult(true, rows, total));
             });
@@ -170,7 +170,9 @@ namespace DanaZhangCms
         {
             return Task.Factory.StartNew<IActionResult>(() =>
             {
-                _repository.Delete(id, true);
+                var model = _repository.GetSingle(id);
+                model.IsDeleted = true;
+                _repository.Edit(model, false);
                 return Json(ExcutedResult.SuccessResult("成功删除一条数据。"));
             });
         }

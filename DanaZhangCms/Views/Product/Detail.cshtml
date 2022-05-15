@@ -49,132 +49,129 @@
         .par_main img {
             display: inline-table;
         }
+        .guige_box img {
+            width: 99%;
+        }
+        .peizhi_content img {
+            width: 99%;
+        }
+       
     </style>
 }
 <div class="introduce_details">
-    <div class="common_containe">
+    <div class="common">
+        <div class="introduce_title">
+            <h1>@Model.Product.Model1 @Model.Product.Name</h1>
+            <h2> @Model.Product.Tag</h2>
+        </div>
         <div class="introduce_banner">
             <img src="@Model.Product.ImgUrl" width="100%">
         </div>
     </div>
+    <div class="zhanwei"></div>
     <div class="introduce_nav">
-        <div class="common_containe">
+        <div class="common">
             <div class="title_cp">@Model.Product.Model1 @Model.Product.Name</div>
             <ul>
-                <li><a href="#shipin">视频观看</li>
-                <li><a href="#guige">规格参数</li>
-                <li><a href="#xiazai">相关下载</li>
-                <li><a href="#chanpin">产品配置</li>
+                @if (!string.IsNullOrWhiteSpace(Model.Product.VedioUrl))
+                {
+                <li> <a class="introduceLi" navTo="shipin">视频观看</a></li>
+                }
+                <li> <a class="introduceLi" navTo="guige">规格参数</a></li>
+                @if (Model.Downfiles != null && Model.Downfiles.Any())
+               {
+                <li><a class="introduceLi" navTo="guige">相关下载</a></li>
+                }
+                <li><a class="introduceLi" navTo="guige">产品配置</a></li>
             </ul>
         </div>
     </div>
     <div class="introduce_content">
-        <a name="shipin">
-            <div class="video_content louti common_containe">
-                <h3>视频观看</h3>
-                <ul class="introduce_video">
-                    <li>
-                        @if (!string.IsNullOrWhiteSpace(Model.Product.VedioUrl) && !Model.Product.VedioUrl.Contains("https://"))
-                        {
-                            <video width="100%" controls autoplay>
-                                <source src="@Model.Product.VedioUrl" type="video/mp4">
-                            </video>
-                        }
-                        else if (!string.IsNullOrWhiteSpace(Model.Product.VedioUrl))
-                        {
-
-                            <iframe height="590" width="980" id="video" src="@Model.Product.VedioUrl" frameborder="0" allowfullscreen=""></iframe>
-                        }
-
-                    </li>
-                    @*<li>
-                            <video width="100%" controls autoplay>
-                                <source src="../images/details/movie2.mp4" type="video/mp4">
-                            </video>
-                        </li>*@
-                </ul>
-                <div class="video_box">
-                    <div>
-                        <div class="video_img">
-                            <img class="tupian" src="@Model.Product.ImgUrl">
-                            <img class="zanting" src="/images/details/video_img.png">
-                        </div>
-                        @*<p>测缺功能演示</p>*@
-                    </div>
-                    @*<div>
-                            <div class="video_img">
-                                <img class="tupian" src="../images/video/img.jpg">
-                                <img class="zanting" src="../images/details/video_img.png">
-                            </div>
-                            <p>操作方式演示</p>
-                        </div>*@
-                </div>
-            </div>
-        </a>
-        <a name="guige">
-            <div class="introduce_guige louti">
-                <div class="common_containe">
-                    <h3>规格参数</h3>
-                    <div class="guige_box">
-                        @if (Model.Details != null && Model.Details.Any())
-                        {
-                            foreach (var item in Model.Details)
-                            {
-                                <div>
-                                    <div class="guige_left">
-                                        @item.Title
-                                    </div>
-                                    <div class="guige_right">
-                                        @Html.Raw(item.Content)
-                                    </div>
-                                </div>
-                            }
-                        }
-
-
-                    </div>
-                </div>
-            </div>
-        </a>
-        <a name="xiazai">
-
-            <div class="introduce_xiazai louti common_containe">
-
-                <h3> 相关下载 </h3>
-                @if (Model.Downfiles != null && Model.Downfiles.Any())
-                {
-                    foreach (var item in Model.Downfiles)
+        @if (!string.IsNullOrWhiteSpace(Model.Product.VedioUrl))
+         {
+        <div class="video_content louti common" id="shipin">
+            <h3>视频观看</h3>
+            <ul class="introduce_video">
+                <li>
+                    @if (!string.IsNullOrWhiteSpace(Model.Product.VedioUrl) && !Model.Product.VedioUrl.Contains("https://"))
                     {
-                       
-                        <div class="xiazai_box">
-
-                            <div class="xiazai_left"> @item.Title</div>
-
-                            <div class="xiazai_right">
-
-                                <ul>
-
-                                    <li>
-
-                                        <p>@(item.FileName).pdf </p>
-                                        <a href="@item.FilePath" target="_blank"><img class="yulam_icon" src="/images/yulan.png"></a>
-                                        <img class="xiazai_icon" data-id="@item.FilePath" data-name="@(item.FileName).pdf" src="/images/xiazai.png">
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+                    <video width="100%" controls autoplay>
+                        <source src="@Model.Product.VedioUrl" type="video/mp4">
+                    </video>
                     }
-                }
-            </div>
-        </a>
-        <a name="chanpin">
-            <div class="introduce_peizhi louti common_containe">
-                <h3>产品配置</h3>
-                <div class="peizhi_content">
-                    @Html.Raw(Model.Product.Content)
+                    else if (!string.IsNullOrWhiteSpace(Model.Product.VedioUrl))
+                    {
+
+                    <iframe height="590" width="980" id="video" src="@Model.Product.VedioUrl" frameborder="0" allowfullscreen=""></iframe>
+                    }
+
+                </li>
+
+            </ul>
+
+        </div>
+        }
+
+        <div class="introduce_guige louti" id="guige">
+            <div class="common">
+                <h3>规格参数</h3>
+                <div class="guige_box">
+                    @if (Model.Details != null && Model.Details.Any())
+                    {
+                        foreach (var item in Model.Details)
+                        {
+                    <div>
+                        <div class="guige_left">
+                            @item.Title
+                        </div>
+                        <div class="guige_right">
+                            @Html.Raw(item.Content)
+                        </div>
+                    </div>
+                        }
+                    }
+
+
                 </div>
             </div>
-        </a>
+        </div>
+        @if (Model.Downfiles != null && Model.Downfiles.Any())
+         {
+        <div class="introduce_xiazai louti common" id="xiazai">
+
+            <h3> 相关下载 </h3>
+            @if (Model.Downfiles != null && Model.Downfiles.Any())
+            {
+                foreach (var item in Model.Downfiles)
+                {
+            <div class="xiazai_box">
+                <div class="xiazai_left"> @item.Title</div>
+
+                <div class="xiazai_right">
+
+                    <ul>
+
+                        <li>
+
+                            <p>@(item.FileName).pdf </p>
+                            <a href="@item.FilePath" target="_blank"><img class="yulam_icon" src="/images/yulan.png"></a>
+                            <img class="xiazai_icon" data-id="@item.FilePath" data-name="@(item.FileName).pdf" src="/images/xiazai.png">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+                }
+            }
+        </div>
+        }
+
+        <div class="introduce_peizhi louti common" id="peizhi">
+            <h3>产品配置</h3>
+            <div class="peizhi_content">
+                @Html.Raw(Model.Product.Content)
+            </div>
+        </div>
+
     </div>
 </div>
 @section Scripts{

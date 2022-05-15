@@ -68,13 +68,13 @@
 
     </div>
     @*<div class="layui-form-item">
-        @Html.LabelFor(model => model.VedioUrl, new { @class = "layui-form-label" })
-        <div class="layui-input-inline">
-            @Html.TextBoxFor(model => model.VedioUrl, new { @class = "layui-input", @required = "",  autocomplete = "off" })
+            @Html.LabelFor(model => model.VedioUrl, new { @class = "layui-form-label" })
+            <div class="layui-input-inline">
+                @Html.TextBoxFor(model => model.VedioUrl, new { @class = "layui-input", @required = "",  autocomplete = "off" })
 
-        </div>
-      
-    </div>*@
+            </div>
+
+        </div>*@
 
     <div class="layui-form-item">
         @Html.LabelFor(model => model.VedioUrl, new { @class = "layui-form-label" })
@@ -178,9 +178,9 @@
         <div class="layui-input-inline" style="width:700px;min-height:200px;">
 
             <a class="layui-btn" onclick="x_admin_show('新增', '/SysContents/Create?pId=' +@Model.Id)"> 新增产品参数</a>
-            <a class="layui-btn" onclick="x_admin_show('新增', '/SysContents/Create?type=1&pId=' +@Model.Id)"> 新增相关下载</a>
+            <a class="layui-btn" onclick="x_admin_show('新增', '/SysContents/Create?type=相关下载&pId=' +@Model.Id)"> 新增相关下载</a>
             <a class="layui-btn" onclick="x_admin_show('新增', '/SysContents/Create?lang=english&pId=' +@Model.Id)"> 新增产品参数英文</a>
-         
+
             <table class="layui-hidden" id="treeTable" lay-filter="treeTable"></table>
 
         </div>
@@ -211,6 +211,19 @@
             </script>
             <input type="hidden" name="Files1" id="Files1" value="@Model.Files" />
         </div>
+
+    </div>
+
+   <div class="layui-form-item">
+
+    @Html.LabelFor(model => model.Content, new { @class = "layui-form-label" })
+    <div class="layui-input-inline" style="width:900px;min-height:500px;">
+
+        <script id="Content" name="Content" type="text/plain">
+                        @Model.Content
+        </script>
+        <input type="hidden" name="Content1" id="Content1" value="@Model.Content" />
+    </div>
 
     </div>
     <div class="layui-form-item">
@@ -366,15 +379,14 @@
 
     <script>
 
-       // var ue = UE.getEditor('Content', {
-       //     initialFrameHeight:800
-       // });
-       // var oldhtml = $("#Content1").val();
+        var ue = UE.getEditor('Content', {
+            initialFrameHeight:800
+        });
+        var oldhtml = $("#Content1").val();
 
-       // ue.ready(function () {
-       //     ue.setContent(oldhtml);
-       // });
-
+        ue.ready(function () {
+            ue.setContent(oldhtml);
+        });
 
        // var ue1 = UE.getEditor('ContentEn', {
        //     initialFrameHeight: 500

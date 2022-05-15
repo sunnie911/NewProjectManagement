@@ -54,7 +54,7 @@ namespace DanaZhangCms
         private void GetPosition()
         {
             var position = new List<ArticleCategory>();
-            var articleCategory = _repository.Include(o => o.ChildList).Where(c => c.Parent == null)
+            var articleCategory = _repository.Where(m => m.IsDeleted == false ).Include(o => o.ChildList).Where(c => c.Parent == null)
                                  .ToList();
             if (articleCategory != null)
             {
@@ -94,8 +94,8 @@ namespace DanaZhangCms
         {
             return Task.Factory.StartNew<IActionResult>(() =>
             {
-                var total = _repository.Count(m => true);
-                var rows = _repository.GetByPagination(m => true, pageSize, pageIndex, true,
+                var total = _repository.Count(m => m.IsDeleted == false );
+                var rows = _repository.GetByPagination(m => m.IsDeleted == false, pageSize, pageIndex, true,
                     m => m.Id).ToList();
                 return Json(PaginationResult.PagedResult(rows, total, pageSize, pageIndex));
             });
@@ -142,7 +142,10 @@ namespace DanaZhangCms
         {
             return Task.Factory.StartNew<IActionResult>(() =>
             {
-                _repository.Delete(id, false);
+                //_repository.Delete(id, false);
+                var model = _repository.GetSingle(id);
+                model.IsDeleted = true;
+                _repository.Edit(model, false);
                 return Json(ExcutedResult.SuccessResult("成功删除一条数据。"));
             });
         }

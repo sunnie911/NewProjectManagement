@@ -41,6 +41,10 @@ namespace DanaZhangCms
             {
                 model.Type = "相关下载";
             }
+            else
+            {
+                model.Type = type;
+            }
 
             return View(model);
         }
@@ -59,7 +63,7 @@ namespace DanaZhangCms
         {
             return Task.Factory.StartNew<IActionResult>(() =>
             {
-                var rows = _repository.Get(p => p.ProductId == 0).ToList();
+                var rows = _repository.Get(p => p.IsDeleted == false && p.ProductId == 0).ToList();
                 return Json(ExcutedResult.SuccessResult(rows));
             });
         }
@@ -69,9 +73,9 @@ namespace DanaZhangCms
         {
             return Task.Factory.StartNew<IActionResult>(() =>
             {
-                var total = _repository.Count(m => m.ProductId == 0);
+                var total = _repository.Count(m => m.IsDeleted == false && m.ProductId == 0);
 
-                var rows = _repository.GetByPagination(m => m.ProductId == 0, limit, page, true,
+                var rows = _repository.GetByPagination(m =>m.IsDeleted==false&& m.ProductId == 0, limit, page, true,
                     m => m.Id).Select(o => new { o.Id, o.Title, o.SpellName, CreatedDate = o.CreatedDate.ToString("yyyy-MM-dd") }).ToList();
                 return Json(LayUIPaginationResult.PagedResult(true, rows, total));
             });
@@ -120,7 +124,12 @@ namespace DanaZhangCms
         {
             return Task.Factory.StartNew<IActionResult>(() =>
             {
-                _repository.Delete(id, false);
+                //_repository.Delete(id, false);
+
+                var model = _repository.GetSingle(id);
+                model.IsDeleted = true;
+                _repository.Edit(model, false);
+
                 return Json(ExcutedResult.SuccessResult("成功删除一条数据。"));
             });
         }

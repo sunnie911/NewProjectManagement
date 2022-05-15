@@ -53,7 +53,7 @@ namespace DanaZhangCms
         private void GetPosition()
         {
             var position = new List<ArticleCategory>();
-            var articleCategory = _cateRepository.Include(o => o.ChildList).Where(c => c.Parent == null)
+            var articleCategory = _cateRepository.Where(c=>c.IsDeleted==false).Include(o => o.ChildList).Where(c => c.Parent == null)
                                  .ToList();
             if (articleCategory != null)
             {
@@ -93,11 +93,11 @@ namespace DanaZhangCms
                 var total = _repository.Count(m => true);
 
                 Func<IQueryable<Article>, IQueryable<Article>> @include = o => o.Include("Category");
-                var rows = _repository.GetByPaginationWithInclude(m => true, @include, limit, page, true,
+                var rows = _repository.GetByPaginationWithInclude(m => m.IsDeleted==false, @include, limit, page, true,
                     m => m.Id).Select(o => new { o.Id, o.Title, o.Author, CreatedDate = o.CreatedDate.ToString("yyyy-MM-dd"),CategoryId=o.CategoryId ,CateName = o.Category.Name }).ToList();
                 if (CategoryId > 0)
                 {
-                      rows = _repository.GetByPaginationWithInclude(m => m.CategoryId==CategoryId, @include, limit, page, true,
+                      rows = _repository.GetByPaginationWithInclude(m => m.IsDeleted == false&&m.CategoryId==CategoryId, @include, limit, page, true,
                        m => m.Id).Select(o => new { o.Id, o.Title, o.Author, CreatedDate = o.CreatedDate.ToString("yyyy-MM-dd"), CategoryId = o.CategoryId, CateName = o.Category.Name }).ToList();
                 }
                 return Json(LayUIPaginationResult.PagedResult(true, rows, total));
@@ -146,7 +146,10 @@ namespace DanaZhangCms
         {
             return Task.Factory.StartNew<IActionResult>(() =>
             {
-                _repository.Delete(id, true);
+                //_repository.Delete(id, true);
+                var model = _repository.GetSingle(id);
+                model.IsDeleted = true;
+                _repository.Edit(model, false);
                 return Json(ExcutedResult.SuccessResult("成功删除一条数据。"));
             });
         }
