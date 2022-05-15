@@ -46,16 +46,35 @@
         </div>
     </div>
     <div class="layui-form-item">
+        <div class="layui-inline">
+            @Html.LabelFor(model => model.Tag, new { @class = "layui-form-label" })
+            <div class="layui-input-inline">
+                @Html.TextBoxFor(model => model.Tag, new { @class = "layui-input" })
+
+            </div>
+
+        </div>
+        <div class="layui-inline">
+            @Html.LabelFor(model => model.IsHot, new { @class = "layui-form-label" })
+            <div class="layui-input-inline">
+                @Html.CheckBoxFor(model => model.IsHot, new { @class = "layui-checkbox" })
+
+            </div>
+
+
+        </div>
+    </div>
+    <div class="layui-form-item">
         @Html.LabelFor(model => model.ImgUrl, new { @class = "layui-form-label" })
         <div class="layui-input-inline">
             <div class="uploadPreview" id="PreviewImg">
                 @if (!string.IsNullOrEmpty(Model.ImgUrl))
                 {
-                    <img src="@Model.ImgUrl" />
+                <img src="@Model.ImgUrl" />
                 }
                 else
                 {
-                    @:暂无图片
+                @:暂无图片
                 }
             </div>
             <div class="left">
@@ -80,15 +99,21 @@
         @Html.LabelFor(model => model.VedioUrl, new { @class = "layui-form-label" })
         <div class="layui-input-inline">
             <div class="uploadPreview" id="PreviewVedio">
-                @if (!string.IsNullOrEmpty(Model.VedioUrl))
+                @if (!string.IsNullOrEmpty(Model.VedioUrl)&& !Model.VedioUrl.Contains("https://"))
                 {
-                    <video width="100%" controls="" preload="auto" autoplay="autoplay">
-                        <source src="@Model.VedioUrl" />
-                    </video>
+                <video width="100%" controls="" preload="auto" autoplay="autoplay">
+                    <source src="@Model.VedioUrl" />
+                </video>
                 }
+                 else if (!string.IsNullOrWhiteSpace(Model.VedioUrl))
+                    {
+
+                <iframe width="400" id="video" src="@Model.VedioUrl" frameborder="0" allowfullscreen=""></iframe>
+                    }
+
                 else
                 {
-                    @:暂无视频
+                @:暂无视频
                 }
             </div>
             <div class="left">
@@ -100,77 +125,6 @@
         @Html.HiddenFor(x => x.VedioUrl)
 
     </div>
-    @*<div class="layui-form-item">
-
-            @Html.LabelFor(model => model.Banner1, new { @class = "layui-form-label" })
-            <div class="layui-input-inline">
-                <div class="uploadPreview" id="PreviewImg1">
-                    @if (!string.IsNullOrEmpty(Model.Banner1))
-                    {
-                        <img src="@Model.Banner1" />
-                    }
-                    else
-                    {
-                        @:暂无图片
-                    }
-                </div>
-                <div class="left">
-                    <div class="uploadProgressBar"></div>
-                    <div id="UploadImg1" class="uploadBut">选择图片</div>
-                </div>
-                <div class="clear"></div>
-            </div>
-            @Html.HiddenFor(x => x.Banner1)
-
-        </div>
-
-        <div class="layui-form-item">
-
-            @Html.LabelFor(model => model.Banner2, new { @class = "layui-form-label" })
-            <div class="layui-input-inline">
-                <div class="uploadPreview" id="PreviewImg2">
-                    @if (!string.IsNullOrEmpty(Model.Banner2))
-                    {
-                        <img src="@Model.Banner2" />
-                    }
-                    else
-                    {
-                        @:暂无图片
-                    }
-                </div>
-                <div class="left">
-                    <div class="uploadProgressBar"></div>
-                    <div id="UploadImg2" class="uploadBut">选择图片</div>
-                </div>
-                <div class="clear"></div>
-            </div>
-            @Html.HiddenFor(x => x.Banner2)
-
-        </div>*@
-
-    @*<div class="layui-form-item">
-
-            @Html.LabelFor(model => model.Banner3, new { @class = "layui-form-label" })
-            <div class="layui-input-inline">
-                <div class="uploadPreview" id="PreviewImg3">
-                    @if (!string.IsNullOrEmpty(Model.Banner3))
-                    {
-                        <img src="@Model.Banner3" />
-                    }
-                    else
-                    {
-                        @:暂无图片
-                    }
-                </div>
-                <div class="left">
-                    <div class="uploadProgressBar"></div>
-                    <div id="UploadImg3" class="uploadBut">选择图片</div>
-                </div>
-                <div class="clear"></div>
-            </div>
-            @Html.HiddenFor(x => x.Banner3)
-
-        </div>*@
 
     <div class="layui-form-item">
 
@@ -188,42 +142,42 @@
 
     </div>
 
-    <div class="layui-form-item">
+    @*<div class="layui-form-item">
 
-        @Html.LabelFor(model => model.Paramter, new { @class = "layui-form-label" })
-        <div class="layui-input-inline" style="width:900px;min-height:500px;">
+            @Html.LabelFor(model => model.Paramter, new { @class = "layui-form-label" })
+            <div class="layui-input-inline" style="width:900px;min-height:500px;">
 
-            <script id="Paramter" name="Paramter" type="text/plain">
-                        @Model.Paramter
-            </script>
-            <input type="hidden" name="Paramter1" id="Paramter1" value="@Model.Paramter" />
+                <script id="Paramter" name="Paramter" type="text/plain">
+                            @Model.Paramter
+                </script>
+                <input type="hidden" name="Paramter1" id="Paramter1" value="@Model.Paramter" />
+            </div>
+
         </div>
 
-    </div>
+        <div class="layui-form-item">
+
+            @Html.LabelFor(model => model.Files, new { @class = "layui-form-label" })
+            <div class="layui-input-inline" style="width:900px;min-height:500px;">
+
+                <script id="Files" name="Files" type="text/plain">
+                        @Model.Files
+                </script>
+                <input type="hidden" name="Files1" id="Files1" value="@Model.Files" />
+            </div>
+
+        </div>*@
 
     <div class="layui-form-item">
 
-        @Html.LabelFor(model => model.Files, new { @class = "layui-form-label" })
+        @Html.LabelFor(model => model.Content, new { @class = "layui-form-label" })
         <div class="layui-input-inline" style="width:900px;min-height:500px;">
 
-            <script id="Files" name="Files" type="text/plain">
-                    @Model.Files
-            </script>
-            <input type="hidden" name="Files1" id="Files1" value="@Model.Files" />
-        </div>
-
-    </div>
-
-   <div class="layui-form-item">
-
-    @Html.LabelFor(model => model.Content, new { @class = "layui-form-label" })
-    <div class="layui-input-inline" style="width:900px;min-height:500px;">
-
-        <script id="Content" name="Content" type="text/plain">
+            <script id="Content" name="Content" type="text/plain">
                         @Model.Content
-        </script>
-        <input type="hidden" name="Content1" id="Content1" value="@Model.Content" />
-    </div>
+            </script>
+            <input type="hidden" name="Content1" id="Content1" value="@Model.Content" />
+        </div>
 
     </div>
     <div class="layui-form-item">
@@ -239,53 +193,10 @@
 
             </div>
         </div>
-        <div class="layui-inline">
-            @Html.LabelFor(model => model.IsHot, new { @class = "layui-form-label" })
-            <div class="layui-input-inline">
-                @Html.CheckBoxFor(model => model.IsHot, new { @class = "layui-checkbox" })
 
-            </div>
-
-
-        </div>
 
     </div>
-    @*<div class="layui-form-item">
 
-            @Html.LabelFor(model => model.Content, new { @class = "layui-form-label" })
-            <div class="layui-input-inline" style="width:900px;min-height:500px;">
-
-                <script id="Content" name="Content" type="text/plain">
-                        @Model.Content
-                </script>
-                <input type="hidden" name="Content1" id="Content1" value="@Model.Content" />
-            </div>
-
-        </div>
-        <div class="layui-form-item">
-
-            @Html.LabelFor(model => model.ParamterEn, new { @class = "layui-form-label" })
-            <div class="layui-input-inline" style="width:900px;min-height:500px;">
-                <script id="ParamterEn" name="ParamterEn" type="text/plain">
-                        @Model.ParamterEn
-                </script>
-                <input type="hidden" name="ParamterEn1" id="ParamterEn1" value="@Model.ParamterEn" />
-            </div>
-
-        </div>
-
-        <div class="layui-form-item">
-
-            @Html.LabelFor(model => model.ContentEn, new { @class = "layui-form-label" })
-            <div class="layui-input-inline" style="width:900px;min-height:500px;">
-
-                <script id="ContentEn" name="ContentEn" type="text/plain">
-                        @Model.ContentEn
-                </script>
-                <input type="hidden" name="ContentEn1" id="ContentEn1" value="@Model.ContentEn" />
-            </div>
-
-        </div>*@
 
 
     <div class="layui-form-item">
@@ -407,24 +318,24 @@
        // });
 
 
-        var ue3 = UE.getEditor('Paramter', {
-            initialFrameHeight: 500
-        });
-       var oldhtml3 = $("#Paramter1").val();
+       // var ue3 = UE.getEditor('Paramter', {
+       //     initialFrameHeight: 500
+       // });
+       //var oldhtml3 = $("#Paramter1").val();
 
-        ue3.ready(function () {
-            ue3.setContent(oldhtml3);
-        });
+       // ue3.ready(function () {
+       //     ue3.setContent(oldhtml3);
+       // });
 
 
-        var ue4 = UE.getEditor('Files', {
-            initialFrameHeight: 500
-        });
-        var oldhtml4 = $("#Files1").val();
+       // var ue4 = UE.getEditor('Files', {
+       //     initialFrameHeight: 500
+       // });
+       // var oldhtml4 = $("#Files1").val();
 
-        ue4.ready(function () {
-            ue4.setContent(oldhtml4);
-        });
+       // ue4.ready(function () {
+       //     ue4.setContent(oldhtml4);
+       // });
         $(function () {
 
 

@@ -76,6 +76,10 @@ namespace DanaZhangCms
             view.DetailsEn = contents.Where(p => p.Type == "规格参数" && p.SpellName == "english").ToList();
             view.Downfiles= contents.Where(p => p.Type == "相关下载").ToList();
 
+            ViewBag.SeoTitle = model.Name+"冠力科技";
+            //ViewBag.SeoKeyword = site.SeoKeyword;
+            //ViewBag.SeoDescription = site.SeoDescription;
+
             return View(view);
         }
 

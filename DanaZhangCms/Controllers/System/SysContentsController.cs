@@ -108,8 +108,8 @@ namespace DanaZhangCms
         {
             return Task.Factory.StartNew<IActionResult>(() =>
             {
-                if (!ModelState.IsValid)
-                    return Json(ExcutedResult.FailedResult("数据验证失败"));
+                //if (!ModelState.IsValid)
+                //    return Json(ExcutedResult.FailedResult("数据验证失败"));
                 _repository.Edit(model, false);
                 return Json(ExcutedResult.SuccessResult());
             });

@@ -55,6 +55,10 @@
         .peizhi_content img {
             width: 99%;
         }
+        .introduce_details img {
+            display: block;
+            width: 70%;
+        }
        
     </style>
 }
@@ -80,9 +84,9 @@
                 <li> <a class="introduceLi" navTo="guige">规格参数</a></li>
                 @if (Model.Downfiles != null && Model.Downfiles.Any())
                {
-                <li><a class="introduceLi" navTo="guige">相关下载</a></li>
+                <li><a class="introduceLi" navTo="xiazai">相关下载</a></li>
                 }
-                <li><a class="introduceLi" navTo="guige">产品配置</a></li>
+                <li><a class="introduceLi" navTo="peizhi">产品配置</a></li>
             </ul>
         </div>
     </div>

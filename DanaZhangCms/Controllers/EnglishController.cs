@@ -15,13 +15,15 @@ namespace DanaZhangCms
     {
         private IProductRepository _proRepository;
         private IArticleRepository _artRepository;
-        private IBannerRepository _banRepository; 
-        public EnglishController( IProductRepository proRepository, IArticleRepository artRepository, IBannerRepository banRepository)
+        private IBannerRepository _banRepository;
+        private IContentsRepository _conRepository;
+        public EnglishController( IProductRepository proRepository, IArticleRepository artRepository, IBannerRepository banRepository, IContentsRepository contentRepository)
         {
             _proRepository = proRepository;
             _artRepository = artRepository;
             _banRepository = banRepository;
-        
+            _conRepository = contentRepository;
+
         }
 
         ///首页
@@ -110,9 +112,22 @@ namespace DanaZhangCms
         /// <returns></returns>
         public async Task<IActionResult> ProDetail(int id)
         {
+            if (RequestExtensions.IsMobile(HttpContext.Request))
+            {
+                return Redirect("/mobile/proDetail/" + id);
+            }
             var model = await _proRepository.GetSingleAsync(id);
 
-            return View("~/Views/English/Product/Detail.cshtml", model);
+            var contents = _conRepository.Where(p => p.ProductId == id).ToList();
+
+            ProductView view = new ProductView() { Product = model };
+            view.Details = contents.Where(p => p.Type == "规格参数" && p.SpellName == "china").ToList();
+            view.DetailsEn = contents.Where(p => p.Type == "规格参数" && p.SpellName == "english").ToList();
+            view.Downfiles = contents.Where(p => p.Type == "相关下载").ToList();
+
+            ViewBag.SeoTitle = model.Name + "冠力科技";
+
+            return View("~/Views/English/Product/Detail.cshtml", view);
         }
 
         /// <summary>

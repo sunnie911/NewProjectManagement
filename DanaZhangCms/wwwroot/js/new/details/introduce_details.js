@@ -11,18 +11,7 @@ $(function () {
 		$('.introduce_video li').eq(vIndex).show().siblings('li').hide();
 	})
 
-	// console.log($(window).scrollTop())
-	// setTimeout(function(){
-	// 	var url=window.location.href;
-	// 	if(url.indexOf('#')==-1){
-	// 		console.log('不包括#')
-	// 		$('.introduce_content>div').removeClass('main_Style');
-	// 	}else{
-	// 		console.log('包括#')
-	// 		$('.introduce_content>div').addClass('main_Style');
-	// 	}
-	// },500)
-
+	
 
 
 	var scrollNav = $('.introduce_nav').offset().top; //获取要定位元素距离浏览器顶部的距离
@@ -78,7 +67,6 @@ $(function () {
 		}
 		request.send();
 	})
-	 
 
 })
  
