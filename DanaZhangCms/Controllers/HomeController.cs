@@ -14,12 +14,14 @@ namespace DanaZhangCms
     {
         private IProductRepository _proRepository;
         private IArticleRepository _artRepository;
-        private IBannerRepository _banRepository; 
-        public HomeController( IProductRepository proRepository, IArticleRepository artRepository, IBannerRepository banRepository)
+        private IBannerRepository _banRepository;
+        private IContentsRepository _contentRepository;
+        public HomeController( IProductRepository proRepository, IArticleRepository artRepository, IBannerRepository banRepository, IContentsRepository contentRepository)
         {
             _proRepository = proRepository;
             _artRepository = artRepository;
             _banRepository = banRepository;
+            _contentRepository = contentRepository;
         
         }
 
@@ -46,7 +48,10 @@ namespace DanaZhangCms
             model.Banners = banners;
             model.Logos = logos;
 
-          
+            var profile = _contentRepository.FirstOrDefault(o => o.SpellName == "CompanyProfile");
+            ViewBag.CompanyProfile = profile;
+
+
             return View(model);
         }
 

@@ -27,11 +27,10 @@ namespace DanaZhangCms
             var site = XmlHelper.XmlDeserializeFromFile<SiteXml>(filePath, System.Text.Encoding.UTF8);
             var banners = _bannerRepository.Get().ToList();
             var _contentsRepository = AspectCoreContainer.Resolve<IContentsRepository>();
-            var contents = _contentsRepository.OrderByDescending(o=>o.SortId).Select(o=>new Models.Contents() { Title=o.Title,SpellName=o.SpellName}).ToList();
+            var contents = _contentsRepository.OrderByDescending(o=>o.SortId).Select(o=>new Models.Contents() { Title=o.Title,SpellName=o.SpellName,Content=o.Content}).ToList();
             WorkContext.Sites = site;
             WorkContext.Banners = banners;
-            WorkContext.Content = contents;
-
+            WorkContext.Content = contents; 
             var _proRepository = AspectCoreContainer.Resolve<IProductRepository>();
             var _cateRepository = AspectCoreContainer.Resolve<IProductCategoryRepository>();
             var position = _proRepository.ToList();
@@ -41,6 +40,9 @@ namespace DanaZhangCms
             ViewBag.SeoTitle = site.SeoTitle;
             ViewBag.SeoKeyword = site.SeoKeyword;
             ViewBag.SeoDescription = site.SeoDescription;
+
+            var script = contents.FirstOrDefault(o => o.SpellName == "Baidu");
+            ViewBag.SeoScript = script;
         }
 
         public override void OnActionExecuted(ActionExecutedContext context)

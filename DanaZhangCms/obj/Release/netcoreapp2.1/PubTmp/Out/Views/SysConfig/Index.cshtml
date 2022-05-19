@@ -54,7 +54,7 @@
         </div>
         @Html.HiddenFor(x => x.logo)
 
-    
+
         <div class="layui-form-mid layui-word-aux">
             <span class="x-red">*</span>
 
@@ -171,6 +171,8 @@
         <button class="layui-btn" lay-filter="add" lay-submit="">
             保存
         </button>
+
+        <a class="layui-btn" id="mapSite" href="javascript:;"> 生成网站地图</a>
     </div>
 </form>
 
@@ -181,7 +183,7 @@
 
     <script>
         $(function () {
- 
+
             var uploader = WebUploader.create({
                 pick: '.uploadBut',
                 auto: true,
@@ -215,6 +217,27 @@
                 $(".uploadPreview").html("上传失败");
             });
 
+            layui.use('layui', function () {
+                $("#mapSite").on('click', function () {
+                    console.log(11)
+                    $.ajax({
+                        url: "/SysConfig/UpdateSite",
+                        type: "post",
+                        success: function (rep) {
+                            if (rep.success == true) {
+                                layer.msg(rep.msg);
+                            }
+                            else {
+                                layer.alert(rep.msg, { icon: 5 });
+                            }
+                        }
+
+                    })
+                });
+            })
+               
+
+
             layui.use('form', function () {
                 var form = layui.form;
 
@@ -222,7 +245,7 @@
                 form.on('submit(add)', function (data) {
                     var url = $(".layui-form").attr("action");
                      //debugger;
-                 
+
                     $.ajax({
                         url: url,
                         data: $("form").serialize(),
@@ -233,10 +256,11 @@
 
                                     window.location.href='@(Url.Action("Index"))';
                                 });
-                    }
-                    else {
-                                layer.alert(rep.msg, { icon: 5 });
-                    }
+                                }
+                                else {
+                                            layer.alert(rep.msg, { icon: 5 });
+                                }
+                                }
 
                         },
                         error: function () {
@@ -247,7 +271,7 @@
 
                     return false;
                 });
-            });
-        })
+            })
+
     </script>
 }

@@ -8,7 +8,7 @@ a{text-decoration:none}
 img{display: block;}
 .common{max-width: 1170px;margin: 0 auto;overflow: hidden;}
 .introduce_details{padding-top: 20px;}
-.introduce_details img{display: block;width:70%;}
+.introduce_details img{display: block}
 /*
 .introduce_banner{margin: 30px auto;}*/
 .zhanwei{display:none;height: 53px;}

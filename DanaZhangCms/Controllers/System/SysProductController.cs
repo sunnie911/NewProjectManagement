@@ -1,4 +1,5 @@
- 
+
+using DanaZhangCms.Core;
 using DanaZhangCms.Core.Attributes;
 using DanaZhangCms.Core.Models;
 using DanaZhangCms.IRepositories;
@@ -8,6 +9,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -16,14 +18,25 @@ namespace DanaZhangCms
     [ControllerDescription(Name = "产品管理")]
     public class SysProductController : SysBaseController
     {
+        private IArticleRepository _ArticleRepository;
+        private IArticleCategoryRepository _ArticleCategoryRepository;
+        private IProductCategoryRepository _ProductCateRepository;
+        private IProductRepository _ProductRepository;
+
         private IContentsRepository _contentRepository;
         private IProductRepository _repository;
         private IProductCategoryRepository _cateRepository;
-        public SysProductController(IProductRepository repository, IProductCategoryRepository cateRepository,IContentsRepository ContentRepository)
+        public SysProductController(IProductRepository repository, IProductCategoryRepository cateRepository,IContentsRepository ContentRepository, IArticleCategoryRepository articleCateRepository, IArticleRepository articleRepository)
         {
             _repository = repository ?? throw new ArgumentNullException(nameof(repository));
             _cateRepository = cateRepository;
             _contentRepository = ContentRepository;
+
+            _ProductRepository = repository;
+            _ProductCateRepository = cateRepository ?? throw new ArgumentNullException(nameof(cateRepository));
+            _ArticleRepository = articleRepository;
+            _ArticleCategoryRepository = articleCateRepository;
+
         }
 
         #region Views
@@ -141,6 +154,8 @@ namespace DanaZhangCms
                 if (!ModelState.IsValid)
                     return Json(ExcutedResult.FailedResult("数据验证失败"));
                 _repository.AddAsync(model, false);
+
+                createXMLSitemap();
                 return Json(ExcutedResult.SuccessResult());
             });
         }
@@ -154,9 +169,10 @@ namespace DanaZhangCms
         {
             return Task.Factory.StartNew<IActionResult>(() =>
             {
+             
                 if (!ModelState.IsValid)
                     return Json(ExcutedResult.FailedResult("数据验证失败"));
-                _repository.Edit(model, false);
+                _repository.Edit(model, false); 
                 return Json(ExcutedResult.SuccessResult());
             });
         }
@@ -173,8 +189,180 @@ namespace DanaZhangCms
                 var model = _repository.GetSingle(id);
                 model.IsDeleted = true;
                 _repository.Edit(model, false);
+
+                createXMLSitemap();
                 return Json(ExcutedResult.SuccessResult("成功删除一条数据。"));
             });
+        }
+
+        #endregion
+
+
+        #region 网站地图
+        public void createXMLSitemap()
+        {
+            FileInfo XMLFile = null;
+            StreamWriter WriteXMLFile = null;
+            var filePath = System.IO.Path.Combine(GlobalConfiguration.ApplicationPath, "sitemap.xml");
+            XMLFile = new FileInfo(filePath);
+            WriteXMLFile = XMLFile.CreateText();
+            //下面两句话必须写，而且不能做任何修改
+            WriteXMLFile.WriteLine("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
+            WriteXMLFile.WriteLine("<urlset xmlns=\"http://www.google.com/schemas/sitemap/0.84\">"); 
+            getXMLSitemapData(WriteXMLFile);
+            WriteXMLFile.WriteLine("</urlset>");//别忘了这句话
+            WriteXMLFile.Close();
+        }
+
+        public void getXMLSitemapData(StreamWriter writerFile)
+        {
+
+            writerFile.WriteLine("<url>");
+            writerFile.WriteLine("<loc>" + "https://jyhc17.com/</loc>");
+            writerFile.WriteLine("<lastmod>" + DateTime.Now.ToShortDateString() + "</lastmod>");
+            writerFile.WriteLine("<changefreq>Always</changefreq>");
+            writerFile.WriteLine("<priority>1</priority>");
+            writerFile.WriteLine("</url>");
+
+
+            writerFile.WriteLine("<url>");
+            writerFile.WriteLine("<loc>" + "https://jyhc17.com</loc>");
+            writerFile.WriteLine("<lastmod>" + DateTime.Now.ToShortDateString() + "</lastmod>");
+            writerFile.WriteLine("<changefreq>Always</changefreq>");
+            writerFile.WriteLine("<priority>1</priority>");
+            writerFile.WriteLine("</url>");
+            var productCategory = _ProductCateRepository.Where(c => c.Parent == null && c.IsDeleted == false).ToList();
+            //处理大类信息，
+            if (productCategory != null && productCategory.Any())
+            {
+                foreach (var item in productCategory)
+                {
+                    writerFile.WriteLine("<url>");
+                    writerFile.WriteLine("<loc>" + "https://jyhc17.com/Product?categoryId=" + item.Id + "</loc>");
+                    writerFile.WriteLine("<lastmod>" + DateTime.Now.ToShortDateString() + "</lastmod>");
+                    writerFile.WriteLine("<changefreq>Always</changefreq>");
+                    writerFile.WriteLine("<priority>0.9</priority>");
+                    writerFile.WriteLine("</url>");
+
+                    var productList = _ProductRepository.Where(p => p.CategoryId == item.Id).OrderByDescending(o => o.IsHot).ToList();
+                    foreach (var pro in productList)
+                    {
+                        writerFile.WriteLine("<url>");
+                        writerFile.WriteLine("<loc>" + "https://jyhc17.com/products/" + item.Id + ".html</loc>");
+                        writerFile.WriteLine("<lastmod>" + DateTime.Now.ToShortDateString() + "</lastmod>");
+                        writerFile.WriteLine("<changefreq>Always</changefreq>");
+                        writerFile.WriteLine("<priority>0.9</priority>");
+                        writerFile.WriteLine("</url>");
+                    }
+
+                }
+                foreach (var item in productCategory)
+                {
+                    writerFile.WriteLine("<url>");
+                    writerFile.WriteLine("<loc>" + "https://jyhc17.com/english/Product?categoryId=" + item.Id + "</loc>");
+                    writerFile.WriteLine("<lastmod>" + DateTime.Now.ToShortDateString() + "</lastmod>");
+                    writerFile.WriteLine("<changefreq>Always</changefreq>");
+                    writerFile.WriteLine("<priority>0.9</priority>");
+                    writerFile.WriteLine("</url>");
+
+                    var productList = _ProductRepository.Where(p => p.CategoryId == item.Id).OrderByDescending(o => o.IsHot).ToList();
+                    foreach (var pro in productList)
+                    {
+                        writerFile.WriteLine("<url>");
+                        writerFile.WriteLine("<loc>" + "https://jyhc17.com/english/products/" + item.Id + ".html</loc>");
+                        writerFile.WriteLine("<lastmod>" + DateTime.Now.ToShortDateString() + "</lastmod>");
+                        writerFile.WriteLine("<changefreq>Always</changefreq>");
+                        writerFile.WriteLine("<priority>0.9</priority>");
+                        writerFile.WriteLine("</url>");
+                    }
+                }
+
+            }
+
+            #region 公司简介
+
+            writerFile.WriteLine("<url>");
+            writerFile.WriteLine("<loc>" + "https://jyhc17.com/contact</loc>");
+            writerFile.WriteLine("<lastmod>" + DateTime.Now.ToShortDateString() + "</lastmod>");
+            writerFile.WriteLine("<changefreq>Always</changefreq>");
+            writerFile.WriteLine("<priority>0.8</priority>");
+            writerFile.WriteLine("</url>");
+
+            writerFile.WriteLine("<url>");
+            writerFile.WriteLine("<loc>" + "https://jyhc17.com/english/contact</loc>");
+            writerFile.WriteLine("<lastmod>" + DateTime.Now.ToShortDateString() + "</lastmod>");
+            writerFile.WriteLine("<changefreq>Always</changefreq>");
+            writerFile.WriteLine("<priority>0.8</priority>");
+            writerFile.WriteLine("</url>");
+
+            writerFile.WriteLine("<url>");
+            writerFile.WriteLine("<loc>" + "https://jyhc17.com/product/download</loc>");
+            writerFile.WriteLine("<lastmod>" + DateTime.Now.ToShortDateString() + "</lastmod>");
+            writerFile.WriteLine("<changefreq>Always</changefreq>");
+            writerFile.WriteLine("<priority>0.8</priority>");
+            writerFile.WriteLine("</url>");
+
+            writerFile.WriteLine("<url>");
+            writerFile.WriteLine("<loc>" + "https://jyhc17.com/english/download</loc>");
+            writerFile.WriteLine("<lastmod>" + DateTime.Now.ToShortDateString() + "</lastmod>");
+            writerFile.WriteLine("<changefreq>Always</changefreq>");
+            writerFile.WriteLine("<priority>0.8</priority>");
+            writerFile.WriteLine("</url>");
+
+            writerFile.WriteLine("<url>");
+            writerFile.WriteLine("<loc>" + "https://jyhc17.com/vedio</loc>");
+            writerFile.WriteLine("<lastmod>" + DateTime.Now.ToShortDateString() + "</lastmod>");
+            writerFile.WriteLine("<changefreq>Always</changefreq>");
+            writerFile.WriteLine("<priority>0.8</priority>");
+            writerFile.WriteLine("</url>");
+
+            writerFile.WriteLine("<url>");
+            writerFile.WriteLine("<loc>" + "https://jyhc17.com/english/vedio</loc>");
+            writerFile.WriteLine("<lastmod>" + DateTime.Now.ToShortDateString() + "</lastmod>");
+            writerFile.WriteLine("<changefreq>Always</changefreq>");
+            writerFile.WriteLine("<priority>0.8</priority>");
+            writerFile.WriteLine("</url>");
+
+            writerFile.WriteLine("<url>");
+            writerFile.WriteLine("<loc>" + "https://jyhc17.com/article</loc>");
+            writerFile.WriteLine("<lastmod>" + DateTime.Now.ToShortDateString() + "</lastmod>");
+            writerFile.WriteLine("<changefreq>Always</changefreq>");
+            writerFile.WriteLine("<priority>0.8</priority>");
+            writerFile.WriteLine("</url>");
+
+            writerFile.WriteLine("<url>");
+            writerFile.WriteLine("<loc>" + "https://jyhc17.com/english/article</loc>");
+            writerFile.WriteLine("<lastmod>" + DateTime.Now.ToShortDateString() + "</lastmod>");
+            writerFile.WriteLine("<changefreq>Always</changefreq>");
+            writerFile.WriteLine("<priority>0.8</priority>");
+            writerFile.WriteLine("</url>");
+
+            #endregion
+
+            var articleCategory = _ArticleCategoryRepository.Where(c => c.IsDeleted == false && c.Id != 5).ToList();
+            foreach (var cate in articleCategory)
+            {
+                var articleList = _ArticleRepository.Where(p => p.CategoryId == cate.Id).OrderByDescending(o => o.IsHot).ToList();
+                foreach (var pro in articleList)
+                {
+                    writerFile.WriteLine("<url>");
+                    writerFile.WriteLine("<loc>" + "https://jyhc17.com/news/" + pro.Id + ".html</loc>");
+                    writerFile.WriteLine("<lastmod>" + DateTime.Now.ToShortDateString() + "</lastmod>");
+                    writerFile.WriteLine("<changefreq>Always</changefreq>");
+                    writerFile.WriteLine("<priority>0.8</priority>");
+                    writerFile.WriteLine("</url>");
+
+                    writerFile.WriteLine("<url>");
+                    writerFile.WriteLine("<loc>" + "https://jyhc17.com/english/news/" + pro.Id + ".html</loc>");
+                    writerFile.WriteLine("<lastmod>" + DateTime.Now.ToShortDateString() + "</lastmod>");
+                    writerFile.WriteLine("<changefreq>Always</changefreq>");
+                    writerFile.WriteLine("<priority>0.8</priority>");
+                    writerFile.WriteLine("</url>");
+                }
+            }
+
+
+
         }
 
         #endregion

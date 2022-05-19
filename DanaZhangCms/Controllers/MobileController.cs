@@ -42,7 +42,11 @@ namespace DanaZhangCms
             model.Articles = arts;
             model.Vedios = vedios;
             model.Banners = banners;
-            model.Logos = logos;          
+            model.Logos = logos;
+
+            var profile = _repository.FirstOrDefault(o => o.SpellName == "CompanyProfile");
+            ViewBag.CompanyProfile = profile;
+
             return View("~/Views/Mobile/Index.cshtml", model);
         }
 

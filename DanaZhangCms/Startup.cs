@@ -86,12 +86,26 @@ namespace DanaZhangCms
               defaults: new { controller = "Article", action = "Detail" }
 
           );
+
+                    routes.MapRoute(
+           name: "newsDetailEn",
+           template: "english/news/{id}.html",
+           defaults: new { controller = "english", action = "NewDetail" }
+
+       );
                     routes.MapRoute(
             name: "productsDetail",
             template: "products/{id}.html",
             defaults: new { controller = "Product", action = "Detail" }
 
         );
+
+                    routes.MapRoute(
+          name: "productsDetailen",
+          template: "english/products/{id}.html",
+          defaults: new { controller = "english", action = "ProDetail" }
+
+      );
                     routes.MapRoute(
                         name: "Content",
                         template: "{spellname}",

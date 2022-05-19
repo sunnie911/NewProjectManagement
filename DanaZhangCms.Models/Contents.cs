@@ -23,7 +23,7 @@ namespace DanaZhangCms.Models
         public int SortId { get; set; }
 
 
-        [Required]
+       
         [Display(Name = "内容")]
         public string Content { get; set; }
 

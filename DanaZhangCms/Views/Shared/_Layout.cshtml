@@ -2,6 +2,8 @@
     var workContext = ViewBag.WorkContext as DanaZhangCms.ViewModels.WebWorkContext;
     List<Product> productList = ViewBag.ProductList;
     List<ProductCategory> cateList = ViewBag.CategoryList;
+
+    var baiduScript = ViewBag.SeoScript;
 }
 
 <!DOCTYPE html>
@@ -184,6 +186,10 @@
         </div>
     </div>
     @RenderSection("Scripts", required: false)
+    <script type="text/javascript">
+
+    @baiduScript
+    </script>
 
 </body>
 
