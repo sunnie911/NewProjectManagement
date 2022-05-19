@@ -49,16 +49,18 @@
         .par_main img {
             display: inline-table;
         }
+
         .guige_box img {
             width: 99%;
         }
+
         .peizhi_content img {
             width: 99%;
         }
+
         .introduce_banner img {
             display: block;
         }
-       
     </style>
 }
 <div class="introduce_details">
@@ -78,12 +80,12 @@
             <ul>
                 @if (!string.IsNullOrWhiteSpace(Model.Product.VedioUrl))
                 {
-                <li> <a class="introduceLi" navTo="shipin">视频观看</a></li>
+                    <li> <a class="introduceLi" navTo="shipin">视频观看</a></li>
                 }
                 <li> <a class="introduceLi" navTo="guige">规格参数</a></li>
                 @if (Model.Downfiles != null && Model.Downfiles.Any())
-               {
-                <li><a class="introduceLi" navTo="xiazai">相关下载</a></li>
+                {
+                    <li><a class="introduceLi" navTo="xiazai">相关下载</a></li>
                 }
                 <li><a class="introduceLi" navTo="peizhi">产品配置</a></li>
             </ul>
@@ -91,28 +93,28 @@
     </div>
     <div class="introduce_content">
         @if (!string.IsNullOrWhiteSpace(Model.Product.VedioUrl))
-         {
-        <div class="video_content louti common" id="shipin">
-            <h3>视频观看</h3>
-            <ul class="introduce_video">
-                <li>
-                    @if (!string.IsNullOrWhiteSpace(Model.Product.VedioUrl) && !Model.Product.VedioUrl.Contains("https://"))
-                    {
-                    <video width="100%" controls autoplay>
-                        <source src="@Model.Product.VedioUrl" type="video/mp4">
-                    </video>
-                    }
-                    else if (!string.IsNullOrWhiteSpace(Model.Product.VedioUrl))
-                    {
+        {
+            <div class="video_content louti common" id="shipin">
+                <h3>视频观看</h3>
+                <ul class="introduce_video">
+                    <li>
+                        @if (!string.IsNullOrWhiteSpace(Model.Product.VedioUrl) && !Model.Product.VedioUrl.Contains("https://"))
+                        {
+                            <video width="100%" controls autoplay>
+                                <source src="@Model.Product.VedioUrl" type="video/mp4">
+                            </video>
+                        }
+                        else if (!string.IsNullOrWhiteSpace(Model.Product.VedioUrl))
+                        {
 
-                    <iframe height="590" width="980" id="video" src="@Model.Product.VedioUrl" frameborder="0" allowfullscreen=""></iframe>
-                    }
+                            <iframe height="590" width="980" id="video" src="@Model.Product.VedioUrl" frameborder="0" allowfullscreen=""></iframe>
+                        }
 
-                </li>
+                    </li>
 
-            </ul>
+                </ul>
 
-        </div>
+            </div>
         }
 
         <div class="introduce_guige louti" id="guige">
@@ -123,14 +125,14 @@
                     {
                         foreach (var item in Model.Details)
                         {
-                    <div>
-                        <div class="guige_left">
-                            @item.Title
-                        </div>
-                        <div class="guige_right">
-                            @Html.Raw(item.Content)
-                        </div>
-                    </div>
+                            <div>
+                                <div class="guige_left">
+                                    @item.Title
+                                </div>
+                                <div class="guige_right">
+                                    @Html.Raw(item.Content)
+                                </div>
+                            </div>
                         }
                     }
 
@@ -139,33 +141,33 @@
             </div>
         </div>
         @if (Model.Downfiles != null && Model.Downfiles.Any())
-         {
-        <div class="introduce_xiazai louti common" id="xiazai">
+        {
+            <div class="introduce_xiazai louti common" id="xiazai">
 
-            <h3> 相关下载 </h3>
-            @if (Model.Downfiles != null && Model.Downfiles.Any())
-            {
-                foreach (var item in Model.Downfiles)
+                <h3> 相关下载 </h3>
+                @if (Model.Downfiles != null && Model.Downfiles.Any())
                 {
-            <div class="xiazai_box">
-                <div class="xiazai_left"> @item.Title</div>
+                    foreach (var item in Model.Downfiles)
+                    {
+                        <div class="xiazai_box">
+                            <div class="xiazai_left"> @item.Title</div>
 
-                <div class="xiazai_right">
+                            <div class="xiazai_right">
 
-                    <ul>
+                                <ul>
 
-                        <li>
+                                    <li>
 
-                            <p>@(item.FileName).pdf </p>
-                            <a href="@item.FilePath" target="_blank"><img class="yulam_icon" src="/images/yulan.png"></a>
-                            <img class="xiazai_icon" data-id="@item.FilePath" data-name="@(item.FileName).pdf" src="/images/xiazai.png">
-                        </li>
-                    </ul>
-                </div>
-            </div>
+                                        <p>@(item.FileName).pdf </p>
+                                        <a href="@item.FilePath" target="_blank"><img class="yulam_icon" src="/images/yulan.png"></a>
+                                        <img class="xiazai_icon" data-id="@item.FilePath" data-name="@(item.FileName).pdf" src="/images/xiazai.png">
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    }
                 }
-            }
-        </div>
+            </div>
         }
 
         <div class="introduce_peizhi louti common" id="peizhi">

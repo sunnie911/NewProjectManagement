@@ -29,7 +29,10 @@ namespace DanaZhangCms
         ///首页
         public IActionResult Index()
         {
-
+            if (RequestExtensions.IsMobile(HttpContext.Request))
+            {
+                return Redirect("/mobileEn/index");
+            }
             var articleList = _artRepository.ToList();
             var model = new HomeVM();
             var pros = _proRepository.Where(o=>o.IsHot==true).Take(8).ToList();
@@ -51,6 +54,10 @@ namespace DanaZhangCms
         ///首页
         public IActionResult Article(int page = 1, int pageSize = 12)
         {
+            if (RequestExtensions.IsMobile(HttpContext.Request))
+            {
+                return Redirect("/mobileEn/article");
+            }
 
             var arts = _artRepository.Where(o => o.CategoryId == 4).OrderByDescending(o => o.ClickCount).ThenByDescending(o => o.CreatedDate).ToList();
             var total = _artRepository.Where(o => o.CategoryId == 4).Count();
@@ -66,6 +73,12 @@ namespace DanaZhangCms
         /// <returns></returns>
         public async Task<IActionResult> NewDetail(int id)
         {
+            if (RequestExtensions.IsMobile(HttpContext.Request))
+            {
+                return Redirect("/mobileEn/newDetail/" + id);
+            }
+
+
             var model = await _artRepository.GetSingleAsync(id);
             var preArticle = _artRepository.Where(p => p.CategoryId == model.CategoryId && p.Id > id).Skip(1).ToList();
             var LastArticle = _artRepository.Where(p => p.CategoryId == model.CategoryId && p.Id < id).Skip(1).ToList();
@@ -83,7 +96,12 @@ namespace DanaZhangCms
         }
         ///首页
         public IActionResult Product(int categoryId, string word)
-        { 
+        {
+
+            if (RequestExtensions.IsMobile(HttpContext.Request))
+            {
+                return Redirect("/mobileEn/product");
+            }
             List<Product> productList = new List<Product>(); 
             if (categoryId > 0)
             {
@@ -114,7 +132,7 @@ namespace DanaZhangCms
         {
             if (RequestExtensions.IsMobile(HttpContext.Request))
             {
-                return Redirect("/mobile/proDetail/" + id);
+                return Redirect("/mobileEn/proDetail/" + id);
             }
             var model = await _proRepository.GetSingleAsync(id);
 
@@ -136,6 +154,11 @@ namespace DanaZhangCms
         /// <returns></returns>
         public IActionResult Download()
         {
+            if (RequestExtensions.IsMobile(HttpContext.Request))
+            {
+                return Redirect("/mobileEn/download");
+            }
+            
             return View("~/Views/English/Product/DownLoad.cshtml");
         }
 
@@ -144,7 +167,11 @@ namespace DanaZhangCms
         /// </summary>
         /// <returns></returns>
         public IActionResult About()
-        { 
+        {
+            if (RequestExtensions.IsMobile(HttpContext.Request))
+            {
+                return Redirect("/mobileEn/about");
+            }
             return View("~/Views/About/AboutEn.cshtml");
         }
         /// <summary>
@@ -153,12 +180,21 @@ namespace DanaZhangCms
         /// <returns></returns>
         public IActionResult join()
         {
-            return View("~/Views/Coontact/join.cshtml");
+
+            if (RequestExtensions.IsMobile(HttpContext.Request))
+            {
+                return Redirect("/mobileEn/join");
+            }
+            
+            return View("~/Views/Contact/join.cshtml");
         }
         ///首页
         public IActionResult Vedio(int page = 1)
         {
-
+            if (RequestExtensions.IsMobile(HttpContext.Request))
+            {
+                return Redirect("/mobileEn/vedio");
+            }
             var arts = _artRepository.Where(o => o.IsDeleted == false && o.CategoryId == 3).OrderByDescending(o => o.ClickCount).ThenByDescending(o => o.CreatedDate).ToList();
             var total = _artRepository.Where(o => o.IsDeleted == false && o.CategoryId == 3).Count();
             ViewBag.Total = total;
@@ -173,6 +209,11 @@ namespace DanaZhangCms
         /// <returns></returns>
         public async Task<IActionResult> VedioDetail(int id)
         {
+
+            if (RequestExtensions.IsMobile(HttpContext.Request))
+            {
+                return Redirect("/mobileEn/VedioDetail/" + id);
+            }
             var model = await _artRepository.GetSingleAsync(id);
             return View("~/Views/English/Vedio/Detail.cshtml", model);
         }

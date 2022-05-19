@@ -115,7 +115,17 @@ namespace DanaZhangCms
         /// <returns></returns>
         public async Task<IActionResult> ProDetail(int id)
         {
-            var model = await _proRepository.GetSingleAsync(id);
+
+
+            var model = await _proRepository.GetSingleAsync(id); 
+            var contents = _repository.Where(p => p.ProductId == id).ToList();
+
+            ProductView view = new ProductView() { Product = model };
+            view.Details = contents.Where(p => p.Type == "规格参数" && p.SpellName == "china").ToList();
+            view.DetailsEn = contents.Where(p => p.Type == "规格参数" && p.SpellName == "english").ToList();
+            view.Downfiles = contents.Where(p => p.Type == "相关下载").ToList();
+
+            ViewBag.SeoTitle = model.Name + "冠力科技";
             return View("~/Views/Mobile/Product/Detail.cshtml", model);
         }
         /// <summary>
