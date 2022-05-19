@@ -126,7 +126,7 @@ namespace DanaZhangCms
             view.Downfiles = contents.Where(p => p.Type == "相关下载").ToList();
 
             ViewBag.SeoTitle = model.Name + "冠力科技";
-            return View("~/Views/Mobile/Product/Detail.cshtml", model);
+            return View("~/Views/Mobile/Product/Detail.cshtml", view);
         }
         /// <summary>
         /// 关于我们
