@@ -1,0 +1,199 @@
+@model DanaZhangCms.ViewModels.HomeVM
+@{
+    Layout = "~/Views/Shared/_LayoutMobileEn.cshtml";
+
+   
+}
+@section css{
+    <link rel="stylesheet" type="text/css" href="/css/mobile/index.css">
+    <link rel="stylesheet" type="text/css" href="/css/mobile/swiper.min.css" />
+}
+<div class="index_whole">
+    <div class="index_main">
+        <!-- banner -->
+        <div class="banner">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    @if (Model.Banners != null && Model.Banners.Any())
+                    {
+                        foreach (var item in Model.Banners)
+                        {
+                            <div class="swiper-slide">
+                                <div class="slide-left">
+                                    <div class="bt">@item.NameEn </div>
+                                    <span>@item.SummaryEn</span>
+                                    <a class="readMore"   href="@item.LinkUrlEn">Read More</a>
+                                </div>
+                                <div class="slide-right">
+                                    <img src="@item.ImgUrl">
+                                </div>
+                            </div>
+                        }
+
+                    }
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+                <!-- Add Arrows -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+        <!-- 热卖详情 -->
+        <div class="hotSell">
+            <div class="index_title">
+                <div class="title">HOT PRODUCT</div>
+                <div class="main">
+                    @*<span>HOT PRODUCT</span>*@
+                    <div class="more">
+                        <a href="/mobileEn/product" target="_blank">
+                            <span>More</span>
+                            <img src="/images/to1.png">
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+            <div class="hotSell_main">
+                <ul>
+                    @if (Model.Products != null && Model.Products.Any())
+                    {
+                        foreach (var item in Model.Products)
+                        {
+                            <li>
+                                <a href="/mobileEn/prodetail/@item.Id"  >
+                                    <img class="goods_img" src="@item.ImgUrl">
+                                    <span>@item.NameEn @item.Model1</span>
+                                    @if (item.IsHot)
+                                    {
+                                        <img class="hot" src="/images/sale.png">
+                                    }
+
+                                </a>
+                            </li>
+                        }
+                    }
+
+                   
+                </ul>
+            </div>
+        </div>
+        <!-- 简介 -->
+        <div class="introduce_bj">
+            <div class="in_left">
+                <div class="index_title">
+                    <div class="title">COMPANY PROFILE</div>
+                    <div class="main">
+                        <span>COMPANY PROFILE</span>
+                    </div>
+                </div>
+                <p>
+                    We are a leading enterprise introduced through the "5213 plan" for entrepreneurship and innovation of high-level talents in Xiaoshan District,
+                    Hangzhou. We are a national high-tech enterprise specializing in the development, production and sales of concrete 3D printing and high-end testing instruments and equipment.
+                    Our R & D and production bases are located in Xintang science and innovation Park, Xiaoshan District, Hangzhou and Jincheng City, Shanxi Province.
+                    "Continuous research and development, cost reduction and efficiency increase, and being the longest friend of users" is our vision.
+                    We have established a research and development team composed of doctors, masters and well-known experts from Tsinghua University and Zhejiang University......
+                </p>
+                <div class="btn"><a href="/mobileEn/about" target="_blank"><img src="/images/to.png"></a></div>
+            </div>
+            <div class="in_right">
+                <img class="leftop" src="/images/leftop.png">
+                <img src="/images/about.png">
+                <img class="rightdown" src="/images/rightdown.png">
+            </div>
+        </div>
+        <!-- 精彩视频 -->
+        <div class="vedio">
+            <div class="index_title">
+                <div class="title">VEDIO</div>
+                <div class="main">
+                    @*<span>VEDIO</span>*@
+                </div>
+            </div>
+            <div class="vedio_container swiper-container">
+                <div class="swiper-wrapper">
+                    @if (Model.Vedios != null && Model.Vedios.Any())
+                    {
+                        foreach (var item in Model.Vedios)
+                        {
+                            <div class="swiper-slide">
+                                <div class="slide_main">
+
+                                    <a href="/mobileEn/VedioDetail/@item.Id">
+                                        <img src="@item.ImgUrl">
+                                    </a>
+                                    <div class="mainP">@item.TitleEn</div>
+                                    <span>@item.CreatedDate</span>
+                                </div>
+                            </div>
+                        }
+                    }
+                </div>
+            </div>
+            <div class="vedio_more"><a href="/mobileEn/vedio">Read More</a></div>
+        </div>
+        <!-- 学术交流 -->
+        <div class="learning">
+            <div class="index_title">
+                <div class="title">ACADEMIC EXCHANGE</div>
+                <div class="main">
+                    <span>ACADEMIC EXCHANGE</span>
+                    <div class="more">
+                        <a href="/MobileEn/Article" target="_blank">
+                            <span>More</span>
+                            <img src="/images/to1.png">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <ul class="learning-box">
+                @if (Model.Articles != null && Model.Articles.Any())
+                {
+                    foreach (var item in Model.Articles)
+                    {
+                        <li>
+                            <img src="@item.ImgUrl">
+                            <div class="main">
+                                <div class="title">  <a href="/mobileEn/newDetail/@item.Id"> @item.TitleEn </a></div>
+                                <div class="neirong">
+                                </div>
+                            </div>
+                            <div class="mengceng"></div>
+                        </li>
+                    }
+                }
+            </ul>
+        </div>
+        <!-- 合作机构 -->
+        <div class="cooperative">
+            <div class="index_title">
+                <div class="title">>COOPERATIVE ORGANIZATRON</div>
+                <div class="main">
+                    @*<span>COOPERATIVE ORGANIZATRON</span>*@
+                    <div class="more">
+                        <a href="javascript:;">
+                            <span>More</span>
+                            <img src="/images/to1.png">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <ul>
+                @if (Model.Logos != null && Model.Logos.Any())
+                {
+                    foreach (var item in Model.Logos)
+                    {
+                        <li><img src="@item.ImgUrl" title="@item.Title"></li>
+                    }
+                }
+            </ul>
+        </div>
+
+    </div>
+
+</div>
+
+@section Scripts{
+    <script src="/js/mobile/swiper.min.js" type="text/javascript"></script>
+    <script src="/js/mobile/index.js" type="text/javascript"></script>
+}

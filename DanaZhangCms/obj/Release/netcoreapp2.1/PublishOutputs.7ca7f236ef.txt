@@ -14,6 +14,17 @@ C:\OldProject\NewProjectManagement\DanaZhangCms\obj\Release\netcoreapp2.1\PubTmp
 C:\OldProject\NewProjectManagement\DanaZhangCms\obj\Release\netcoreapp2.1\PubTmp\Out\Views\English\Article\Detail.cshtml
 C:\OldProject\NewProjectManagement\DanaZhangCms\obj\Release\netcoreapp2.1\PubTmp\Out\Views\English\Article\Index.cshtml
 C:\OldProject\NewProjectManagement\DanaZhangCms\obj\Release\netcoreapp2.1\PubTmp\Out\Views\English\Index.cshtml
+C:\OldProject\NewProjectManagement\DanaZhangCms\obj\Release\netcoreapp2.1\PubTmp\Out\Views\English\Mobile\About.cshtml
+C:\OldProject\NewProjectManagement\DanaZhangCms\obj\Release\netcoreapp2.1\PubTmp\Out\Views\English\Mobile\Article\Detail.cshtml
+C:\OldProject\NewProjectManagement\DanaZhangCms\obj\Release\netcoreapp2.1\PubTmp\Out\Views\English\Mobile\Article\Index.cshtml
+C:\OldProject\NewProjectManagement\DanaZhangCms\obj\Release\netcoreapp2.1\PubTmp\Out\Views\English\Mobile\Contact.cshtml
+C:\OldProject\NewProjectManagement\DanaZhangCms\obj\Release\netcoreapp2.1\PubTmp\Out\Views\English\Mobile\Index.cshtml
+C:\OldProject\NewProjectManagement\DanaZhangCms\obj\Release\netcoreapp2.1\PubTmp\Out\Views\English\Mobile\Join.cshtml
+C:\OldProject\NewProjectManagement\DanaZhangCms\obj\Release\netcoreapp2.1\PubTmp\Out\Views\English\Mobile\Product\Detail.cshtml
+C:\OldProject\NewProjectManagement\DanaZhangCms\obj\Release\netcoreapp2.1\PubTmp\Out\Views\English\Mobile\Product\Download.cshtml
+C:\OldProject\NewProjectManagement\DanaZhangCms\obj\Release\netcoreapp2.1\PubTmp\Out\Views\English\Mobile\Product\Index.cshtml
+C:\OldProject\NewProjectManagement\DanaZhangCms\obj\Release\netcoreapp2.1\PubTmp\Out\Views\English\Mobile\Vedio\Detail.cshtml
+C:\OldProject\NewProjectManagement\DanaZhangCms\obj\Release\netcoreapp2.1\PubTmp\Out\Views\English\Mobile\Vedio\Index.cshtml
 C:\OldProject\NewProjectManagement\DanaZhangCms\obj\Release\netcoreapp2.1\PubTmp\Out\Views\English\Product\Detail.cshtml
 C:\OldProject\NewProjectManagement\DanaZhangCms\obj\Release\netcoreapp2.1\PubTmp\Out\Views\English\Product\Download.cshtml
 C:\OldProject\NewProjectManagement\DanaZhangCms\obj\Release\netcoreapp2.1\PubTmp\Out\Views\English\Product\Index.cshtml
@@ -38,6 +49,7 @@ C:\OldProject\NewProjectManagement\DanaZhangCms\obj\Release\netcoreapp2.1\PubTmp
 C:\OldProject\NewProjectManagement\DanaZhangCms\obj\Release\netcoreapp2.1\PubTmp\Out\Views\Shared\_Layout1.cshtml
 C:\OldProject\NewProjectManagement\DanaZhangCms\obj\Release\netcoreapp2.1\PubTmp\Out\Views\Shared\_LayoutEn.cshtml
 C:\OldProject\NewProjectManagement\DanaZhangCms\obj\Release\netcoreapp2.1\PubTmp\Out\Views\Shared\_LayoutMobile.cshtml
+C:\OldProject\NewProjectManagement\DanaZhangCms\obj\Release\netcoreapp2.1\PubTmp\Out\Views\Shared\_LayoutMobileEn.cshtml
 C:\OldProject\NewProjectManagement\DanaZhangCms\obj\Release\netcoreapp2.1\PubTmp\Out\Views\Shared\_SysLayout.cshtml
 C:\OldProject\NewProjectManagement\DanaZhangCms\obj\Release\netcoreapp2.1\PubTmp\Out\Views\SysArticleCategory\Create.cshtml
 C:\OldProject\NewProjectManagement\DanaZhangCms\obj\Release\netcoreapp2.1\PubTmp\Out\Views\SysArticleCategory\Index.cshtml
@@ -66,6 +78,7 @@ C:\OldProject\NewProjectManagement\DanaZhangCms\obj\Release\netcoreapp2.1\PubTmp
 C:\OldProject\NewProjectManagement\DanaZhangCms\obj\Release\netcoreapp2.1\PubTmp\Out\wwwroot\css\basic.css
 C:\OldProject\NewProjectManagement\DanaZhangCms\obj\Release\netcoreapp2.1\PubTmp\Out\wwwroot\css\font.css
 C:\OldProject\NewProjectManagement\DanaZhangCms\obj\Release\netcoreapp2.1\PubTmp\Out\wwwroot\css\index.css
+C:\OldProject\NewProjectManagement\DanaZhangCms\obj\Release\netcoreapp2.1\PubTmp\Out\wwwroot\css\mobile\details\introduce_details.css
 C:\OldProject\NewProjectManagement\DanaZhangCms\obj\Release\netcoreapp2.1\PubTmp\Out\wwwroot\css\mobile\details\lea_details.css
 C:\OldProject\NewProjectManagement\DanaZhangCms\obj\Release\netcoreapp2.1\PubTmp\Out\wwwroot\css\mobile\details\product_details.css
 C:\OldProject\NewProjectManagement\DanaZhangCms\obj\Release\netcoreapp2.1\PubTmp\Out\wwwroot\css\mobile\index.css
@@ -430,6 +443,8 @@ C:\OldProject\NewProjectManagement\DanaZhangCms\obj\Release\netcoreapp2.1\PubTmp
 C:\OldProject\NewProjectManagement\DanaZhangCms\obj\Release\netcoreapp2.1\PubTmp\Out\wwwroot\images\yulan.png
 C:\OldProject\NewProjectManagement\DanaZhangCms\obj\Release\netcoreapp2.1\PubTmp\Out\wwwroot\js\basic.js
 C:\OldProject\NewProjectManagement\DanaZhangCms\obj\Release\netcoreapp2.1\PubTmp\Out\wwwroot\js\index.js
+C:\OldProject\NewProjectManagement\DanaZhangCms\obj\Release\netcoreapp2.1\PubTmp\Out\wwwroot\js\jquery.cookie.js
+C:\OldProject\NewProjectManagement\DanaZhangCms\obj\Release\netcoreapp2.1\PubTmp\Out\wwwroot\js\mobile\details\introduce_details.js
 C:\OldProject\NewProjectManagement\DanaZhangCms\obj\Release\netcoreapp2.1\PubTmp\Out\wwwroot\js\mobile\details\product_details.js
 C:\OldProject\NewProjectManagement\DanaZhangCms\obj\Release\netcoreapp2.1\PubTmp\Out\wwwroot\js\mobile\index.js
 C:\OldProject\NewProjectManagement\DanaZhangCms\obj\Release\netcoreapp2.1\PubTmp\Out\wwwroot\js\mobile\jquery-1.10.1.min.js

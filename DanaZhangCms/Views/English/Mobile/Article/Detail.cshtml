@@ -1,0 +1,63 @@
+﻿@model DanaZhangCms.Models.Article
+@{
+    ViewData["Title"] = Model.Title;
+    var preArticle = ViewBag.PreArticle as Article;
+
+    var lastArticle = ViewBag.LastArticle as Article;
+
+    Layout = "~/Views/Shared/_LayoutMobileEn.cshtml";
+}
+
+@section css{
+
+    <link href="~/css/mobile/details/lea_details.css" rel="stylesheet" />
+}
+<div class="lea_whole"  >
+ 
+        <div class="list_top">
+            <i></i>
+            <a href="/mobileEn">Index > </a>
+            <a href="/mobileEn/article">Company News </a>
+            <a href="javascript:;"> @Model.Title </a>
+        </div>
+        <div class="lea_main">
+            <h2>@Model.Title</h2>
+            <span class="time">@Model.CreatedDate</span>
+            <div class="leaBox">
+                @Html.Raw(Model.Content)
+               
+            </div>
+        </div>
+        <div class="lea_bott">
+            @if (preArticle != null && preArticle.Id > 0)
+            {
+                <a href="/mobileEn/NewDetail/@preArticle.Id">
+                    <div>
+                        <img src="@preArticle.ImgUrl">
+                    </div>
+                    <div class="lea_right">
+                        <span>  上一篇</span>
+                        <p>@preArticle.Title</p>
+                    </div>
+                </a>
+            }
+            @if (lastArticle != null && lastArticle.Id > 0)
+            {
+
+                <a href="/mobileEn/NewDetail/@lastArticle.Id">
+                    <div>
+                        <img src="@lastArticle.ImgUrl">
+                    </div>
+                    <div class="lea_right">
+                        <span> 下一篇 > </span>
+                        <p>@lastArticle.Title</p>
+                    </div>
+                </a>
+            }
+            </div>
+    </div>
+ 
+@section Scripts{
+    
+    <script src="~/js/mobile/details/lea_details.js"></script>
+}

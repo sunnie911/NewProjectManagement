@@ -1,0 +1,53 @@
+﻿@model List<DanaZhangCms.Models.Article>
+@{
+    ViewData["Title"] = "新闻中心";
+    Layout = "~/Views/Shared/_LayoutMobileEn.cshtml";
+}
+@section css{
+
+    <link href="~/css/mobile/list/learning.css" rel="stylesheet" />
+}
+<div class="whole_list"  >
+
+    <div class="list_top">
+        <i></i>
+        <a href="/mobileEn">Index > </a>
+        <a href="/mobileEn/Article">Company News </a>
+    </div>
+
+    <div class="lea_main">
+        <ul>
+            @if (Model != null && Model.Any())
+            {
+                foreach (var item in Model)
+                {
+                    <li>
+                        <a href="/mobile/newDetail/@item.Id]">
+                            <div class="img_box">
+                                <img src="@item.ImgUrl">
+                            </div>
+                            <div class="jieshao">
+                                <p>@item.TitleEn</p>
+                                <span>@item.CreatedDate</span>
+                            </div>
+                        </a>
+
+
+                    </li>
+
+
+                }
+            }
+
+        </ul>
+        
+    </div>
+
+</div>
+
+@section Scripts{
+
+     
+    <script src="~/js/mobile/list/learning.js"></script>
+
+}

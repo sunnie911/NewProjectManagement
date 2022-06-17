@@ -1,0 +1,32 @@
+﻿@model  DanaZhangCms.Models.Article
+@{
+    ViewData["Title"] = "新闻中心";
+    Layout = "~/Views/Shared/_LayoutMobileEn.cshtml";
+}
+@section css{
+    <link rel="stylesheet" type="text/css" href="/css/new/list/video.css" />
+}
+<div class="video_whole"  >
+    <div class="common_containe">
+        <div class="list_top">
+            <i></i>
+            <a href="/mobileEn">Index > </a>
+            <a href="/mobileEn/vedio">Product Vedio </a>
+        </div>
+        <div class="goods_video">
+
+              <iframe height="590" width="100%" id="video" src="@Model.VedioUrl" frameborder="0" allowfullscreen=""></iframe>
+
+            @*<video id="video1" width="100%" controls="" preload="auto" autoplay="autoplay" controlslist="nodownload">
+                <source src="@Model.VedioUrl">
+            </video>*@
+
+        </div>
+         
+
+    </div>
+</div>
+@section Scripts{
+
+    
+}

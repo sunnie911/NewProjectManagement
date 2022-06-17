@@ -3,10 +3,29 @@
         el: '.nav',
         data: {
             navObject: {
-              
+
             },
         },
     })
+     
+
+    if (!$.cookie('the_cookie')) {
+        var lang = "";
+        if (navigator.userLanguage) {
+            lang = navigator.userLanguage.substring(0, 2).toLowerCase();
+        }
+        else {
+            lang = navigator.language.substring(0, 2).toLowerCase();
+        }
+        console.log(lang);
+        if (lang != "zh") {
+            window.location.href = "/english";
+        }
+
+        $.cookie('the_cookie', '1', {expires:1,path:'/'});
+    }
+    
+
 
     var lau = $('.nav').find(".chiness").length;
     if (lau == 1) {
@@ -121,6 +140,6 @@
         $('.search_input').hide();
     })
 
-     
+
 
 })

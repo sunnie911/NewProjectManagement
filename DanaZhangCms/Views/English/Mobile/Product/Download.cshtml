@@ -1,0 +1,63 @@
+﻿@model List<DanaZhangCms.Models.Product>
+@{
+    ViewData["Title"] = "产品列表";
+    Layout = "~/Views/Shared/_LayoutMobileEn.cshtml";
+
+    List<Product> productList = ViewBag.ProductList;
+    List<ProductCategory> cateList = ViewBag.CategoryList;
+}
+@section css{
+    <link href="~/css/mobile/list/download.css" rel="stylesheet" />
+}
+<div class="load_whole" style="margin-top:50px;">
+    <div class="load_box">
+        <div class="load_title">
+            <h3>Technical support resource download center</h3>
+            <p>
+
+                Here you can download standard specifications, product software and instructions
+            </p>
+        </div>
+        <div class="load_content">
+
+            @if (cateList != null && cateList.Any())
+            {
+                foreach (var cate in cateList)
+                {
+                    var proList = productList.Where(p => p.CategoryId == cate.Id && !string.IsNullOrEmpty(p.Files)).OrderByDescending(o => o.IsHot).ToList();
+
+
+                    <div class="content_ul">
+                        <h5>@cate.Name</h5>
+
+                        <ul>
+                            @foreach (var pro in proList)
+                            {
+                                <li>
+                                    <div class="content_img">
+                                        <img src="@pro.ImgUrl" title="@pro.Name">
+                                    </div>
+                                    <div class="content_right">
+                                        <p><a href="/mobileEn/ProDetail/@pro.Id" target="_blank">@pro.NameEn @pro.Model1</a></p>
+                                        <span><a href="/mobileEn/ProDetail/@pro.Id" target="_blank">Standard Specification ></a></span>
+                                    </div>
+                                </li>
+
+                            }
+                        </ul>
+                    </div>
+
+                }
+
+
+            }
+
+
+        </div>
+    </div>
+</div>
+@section Scripts{
+
+
+
+}

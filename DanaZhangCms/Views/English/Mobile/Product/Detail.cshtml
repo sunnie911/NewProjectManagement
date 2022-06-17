@@ -1,0 +1,175 @@
+﻿@model DanaZhangCms.ViewModels.ProductView
+@{
+
+    Layout = "~/Views/Shared/_LayoutMobileEn.cshtml";
+
+    List<string> imglist = new List<string>();
+
+
+    if (!string.IsNullOrWhiteSpace(Model.Product.ImgUrl))
+    {
+        imglist.Add(Model.Product.ImgUrl);
+    }
+
+    if (!string.IsNullOrWhiteSpace(Model.Product.Banner1))
+    {
+        imglist.Add(Model.Product.Banner1);
+    }
+
+    if (!string.IsNullOrWhiteSpace(Model.Product.Banner2))
+    {
+        imglist.Add(Model.Product.Banner2);
+    }
+
+    if (!string.IsNullOrWhiteSpace(Model.Product.Banner3))
+    {
+        imglist.Add(Model.Product.Banner3);
+    }
+
+    if (!string.IsNullOrWhiteSpace(Model.Product.Banner4))
+    {
+        imglist.Add(Model.Product.Banner4);
+    }
+
+}
+
+@section css{
+    <link href="~/css/mobile/details/product_details.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="/css/mobile/swiper.min.css" />
+    <style type="text/css">
+        .det_banner .swiper-button-next {
+            background-image: url("/images/details/jian_right.png");
+            background-size: 100%;
+        }
+
+        .det_banner .swiper-button-prev {
+            background-image: url("/images/details/jian_left.png");
+            background-size: 100%;
+        }
+
+        .par_main img {
+            display: inline-table;
+        }
+    </style>
+}
+<div class="introduce_details">
+    <div class="common">
+        <div class="introduce_title">
+            <h1>@Model.Product.Model1 @Model.Product.Name</h1>
+            <h2> @Model.Product.Tag</h2>
+        </div>
+        <div class="introduce_banner">
+            <img src="@Model.Product.ImgUrl" width="100%">
+        </div>
+    </div>
+    <div class="introduce_nav">
+        <div class="common_containe">
+            <div class="title_cp">@Model.Product.NameEn</div>
+            <ul>
+                @if (!string.IsNullOrWhiteSpace(Model.Product.VedioUrl))
+                {
+                    <li>Product Vedio</li>
+                }
+                <li>Technical Parameter</li>
+                @if (Model.Downfiles != null && Model.Downfiles.Any())
+                {
+                    <li>File Downoad</li>
+                }
+                <li>  Detail highlights</li>
+
+            </ul>
+        </div>
+    </div>
+    <div class="introduce_content">
+        @if (!string.IsNullOrWhiteSpace(Model.Product.VedioUrl))
+        {
+            <div class="video_content louti common_containe">
+                <h3>Product Vedio</h3>
+                <ul class="introduce_video">
+                    <li>
+                        @if (!string.IsNullOrWhiteSpace(Model.Product.VedioUrl) && !Model.Product.VedioUrl.Contains("https://"))
+                        {
+                            <video width="100%" controls autoplay>
+                                <source src="@Model.Product.VedioUrl" type="video/mp4">
+                            </video>
+                        }
+                        else if (!string.IsNullOrWhiteSpace(Model.Product.VedioUrl))
+                        {
+
+                            <iframe height="590" width="980" id="video" src="@Model.Product.VedioUrl" frameborder="0" allowfullscreen=""></iframe>
+                        }
+
+                    </li>
+
+                </ul>
+
+            </div>
+        }
+        <div class="introduce_guige louti">
+            <div class="common">
+                <h3>Technical Parameter</h3>
+                <div class="guige_box">
+
+                    @if (Model.Details != null && Model.Details.Any())
+                    {
+                        foreach (var item in Model.Details)
+                        {
+                            <div>
+                                <div class="guige_left">
+                                    @item.Title
+                                </div>
+                                <div class="guige_right">
+                                    @Html.Raw(item.Content)
+                                </div>
+                            </div>
+                        }
+                    }
+
+                </div>
+            </div>
+        </div>
+
+        @if (Model.Downfiles != null && Model.Downfiles.Any())
+        {
+            <div class="introduce_xiazai louti common" id="xiazai">
+
+                <h3> File Downoad </h3>
+                @if (Model.Downfiles != null && Model.Downfiles.Any())
+                {
+                    foreach (var item in Model.Downfiles)
+                    {
+                        <div class="xiazai_box">
+                            <div class="xiazai_left"> @item.Title</div>
+
+                            <div class="xiazai_right">
+
+                                <ul>
+
+                                    <li>
+
+                                        <p>@(item.FileName).pdf </p>
+                                        <a href="@item.FilePath" target="_blank"><img class="yulam_icon" src="/images/yulan.png"></a>
+                                        <img class="xiazai_icon" data-id="@item.FilePath" data-name="@(item.FileName).pdf" src="/images/xiazai.png">
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    }
+                }
+            </div>
+        }
+
+
+        <div class="introduce_peizhi louti common">
+            <h3>Detail highlights</h3>
+            <div class="peizhi_content">
+                @Html.Raw(Model.Product.Content)
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script src="/js/mobile/swiper.min.js" type="text/javascript"></script>
+    <script src="~/js/mobile/details/product_details.js"></script>
+}

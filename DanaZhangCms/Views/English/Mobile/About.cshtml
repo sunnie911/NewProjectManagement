@@ -1,0 +1,116 @@
+﻿@model DanaZhangCms.Models.Contents
+@{
+    //ViewData["Title"] = Model.Title;
+    Layout = "~/Views/Shared/_LayoutMobileEn.cshtml";
+}
+
+@section css{
+    <link rel="stylesheet" type="text/css" href="/css/mobile/list/introduce.css" />
+    <link rel="stylesheet" type="text/css" href="/css/mobile/swiper.min.css" />
+    <style type="text/css">
+        .in_bottom .swiper-button-next {
+            background-image: url("/images/details/jian_right.png");
+            background-size: 100%;
+            right: -60px;
+        }
+
+        .in_bottom .swiper-button-prev {
+            background-image: url("/images/details/jian_left.png");
+            background-size: 100%;
+            left: -60px;
+        }
+    </style>
+
+}
+<div class="introduce_whole" style="padding-top: 80px;">
+   
+        <div class="list_top">
+            <i></i>
+            <a href="/mobileEn">Index > </a>
+            <a href="/mobileEn/about">公司介绍 </a>
+        </div>
+        <div class="introduce_main">
+            <img src="/images/introduce/img1.jpg">
+            <p>
+                We are a leading enterprise introduced through the "5213 plan" for entrepreneurship and innovation of high-level talents in Xiaoshan District, Hangzhou.
+                We are a national high-tech enterprise specializing in the development, production and sales of concrete 3D printing and high-end testing instruments and equipment.
+                Our R & D and production bases are located in Xintang science and innovation Park, Xiaoshan District, Hangzhou and Jincheng City, Shanxi Province.
+                "Continuous research and development, cost reduction and efficiency increase, and being the longest friend of users" is our vision.
+                We have established a research and development team composed of doctors, masters and well-known experts from Tsinghua University and Zhejiang University.
+                We have tackled key problems in software and hardware at the same time and made continuous innovation.
+                We have realized the complete autonomy of the core control system in the field of concrete (mortar) 3D printing and solved the common software control bottleneck in China.
+
+
+            </p>
+            <p>
+                The company's main products are: concrete 3D printing system, concrete gas permeability tester, non-contact shrinkage deformation tester, rapid freeze-thaw test machine,
+                carbonization box, sulfate dry and wet cycle tester, electric flux & diffusion coefficient joint tester , Concrete temperature-stress tester,
+                concrete thermophysical parameter tester, automatic concrete setting time tester, Mariotte water permeability tester, hardened concrete pore structure analyzer,
+                chlorine content rapid tester, reinforced concrete electrochemical test system, etc.
+            </p>
+            @*<ul class="in_box">
+            <li><img src="/images/introduce/img2.jpg"></li>
+            <li><img src="../images/introduce/img2.jpg"></li>
+            <li><img src="../images/introduce/img2.jpg"></li>
+        </ul>*@
+            <p>
+                Product performance and quality are at the leading level of domestic counterparts, and have been widely recognized by domestic colleges, research institutes,
+                construction enterprise R&D centers, and testing institutions. They are exported to overseas markets such as Singapore,
+                the United States, Australia, New Zealand, the United Arab Emirates, and Malaysia.
+            </p>
+            <ul class="in_icon">
+                <li>
+                    <img src="/images/introduce/icon1.png">
+                    <div>16<span>年</span></div>
+                    <p>深耕智慧检测行业</p>
+                </li>
+                <li>
+                    <img src="/images/introduce/icon1.png">
+                    <div>80<span>款</span></div>
+                    <p>5大类产品</p>
+                </li>
+                <li>
+                    <img src="/images/introduce/icon1.png">
+                    <div>1000<span>+</span></div>
+                    <p>知名客户遍布世界各地</p>
+                </li>
+            </ul>
+            <p>
+                We are a national high-tech enterprise, a national science and technology innovation small and medium-sized enterprise,
+                a science and technology small and medium-sized enterprise in Zhejiang Province, a high-tech enterprise in Hangzhou,
+                a 5213 key talent introduction project in Xiaoshan District, Hangzhou, a Tsinghua X-lab training project, a vice chairman unit of ccpa-3d printing branch, etc;
+                It has 2 invention patents, 16 utility model patents, 8 appearance patents and 3 soft works. The founder of the company has won 3 second prizes and 5 third prizes of provincial and ministerial scientific and technological progress awards, and more than 30 patents.
+
+            </p>
+        </div>
+        <div class="in_bottom">
+            <div class="title"> Company Honor</div>
+            <div class="bottom_lunbo">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="/images/introduce/rongyu1.png">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="/images/introduce/rongyu2.jpg">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="/images/introduce/rongyu3.jpg">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+    </div>
+ 
+
+
+
+@section Scripts{
+    <script src="/js/mobile/list/introduce.js" type="text/javascript"></script>
+    <script src="/js/mobile/swiper.min.js" type="text/javascript"></script>
+
+}

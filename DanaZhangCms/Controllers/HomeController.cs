@@ -28,7 +28,9 @@ namespace DanaZhangCms
         ///首页
         public IActionResult Index()
         {
-            
+            var remoteIpAddress = HttpContext.Connection.RemoteIpAddress.ToString();
+
+           
             if (RequestExtensions.IsMobile(HttpContext.Request))
             {
                 return Redirect("/mobile/index");
