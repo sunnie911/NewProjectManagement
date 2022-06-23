@@ -25,7 +25,7 @@ img{display: block;}
 .video_content,.introduce_guige,.introduce_xiazai,.introduce_peizhi{padding: 60px 0;}
 .introduce_content h3{font-size: 40px;font-weight: normal;margin-bottom: 25px;}
 .introduce_video,.video_box{width: 1100px;margin: 0 auto;}
-.introduce_video li{height: 592px;display: none;overflow: hidden;}
+.introduce_video li{ display: none;overflow: hidden;}
 .introduce_content .video_box{display: flex;flex-direction: row;margin-top: 20px;}
 .introduce_content .video_box>div{width: 188px;margin-right:20px;cursor: pointer;}
 .introduce_content .video_box>div:hover{color: #ffba01;}

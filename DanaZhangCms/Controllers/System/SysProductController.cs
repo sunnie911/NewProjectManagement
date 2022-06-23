@@ -111,18 +111,18 @@ namespace DanaZhangCms
                 // return Json(PaginationResult.PagedResult(rows, total, pageSize, pageIndex));
                 Func<IQueryable<Product>, IQueryable<Product>> @include = o => o.Include("Category");
                 var rows = _repository.GetByPaginationWithInclude(m => m.IsDeleted == false , @include, limit, page, true,
-              m => m.SortId).Select(o => new { o.Id, o.Name,o.NameEn,o.ContentEn,o.Model1, CreatedDate = o.CreatedDate.ToString("yyyy-MM-dd"), CateName = o.Category == null ? "" : o.Category.Name }).ToList();
+              m => m.SortId).Select(o => new { o.Id, o.Name,o.NameEn,o.ContentEn,o.Model1,o.SortId, CreatedDate = o.CreatedDate.ToString("yyyy-MM-dd"), CateName = o.Category == null ? "" : o.Category.Name }).ToList();
 
                 if (CategoryId > 0)
                 {
                       rows = _repository.GetByPaginationWithInclude(m => m.IsDeleted == false && m.CategoryId==CategoryId, @include, limit, page, true,
-             m => m.Id).Select(o => new { o.Id, o.Name, o.NameEn, o.ContentEn, o.Model1, CreatedDate = o.CreatedDate.ToString("yyyy-MM-dd"), CateName = o.Category == null ? "" : o.Category.Name }).ToList();
+             m => m.Id).Select(o => new { o.Id, o.Name, o.NameEn, o.ContentEn, o.Model1, o.SortId, CreatedDate = o.CreatedDate.ToString("yyyy-MM-dd"), CateName = o.Category == null ? "" : o.Category.Name }).ToList();
 
                 }
                 if (!string.IsNullOrWhiteSpace(title))
                 {
                     rows = _repository.GetByPaginationWithInclude(m => m.IsDeleted == false&& m.Name.Contains(title.Trim()), @include, limit, page, true,
-              m => m.SortId).Select(o => new { o.Id, o.Name, o.NameEn, o.ContentEn, o.Model1, CreatedDate = o.CreatedDate.ToString("yyyy-MM-dd"), CateName = o.Category == null ? "" : o.Category.Name }).ToList();
+              m => m.SortId).Select(o => new { o.Id, o.Name, o.NameEn, o.ContentEn, o.Model1, o.SortId, CreatedDate = o.CreatedDate.ToString("yyyy-MM-dd"), CateName = o.Category == null ? "" : o.Category.Name }).ToList();
 
                 }
 
@@ -137,7 +137,7 @@ namespace DanaZhangCms
             {
                 var total = _contentRepository.Where(p =>p.IsDeleted==false&& p.ProductId==pId).Count(m => true);
                 var rows = _contentRepository.GetByPagination(m => m.IsDeleted == false && m.ProductId==pId, limit, page, true,
-                    m => m.Id).Select(o => new { o.Id, o.Title, o.SpellName,o.Type, CreatedDate = o.CreatedDate.ToString("yyyy-MM-dd") }).ToList();
+                    m => m.Id).Select(o => new { o.Id, o.Title, o.SpellName,o.Type, o.SortId, CreatedDate = o.CreatedDate.ToString("yyyy-MM-dd") }).ToList();
                 return Json(LayUIPaginationResult.PagedResult(true, rows, total));
             });
         }

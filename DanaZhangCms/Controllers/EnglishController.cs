@@ -35,11 +35,11 @@ namespace DanaZhangCms
             }
             var articleList = _artRepository.ToList();
             var model = new HomeVM();
-            var pros = _proRepository.Where(o=>o.IsHot==true).OrderBy(o => o.SortId).Take(8).ToList();
-            var arts = articleList.Where(a=>a.CategoryId==4).OrderBy(o => o.SortId).Take(3) .ToList();
-            var vedios = articleList.Where(a => a.CategoryId == 3).OrderBy(o => o.SortId).Take(10) .ToList();
+            var pros = _proRepository.Where(o=>o.IsHot== true && o.IsDeleted == false).OrderBy(o => o.SortId).Take(8).ToList();
+            var arts = articleList.Where(a=>a.CategoryId== 4 && a.IsDeleted == false).OrderBy(o => o.SortId).Take(3) .ToList();
+            var vedios = articleList.Where(a => a.CategoryId == 3 &&a.IsDeleted == false).OrderBy(o => o.SortId).Take(10) .ToList();
             var banners = _banRepository.Take(5).ToList();
-            var logos = articleList.Where(a => a.CategoryId == 5).OrderBy(o => o.SortId).Take(10).ToList();
+            var logos = articleList.Where(a => a.CategoryId == 5 && a.IsDeleted == false).OrderBy(o => o.SortId).Take(10).ToList();
 
             model.Products = pros;
             model.Articles = arts;
@@ -47,7 +47,7 @@ namespace DanaZhangCms
             model.Banners = banners;
             model.Logos = logos;
 
-            var cases = articleList.Where(a => a.CategoryId == 8).OrderBy(o => o.SortId).Take(10).Select(o => new Article() { Title = o.Title, Id = o.Id, ImgUrl = o.ImgUrl, CreatedDate = o.CreatedDate }).ToList();
+            var cases = articleList.Where(a => a.CategoryId == 8 && a.IsDeleted == false).OrderBy(o => o.SortId).Take(10).Select(o => new Article() { Title = o.Title, Id = o.Id, ImgUrl = o.ImgUrl, CreatedDate = o.CreatedDate }).ToList();
 
             model.Cases = cases;
             return View("~/Views/English/Index.cshtml", model);
