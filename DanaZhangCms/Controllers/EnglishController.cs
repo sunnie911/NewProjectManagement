@@ -35,11 +35,11 @@ namespace DanaZhangCms
             }
             var articleList = _artRepository.ToList();
             var model = new HomeVM();
-            var pros = _proRepository.Where(o=>o.IsHot==true).Take(8).ToList();
-            var arts = articleList.Where(a=>a.CategoryId==4).OrderByDescending(o => o.CreatedDate).Take(3) .ToList();
-            var vedios = articleList.Where(a => a.CategoryId == 3).OrderByDescending(o => o.Id).Take(10) .ToList();
+            var pros = _proRepository.Where(o=>o.IsHot==true).OrderBy(o => o.SortId).Take(8).ToList();
+            var arts = articleList.Where(a=>a.CategoryId==4).OrderBy(o => o.SortId).Take(3) .ToList();
+            var vedios = articleList.Where(a => a.CategoryId == 3).OrderBy(o => o.SortId).Take(10) .ToList();
             var banners = _banRepository.Take(5).ToList();
-            var logos = articleList.Where(a => a.CategoryId == 5).OrderByDescending(o => o.Id).Take(10).ToList();
+            var logos = articleList.Where(a => a.CategoryId == 5).OrderBy(o => o.SortId).Take(10).ToList();
 
             model.Products = pros;
             model.Articles = arts;
@@ -47,21 +47,25 @@ namespace DanaZhangCms
             model.Banners = banners;
             model.Logos = logos;
 
-          
+            var cases = articleList.Where(a => a.CategoryId == 8).OrderBy(o => o.SortId).Take(10).Select(o => new Article() { Title = o.Title, Id = o.Id, ImgUrl = o.ImgUrl, CreatedDate = o.CreatedDate }).ToList();
+
+            model.Cases = cases;
             return View("~/Views/English/Index.cshtml", model);
         }
 
         ///首页
-        public IActionResult Article(int page = 1, int pageSize = 12)
+        public IActionResult Article(int categoryId = 4,int page = 1, int pageSize = 12)
         {
             if (RequestExtensions.IsMobile(HttpContext.Request))
             {
                 return Redirect("/mobileEn/article");
             }
 
-            var arts = _artRepository.Where(o => o.CategoryId == 4).OrderByDescending(o => o.ClickCount).ThenByDescending(o => o.CreatedDate).ToList();
-            var total = _artRepository.Where(o => o.CategoryId == 4).Count();
+            var arts = _artRepository.Where(o => o.CategoryId == categoryId).OrderBy(o => o.SortId).ThenByDescending(o => o.CreatedDate).ToList();
+            var total = _artRepository.Where(o => o.CategoryId == categoryId).Count();
             ViewBag.Total = total;
+
+            ViewBag.CategoryId = categoryId;
 
             return View("~/Views/English/Article/Index.cshtml", arts);
         }
@@ -78,10 +82,12 @@ namespace DanaZhangCms
                 return Redirect("/mobileEn/newDetail/" + id);
             }
 
-
+           
             var model = await _artRepository.GetSingleAsync(id);
             var preArticle = _artRepository.Where(p => p.CategoryId == model.CategoryId && p.Id > id).Skip(1).ToList();
             var LastArticle = _artRepository.Where(p => p.CategoryId == model.CategoryId && p.Id < id).Skip(1).ToList();
+
+            ViewBag.CategoryId = model.CategoryId;
 
             if (preArticle != null && preArticle.Count > 0)
             {
@@ -195,7 +201,7 @@ namespace DanaZhangCms
             {
                 return Redirect("/mobileEn/vedio");
             }
-            var arts = _artRepository.Where(o => o.IsDeleted == false && o.CategoryId == 3).OrderByDescending(o => o.ClickCount).ThenByDescending(o => o.CreatedDate).ToList();
+            var arts = _artRepository.Where(o => o.IsDeleted == false && o.CategoryId == 3).OrderBy(o => o.SortId).ToList();
             var total = _artRepository.Where(o => o.IsDeleted == false && o.CategoryId == 3).Count();
             ViewBag.Total = total;
           

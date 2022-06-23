@@ -38,17 +38,17 @@ namespace DanaZhangCms
             if (categoryId > 0)
             {
             
-                productList = _proRepository.Where(p => p.CategoryId == categoryId).OrderByDescending(o => o.IsHot).ToList();
+                productList = _proRepository.Where(p => p.CategoryId == categoryId).OrderByDescending(o => o.IsHot).OrderBy(o=>o.SortId).ToList();
 
             }
             else
             {
-                productList = _proRepository.OrderByDescending(o => o.IsHot).ToList();
+                productList = _proRepository.OrderByDescending(o => o.IsHot).OrderBy(o => o.SortId).ToList();
 
             }
             if (!string.IsNullOrWhiteSpace(word))
             {
-                productList = _proRepository.Where(p => p.Name.Contains(word)|| p.Model1.Contains(word)).OrderByDescending(o => o.IsHot).ToList();
+                productList = _proRepository.Where(p => p.Name.Contains(word)|| p.Model1.Contains(word)).OrderByDescending(o => o.IsHot).OrderBy(o => o.SortId).ToList();
             }
 
 
@@ -69,7 +69,7 @@ namespace DanaZhangCms
             }
             var model = await _proRepository.GetSingleAsync(id);
 
-            var contents = _conRepository.Where(p => p.ProductId == id).ToList();
+            var contents = _conRepository.Where(p => p.ProductId == id).OrderBy(o => o.SortId).ToList();
 
             ProductView view = new ProductView() { Product=model };
             view.Details = contents.Where(p => p.Type == "规格参数" && p.SpellName == "china").ToList();

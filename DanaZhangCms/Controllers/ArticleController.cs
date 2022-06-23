@@ -26,7 +26,7 @@ namespace DanaZhangCms
             {
                 return Redirect("/mobile/article");
             }
-            var arts = _artRepository.Where(o=>o.CategoryId== categoryId).OrderByDescending(o => o.ClickCount).ThenByDescending(o => o.CreatedDate).Select(o => new Article() { Title = o.Title, Id = o.Id, ImgUrl = o.ImgUrl,VedioUrl=o.VedioUrl,CreatedDate=o.CreatedDate,ClickCount=o.ClickCount,Content=o.Content }).ToList();
+            var arts = _artRepository.Where(o=>o.CategoryId== categoryId).OrderBy(o => o.SortId).ThenByDescending(o => o.CreatedDate).Select(o => new Article() { Title = o.Title, Id = o.Id, ImgUrl = o.ImgUrl,VedioUrl=o.VedioUrl,CreatedDate=o.CreatedDate,ClickCount=o.ClickCount,Content=o.Content }).ToList();
             var total = _artRepository.Where(o=>o.CategoryId== categoryId).Count();
             ViewBag.Total = total;
 
@@ -37,6 +37,11 @@ namespace DanaZhangCms
             if (categoryId == 7)
             {
                 name = "科研标准";
+            }
+
+            if (categoryId == 8)
+            {
+                name = "工程案例";
             }
             ViewBag.CategoryName = name;
             return View(arts);
@@ -49,7 +54,7 @@ namespace DanaZhangCms
             {
                 return Redirect("/mobile/article");
             }
-            var arts = _artRepository.Where(o => o.CategoryId == categoryId).OrderByDescending(o => o.ClickCount).ThenByDescending(o => o.CreatedDate).Select(o => new Article() { Title = o.Title, Id = o.Id, ImgUrl = o.ImgUrl, VedioUrl = o.VedioUrl, CreatedDate = o.CreatedDate, ClickCount = o.ClickCount, Content = o.Content }).ToList();
+            var arts = _artRepository.Where(o => o.CategoryId == categoryId).OrderBy(o => o.SortId).Select(o => new Article() { Title = o.Title, Id = o.Id, ImgUrl = o.ImgUrl, VedioUrl = o.VedioUrl, CreatedDate = o.CreatedDate, ClickCount = o.ClickCount, Content = o.Content }).ToList();
             var total = _artRepository.Where(o => o.CategoryId == categoryId).Count();
             ViewBag.Total = total;
 
@@ -79,8 +84,8 @@ namespace DanaZhangCms
 
             var model = await _artRepository.GetSingleAsync(id);
 
-            var preArticle = _artRepository.Where(p => p.CategoryId == model.CategoryId&&p.Id>id).Skip(1).ToList(); 
-            var LastArticle = _artRepository.Where(p => p.CategoryId == model.CategoryId && p.Id < id).Skip(1).ToList();
+            var preArticle = _artRepository.Where(p => p.CategoryId == model.CategoryId&&p.SortId>model.SortId).OrderBy(o => o.SortId).Skip(1).ToList(); 
+            var LastArticle = _artRepository.Where(p => p.CategoryId == model.CategoryId && p.SortId < model.SortId).OrderBy(o => o.SortId).Skip(1).ToList();
 
             if (preArticle != null && preArticle.Count > 0)
             {

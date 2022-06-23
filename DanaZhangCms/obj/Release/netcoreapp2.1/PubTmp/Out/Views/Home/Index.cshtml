@@ -48,6 +48,7 @@
         </div>
 
     </div>
+
     <!-- 热卖详情 -->
     <div class="hotSell common_containe">
         <div class="index_title">
@@ -86,6 +87,7 @@
             </ul>
         </div>
     </div>
+
     <!-- 简介 -->
     <div class="introduce_bj">
         <div class="introduce common_containe">
@@ -109,110 +111,150 @@
             </div>
         </div>
     </div>
-    <!-- 精彩视频 -->
-    <div class="vedio">
-        <div class="common_containe">
+
+    <!-- 工程案例 -->
+    @if (Model.Cases != null && Model.Cases.Any())
+    {
+        <div class="hotSell common_containe">
             <div class="index_title">
-                <div class="title">{{titleArry[2].chinese}}</div>
+                <div class="title">工程案例</div>
                 <div class="main">
-                    <span>{{titleArry[2].english}}</span>
+                    <span>PROJECT CASE</span>
                     <div class="more">
-                        <a href="/vedio" target="_blank">
+                        <a href="/article?categoryId=8" target="_blank">
+                            <span>更多</span>
+                            <img src="images/to1.png">
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="content">
+                <ul>
+                    @if (Model.Cases != null && Model.Cases.Any())
+                    {
+                        foreach (var item in Model.Cases)
+                        {
+                            <li>
+                                <a href="@(Url.Action("Detail", "Article", new { id = item.Id }))" target="_blank">
+                                    <img class="goods_img" src="@item.ImgUrl">
+                                    <span>@item.Title  </span>
+
+
+                                </a>
+                            </li>
+                        }
+                    }
+                </ul>
+            </div>
+        </div>
+
+    }
+        <!-- 精彩视频 -->
+        <div class="vedio">
+            <div class="common_containe">
+                <div class="index_title">
+                    <div class="title">{{titleArry[2].chinese}}</div>
+                    <div class="main">
+                        <span>{{titleArry[2].english}}</span>
+                        <div class="more">
+                            <a href="/vedio" target="_blank">
+                                <span>更多</span>
+                                <img src="images/to1.png">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="vedio_container swiper-container">
+                    <div class="swiper-wrapper">
+                        @if (Model.Vedios != null && Model.Vedios.Any())
+                        {
+                            foreach (var item in Model.Vedios)
+                            {
+                                <div class="swiper-slide">
+                                    <div class="slide_main">
+
+                                        <a href="/Vedio/Detail/@item.Id">
+                                            <img src="@item.ImgUrl">
+                                        </a>
+                                        <div class="mainP">@item.Title</div>
+                                        <span>@item.CreatedDate</span>
+                                    </div>
+                                </div>
+                            }
+                        }
+                    </div>
+
+                </div>
+
+                <div class="vedio_more"><a href="/vedio" target="_blank">查看更多视频</a></div>
+
+            </div>
+        </div>
+        <!-- 学术交流 -->
+        <div class="learning common_containe">
+            <div class="index_title">
+                <div class="title">{{titleArry[3].chinese}}</div>
+                <div class="main">
+                    <span>{{titleArry[3].english}}</span>
+                    <div class="more">
+                        <a href="/article" target="_blank">
                             <span>更多</span>
                             <img src="images/to1.png">
                         </a>
                     </div>
                 </div>
             </div>
-
-
-            <div class="vedio_container swiper-container">
-                <div class="swiper-wrapper">
-                    @if (Model.Vedios != null && Model.Vedios.Any())
+            <ul class="learning-box">
+                @if (Model.Articles != null && Model.Articles.Any())
+                {
+                    foreach (var item in Model.Articles)
                     {
-                        foreach (var item in Model.Vedios)
-                        {
-                            <div class="swiper-slide">
-                                <div class="slide_main">
-
-                                    <a href="/Vedio/Detail/@item.Id">
-                                        <img src="@item.ImgUrl">
-                                    </a>
-                                    <div class="mainP">@item.Title</div>
-                                    <span>@item.CreatedDate</span>
+                        <li>
+                            <img src="@item.ImgUrl">
+                            <div class="main">
+                                <div class="title">  <a href="@(Url.Action("Detail","Article",new { id=item.Id}))"> @item.Title </a></div>
+                                <div class="neirong">
                                 </div>
                             </div>
-                        }
+                            <div class="mengceng"></div>
+                        </li>
                     }
-                </div>
-
-            </div>
-
-            <div class="vedio_more"><a href="/vedio" target="_blank">查看更多视频</a></div>
-
-        </div>
-    </div>
-    <!-- 学术交流 -->
-    <div class="learning common_containe">
-        <div class="index_title">
-            <div class="title">{{titleArry[3].chinese}}</div>
-            <div class="main">
-                <span>{{titleArry[3].english}}</span>
-                <div class="more">
-                    <a href="/article" target="_blank">
-                        <span>更多</span>
-                        <img src="images/to1.png">
-                    </a>
-                </div>
-            </div>
-        </div>
-        <ul class="learning-box">
-            @if (Model.Articles != null && Model.Articles.Any())
-            {
-                foreach (var item in Model.Articles)
-                {
-                    <li>
-                        <img src="@item.ImgUrl">
-                        <div class="main">
-                            <div class="title">  <a href="@(Url.Action("Detail","Article",new { id=item.Id}))"> @item.Title </a></div>
-                            <div class="neirong">
-                            </div>
-                        </div>
-                        <div class="mengceng"></div>
-                    </li>
                 }
-            }
 
 
-        </ul>
-    </div>
-    <!-- 合作机构 -->
-    <div class="cooperative common_containe">
-        <div class="index_title">
-            <div class="title">{{titleArry[4].chinese}}</div>
-            <div class="main">
-                <span>{{titleArry[4].english}}</span>
-                <div class="more">
-                    <a href="javascript:;" target="_blank">
-                        <span>更多</span>
-                        <img src="images/to1.png">
-                    </a>
+            </ul>
+        </div>
+        <!-- 合作机构 -->
+        <div class="cooperative common_containe">
+            <div class="index_title">
+                <div class="title">{{titleArry[4].chinese}}</div>
+                <div class="main">
+                    <span>{{titleArry[4].english}}</span>
+                    <div class="more">
+                        <a href="javascript:;" target="_blank">
+                            <span>更多</span>
+                            <img src="images/to1.png">
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <ul>
+            <ul>
 
-            @if (Model.Logos != null && Model.Logos.Any())
-            {
-                foreach (var item in Model.Logos)
+                @if (Model.Logos != null && Model.Logos.Any())
                 {
-                    <li><img src="@item.ImgUrl" title="@item.Title"></li>
+                    foreach (var item in Model.Logos)
+                    {
+                        <li><img src="@item.ImgUrl" title="@item.Title"></li>
+                    }
                 }
-            }
-        </ul>
-    </div>
+            </ul>
+        </div>
 
-</div>
+    </div>
 
 
 @section Scripts{

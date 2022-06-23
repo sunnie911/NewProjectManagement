@@ -30,7 +30,7 @@
 
     </div>
 
-     
+
     <div class="layui-form-item">
         @Html.LabelFor(model => model.CategoryId, new { @class = "layui-form-label" })
         <div class="layui-input-inline">
@@ -64,47 +64,47 @@
     </div>
 
 
-    @*<div class="layui-form-item">
-            @Html.LabelFor(model => model.VedioUrl, new { @class = "layui-form-label" })
-            <div class="layui-input-inline">
-                <div class="uploadPreview" id="PreviewVedio">
-                    @if (!string.IsNullOrEmpty(Model.VedioUrl))
-                    {
+    <div class="layui-form-item">
+        @Html.LabelFor(model => model.VedioUrl, new { @class = "layui-form-label" })
+        <div class="layui-input-inline">
+            <div class="uploadPreview" id="PreviewVedio">
+                @if (!string.IsNullOrEmpty(Model.VedioUrl))
+                {
                     <video width="100%" controls="" preload="auto" autoplay="autoplay">
                         <source src="@Model.VedioUrl" />
                     </video>
-                    }
-                    else
-                    {
+                }
+                else
+                {
                     @:暂无视频
-                    }
-                </div>
-                <div class="left">
-                    <div class="uploadProgressBar"></div>
-                    <div id="UploadVedio" class="uploadBut">选择视频</div>
-                </div>
-                <div class="clear"></div>
+                }
             </div>
-            @Html.HiddenFor(x => x.VedioUrl)
-
-        </div>*@
-
-    <div class="layui-form-mid layui-word-aux">
-        <span class="x-red"></span>
+            <div class="left">
+                <div class="uploadProgressBar"></div>
+                <div id="UploadVedio" class="uploadBut">选择视频</div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        @Html.HiddenFor(x => x.VedioUrl)
 
     </div>
-    <div class="layui-form-item">
 
-        @Html.LabelFor(model => model.VedioUrl, new { @class = "layui-form-label" })
-        <div class="layui-input-inline">
-            @Html.TextBoxFor(model => model.VedioUrl, new { @class = "layui-input", autocomplete = "off" })
-
-        </div>
-        <div class="layui-form-mid layui-word-aux">
+    @*<div class="layui-form-mid layui-word-aux">
             <span class="x-red"></span>
 
         </div>
-    </div>
+        <div class="layui-form-item">
+
+            @Html.LabelFor(model => model.VedioUrl, new { @class = "layui-form-label" })
+            <div class="layui-input-inline">
+                @Html.TextBoxFor(model => model.VedioUrl, new { @class = "layui-input", autocomplete = "off" })
+
+            </div>
+            <div class="layui-form-mid layui-word-aux">
+                <span class="x-red"></span>
+
+            </div>
+        </div>*@
 
     <div class="layui-form-item">
 
@@ -195,7 +195,7 @@
             ue1.setContent(oldhtml1);
         });
 
-        $(function () { 
+        $(function () {
             var uploader = WebUploader.create({
                 pick: '#UploadImg',
                 auto: true,
@@ -268,7 +268,7 @@
 
 
                 form.on('submit(add)', function (data) {
-                    var url = $(".layui-form").attr("action"); 
+                    var url = $(".layui-form").attr("action");
                     $.ajax({
                         url: url,
                         data: $("form").serialize(),

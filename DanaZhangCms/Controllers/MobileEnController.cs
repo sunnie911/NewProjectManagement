@@ -33,10 +33,10 @@ namespace DanaZhangCms
             var articleList = _artRepository.ToList();
             var model = new HomeVM();
             var pros = _proRepository.Where(o => o.IsHot == true).Take(8).ToList();
-            var arts = articleList.Where(a => a.CategoryId == 4).OrderByDescending(o => o.Id).Take(4).ToList();
-            var vedios = articleList.Where(a => a.CategoryId == 3).OrderByDescending(o => o.Id).Take(10).ToList();
-            var banners = _banRepository.Take(5).ToList();
-            var logos = articleList.Where(a => a.CategoryId == 5).OrderByDescending(o => o.Id).Take(10).ToList();
+            var arts = articleList.Where(a => a.CategoryId == 4).OrderBy(o => o.SortId).Take(4).ToList();
+            var vedios = articleList.Where(a => a.CategoryId == 3).OrderBy(o => o.SortId).Take(10).ToList();
+            var banners = _banRepository.OrderBy(o => o.SortId).Take(5).ToList();
+            var logos = articleList.Where(a => a.CategoryId == 5).OrderBy(o => o.SortId).Take(10).ToList();
 
             model.Products = pros;
             model.Articles = arts;
@@ -54,7 +54,7 @@ namespace DanaZhangCms
         public IActionResult Article(int page = 1, int pageSize = 12)
         {
 
-            var arts = _artRepository.Where(o => o.CategoryId == 4).OrderByDescending(o => o.ClickCount).ThenByDescending(o => o.CreatedDate).ToList();
+            var arts = _artRepository.Where(o => o.CategoryId == 4).OrderBy(o => o.SortId).ThenByDescending(o => o.CreatedDate).ToList();
             var total = _artRepository.Where(o => o.CategoryId == 4).Count();
             ViewBag.Total = total;
 
@@ -148,7 +148,7 @@ namespace DanaZhangCms
         ///首页
         public IActionResult Vedio(int page = 1)
         {
-            var arts = _artRepository.Where(o => o.IsDeleted == false && o.CategoryId == 3).OrderByDescending(o => o.ClickCount).ThenByDescending(o => o.CreatedDate).Select(o => new Article() { Title = o.Title, Id = o.Id, ImgUrl = o.ImgUrl, VedioUrl = o.VedioUrl, CreatedDate = o.CreatedDate, ClickCount = o.ClickCount, Content = o.Content }).ToList();
+            var arts = _artRepository.Where(o => o.IsDeleted == false && o.CategoryId == 3).OrderBy(o => o.SortId).Select(o => new Article() { Title = o.Title, Id = o.Id, ImgUrl = o.ImgUrl, VedioUrl = o.VedioUrl, CreatedDate = o.CreatedDate, ClickCount = o.ClickCount, Content = o.Content }).ToList();
             var total = _artRepository.Where(o => o.IsDeleted == false && o.CategoryId == 3).Count();
             ViewBag.Total = total;
             return View("~/Views/English/Mobile/Vedio/Index.cshtml", arts);

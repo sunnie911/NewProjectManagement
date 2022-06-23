@@ -29,7 +29,7 @@
 
     var lau = $('.nav').find(".chiness").length;
     if (lau == 1) {
-        $('.nav .list ul').prepend("<li><a href=\"/english\">index</a></li>")
+        $('.nav .list ul').prepend("<li><a href=\"/english\">Index</a></li>")
     }
     else {
         $('.nav .list ul').prepend("<li><a href=\"/home\">首页</a></li>")

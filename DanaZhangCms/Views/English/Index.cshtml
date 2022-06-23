@@ -88,7 +88,7 @@
                 <p>
                     We are a leading enterprise introduced through the "5213 plan" for entrepreneurship and innovation of high-level talents in Xiaoshan District,
                     Hangzhou. We are a national high-tech enterprise specializing in the development, production and sales of concrete 3D printing and high-end testing instruments and equipment.
-                    Our R & D and production bases are located in Xintang science and innovation Park, Xiaoshan District, Hangzhou and Jincheng City, Shanxi Province. 
+                    Our R & D and production bases are located in Xintang science and innovation Park, Xiaoshan District, Hangzhou and Jincheng City, Shanxi Province.
                     "Continuous research and development, cost reduction and efficiency increase, and being the longest friend of users" is our vision.
                     We have established a research and development team composed of doctors, masters and well-known experts from Tsinghua University and Zhejiang University......
                 </p>
@@ -101,6 +101,42 @@
             </div>
         </div>
     </div>
+    @if (Model.Cases != null && Model.Cases.Any())
+    {
+        <!-- 工程案例 -->
+        <div class="hotSell common_containe">
+            <div class="index_title">
+                <div class="title">PROJECT CASE</div>
+                <div class="main">
+                    <span>PROJECT CASE</span>
+                    <div class="more">
+                        <a href="/english/article?categoryId=8" target="_blank">
+                            <span>More</span>
+                            <img src="images/to1.png">
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="content">
+                <ul>
+                    @if (Model.Cases != null && Model.Cases.Any())
+                    {
+                        foreach (var item in Model.Cases)
+                        {
+                            <li>
+                                <a href="@(Url.Action("NewDetail", "english", new { id = item.Id }))" target="_blank">
+                                    <img class="goods_img" src="@item.ImgUrl">
+                                    <span>@item.TitleEn</span>
+                                </a>
+                            </li>
+                        }
+                    }
+                </ul>
+            </div>
+        </div>
+    }
     <!-- 精彩视频 -->
     <div class="vedio">
         <div class="common_containe">
@@ -128,9 +164,9 @@
                                 <div class="slide_main">
                                     <a href="/english/VedioDetail/@item.Id">
                                         <img src="@item.ImgUrl">
-                                        </a>
-                                        <div class="mainP">@item.TitleEn</div>
-                                        <span>@item.CreatedDate</span>
+                                    </a>
+                                    <div class="mainP">@item.TitleEn</div>
+                                    <span>@item.CreatedDate</span>
                                 </div>
                             </div>
                         }

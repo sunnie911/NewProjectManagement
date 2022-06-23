@@ -107,11 +107,11 @@ namespace DanaZhangCms
 
                 Func<IQueryable<Article>, IQueryable<Article>> @include = o => o.Include("Category");
                 var rows = _repository.GetByPaginationWithInclude(m => m.IsDeleted==false, @include, limit, page, true,
-                    m => m.Id).Select(o => new { o.Id, o.Title, o.Author, CreatedDate = o.CreatedDate.ToString("yyyy-MM-dd"),CategoryId=o.CategoryId ,CateName = o.Category.Name }).ToList();
+                    m => m.SortId).Select(o => new { o.Id, o.Title, o.Author, CreatedDate = o.CreatedDate.ToString("yyyy-MM-dd"),CategoryId=o.CategoryId ,CateName = o.Category.Name }).ToList();
                 if (CategoryId > 0)
                 {
                       rows = _repository.GetByPaginationWithInclude(m => m.IsDeleted == false&&m.CategoryId==CategoryId, @include, limit, page, true,
-                       m => m.Id).Select(o => new { o.Id, o.Title, o.Author, CreatedDate = o.CreatedDate.ToString("yyyy-MM-dd"), CategoryId = o.CategoryId, CateName = o.Category.Name }).ToList();
+                       m => m.SortId).Select(o => new { o.Id, o.Title, o.Author, CreatedDate = o.CreatedDate.ToString("yyyy-MM-dd"), CategoryId = o.CategoryId, CateName = o.Category.Name }).ToList();
                 }
                 return Json(LayUIPaginationResult.PagedResult(true, rows, total));
             });

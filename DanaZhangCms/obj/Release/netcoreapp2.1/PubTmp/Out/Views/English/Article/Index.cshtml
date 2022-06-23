@@ -2,6 +2,8 @@
 @{
     ViewData["Title"] = "新闻中心";
     Layout = "~/Views/Shared/_LayoutEn.cshtml";
+
+    var type = ViewBag.CategoryId;
 }
 @section css{
 
@@ -12,7 +14,21 @@
         <div class="list_top">
             <i></i>
             <a href="/english">Index > </a>
-            <a href="/english/Article">Company News </a>
+
+            @if (type == 4)
+            {
+                <a href="/english/article"> Company News </a>
+            }
+            else if (type == 7)
+            {
+                <a href="/english/article?categoryId=7">Scient Standard </a>
+            }
+
+            else if (type == 8)
+            {
+                <a href="/english/article?categoryId=8">Project Cases </a>
+            }
+            @*<a href="/english/Article">Company News </a>*@
         </div>
 
         <div class="list_main common_containe">
@@ -25,7 +41,7 @@
                             <div class="list_current">
                                 <div class="">
                                     <span>
-                                        <a href="@(Url.Action("Detail","Article",new { id=item.Id}))">
+                                        <a href="/english/article/NewDetail/@item.Id">
                                             <div class="img_box">
                                                 <img src="@item.ImgUrl">
                                             </div>
