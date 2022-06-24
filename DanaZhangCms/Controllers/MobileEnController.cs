@@ -142,7 +142,19 @@ namespace DanaZhangCms
         /// <returns></returns>
         public IActionResult Contact()
         {
-            return View("~/Views/English/Mobile/Contact.cshtml");
+            var model = _repository.Where(o => o.ProductId == 0 && (o.SpellName.Contains("SeekArea") || o.SpellName.Contains("Contact")) && o.IsDeleted == false);
+
+            return View("~/Views/English/Mobile/Contact.cshtml",model);
+        }
+        /// <summary>
+        /// 招聘
+        /// </summary>
+        /// <returns></returns>
+        public IActionResult Join()
+        {
+            var model = _repository.Where(o => o.ProductId == 0 && (o.SpellName.Contains("SeekAreaEn")) && o.IsDeleted == false);
+
+            return View("~/Views/English/Mobile/Join.cshtml", model);
         }
 
         ///首页

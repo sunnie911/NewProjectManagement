@@ -61,8 +61,8 @@ namespace DanaZhangCms
                 return Redirect("/mobileEn/article");
             }
 
-            var arts = _artRepository.Where(o => o.CategoryId == categoryId).OrderBy(o => o.SortId).ThenByDescending(o => o.CreatedDate).ToList();
-            var total = _artRepository.Where(o => o.CategoryId == categoryId).Count();
+            var arts = _artRepository.Where(o => o.CategoryId == categoryId&&o.IsDeleted==false).OrderBy(o => o.SortId).ThenByDescending(o => o.CreatedDate).ToList();
+            var total = _artRepository.Where(o => o.CategoryId == categoryId && o.IsDeleted == false).Count();
             ViewBag.Total = total;
 
             ViewBag.CategoryId = categoryId;
@@ -80,12 +80,10 @@ namespace DanaZhangCms
             if (RequestExtensions.IsMobile(HttpContext.Request))
             {
                 return Redirect("/mobileEn/newDetail/" + id);
-            }
-
-           
+            }             
             var model = await _artRepository.GetSingleAsync(id);
-            var preArticle = _artRepository.Where(p => p.CategoryId == model.CategoryId && p.Id > id).Skip(1).ToList();
-            var LastArticle = _artRepository.Where(p => p.CategoryId == model.CategoryId && p.Id < id).Skip(1).ToList();
+            var preArticle = _artRepository.Where(p => p.CategoryId == model.CategoryId && p.IsDeleted == false && p.Id > id).Skip(1).ToList();
+            var LastArticle = _artRepository.Where(p => p.CategoryId == model.CategoryId && p.IsDeleted == false && p.Id < id).Skip(1).ToList();
 
             ViewBag.CategoryId = model.CategoryId;
 
@@ -121,7 +119,7 @@ namespace DanaZhangCms
             }
             if (!string.IsNullOrWhiteSpace(word))
             {
-                productList = _proRepository.Where(p => p.NameEn.Contains(word) || p.Model1.Contains(word)).OrderBy(o => o.IsHot).ToList();
+                productList = _proRepository.Where(p =>p.IsDeleted==false&&( p.NameEn.Contains(word) || p.Model1.Contains(word))).OrderBy(o => o.IsHot).ToList();
 
             }
 
@@ -193,6 +191,21 @@ namespace DanaZhangCms
             }
             
             return View("~/Views/Contact/join.cshtml");
+        }
+
+        /// <summary>
+        /// 联系我们
+        /// </summary>
+        /// <returns></returns>
+        public IActionResult Contact()
+        {
+
+            if (RequestExtensions.IsMobile(HttpContext.Request))
+            {
+                return Redirect("/mobileEn/Contact");
+            }
+
+            return View("~/Views/Contact/ContactEn.cshtml");
         }
         ///首页
         public IActionResult Vedio(int page = 1)

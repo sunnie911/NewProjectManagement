@@ -48,6 +48,15 @@ namespace DanaZhangCms
 
             return View(model);
         }
+
+        [ActionDescription(Name = "添加招人信息")]
+        public IActionResult CreateNew(string spellName = "Recruit")
+        {
+            var model = new Contents() { SpellName= spellName };
+           
+
+            return View(model);
+        }
         [Ignore]
         [ActionDescription(Name = "编辑内容")]
         public IActionResult Edit(int id)

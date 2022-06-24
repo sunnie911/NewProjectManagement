@@ -18,25 +18,25 @@ namespace DanaZhangCms
          
         }
 
-        public  IActionResult Index(string spellname = "")
+        public  IActionResult Index()
         {
             if (RequestExtensions.IsMobile(HttpContext.Request))
             {
                 return Redirect("/mobile/contact");
             }
 
-            var model =  _repository.FirstOrDefault(o => o.SpellName == spellname && o.IsDeleted == false);
+            var model =  _repository.Where(o => o.ProductId==0 &&(o.SpellName.Contains("SeekArea")||o.SpellName.Contains("Contact")) && o.IsDeleted == false);
             return View(model);
         }
 
-        public IActionResult Join(string spellname = "")
+        public IActionResult Join()
         {
             if (RequestExtensions.IsMobile(HttpContext.Request))
             {
                 return Redirect("/mobile/join");
             }
 
-            var model = _repository.FirstOrDefault(o => o.SpellName == spellname && o.IsDeleted == false);
+            var model = _repository.Where(o =>(o.SpellName.Contains("Recruit")) && o.IsDeleted == false);
           
             return View("~/Views/Contact/join.cshtml", model);
         }

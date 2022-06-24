@@ -1,4 +1,5 @@
-﻿@model DanaZhangCms.Models.Contents
+﻿@using DanaZhangCms.Core.Helpers;
+@model List<DanaZhangCms.Models.Contents>
 @{
     //ViewData["Title"] = Model.Title;
     Layout = "~/Views/Shared/_LayoutMobileEn.cshtml";
@@ -13,8 +14,8 @@
 
     <div class="list_top">
         <i></i>
-        <a href="/home">首页 > </a>
-        <a href="/contact/join">加入我们 </a>
+        <a href="/home">Index > </a>
+        <a href="/contact/join">Join Us </a>
     </div>
 
     <div class="join_main">

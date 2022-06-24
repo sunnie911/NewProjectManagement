@@ -38,17 +38,17 @@ namespace DanaZhangCms
             if (categoryId > 0)
             {
             
-                productList = _proRepository.Where(p => p.CategoryId == categoryId).OrderByDescending(o => o.IsHot).OrderBy(o=>o.SortId).ToList();
+                productList = _proRepository.Where(p => p.CategoryId == categoryId && p.IsDeleted == false).OrderByDescending(o => o.IsHot).OrderBy(o=>o.SortId).ToList();
 
             }
             else
             {
-                productList = _proRepository.OrderByDescending(o => o.IsHot).OrderBy(o => o.SortId).ToList();
+                productList = _proRepository.Where(p =>   p.IsDeleted == false).OrderByDescending(o => o.IsHot).OrderBy(o => o.SortId).ToList();
 
             }
             if (!string.IsNullOrWhiteSpace(word))
             {
-                productList = _proRepository.Where(p => p.Name.Contains(word)|| p.Model1.Contains(word)).OrderByDescending(o => o.IsHot).OrderBy(o => o.SortId).ToList();
+                productList = _proRepository.Where(p => p.IsDeleted == false&&(p.Name.Contains(word)|| p.Model1.Contains(word))).OrderByDescending(o => o.IsHot).OrderBy(o => o.SortId).ToList();
             }
 
 

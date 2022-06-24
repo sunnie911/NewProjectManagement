@@ -195,6 +195,9 @@
     <Content Update="Views\Mobile\Vedio\Detail.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
+    <Content Update="Views\SysContents\CreateNew.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
     <Content Update="Views\Vedio\Detail.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>

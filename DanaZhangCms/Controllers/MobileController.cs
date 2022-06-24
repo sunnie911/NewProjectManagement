@@ -102,7 +102,7 @@ namespace DanaZhangCms
             }
             if (!string.IsNullOrWhiteSpace(word))
             {
-                productList = _proRepository.Where(p => p.Name.Contains(word) || p.Model1.Contains(word)).OrderBy(o => o.IsHot).ToList();
+                productList = _proRepository.Where(p =>( p.Name.Contains(word) || p.Model1.Contains(word)) && p.IsDeleted == false).OrderBy(o => o.IsHot).ToList();
             }
             ViewBag.Total = total;
             return View("~/Views/Mobile/Product/Index.cshtml", productList);
