@@ -25,7 +25,7 @@ namespace DanaZhangCms
                 return Redirect("/mobile/contact");
             }
 
-            var model =  _repository.FirstOrDefault(o => o.SpellName == spellname);
+            var model =  _repository.FirstOrDefault(o => o.SpellName == spellname && o.IsDeleted == false);
             return View(model);
         }
 
@@ -36,7 +36,7 @@ namespace DanaZhangCms
                 return Redirect("/mobile/join");
             }
 
-            var model = _repository.FirstOrDefault(o => o.SpellName == spellname);
+            var model = _repository.FirstOrDefault(o => o.SpellName == spellname && o.IsDeleted == false);
           
             return View("~/Views/Contact/join.cshtml", model);
         }

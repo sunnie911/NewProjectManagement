@@ -22,7 +22,7 @@ namespace DanaZhangCms
                 return Redirect("/mobile/about");
             }
 
-            var model =  _repository.FirstOrDefault(o => o.SpellName == spellname);
+            var model =  _repository.FirstOrDefault(o => o.SpellName == spellname && o.IsDeleted == false);
             return View(model);
         }
 

@@ -69,7 +69,7 @@ namespace DanaZhangCms
             }
             var model = await _proRepository.GetSingleAsync(id);
 
-            var contents = _conRepository.Where(p => p.ProductId == id).OrderBy(o => o.SortId).ToList();
+            var contents = _conRepository.Where(p => p.ProductId == id&&p.IsDeleted==false).OrderBy(o => o.SortId).ToList();
 
             ProductView view = new ProductView() { Product=model };
             view.Details = contents.Where(p => p.Type == "规格参数" && p.SpellName == "china").ToList();

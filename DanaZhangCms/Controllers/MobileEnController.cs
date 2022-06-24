@@ -32,11 +32,11 @@ namespace DanaZhangCms
         {
             var articleList = _artRepository.ToList();
             var model = new HomeVM();
-            var pros = _proRepository.Where(o => o.IsHot == true).Take(8).ToList();
-            var arts = articleList.Where(a => a.CategoryId == 4).OrderBy(o => o.SortId).Take(4).ToList();
-            var vedios = articleList.Where(a => a.CategoryId == 3).OrderBy(o => o.SortId).Take(10).ToList();
-            var banners = _banRepository.OrderBy(o => o.SortId).Take(5).ToList();
-            var logos = articleList.Where(a => a.CategoryId == 5).OrderBy(o => o.SortId).Take(10).ToList();
+            var pros = _proRepository.Where(o => o.IsHot == true && o.IsDeleted == false).Take(8).ToList();
+            var arts = articleList.Where(a => a.CategoryId == 4 && a.IsDeleted == false).OrderBy(o => o.SortId).Take(4).ToList();
+            var vedios = articleList.Where(a => a.CategoryId == 3 && a.IsDeleted == false).OrderBy(o => o.SortId).Take(10).ToList();
+            var banners = _banRepository.Where(a=>&& a.IsDeleted == false).OrderBy(o => o.SortId).Take(5).ToList();
+            var logos = articleList.Where(a => a.CategoryId == 5 && a.IsDeleted == false).OrderBy(o => o.SortId).Take(10).ToList();
 
             model.Products = pros;
             model.Articles = arts;
@@ -54,8 +54,8 @@ namespace DanaZhangCms
         public IActionResult Article(int page = 1, int pageSize = 12)
         {
 
-            var arts = _artRepository.Where(o => o.CategoryId == 4).OrderBy(o => o.SortId).ThenByDescending(o => o.CreatedDate).ToList();
-            var total = _artRepository.Where(o => o.CategoryId == 4).Count();
+            var arts = _artRepository.Where(o => o.CategoryId == 4 && o.IsDeleted == false).OrderBy(o => o.SortId).ThenByDescending(o => o.CreatedDate).ToList();
+            var total = _artRepository.Where(o => o.CategoryId == 4 && o.IsDeleted == false).Count();
             ViewBag.Total = total;
 
             return View("~/Views/English/Mobile/Article/Index.cshtml", arts);
@@ -69,8 +69,8 @@ namespace DanaZhangCms
         public async Task<IActionResult> NewDetail(int id)
         {
             var model = await _artRepository.GetSingleAsync(id);
-            var preArticle = _artRepository.Where(p => p.CategoryId == model.CategoryId && p.Id > id).Skip(1).ToList();
-            var LastArticle = _artRepository.Where(p => p.CategoryId == model.CategoryId && p.Id < id).Skip(1).ToList();
+            var preArticle = _artRepository.Where(p => p.CategoryId == model.CategoryId && p.Id > id && p.IsDeleted == false).Skip(1).ToList();
+            var LastArticle = _artRepository.Where(p => p.CategoryId == model.CategoryId && p.Id < id && p.IsDeleted == false).Skip(1).ToList();
 
             if (preArticle != null && preArticle.Count > 0)
             {
@@ -92,7 +92,7 @@ namespace DanaZhangCms
             var total = _proRepository.Count();
             if (categoryId > 0)
             {
-                productList = _proRepository.Where(p => p.CategoryId == categoryId).OrderBy(o => o.IsHot).ToList();
+                productList = _proRepository.Where(p => p.CategoryId == categoryId && p.IsDeleted == false).OrderBy(o => o.IsHot).ToList();
                 total = _proRepository.Where(p => p.CategoryId == categoryId).Count();
             }
             else
@@ -117,7 +117,7 @@ namespace DanaZhangCms
         {
 
             var model = await _proRepository.GetSingleAsync(id);
-            var contents = _repository.Where(p => p.ProductId == id).ToList();
+            var contents = _repository.Where(p => p.ProductId == id && p.IsDeleted == false).ToList();
 
             ProductView view = new ProductView() { Product = model };
             view.Details = contents.Where(p => p.Type == "规格参数" && p.SpellName == "china").ToList();
@@ -167,7 +167,7 @@ namespace DanaZhangCms
 
         public IActionResult Join(string spellname = "")
         {
-            var model = _repository.FirstOrDefault(o => o.SpellName == spellname);
+            var model = _repository.FirstOrDefault(o => o.SpellName == spellname&& o.IsDeleted == false);
             return View("~/Views/English/Mobile/Join.cshtml", model);
         }
 

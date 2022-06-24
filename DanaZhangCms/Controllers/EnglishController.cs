@@ -111,7 +111,7 @@ namespace DanaZhangCms
             List<Product> productList = new List<Product>(); 
             if (categoryId > 0)
             {
-                productList = _proRepository.Where(p => p.CategoryId == categoryId).OrderBy(o => o.IsHot).ToList();
+                productList = _proRepository.Where(p => p.CategoryId == categoryId&&p.IsDeleted==false).OrderBy(o => o.IsHot).ToList();
               
             }
             else
@@ -142,7 +142,7 @@ namespace DanaZhangCms
             }
             var model = await _proRepository.GetSingleAsync(id);
 
-            var contents = _conRepository.Where(p => p.ProductId == id).ToList();
+            var contents = _conRepository.Where(p => p.ProductId == id && p.IsDeleted == false).ToList();
 
             ProductView view = new ProductView() { Product = model };
             view.Details = contents.Where(p => p.Type == "规格参数" && p.SpellName == "china").ToList();

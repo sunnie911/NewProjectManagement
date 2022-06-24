@@ -44,7 +44,7 @@ namespace DanaZhangCms
             model.Banners = banners;
             model.Logos = logos;
 
-            var profile = _repository.FirstOrDefault(o => o.SpellName == "CompanyProfile");
+            var profile = _repository.FirstOrDefault(o => o.SpellName == "CompanyProfile" && o.IsDeleted == false);
             ViewBag.CompanyProfile = profile;
 
             return View("~/Views/Mobile/Index.cshtml", model);
@@ -168,7 +168,7 @@ namespace DanaZhangCms
 
         public IActionResult Join(string spellname = "")
         { 
-            var model = _repository.FirstOrDefault(o => o.SpellName == spellname);
+            var model = _repository.FirstOrDefault(o => o.SpellName == spellname && o.IsDeleted == false);
             return View("~/Views/Contact/mobilejoin.cshtml", model);
         }
 
