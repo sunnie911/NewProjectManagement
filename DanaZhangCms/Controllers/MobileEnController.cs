@@ -35,7 +35,7 @@ namespace DanaZhangCms
             var pros = _proRepository.Where(o => o.IsHot == true && o.IsDeleted == false).Take(8).ToList();
             var arts = articleList.Where(a => a.CategoryId == 4 && a.IsDeleted == false).OrderBy(o => o.SortId).Take(4).ToList();
             var vedios = articleList.Where(a => a.CategoryId == 3 && a.IsDeleted == false).OrderBy(o => o.SortId).Take(10).ToList();
-            var banners = _banRepository.Where(a=>&& a.IsDeleted == false).OrderBy(o => o.SortId).Take(5).ToList();
+            var banners = _banRepository.Where(a=>a.IsDeleted == false).OrderBy(o => o.SortId).Take(5).ToList();
             var logos = articleList.Where(a => a.CategoryId == 5 && a.IsDeleted == false).OrderBy(o => o.SortId).Take(10).ToList();
 
             model.Products = pros;
