@@ -1,26 +1,30 @@
 ﻿@using DanaZhangCms.Core.Helpers;
-@model List<DanaZhangCms.Models.Contents>
 @{
-    //ViewData["Title"] = Model.Title;
+    
     Layout = "~/Views/Shared/_Layout.cshtml";
+
+     var Model= ViewBag.List as List<DanaZhangCms.Models.Contents>;
+
+
+  var model1 =  ViewBag.ContactList as List<DanaZhangCms.Models.Contents>; 
 
     var address = string.Empty;
     var phone = string.Empty;
     var itTel = string.Empty;
-    var result = Model.FirstOrDefault(p => p.SpellName.Contains("ConactAddress"));
+    var result = model1.FirstOrDefault(p => p.SpellName.Contains("ConactAddress"));
     if (result != null)
     {
         address = CommonHelper.NoHTML(result.Content);
     }
 
 
-    var result1 = Model.FirstOrDefault(p => p.SpellName.Contains("ConactPhone"));
+    var result1 = model1.FirstOrDefault(p => p.SpellName.Contains("ConactPhone"));
     if (result1 != null)
     {
         phone = CommonHelper.NoHTML(result1.Content);
     }
 
-    var result2 = Model.FirstOrDefault(p => p.SpellName.Contains("ConactITTEL"));
+    var result2 = model1.FirstOrDefault(p => p.SpellName.Contains("ConactITTEL"));
     if (result2 != null)
     {
         itTel = CommonHelper.NoHTML(result2.Content);
@@ -64,7 +68,7 @@
                 <div class="province">
                     <h2>售前咨询(负责省份)</h2>
                     <ul>
-                        @if (list.Any())
+                        @if (list != null && list.Any())
                         {
                             foreach (var item in list)
                             {
@@ -74,32 +78,36 @@
                                 </li>
                             }
                         }
+                        else
+                        {
+                            <li>
+                                <p> 江苏、上海、浙北、黑龙江、吉林、辽宁、山东</p>
+                                <div>邸经理 18668045955</div>
+                            </li>
+                            <li>
+                                <p> 天津（特约经销）</p>
+                                <div> 马经理 13621232645</div>
+                            </li>
+                            <li>
+                                <p> 四川、贵州、重庆、新疆、陕西、甘肃、青海、西藏</p>
+                                <div>王经理 18668048655</div>
+                            </li>
+                            <li>
+                                <p> 河南、河北、广东、海南、北京、天津、湖北、港澳台、海外</p>
+                                <div>王经理 18668048655</div>
+                            </li>
+                            <li>
+                                <p> 浙南、福建、广西、云南、湖南</p>
+                                <div>吴经理 18667125808</div>
+                            </li>
+                            <li>
+                                <p> 山西、内蒙、宁夏、安徽、江西</p>
+                                <div>王经理 18668048955</div>
+                            </li>
+                        }
 
 
-                        @*<li>
-                            <p> 江苏、上海、浙北、黑龙江、吉林、辽宁、山东</p>
-                            <div>邸经理 18668045955</div>
-                        </li>
-                        <li>
-                            <p> 天津（特约经销）</p>
-                            <div> 马经理 13621232645</div>
-                        </li>
-                        <li>
-                            <p> 四川、贵州、重庆、新疆、陕西、甘肃、青海、西藏</p>
-                            <div>王经理 18668048655</div>
-                        </li>
-                        <li>
-                            <p> 河南、河北、广东、海南、北京、天津、湖北、港澳台、海外</p>
-                            <div>王经理 18668048655</div>
-                        </li>
-                        <li>
-                            <p> 浙南、福建、广西、云南、湖南</p>
-                            <div>吴经理 18667125808</div>
-                        </li>
-                        <li>
-                            <p> 山西、内蒙、宁夏、安徽、江西</p>
-                            <div>王经理 18668048955</div>
-                        </li>*@
+                        @**@
                     </ul>
 
 

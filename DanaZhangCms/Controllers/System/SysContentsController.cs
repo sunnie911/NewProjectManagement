@@ -103,6 +103,7 @@ namespace DanaZhangCms
             {
                 if (!ModelState.IsValid)
                     return Json(ExcutedResult.FailedResult("数据验证失败"));
+                model.IsDeleted = false;
                 _repository.AddAsync(model, false);
                 return Json(ExcutedResult.SuccessResult());
             });

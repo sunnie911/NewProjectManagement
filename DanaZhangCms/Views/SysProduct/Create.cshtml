@@ -481,6 +481,12 @@
                     extensions: 'mp4,flv,swf,wmv,flv',
                     mimeTypes: 'vedio/*'
                 },
+                chunked: true,
+                chunkSize: 10 * 1024 * 1024,
+                chunkRetry: 3,
+                threads: 5,
+                fileSizeLimit: 1024 * 1024 * 1024 * 2,
+                duplicate: true,
 
             });
 

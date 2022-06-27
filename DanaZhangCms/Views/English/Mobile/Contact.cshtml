@@ -1,9 +1,9 @@
 ﻿@using DanaZhangCms.Core.Helpers;
-@model List<DanaZhangCms.Models.Contents>
+ 
 @{
     //ViewData["Title"] = Model.Title;
     Layout = "~/Views/Shared/_LayoutMobileEn.cshtml";
-
+    var Model = ViewBag.List as List<DanaZhangCms.Models.Contents>;
     var address = string.Empty;
     var phone = string.Empty;
     var itTel = string.Empty;

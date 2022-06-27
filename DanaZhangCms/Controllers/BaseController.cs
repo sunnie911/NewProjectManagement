@@ -27,13 +27,13 @@ namespace DanaZhangCms
             var site = XmlHelper.XmlDeserializeFromFile<SiteXml>(filePath, System.Text.Encoding.UTF8);
             var banners = _bannerRepository.Get().ToList();
             var _contentsRepository = AspectCoreContainer.Resolve<IContentsRepository>();
-            var contents = _contentsRepository.OrderByDescending(o=>o.SortId).Select(o=>new Models.Contents() { Title=o.Title,SpellName=o.SpellName,Content=o.Content}).ToList();
+            var contents = _contentsRepository.Where(p => p.IsDeleted == false).OrderByDescending(o=>o.SortId).Select(o=>new Models.Contents() { Title=o.Title,SpellName=o.SpellName,Content=o.Content}).ToList();
             WorkContext.Sites = site;
             WorkContext.Banners = banners;
             WorkContext.Content = contents; 
             var _proRepository = AspectCoreContainer.Resolve<IProductRepository>();
             var _cateRepository = AspectCoreContainer.Resolve<IProductCategoryRepository>();
-            var position = _proRepository.ToList();
+            var position = _proRepository.Where(p=>p.IsDeleted==false).ToList();
             ViewBag.ProductList = position;
             ViewBag.CategoryList = _cateRepository.ToList();
 

@@ -143,8 +143,8 @@ namespace DanaZhangCms
         public IActionResult Contact()
         {
             var model = _repository.Where(o => o.ProductId == 0 && (o.SpellName.Contains("SeekArea") || o.SpellName.Contains("Contact")) && o.IsDeleted == false);
-
-            return View("~/Views/English/Mobile/Contact.cshtml",model);
+            ViewBag.List = model;
+            return View("~/Views/English/Mobile/Contact.cshtml");
         }
         /// <summary>
         /// 招聘

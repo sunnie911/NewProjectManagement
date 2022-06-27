@@ -178,20 +178,20 @@ namespace DanaZhangCms
             }
             return View("~/Views/About/AboutEn.cshtml");
         }
-        /// <summary>
-        /// 关于我们
-        /// </summary>
-        /// <returns></returns>
-        public IActionResult join()
-        {
+        ///// <summary>
+        ///// 关于我们
+        ///// </summary>
+        ///// <returns></returns>
+        //public IActionResult join()
+        //{
 
-            if (RequestExtensions.IsMobile(HttpContext.Request))
-            {
-                return Redirect("/mobileEn/join");
-            }
+        //    if (RequestExtensions.IsMobile(HttpContext.Request))
+        //    {
+        //        return Redirect("/mobileEn/join");
+        //    }
             
-            return View("~/Views/Contact/join.cshtml");
-        }
+        //    return View("~/Views/Contact/join.cshtml");
+        //}
 
         /// <summary>
         /// 联系我们
@@ -204,6 +204,12 @@ namespace DanaZhangCms
             {
                 return Redirect("/mobileEn/Contact");
             }
+            var model = _conRepository.Where(o => o.ProductId == 0 && (o.SpellName.Contains("SeekArea") || o.SpellName.Contains("Contact")) && o.IsDeleted == false).ToList();
+
+            ViewBag.List = model;
+            var model1 = _conRepository.Where(o => (o.SpellName.Contains("Contact")) && o.IsDeleted == false).ToList();
+
+            ViewBag.ContactList = model1;
 
             return View("~/Views/Contact/ContactEn.cshtml");
         }

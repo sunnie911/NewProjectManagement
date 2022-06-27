@@ -25,7 +25,14 @@ namespace DanaZhangCms
                 return Redirect("/mobile/contact");
             }
 
-            var model =  _repository.Where(o => o.ProductId==0 &&(o.SpellName.Contains("SeekArea")||o.SpellName.Contains("Contact")) && o.IsDeleted == false);
+            var model =  _repository.Where(o =>  (o.SpellName.Contains("SeekArea") ) && o.IsDeleted == false).ToList();
+
+            ViewBag.List = model;
+
+            var model1 = _repository.Where(o => (  o.SpellName.Contains("Contact")) && o.IsDeleted == false).ToList(); 
+
+            ViewBag.ContactList = model1;
+
             return View(model);
         }
 
@@ -37,8 +44,9 @@ namespace DanaZhangCms
             }
 
             var model = _repository.Where(o =>(o.SpellName.Contains("Recruit")) && o.IsDeleted == false);
-          
-            return View("~/Views/Contact/join.cshtml", model);
+
+            ViewBag.List = model;
+            return View("~/Views/Contact/join.cshtml");
         }
     }
 }

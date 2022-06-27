@@ -6,6 +6,7 @@ C:\OldProject\NewProjectManagement\DanaZhangCms\obj\Release\netcoreapp2.1\PubTmp
 C:\OldProject\NewProjectManagement\DanaZhangCms\obj\Release\netcoreapp2.1\PubTmp\Out\Views\Account\Index.cshtml
 C:\OldProject\NewProjectManagement\DanaZhangCms\obj\Release\netcoreapp2.1\PubTmp\Out\Views\Article\Detail.cshtml
 C:\OldProject\NewProjectManagement\DanaZhangCms\obj\Release\netcoreapp2.1\PubTmp\Out\Views\Article\Index.cshtml
+C:\OldProject\NewProjectManagement\DanaZhangCms\obj\Release\netcoreapp2.1\PubTmp\Out\Views\Contact\ContactEn.cshtml
 C:\OldProject\NewProjectManagement\DanaZhangCms\obj\Release\netcoreapp2.1\PubTmp\Out\Views\Contact\Index.cshtml
 C:\OldProject\NewProjectManagement\DanaZhangCms\obj\Release\netcoreapp2.1\PubTmp\Out\Views\Contact\join.cshtml
 C:\OldProject\NewProjectManagement\DanaZhangCms\obj\Release\netcoreapp2.1\PubTmp\Out\Views\Contact\mobile.cshtml
@@ -59,6 +60,7 @@ C:\OldProject\NewProjectManagement\DanaZhangCms\obj\Release\netcoreapp2.1\PubTmp
 C:\OldProject\NewProjectManagement\DanaZhangCms\obj\Release\netcoreapp2.1\PubTmp\Out\Views\SysBanner\Index.cshtml
 C:\OldProject\NewProjectManagement\DanaZhangCms\obj\Release\netcoreapp2.1\PubTmp\Out\Views\SysConfig\Index.cshtml
 C:\OldProject\NewProjectManagement\DanaZhangCms\obj\Release\netcoreapp2.1\PubTmp\Out\Views\SysContents\Create.cshtml
+C:\OldProject\NewProjectManagement\DanaZhangCms\obj\Release\netcoreapp2.1\PubTmp\Out\Views\SysContents\CreateNew.cshtml
 C:\OldProject\NewProjectManagement\DanaZhangCms\obj\Release\netcoreapp2.1\PubTmp\Out\Views\SysContents\Index.cshtml
 C:\OldProject\NewProjectManagement\DanaZhangCms\obj\Release\netcoreapp2.1\PubTmp\Out\Views\SysManage\Index.cshtml
 C:\OldProject\NewProjectManagement\DanaZhangCms\obj\Release\netcoreapp2.1\PubTmp\Out\Views\SysManage\Welcome.cshtml

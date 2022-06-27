@@ -1,79 +1,119 @@
-﻿@model DanaZhangCms.Models.Contents
+﻿@using DanaZhangCms.Core.Helpers;
 @{
     //ViewData["Title"] = Model.Title;
     Layout = "~/Views/Shared/_LayoutMobile.cshtml";
+
+    var Model = ViewBag.List as List<DanaZhangCms.Models.Contents>;
+
+    var address = string.Empty;
+    var phone = string.Empty;
+    var itTel = string.Empty;
+    var result = Model.FirstOrDefault(p => p.SpellName.Contains("ConactAddress"));
+    if (result != null)
+    {
+        address = CommonHelper.NoHTML(result.Content);
+    }
+
+
+    var result1 = Model.FirstOrDefault(p => p.SpellName.Contains("ConactPhone"));
+    if (result1 != null)
+    {
+        phone = CommonHelper.NoHTML(result1.Content);
+    }
+
+    var result2 = Model.FirstOrDefault(p => p.SpellName.Contains("ConactITTEL"));
+    if (result2 != null)
+    {
+        itTel = CommonHelper.NoHTML(result2.Content);
+    }
+
+    var list = Model.Where(p => p.SpellName.Contains("SeekArea")).ToList();
 }
 
-@section css{ 
+@section css{
     <link rel="stylesheet" type="text/css" href="/css/mobile/list/contact.css" />
     <link rel="stylesheet" type="text/css" href="/css/mobile/swiper.min.css" />
-  
+
 }
 <div class="contact_whole" style="padding-top: 80px; padding-bottom:50px;">
-     
-        <div class="list_top">
-            <i></i>
-            <a href="/home">首页 > </a>
-            <a href="/contact">联系我们 </a>
-        </div>
-        <div class="contact_main">
-            <div class="left">
-                <div class="address">
-                    <h2>联系我们</h2>
-                    <div>
-                        <img src="/images/contact/dingwei.png">
-                        <span>浙江省杭州市萧山区新塘街道南秀路3089号新塘科创园建研华测</span>
-                    </div>
-                    <div>
-                        <img src="/images/contact/dianhua.png">
-                        <span>总部电话：0571-82755615</span>
-                    </div>
-                    <div>
-                        <img src="/images/contact/dianhua.png">
-                        <span>技术服务：18657102326</span>
-                    </div>
 
-                </div>
-                <div class="province">
-                    <h2>售前咨询(负责省份)</h2>
-                    <ul>
-                        <li>
-                            <p> 江苏、上海、浙北、黑龙江、吉林、辽宁、山东</p>
-                            <div>邸经理 18668045955</div>
-                        </li>
-                        <li>
-                            <p> 天津（特约经销）</p>
-                            <div> 马经理 13621232645</div>
-                        </li>
-                        <li>
-                            <p> 四川、贵州、重庆、新疆、陕西、甘肃、青海、西藏</p>
-                            <div>王经理 18668048655</div>
-                        </li>
-                        <li>
-                            <p> 河南、河北、广东、海南、北京、天津、湖北、港澳台、海外</p>
-                            <div>王经理 18668048655</div>
-                        </li>
-                        <li>
-                            <p> 浙南、福建、广西、云南、湖南</p>
-                            <div>吴经理 18667125808</div>
-                        </li>
-                        <li>
-                            <p> 山西、内蒙、宁夏、安徽、江西</p>
-                            <div>王经理 18668048955</div>
-                        </li>
-                    </ul>
-
-
-                </div>
-            </div>
-            <ul class="right">
-                <li><img class="pro_img" src="/images/contact/ditu.png"></li>
-            </ul>
-
-
-        </div>
+    <div class="list_top">
+        <i></i>
+        <a href="/home">首页 > </a>
+        <a href="/contact">联系我们 </a>
     </div>
- 
+    <div class="contact_main">
+        <div class="left">
+            <div class="address">
+                <h2>联系我们</h2>
+                <div>
+                    <img src="/images/contact/dingwei.png">
+                    <span>@address</span>
+                </div>
+                <div>
+                    <img src="/images/contact/dianhua.png">
+                    <span>总部电话：@phone</span>
+                </div>
+                <div>
+                    <img src="/images/contact/dianhua.png">
+                    <span>技术服务：@itTel</span>
+                </div>
+
+            </div>
+            <div class="province">
+                <h2>售前咨询(负责省份)</h2>
+                <ul>
+                    @if (list != null && list.Any())
+                    {
+                        foreach (var item in list)
+                        {
+                            <li>
+                                <p> @item.Title</p>
+                                <div>@CommonHelper.NoHTML(item.Content)</div>
+                            </li>
+                        }
+                    }
+                    else {
+
+
+                    <li>
+                        <p> 江苏、上海、浙北、黑龙江、吉林、辽宁、山东</p>
+                        <div>邸经理 18668045955</div>
+                    </li>
+                    <li>
+                        <p> 天津（特约经销）</p>
+                        <div> 马经理 13621232645</div>
+                    </li>
+                    <li>
+                        <p> 四川、贵州、重庆、新疆、陕西、甘肃、青海、西藏</p>
+                        <div>王经理 18668048655</div>
+                    </li>
+                    <li>
+                        <p> 河南、河北、广东、海南、北京、天津、湖北、港澳台、海外</p>
+                        <div>王经理 18668048655</div>
+                    </li>
+                    <li>
+                        <p> 浙南、福建、广西、云南、湖南</p>
+                        <div>吴经理 18667125808</div>
+                    </li>
+                    <li>
+                        <p> 山西、内蒙、宁夏、安徽、江西</p>
+                        <div>王经理 18668048955</div>
+                    </li>
+                    }
+                </ul>
+
+
+            </div>
+        </div>
+        <ul class="right">
+            <li><img class="pro_img" src="/images/contact/ditu.png"></li>
+        </ul>
+
+
+    </div>
+</div>
+
 @section Scripts{
     <script src="/js/mobile/list/contact.js" type="text/javascript"></script>
     <script src="/js/mobile/swiper.min.js" type="text/javascript"></script>

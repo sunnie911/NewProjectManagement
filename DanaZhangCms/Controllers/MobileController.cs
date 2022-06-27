@@ -167,9 +167,11 @@ namespace DanaZhangCms
         }
 
         public IActionResult Join(string spellname = "")
-        { 
-            var model = _repository.FirstOrDefault(o => o.SpellName == spellname && o.IsDeleted == false);
-            return View("~/Views/Contact/mobilejoin.cshtml", model);
+        {
+            var model = _repository.Where(o => (o.SpellName.Contains("Recruit")) && o.IsDeleted == false);
+
+            ViewBag.List = model;
+            return View("~/Views/Contact/mobilejoin.cshtml");
         }
 
         /// <summary>
