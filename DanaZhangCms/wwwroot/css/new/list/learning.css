@@ -97,14 +97,12 @@ img {
         font-size: 13px; 
         margin-top: 10px;
         text-align: left;
+        margin-left:20px;
         width: 90%;
     }
    
 
-    .list_current span a {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    .list_current span a { 
     }
 
     .list_current span .img_box {        
@@ -115,8 +113,7 @@ img {
         align-items: center;
         justify-content: center;
         position: relative;
-        flex-wrap: wrap;
-       /* border-left: 1px solid #999999;*/
+        flex-wrap: wrap; 
     }
 
 .list_main ul li:nth-child(5n+1) .img_box {
@@ -142,7 +139,7 @@ img {
     color: #000000;
     padding: 0 15px;
     line-height: 25px;
-    white-space: nowrap;
+    /*white-space: nowrap;*/
     width: 90%;
 }
 

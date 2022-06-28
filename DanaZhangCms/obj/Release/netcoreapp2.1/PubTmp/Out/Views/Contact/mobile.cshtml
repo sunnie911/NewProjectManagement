@@ -8,20 +8,20 @@
     var address = string.Empty;
     var phone = string.Empty;
     var itTel = string.Empty;
-    var result = Model.FirstOrDefault(p => p.SpellName.Contains("ConactAddress"));
+    var result = Model.FirstOrDefault(p => p.SpellName.Contains("ContactAddress"));
     if (result != null)
     {
         address = CommonHelper.NoHTML(result.Content);
     }
 
 
-    var result1 = Model.FirstOrDefault(p => p.SpellName.Contains("ConactPhone"));
+    var result1 = Model.FirstOrDefault(p => p.SpellName.Contains("ContactPhone"));
     if (result1 != null)
     {
         phone = CommonHelper.NoHTML(result1.Content);
     }
 
-    var result2 = Model.FirstOrDefault(p => p.SpellName.Contains("ConactITTEL"));
+    var result2 = Model.FirstOrDefault(p => p.SpellName.Contains("ContactITTEL"));
     if (result2 != null)
     {
         itTel = CommonHelper.NoHTML(result2.Content);

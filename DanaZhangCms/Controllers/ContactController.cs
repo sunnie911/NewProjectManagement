@@ -43,7 +43,7 @@ namespace DanaZhangCms
                 return Redirect("/mobile/join");
             }
 
-            var model = _repository.Where(o =>(o.SpellName.Contains("Recruit")) && o.IsDeleted == false);
+            var model = _repository.Where(o =>(o.SpellName.Contains("Recruit")) && o.IsDeleted == false).ToList();
 
             ViewBag.List = model;
             return View("~/Views/Contact/join.cshtml");

@@ -53,14 +53,19 @@ namespace DanaZhangCms
         public IActionResult CreateNew(string spellName = "Recruit")
         {
             var model = new Contents() { SpellName= spellName };
-           
-
-            return View(model);
+       
+            return View("~/Views/SysContents/CreateNew.cshtml", model);
         }
         [Ignore]
         [ActionDescription(Name = "编辑内容")]
         public IActionResult Edit(int id)
         {
+            var model = _repository.GetSingle(id);
+            if (model != null && model.SpellName.Contains("Recruit"))
+            {
+                return View("CreateNew", model);
+            }
+
             return View("Create", _repository.GetSingle(id));
         }
         #endregion
@@ -78,19 +83,27 @@ namespace DanaZhangCms
         }
 
         [AjaxRequestOnly]
-        public Task<IActionResult> GetEntitiesByPaged(int limit, int page)
+        public Task<IActionResult> GetEntitiesByPaged(int limit, int page,string spellName="")
         {
             return Task.Factory.StartNew<IActionResult>(() =>
             {
                 var total = _repository.Count(m => m.IsDeleted == false && m.ProductId == 0);
 
+
+
                 var rows = _repository.GetByPagination(m =>m.IsDeleted==false&& m.ProductId == 0, limit, page, true,
                     m => m.Id).Select(o => new { o.Id, o.Title, o.SpellName, CreatedDate = o.CreatedDate.ToString("yyyy-MM-dd") }).ToList();
+
+                if (!string.IsNullOrWhiteSpace(spellName))
+                {
+                    total = _repository.Count(m => m.IsDeleted == false && m.ProductId == 0 && m.SpellName.Contains(spellName));
+
+                    rows = _repository.GetByPagination(m => m.IsDeleted == false && m.ProductId == 0&&m.SpellName.Contains(spellName), limit, page, true,
+                     m => m.Id).Select(o => new { o.Id, o.Title, o.SpellName, CreatedDate = o.CreatedDate.ToString("yyyy-MM-dd") }).ToList();
+                }
                 return Json(LayUIPaginationResult.PagedResult(true, rows, total));
             });
-        }
-
-
+        } 
         /// <summary>
         /// 新建
         /// </summary>

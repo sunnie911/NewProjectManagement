@@ -3,10 +3,15 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_SysLayout.cshtml";
 }
+
+ 
 <div class="layui-row">
     <button class="layui-btn addCate" onclick="x_admin_show('新增','@(Url.Action("Create"))')"><i class="layui-icon"></i>增加</button>
-    <button class="layui-btn addCate" onclick="x_admin_show('新增招聘','@(Url.Action("CreateNew?SpellName=Recruit"))')"><i class="layui-icon"></i>增加</button>
-
+    <button class="layui-btn addCate" onclick="x_admin_show('新增招聘','@(Url.Action("CreateNew"))')"><i class="layui-icon"></i>新增招聘</button>
+    <div class="layui-inline">
+        <input class="layui-input" name="spellName" id="demoReload" autocomplete="off">
+    </div>
+    <button class="layui-btn" data-type="reload">搜索</button>
 </div>
 <div>
     <table class="layui-hidden" id="treeTable" lay-filter="treeTable"></table>
@@ -14,29 +19,17 @@
 
 @section Scripts{
     <script>
- 
-        var editObj = null, ptable = null, treeGrid = null, tableId = 'treeTable', layer = null;
-        layui.config({
-            base: '/lib/layui/extend/'
-        }).extend({
-            treeGrid: 'treeGrid'
-        }).use(['jquery', 'treeGrid', 'layer'], function () {
-            var $ = layui.jquery;
-            treeGrid = layui.treeGrid;//很重要
-            layer = layui.layer;
-            ptable = treeGrid.render({
-                id: tableId
-                , elem: '#' + tableId
-                , idField: 'id'
+        layui.use('Table', function () {
+            var table = layui.table;
+            table.render({
+                id: 'treeTable'
+                , elem: '#treeTable'
+                , page: true //开启分页
                 , url: '/SysContents/GetEntitiesByPaged'
-                , cellMinWidth: 100
-                , treeId: 'id'//树形id字段名称
-                , treeUpId: 'parentId'//树形父id字段名称
-                , treeShowName: 'name'//以树形式显示的字段
+               
                 , cols: [[
                     { field: 'title', edit: 'text', width: 300, title: '分类名称' },
                     { field: 'spellName', title: '简拼' },
-                   
                     {
                         width: 200, title: '操作', align: 'center'/*toolbar: '#barDemo'*/
                         , templet: function (d) {
@@ -52,7 +45,29 @@
                 , page: false
             });
 
-            treeGrid.on('tool(' + tableId + ')', function (obj) {
+            var $ = layui.$, active = {
+                reload: function () {
+                   
+                    var name = $('#demoReload');
+                    //执行重载
+                    table.reload('testReload', {
+                        page: {
+                            curr: 1 //重新从第 1 页开始
+                        }
+                        , where: { 
+                            spellName: name.val(),
+                        }
+                    });
+                }
+            };
+
+            
+            $('#demoTable .layui-btn').on('click', function () {
+                var type = $(this).data('type');
+                active[type] ? active[type].call(this) : '';
+            });
+
+            treeGrid.on('tool(treeTable)', function (obj) {
                 var data = obj.data;
                 var id=obj.data.id;
                 if (obj.event === 'del') {//删除行
@@ -90,5 +105,5 @@
         });
 
     </script>
-    
+
 }
