@@ -39,18 +39,18 @@
                                 </div>
                                 <div class="post_main">
                                     <h4>岗位职责：</h4>
-                                    @item.Type
+                                    @Html.Raw(item.Type)
                                     <h4>任职资格：</h4>
-                                    @item.FileName
+                                    @Html.Raw(item.FileName)
                                     @*<p>1、3年以上前端工作经验，至少参加过一个完整中型前端项目开发，并拥有APP实际开发经验的人员优先选择；</p>
                                         <p>2、精通HTML+CSS，并能处理浏览器兼容以及跨域等问题；</p>
                                         <p>3、精通JQuery、JS、Ajax；</p>*@
                                     <h4>福利待遇：</h4>
                                     @*<p>五险一金、员工餐补、带薪年假、年度体检、团建福利</p>*@
-                                    @item.Content
+                                    @Html.Raw(item.Content)
                                     <h4>投递方式：</h4>
                                     @*<p>1、投递您的简历和作品到耐尔得邮箱：adminhr@neld.com.cn。</p>*@
-                                    @item.FilePath
+                                    @Html.Raw(item.FilePath)
                                     <img src="/images/ewm.jpg">
                                 </div>
                             </li>

@@ -86,16 +86,16 @@
         @Html.HiddenFor(x => x.ImgUrl)
 
     </div>
-    @*<div class="layui-form-item">
+    <div class="layui-form-item">
             @Html.LabelFor(model => model.VedioUrl, new { @class = "layui-form-label" })
             <div class="layui-input-inline">
                 @Html.TextBoxFor(model => model.VedioUrl, new { @class = "layui-input", @required = "",  autocomplete = "off" })
 
             </div>
 
-        </div>*@
+        </div>
 
-    <div class="layui-form-item">
+    @*<div class="layui-form-item">
         @Html.LabelFor(model => model.VedioUrl, new { @class = "layui-form-label" })
         <div class="layui-input-inline">
             <div class="uploadPreview" id="PreviewVedio">
@@ -124,7 +124,7 @@
         </div>
         @Html.HiddenFor(x => x.VedioUrl)
 
-    </div>
+    </div>*@
 
     <div class="layui-form-item">
 
@@ -142,31 +142,7 @@
 
     </div>
 
-    @*<div class="layui-form-item">
-
-            @Html.LabelFor(model => model.Paramter, new { @class = "layui-form-label" })
-            <div class="layui-input-inline" style="width:900px;min-height:500px;">
-
-                <script id="Paramter" name="Paramter" type="text/plain">
-                            @Model.Paramter
-                </script>
-                <input type="hidden" name="Paramter1" id="Paramter1" value="@Model.Paramter" />
-            </div>
-
-        </div>
-
-        <div class="layui-form-item">
-
-            @Html.LabelFor(model => model.Files, new { @class = "layui-form-label" })
-            <div class="layui-input-inline" style="width:900px;min-height:500px;">
-
-                <script id="Files" name="Files" type="text/plain">
-                        @Model.Files
-                </script>
-                <input type="hidden" name="Files1" id="Files1" value="@Model.Files" />
-            </div>
-
-        </div>*@
+    
 
     <div class="layui-form-item">
 
@@ -298,44 +274,7 @@
         ue.ready(function () {
             ue.setContent(oldhtml);
         });
-
-       // var ue1 = UE.getEditor('ContentEn', {
-       //     initialFrameHeight: 500
-       // });
-       //   var oldhtml1 = $("#ContentEn1").val();
-
-       // ue1.ready(function () {
-       //     ue1.setContent(oldhtml1);
-       // });
-
-       // var ue2 = UE.getEditor('ParamterEn', {
-       //     initialFrameHeight: 500
-       // });
-       //  var oldhtml2 = $("#ParamterEn1").val();
-
-       // ue2.ready(function () {
-       //     ue2.setContent(oldhtml2);
-       // });
-
-
-       // var ue3 = UE.getEditor('Paramter', {
-       //     initialFrameHeight: 500
-       // });
-       //var oldhtml3 = $("#Paramter1").val();
-
-       // ue3.ready(function () {
-       //     ue3.setContent(oldhtml3);
-       // });
-
-
-       // var ue4 = UE.getEditor('Files', {
-       //     initialFrameHeight: 500
-       // });
-       // var oldhtml4 = $("#Files1").val();
-
-       // ue4.ready(function () {
-       //     ue4.setContent(oldhtml4);
-       // });
+ 
         $(function () {
 
 

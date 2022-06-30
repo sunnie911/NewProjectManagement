@@ -69,7 +69,21 @@ namespace DanaZhangCms
             ViewBag.CategoryName = name;
             return View("~/Views/Article/index.cshtml", arts);
         }
+        ///首页
+        public IActionResult Organization()
+        {
 
+            int categoryId = 5;
+            //if (RequestExtensions.IsMobile(HttpContext.Request))
+            //{
+            //    return Redirect("/mobile/article");
+            //}
+            var arts = _artRepository.Where(o => o.CategoryId == categoryId && o.IsDeleted == false).OrderBy(o => o.SortId).Select(o => new Article() { Title = o.Title, Id = o.Id, ImgUrl = o.ImgUrl, VedioUrl = o.VedioUrl, CreatedDate = o.CreatedDate, ClickCount = o.ClickCount, Content = o.Content }).ToList();
+            var total = _artRepository.Where(o => o.CategoryId == categoryId && o.IsDeleted == false).Count();
+            ViewBag.Total = total;
+ 
+            return View("~/Views/Article/Organization.cshtml", arts);
+        }
         /// <summary>
         /// 详情
         /// </summary>

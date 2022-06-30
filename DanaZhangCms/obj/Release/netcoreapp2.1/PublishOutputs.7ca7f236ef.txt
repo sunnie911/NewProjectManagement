@@ -6,6 +6,7 @@ C:\OldProject\NewProjectManagement\DanaZhangCms\obj\Release\netcoreapp2.1\PubTmp
 C:\OldProject\NewProjectManagement\DanaZhangCms\obj\Release\netcoreapp2.1\PubTmp\Out\Views\Account\Index.cshtml
 C:\OldProject\NewProjectManagement\DanaZhangCms\obj\Release\netcoreapp2.1\PubTmp\Out\Views\Article\Detail.cshtml
 C:\OldProject\NewProjectManagement\DanaZhangCms\obj\Release\netcoreapp2.1\PubTmp\Out\Views\Article\Index.cshtml
+C:\OldProject\NewProjectManagement\DanaZhangCms\obj\Release\netcoreapp2.1\PubTmp\Out\Views\Article\Organization.cshtml
 C:\OldProject\NewProjectManagement\DanaZhangCms\obj\Release\netcoreapp2.1\PubTmp\Out\Views\Contact\ContactEn.cshtml
 C:\OldProject\NewProjectManagement\DanaZhangCms\obj\Release\netcoreapp2.1\PubTmp\Out\Views\Contact\Index.cshtml
 C:\OldProject\NewProjectManagement\DanaZhangCms\obj\Release\netcoreapp2.1\PubTmp\Out\Views\Contact\join.cshtml

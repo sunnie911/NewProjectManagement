@@ -12,6 +12,7 @@
     <None Remove="wwwroot\components\**" />
   </ItemGroup>
   <ItemGroup>
+    <Content Remove="wwwroot\js\new\list\Organization.js" />
     <Content Remove="wwwroot\lib\ckeditor\ckeditor.config.js" />
   </ItemGroup>
   <ItemGroup>
@@ -36,6 +37,7 @@
     <None Include="wwwroot\js\new\list\contact.js" />
     <None Include="wwwroot\js\new\list\introduce.js" />
     <None Include="wwwroot\js\new\list\join.js" />
+    <None Include="wwwroot\js\new\list\organization.js" />
     <None Include="wwwroot\js\new\list\learning.js" />
     <None Include="wwwroot\js\new\list\productList.js" />
     <None Include="wwwroot\js\new\list\video.js" />
